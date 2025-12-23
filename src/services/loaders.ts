@@ -11,9 +11,9 @@ import {
 import { LS_KEYS, lsGetJson } from "@/services/storage";
 
 export async function fetchJson<T>(url: string, schema: z.ZodType<T>): Promise<T> {
-  // 在静态导出时，确保URL是完整的
-  const baseUrl = process.env.NODE_ENV === 'production' ? '' : '';
-  const fullUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
+  // 在静态导出时，确保URL包含basePath
+  const basePath = process.env.NODE_ENV === 'production' ? '/targetmanage' : '';
+  const fullUrl = url.startsWith('http') ? url : `${basePath}${url}`;
   
   const res = await fetch(fullUrl, { cache: "no-store" });
   if (!res.ok) throw new Error(`fetch_failed: ${url}`);
