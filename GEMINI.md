@@ -1,63 +1,125 @@
-# Gemini Context: 川分目标管理系统 (v2.0.0)
+# GEMINI.md
 
-你正在协助开发 **川分目标管理系统** (Target Management Visualization)，这是一个基于 **Next.js 14** 的企业级数据可视化应用。
+> Google Gemini 专用指令文件 - 知识图谱驱动的智能辅助
 
-## 核心任务与实施规划 (Critical)
+## 🎯 核心原则：索引优先，图谱导航
 
-当前处于 **V0 -> V1 过渡阶段**，请严格遵循 `docs/实施规划.md` 中的策略：
+作为 Google Gemini，你在协助开发时必须：
+1. **先查询知识图谱**：理解项目结构和概念关系
+2. **追溯文档源头**：代码的业务逻辑定义在哪里
+3. **评估影响范围**：修改会影响哪些模块
+4. **同步更新所有关联**：文档、代码、索引、测试
 
-1.  **数据加载优先级 (Immutable Rule)**:
-    *   必须严格遵循：`localStorage` (用户导入) > `public/data` (静态文件) > `Fallback` (空数据)。
-    *   **2025年度数据兼容**: 支持双文件名读取（`actuals_annual_2025.json` 优先，`预测_annual_2025.json` 兼容）。
-    *   文件路径：`src/services/loaders.ts`。
+## 🗺️ 知识图谱系统
 
-2.  **严格指标口径**:
-    *   **增长率/增量**: 必须基于 2025 基线计算。若缺基线或分母为 0，必须返回 `null` (UI 显示 "—")，严禁补 0。
-    *   **Null 安全**: 所有除法运算必须使用 `src/domain/achievement.ts` 中的 `safeDivide`。
-    *   **双口径进度**: 必须同时计算“线性进度”和“权重进度”。
+### 索引文件位置
+```
+docs/.meta/
+├── docs-index.json      # 文档索引（AI可直接读取）
+├── code-index.json      # 代码索引（AI可直接读取）
+├── graph.json           # 知识图谱（节点+边）
+└── ai-context.md        # AI工具使用指南
+```
 
-3.  **UI/UX 约束**:
-    *   **大屏适配**: PPT 容器宽度固定为 **2400px**，内容区 **2100px**。
-    *   **KPI 布局**: 大屏模式下强制使用 **6 列** 布局。
-    *   **图表高度**: 标准图表高度 **600px**。
+### Gemini 专属能力
 
-## 项目架构
+作为 Google Gemini，你擅长：
+- ✅ **多模态理解**：可以理解图表、架构图、流程图
+- ✅ **大规模推理**：可以一次性分析整个知识图谱
+- ✅ **代码与文档对比**：找出不一致之处
+- ✅ **影响分析**：预测修改的连锁反应
 
-### 目录结构 (Key Paths)
+## 📚 项目概览（基于索引）
 
-*   `src/domain/`: **纯函数计算引擎**。业务逻辑（增长率、达成率、权重）的核心。无副作用。
-*   `src/services/`: **数据服务层**。负责数据加载、存储 (LocalStorage)、Zod 验证。
-*   `src/config/`: **静态配置**。`organizationModes.ts` (组织模式), `progressWeights.ts` (权重)。
-*   `src/components/`: **UI 组件**。
-    *   `kpi/`: KPI 卡片 (KpiCard)。
-    *   `charts/`: ECharts 图表容器。
-*   `src/app/`: **Next.js 路由**。
-*   `public/data/`: **静态数据源** (JSON)。开发期默认数据。
+**四川分公司车险目标管理平台（2025-2026）**
 
-### 技术栈规范
+核心功能：
+- 年度目标分配到月度/季度
+- 实际数据录入与达成率计算
+- 时间进度达成率（三种口径）
+- 同比增长指标
+- 大屏展示优化
 
-*   **Framework**: Next.js 14 (App Router)
-*   **Language**: TypeScript 5 (Strict types, no `any`)
-*   **Styling**: Tailwind CSS 3 (使用 `src/styles/tokens.ts` 中的 Design Tokens)
-*   **Visualization**: ECharts 5 (ReactECharts)
-*   **State**: Zustand (Client), React Query (Server/Async)
+### 关键模块映射
 
-## 常用命令
+| 业务概念 | 文档位置 | 代码实现 |
+|---------|---------|---------|
+| 时间进度 | docs/business/指标定义规范.md:26-64 | src/domain/time.ts |
+| 达成率 | docs/business/指标定义规范.md:22-24 | src/domain/achievement.ts |
+| 增长率 | docs/business/指标定义规范.md:66-92 | src/domain/growth.ts |
 
-*   `pnpm dev`: 启动开发服务器
-*   `pnpm build`: 构建生产版本
-*   `pnpm typecheck`: TypeScript 类型检查 (重要)
+## 🔍 Gemini 智能查询工作流
 
-## 开发行为准则
+### 场景1: 理解新概念
+```
+用户问："什么是时间进度达成率？"
 
-1.  **逻辑与数据分离**: 不要将业务数据硬编码在组件中。始终通过 `src/services` 加载数据。
-2.  **别名-验证模式**: 处理 CSV/Excel 导入时，必须使用 Schema 验证列名映射，参考 `.gemini/GEMINI.md` 历史上下文。
-3.  **组件设计**: UI 组件应保持“哑”(dumb)，复杂逻辑下沉到 Hooks 或 Domain 函数。
-4.  **文档优先**: 在进行重大架构变更前，先查阅 `docs/architecture/` 和 `docs/business/`。
+你的步骤：
+1. 查询 docs-index.json 搜索 "时间进度"
+2. 找到文档位置
+3. 阅读业务定义
+4. 查询代码实现
+5. 生成完整答案
+```
 
-## 关键文档索引 (Docs Map)
+### 场景2: 代码审查
+```
+用户提交PR修改 src/domain/time.ts
 
-*   **实施细节**: `docs/实施规划.md` (当前任务清单)
-*   **业务逻辑**: `docs/business/业务指标计算.md`
-*   **设计规范**: `docs/design/全局设计规范.md`
-*   **UI 开发**: `docs/development/UI开发指南.md`
+你的审查：
+1. 读取 code-index 找关联文档
+2. 检查文档是否同步更新
+3. 查看依赖关系
+4. 生成审查报告
+```
+
+### 场景3: 影响分析
+```
+用户想修改某个函数
+
+你的分析：
+1. 读取 graph.json
+2. 找出所有依赖
+3. 评估风险级别
+4. 提供修改建议
+```
+
+## 🎨 Gemini 专属技能
+
+### 技能1: 多模态分析
+- 解析架构图
+- 理解流程图
+- 对比设计与代码
+
+### 技能2: 大规模推理
+- 分析整个知识图谱
+- 识别模式和异常
+- 生成健康度报告
+
+### 技能3: 智能推荐
+- 基于上下文推荐相关内容
+- 提供最佳实践建议
+- 预测可能的问题
+
+### 技能4: 影响分析
+- 修改前的风险评估
+- 依赖链分析
+- 连锁反应预测
+
+## 📊 质量检查清单
+
+每次协助开发时确认：
+- [ ] 文档定义与代码实现一致
+- [ ] 索引文件完整
+- [ ] 所有依赖已更新
+- [ ] TypeScript 类型正确
+- [ ] JSDoc 注释完整
+
+## 📚 必读文档
+1. docs/.meta/ai-context.md - 完整指南
+2. docs/architecture/文档代码索引系统设计.md - 系统设计
+3. docs/.meta/QUICKSTART.md - 快速入门
+
+---
+
+**Gemini，你是知识图谱的守护者！** 🌟

@@ -9,6 +9,8 @@ import {
   weightedProgressYear,
   linearProgressQuarter,
   weightedProgressQuarter,
+  actual2025ProgressYear,
+  actual2025ProgressQuarter,
   monthToQuarter,
 } from "@/domain/time";
 import { calculateGrowthMetrics, formatGrowthRate } from "@/domain/growth";
@@ -21,7 +23,7 @@ const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });
 
 type GroupView = "all" | "local" | "remote";
 type ProductView = "total" | "auto" | "property" | "life" | "health";
-type ProgressMode = "linear" | "weighted";
+type ProgressMode = "linear" | "weighted" | "actual2025";
 
 const productLabel: Record<ProductView, string> = {
   total: "汇总",
@@ -157,6 +159,12 @@ export default function Page() {
   }, [dataResetTick]);
 
   const orgMap = useMemo(() => new Map(orgs.map((o) => [o.org_id, o])), [orgs]);
+  const viewLabel = useMemo(() => {
+    if (viewKey === "all") return "全省";
+    if (viewKey === "local") return "同城";
+    if (viewKey === "remote") return "异地";
+    return orgMap.get(viewKey)?.org_cn ?? "全省";
+  }, [viewKey, orgMap]);
 
   const annualTargetAgg = useMemo(() => {
     if (!annualTargets) return null;
@@ -268,17 +276,22 @@ export default function Page() {
 
     const progressLinearYear = linearProgressYear(month);
     const progressWeightedYear = weightedProgressYear(weights, month);
+    const progressActual2025Year = actual2025ProgressYear(monthlyActualSeries2025, month);
 
     const progressLinearQuarter = linearProgressQuarter(month);
     const progressWeightedQuarter = weightedProgressQuarter(weights, month);
+    const progressActual2025Quarter = actual2025ProgressQuarter(monthlyActualSeries2025, month);
 
     const expectedCumYearLinear = annual * progressLinearYear;
     const expectedCumYearWeighted = annual * progressWeightedYear;
+    const expectedCumYearActual2025 = annual * progressActual2025Year;
 
     const timeAchYearLinear =
       actualsPeriod2026.ytd === null ? null : safeDivide(actualsPeriod2026.ytd, expectedCumYearLinear).value;
     const timeAchYearWeighted =
       actualsPeriod2026.ytd === null ? null : safeDivide(actualsPeriod2026.ytd, expectedCumYearWeighted).value;
+    const timeAchYearActual2025 =
+      actualsPeriod2026.ytd === null ? null : safeDivide(actualsPeriod2026.ytd, expectedCumYearActual2025).value;
 
     // 计算增长率指标（严格口径：2026 实际 vs 2025 同期实际）
     const growthMetrics = calculateGrowthMetrics(actualsPeriod2026, actualsPeriod2025);
@@ -292,14 +305,17 @@ export default function Page() {
       qtdTarget,
       progressLinearYear,
       progressWeightedYear,
+      progressActual2025Year,
       progressLinearQuarter,
       progressWeightedQuarter,
+      progressActual2025Quarter,
       timeAchYearLinear,
       timeAchYearWeighted,
+      timeAchYearActual2025,
       growthMetrics,
       ytdActual2025: actualsPeriod2025.ytd,
     };
-  }, [annualTargetAgg, weights, viewKey, product, month, actualsPeriod2026, actualsPeriod2025]);
+  }, [annualTargetAgg, weights, viewKey, product, month, actualsPeriod2026, actualsPeriod2025, monthlyActualSeries2025]);
 
   const chartOption = useMemo(() => {
     if (!kpi) return null;
@@ -308,6 +324,11 @@ export default function Page() {
     const actualColor = colors.chart.expenseRate;
     const growthColor = colors.status.good;
     const warningColor = colors.status.warning;
+    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
+    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
+    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
+    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
+    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
 
     const monthlyEstimateTargets =
       progressMode === "linear" ? kpi.monthlyTargetsLinear : kpi.monthlyTargets;
@@ -321,6 +342,14 @@ export default function Page() {
     });
 
     const barWidth = Math.round(24 * 1.618);
+    const warningThreshold = 0.05; // 5%预警线
+
+    // 为2025实际数据生成颜色（对应增长率低于5%时变橙色）
+    const actualBarColors = monthlyActualSeries2025.map((v, idx) => {
+      const growthRate = growthSeries[idx];
+      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
+    });
+
     const barLabel = {
       show: true,
       position: "top" as const,
@@ -329,7 +358,19 @@ export default function Page() {
       width: barWidth,
       formatter: (params: any) => {
         const value = params?.value as number | null;
-        return value === null ? "" : `${Math.round(value)}`;
+        if (value === null) return "";
+        const growthRate = growthSeries[params.dataIndex];
+        const isWarning = growthRate !== null && growthRate < warningThreshold;
+        const color = isWarning ? darkRedColor : grayColor;
+        return `{${isWarning ? 'warning' : 'normal'}|${Math.round(value)}}`;
+      },
+      rich: {
+        normal: {
+          color: grayColor,
+        },
+        warning: {
+          color: darkRedColor,
+        },
       },
     };
 
@@ -379,7 +420,9 @@ export default function Page() {
           type: "bar",
           data: monthlyActualSeries2025,
           name: "2025实际",
-          itemStyle: { color: actualColor },
+          itemStyle: {
+            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
+          },
           barMaxWidth: barWidth,
           label: barLabel,
           barGap: "30%",
@@ -389,8 +432,12 @@ export default function Page() {
           data: growthSeries,
           name: "增长率",
           yAxisIndex: 1,
-          lineStyle: { color: growthColor },
-          itemStyle: { color: growthColor },
+          lineStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
+          itemStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
           smooth: true,
           symbol: "circle",
           symbolSize: 6,
@@ -400,14 +447,25 @@ export default function Page() {
             fontWeight: "bold",
             formatter: (params: any) => {
               const value = params?.value as number | null;
-              return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+              if (value === null) return "";
+              const isWarning = value !== null && value < warningThreshold;
+              const color = isWarning ? darkRedColor : blueColor;
+              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
+            },
+            rich: {
+              normal: {
+                color: blueColor,
+              },
+              warning: {
+                color: darkRedColor,
+              },
             },
           },
           markLine: {
             symbol: "none",
             lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 3%" },
-            data: [{ yAxis: 0.03 }],
+            label: { formatter: "预警线 5%" },
+            data: [{ yAxis: 0.05 }],
           },
         },
       ],
@@ -422,6 +480,11 @@ export default function Page() {
     const actualColor = colors.chart.expenseRate;
     const growthColor = colors.status.good;
     const warningColor = colors.status.warning;
+    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
+    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
+    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
+    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
+    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
 
     const monthlyEstimateTargets =
       progressMode === "linear" ? kpi.monthlyTargetsLinear : kpi.monthlyTargets;
@@ -454,6 +517,14 @@ export default function Page() {
     });
 
     const barWidth = Math.round(24 * 1.618);
+    const warningThreshold = 0.05; // 5%预警线
+
+    // 为2025实际数据生成颜色（对应增长率低于5%时变橙色）
+    const actualBarColors = quarterlyActuals2025.map((v, idx) => {
+      const growthRate = growthSeries[idx];
+      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
+    });
+
     const barLabel = {
       show: true,
       position: "top" as const,
@@ -462,7 +533,18 @@ export default function Page() {
       width: barWidth,
       formatter: (params: any) => {
         const value = params?.value as number | null;
-        return value === null ? "" : `${Math.round(value)}`;
+        if (value === null) return "";
+        const growthRate = growthSeries[params.dataIndex];
+        const isWarning = growthRate !== null && growthRate < warningThreshold;
+        return `{${isWarning ? 'warning' : 'normal'}|${Math.round(value)}}`;
+      },
+      rich: {
+        normal: {
+          color: grayColor,
+        },
+        warning: {
+          color: darkRedColor,
+        },
       },
     };
 
@@ -512,7 +594,9 @@ export default function Page() {
           type: "bar",
           data: quarterlyActuals2025,
           name: "2025实际",
-          itemStyle: { color: actualColor },
+          itemStyle: {
+            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
+          },
           barMaxWidth: barWidth,
           label: barLabel,
           barGap: "30%",
@@ -522,8 +606,12 @@ export default function Page() {
           data: growthSeries,
           name: "增长率",
           yAxisIndex: 1,
-          lineStyle: { color: growthColor },
-          itemStyle: { color: growthColor },
+          lineStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
+          itemStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
           smooth: true,
           symbol: "circle",
           symbolSize: 6,
@@ -533,14 +621,24 @@ export default function Page() {
             fontWeight: "bold",
             formatter: (params: any) => {
               const value = params?.value as number | null;
-              return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+              if (value === null) return "";
+              const isWarning = value !== null && value < warningThreshold;
+              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
+            },
+            rich: {
+              normal: {
+                color: blueColor,
+              },
+              warning: {
+                color: darkRedColor,
+              },
             },
           },
           markLine: {
             symbol: "none",
             lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 3%" },
-            data: [{ yAxis: 0.03 }],
+            label: { formatter: "预警线 5%" },
+            data: [{ yAxis: 0.05 }],
           },
         },
       ],
@@ -555,6 +653,11 @@ export default function Page() {
     const actualColor = colors.chart.expenseRate;
     const growthColor = colors.status.good;
     const warningColor = colors.status.warning;
+    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
+    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
+    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
+    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
+    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
 
     const monthlyEstimateTargets =
       progressMode === "linear" ? kpi.monthlyTargetsLinear : kpi.monthlyTargets;
@@ -580,6 +683,14 @@ export default function Page() {
       : Array.from({ length: 12 }, () => null);
 
     const barWidth = Math.round(24 * 1.618);
+    const warningThreshold = 0.05; // 5%预警线
+
+    // 为2025实际占比数据生成颜色（对应增长率低于5%时变橙色）
+    const actualBarColors = actualShare.map((v, idx) => {
+      const growthRate = growthSeries[idx];
+      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
+    });
+
     const barLabel = {
       show: true,
       position: "top" as const,
@@ -588,7 +699,18 @@ export default function Page() {
       width: barWidth,
       formatter: (params: any) => {
         const value = params?.value as number | null;
-        return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+        if (value === null) return "";
+        const growthRate = growthSeries[params.dataIndex];
+        const isWarning = growthRate !== null && growthRate < warningThreshold;
+        return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
+      },
+      rich: {
+        normal: {
+          color: grayColor,
+        },
+        warning: {
+          color: darkRedColor,
+        },
       },
     };
 
@@ -640,7 +762,9 @@ export default function Page() {
           type: "bar",
           data: actualShare,
           name: "2025实际占比",
-          itemStyle: { color: actualColor },
+          itemStyle: {
+            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
+          },
           barMaxWidth: barWidth,
           label: barLabel,
           barGap: "30%",
@@ -650,8 +774,12 @@ export default function Page() {
           data: growthSeries,
           name: "增长率",
           yAxisIndex: 1,
-          lineStyle: { color: growthColor },
-          itemStyle: { color: growthColor },
+          lineStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
+          itemStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
           smooth: true,
           symbol: "circle",
           symbolSize: 6,
@@ -661,14 +789,24 @@ export default function Page() {
             fontWeight: "bold",
             formatter: (params: any) => {
               const value = params?.value as number | null;
-              return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+              if (value === null) return "";
+              const isWarning = value !== null && value < warningThreshold;
+              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
+            },
+            rich: {
+              normal: {
+                color: blueColor,
+              },
+              warning: {
+                color: darkRedColor,
+              },
             },
           },
           markLine: {
             symbol: "none",
             lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 3%" },
-            data: [{ yAxis: 0.03 }],
+            label: { formatter: "预警线 5%" },
+            data: [{ yAxis: 0.05 }],
           },
         },
       ],
@@ -683,6 +821,11 @@ export default function Page() {
     const actualColor = colors.chart.expenseRate;
     const growthColor = colors.status.good;
     const warningColor = colors.status.warning;
+    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
+    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
+    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
+    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
+    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
 
     const monthlyEstimateTargets =
       progressMode === "linear" ? kpi.monthlyTargetsLinear : kpi.monthlyTargets;
@@ -727,6 +870,14 @@ export default function Page() {
       : Array.from({ length: 4 }, () => null);
 
     const barWidth = Math.round(24 * 1.618);
+    const warningThreshold = 0.05; // 5%预警线
+
+    // 为2025实际占比数据生成颜色（对应增长率低于5%时变橙色）
+    const actualBarColors = actualShare.map((v, idx) => {
+      const growthRate = growthSeries[idx];
+      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
+    });
+
     const barLabel = {
       show: true,
       position: "top" as const,
@@ -735,7 +886,18 @@ export default function Page() {
       width: barWidth,
       formatter: (params: any) => {
         const value = params?.value as number | null;
-        return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+        if (value === null) return "";
+        const growthRate = growthSeries[params.dataIndex];
+        const isWarning = growthRate !== null && growthRate < warningThreshold;
+        return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
+      },
+      rich: {
+        normal: {
+          color: grayColor,
+        },
+        warning: {
+          color: darkRedColor,
+        },
       },
     };
 
@@ -786,7 +948,9 @@ export default function Page() {
           type: "bar",
           data: actualShare,
           name: "2025实际占比",
-          itemStyle: { color: actualColor },
+          itemStyle: {
+            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
+          },
           barMaxWidth: barWidth,
           label: barLabel,
           barGap: "30%",
@@ -796,8 +960,12 @@ export default function Page() {
           data: growthSeries,
           name: "增长率",
           yAxisIndex: 1,
-          lineStyle: { color: growthColor },
-          itemStyle: { color: growthColor },
+          lineStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
+          itemStyle: {
+            color: darkBlueColor, // 统一为深蓝色
+          },
           smooth: true,
           symbol: "circle",
           symbolSize: 6,
@@ -807,14 +975,24 @@ export default function Page() {
             fontWeight: "bold",
             formatter: (params: any) => {
               const value = params?.value as number | null;
-              return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+              if (value === null) return "";
+              const isWarning = value !== null && value < warningThreshold;
+              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
+            },
+            rich: {
+              normal: {
+                color: blueColor,
+              },
+              warning: {
+                color: darkRedColor,
+              },
             },
           },
           markLine: {
             symbol: "none",
             lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 3%" },
-            data: [{ yAxis: 0.03 }],
+            label: { formatter: "预警线 5%" },
+            data: [{ yAxis: 0.05 }],
           },
         },
       ],
@@ -884,6 +1062,7 @@ export default function Page() {
             <select className="mt-1 rounded border px-2 py-1 text-sm" value={progressMode} onChange={(e) => setProgressMode(e.target.value as any)}>
               <option value="weighted">目标权重</option>
               <option value="linear">线性月份</option>
+              <option value="actual2025">2025年实际</option>
             </select>
           </div>
           <div className="ml-auto text-xs text-slate-500">
@@ -908,23 +1087,23 @@ export default function Page() {
       </section>
 
       <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">月度规划图</div>
-        <ReactECharts option={chartOption} style={{ height: 360 }} />
-      </section>
-
-      <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">月度规划占比图</div>
-        <ReactECharts option={monthlyShareChartOption} style={{ height: 360 }} />
-      </section>
-
-      <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">季度规划图</div>
+        <div className="mb-2 text-sm font-medium">{viewLabel}季度保费规划图</div>
         <ReactECharts option={quarterlyChartOption} style={{ height: 360 }} />
       </section>
 
       <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">季度规划占比图</div>
+        <div className="mb-2 text-sm font-medium">{viewLabel}季度占比规划图</div>
         <ReactECharts option={quarterlyShareChartOption} style={{ height: 360 }} />
+      </section>
+
+      <section className="rounded-xl border p-4">
+        <div className="mb-2 text-sm font-medium">{viewLabel}月度保费规划图</div>
+        <ReactECharts option={chartOption} style={{ height: 360 }} />
+      </section>
+
+      <section className="rounded-xl border p-4">
+        <div className="mb-2 text-sm font-medium">{viewLabel}月度占比规划图</div>
+        <ReactECharts option={monthlyShareChartOption} style={{ height: 360 }} />
       </section>
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-6">
@@ -935,14 +1114,14 @@ export default function Page() {
           title="年度达成率"
           value={actualsPeriod2026.ytd === null ? "—" : `${((actualsPeriod2026.ytd / kpi.annual) * 100).toFixed(1)}%`}
         />
-        <KpiCard 
-          title="时间进度达成率" 
-          value={ 
-            actualsPeriod2026.ytd === null 
-              ? "—" 
-              : `${((progressMode === "linear" ? kpi.timeAchYearLinear : kpi.timeAchYearWeighted)! * 100).toFixed(2)}%` 
-          } 
-          hint={actualsPeriod2026.ytd === null ? "请在 /import 导入 2026 月度实际后点亮" : undefined} 
+        <KpiCard
+          title="时间进度达成率"
+          value={
+            actualsPeriod2026.ytd === null
+              ? "—"
+              : `${((progressMode === "linear" ? kpi.timeAchYearLinear : progressMode === "weighted" ? kpi.timeAchYearWeighted : kpi.timeAchYearActual2025)! * 100).toFixed(2)}%`
+          }
+          hint={actualsPeriod2026.ytd === null ? "请在 /import 导入 2026 月度实际后点亮" : undefined}
         />
         <KpiCard 
           title="年累计增长率" 

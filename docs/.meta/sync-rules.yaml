@@ -1,0 +1,178 @@
+# 文档-代码同步规则配置
+
+version: "1.0"
+
+# 忽略规则
+ignore:
+  docs:
+    - "**/archive/**"
+    - "**/drafts/**"
+    - "**/.meta/**"
+    - "**/README.md"  # 过于通用，不参与索引
+  code:
+    - "**/*.test.ts"
+    - "**/*.spec.ts"
+    - "**/*.stories.tsx"
+    - "**/*.d.ts"
+    - "**/node_modules/**"
+
+# 文档-代码映射规则
+mappings:
+  # 业务文档 → domain层
+  - docPattern: "docs/business/*.md"
+    codePattern: "src/domain/*.ts"
+    required: true  # 业务文档必须有代码实现
+
+  # 架构文档 → 全局
+  - docPattern: "docs/architecture/*.md"
+    codePattern: "src/**/*.ts"
+    required: false
+
+  # UI设计 → app层
+  - docPattern: "docs/design/*.md"
+    codePattern: "src/app/**/*.tsx"
+    required: false
+
+  # 开发指南 → 所有代码
+  - docPattern: "docs/development/*.md"
+    codePattern: "src/**/*"
+    required: false
+
+# 必须的元数据标记
+requiredTags:
+  docs:
+    business:  # docs/business/ 下必须有的标记
+      - "<!--meta"  # 元数据头
+      - "## "       # 至少一个二级标题
+    architecture:
+      - "```mermaid"  # 至少一个架构图
+  code:
+    domain:  # src/domain/ 下必须有的标记
+      - "@doc"      # 文档引用
+      - "@param"    # 参数说明
+      - "@returns"  # 返回值说明
+
+# 自动修复规则
+autoFix:
+  enabled: true
+
+  # 自动添加缺失的@doc标记
+  addDocTags:
+    enabled: true
+    pattern: "export function"
+
+  # 自动更新过期的文档引用
+  updateStaleRefs:
+    enabled: true
+    maxAge: 7  # 超过7天未更新的引用视为过期
+
+  # 自动生成缺失的类型定义
+  generateTypes:
+    enabled: false  # 需要人工审核
+
+# 链接验证规则
+linkValidation:
+  # 检查Markdown链接
+  checkMarkdownLinks: true
+
+  # 检查代码中的文档引用
+  checkDocReferences: true
+
+  # 检查函数实现引用
+  checkImplementationRefs: true
+
+  # 允许的外部链接域名
+  allowedExternalDomains:
+    - "github.com"
+    - "nextjs.org"
+    - "echarts.apache.org"
+
+# 知识图谱配置
+knowledgeGraph:
+  # 节点权重（用于可视化大小）
+  nodeWeights:
+    doc: 1.0
+    code: 1.0
+    function: 0.5
+
+  # 边权重（用于可视化粗细）
+  edgeWeights:
+    defines: 3.0      # 文档定义代码
+    implements: 2.0   # 代码实现文档
+    uses: 1.0         # 代码使用代码
+    references: 0.5   # 文档引用文档
+
+  # 布局算法
+  layout: "hierarchical"  # 或 "force-directed"
+
+  # 导出格式
+  exportFormats:
+    - "mermaid"
+    - "graphviz"
+    - "cytoscape"
+
+# 报告配置
+reporting:
+  # 输出格式
+  formats:
+    - "console"  # 控制台输出
+    - "markdown" # Markdown报告
+    - "json"     # JSON数据
+
+  # 报告级别
+  levels:
+    - "error"    # 必须修复
+    - "warning"  # 建议修复
+    - "info"     # 仅供参考
+
+  # 输出目录
+  outputDir: "docs/.meta/reports"
+
+# 质量指标阈值
+qualityThresholds:
+  documentationCoverage:
+    domain: 100  # domain层必须100%有文档
+    service: 80
+    ui: 50
+
+  linkIntegrity: 95  # 95%的链接必须有效
+
+  syncDelay: 24  # 小时，代码变更后24小时内必须更新文档
+
+  orphanedNodes: 5  # 最多5%的孤立节点
+
+# Git集成
+gitIntegration:
+  # 启用Git钩子
+  enableHooks: true
+
+  # pre-commit: 提交前检查
+  preCommit:
+    checkSync: true
+    generateIndex: true
+
+  # post-merge: 合并后更新
+  postMerge:
+    updateIndex: true
+
+  # 自动提交索引更新
+  autoCommitIndex: true
+  commitMessage: "chore: 更新文档-代码索引 [skip ci]"
+
+# AI工具集成
+aiIntegration:
+  # 为AI工具生成上下文摘要
+  generateContext: true
+
+  # 上下文包含的信息
+  contextIncludes:
+    - "知识图谱"
+    - "最近变更"
+    - "一致性问题"
+    - "建议的下一步操作"
+
+  # 上下文文件路径
+  contextFile: "docs/.meta/ai-context.md"
+
+  # 定期更新频率（分钟）
+  updateInterval: 30

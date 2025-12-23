@@ -1,0 +1,80 @@
+name: 文档-代码同步检查
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    paths:
+      - 'src/**/*.ts'
+      - 'src/**/*.tsx'
+      - 'docs/**/*.md'
+
+jobs:
+  sync-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install -g tsx
+          pnpm install
+
+      - name: 运行文档-代码同步检查
+        run: |
+          tsx scripts/sync-docs-code.ts
+        id: sync-check
+
+      - name: 上传索引文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-code-index
+          path: docs/.meta/*.json
+
+      - name: 检查是否有变更
+        run: |
+          if [ -n "$(git status --porcelain docs/.meta)" ]; then
+            echo "⚠️ 索引文件已更新，请提交变更"
+            git diff docs/.meta
+            exit 1
+          fi
+
+      - name: 生成检查报告
+        if: always()
+        run: |
+          echo "## 文档-代码同步报告" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f docs/.meta/sync-report.md ]; then
+            cat docs/.meta/sync-report.md >> $GITHUB_STEP_SUMMARY
+          fi
+
+  update-knowledge-graph:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: sync-check
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 生成知识图谱
+        run: |
+          npm install -g tsx
+          pnpm install
+          tsx scripts/sync-docs-code.ts
+
+      - name: 提交索引更新
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add docs/.meta/
+          git commit -m "chore: 更新文档-代码索引 [skip ci]" || echo "无变更"
+          git push

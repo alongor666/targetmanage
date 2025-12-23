@@ -8,7 +8,11 @@
     "build:github": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "docs:sync": "tsx scripts/sync-docs-code.ts",
+    "docs:check": "tsx scripts/sync-docs-code.ts --check",
+    "docs:graph": "tsx scripts/sync-docs-code.ts && code docs/.meta/knowledge-graph.mmd",
+    "docs:fix": "tsx scripts/sync-docs-code.ts --auto-fix"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -28,8 +32,11 @@
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^9.39.2",
+    "glob": "^10.3.10",
     "postcss": "^8.4.0",
     "tailwindcss": "^3.4.0",
-    "typescript": "^5.4.0"
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "yaml": "^2.3.4"
   }
 }

@@ -52,3 +52,50 @@ export function weightedProgressQuarter(weights: number[], month: number): numbe
   const elapsedSum = qWeights.slice(0, within).reduce((a, b) => a + b, 0);
   return qTotal === 0 ? 0 : (elapsedSum / qTotal);
 }
+
+/**
+ * 年度2025实际进度 = sum(actuals2025[0..month-1]) / sum(actuals2025[0..11])
+ * @param actuals2025 2025年12个月实际数据数组（可能包含null）
+ * @param month 当前月份（1-12）
+ * @returns 进度值（0-1），如果数据不足返回0
+ */
+export function actual2025ProgressYear(actuals2025: Array<number | null>, month: number): number {
+  if (actuals2025.length !== 12) return 0;
+
+  const idx = Math.max(1, Math.min(12, month));
+
+  // 计算年度总计（过滤null值）
+  const yearTotal = actuals2025.reduce((sum: number, v) => sum + (v ?? 0), 0);
+  if (yearTotal === 0) return 0;
+
+  // 计算前N个月累计（过滤null值）
+  const elapsed = actuals2025.slice(0, idx).reduce((sum: number, v) => sum + (v ?? 0), 0);
+
+  return elapsed / yearTotal;
+}
+
+/**
+ * 季度2025实际进度 = sum(actuals2025[quarterStart..month-1]) / sum(actuals2025[quarterStart..quarterEnd])
+ * @param actuals2025 2025年12个月实际数据数组（可能包含null）
+ * @param month 当前月份（1-12）
+ * @returns 进度值（0-1），如果数据不足返回0
+ */
+export function actual2025ProgressQuarter(actuals2025: Array<number | null>, month: number): number {
+  if (actuals2025.length !== 12) return 0;
+
+  const q = monthToQuarter(month);
+  const start = (q - 1) * 3; // 0-index
+  const end = start + 3;
+
+  // 提取季度数据
+  const qActuals = actuals2025.slice(start, end);
+  const qTotal = qActuals.reduce((sum: number, v) => sum + (v ?? 0), 0);
+  if (qTotal === 0) return 0;
+
+  // 计算季度内已过月份
+  const mIdx = Math.max(1, Math.min(12, month));
+  const within = mIdx - 1 - start + 1; // 季度内已过月数
+  const elapsed = qActuals.slice(0, within).reduce((sum: number, v) => sum + (v ?? 0), 0);
+
+  return elapsed / qTotal;
+}
