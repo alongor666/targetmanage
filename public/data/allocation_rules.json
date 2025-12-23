@@ -1,0 +1,31 @@
+{
+  "version": "v1",
+  "type": "allocation_rules",
+  "rules": [
+    {
+      "rule_id": "R_GLOBAL_2026_DEFAULT",
+      "scope": "global",
+      "scope_key": "all",
+      "weights": [
+        0.1,
+        0.07,
+        0.1,
+        0.1,
+        0.1,
+        0.08,
+        0.06,
+        0.06,
+        0.08,
+        0.08,
+        0.08,
+        0.09
+      ],
+      "notes_cn": "统一权重：1-12月分别为 10%,7%,10%,10%,10%,8%,6%,6%,8%,8%,8%,9%。"
+    }
+  ],
+  "validation": {
+    "sum_to_one": true,
+    "min_weight": 0,
+    "max_weight": 1
+  }
+}

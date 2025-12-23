@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    /* ========== COLOR SYSTEM ========== */
+
+    /* === 品牌色 === */
+    --color-primary-red: #a02724;
+    --color-tesla-blue: #0070c0;
+
+    /* === 兼容别名（与 docs/全局设计规范.md 一致） === */
+    --primary-red: var(--color-primary-red);
+    --tesla-blue: var(--color-tesla-blue);
+
+    /* === 状态色 === */
+    --color-status-good: #00b050;
+    --color-status-warning: #ffc000;
+    --color-status-danger: #c00000;
+    --color-status-normal: #666666;
+
+    --status-good: var(--color-status-good);
+    --status-warning: var(--color-status-warning);
+    --status-danger: var(--color-status-danger);
+    --status-normal: var(--color-status-normal);
+
+    /* === 文字色 === */
+    --color-text-primary: #333333;
+    --color-text-secondary: #666666;
+    --color-text-muted: #999999;
+    --color-text-inverse: #ffffff;
+
+    --text-primary: var(--color-text-primary);
+    --text-secondary: var(--color-text-secondary);
+    --text-muted: var(--color-text-muted);
+    --text-inverse: var(--color-text-inverse);
+
+    /* === 边框色 === */
+    --color-border-light: #e0e0e0;
+    --color-border-medium: #cccccc;
+    --color-border-dark: #999999;
+
+    --border-light: var(--color-border-light);
+    --border-medium: var(--color-border-medium);
+    --border-dark: var(--color-border-dark);
+
+    /* === 背景色 === */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8f9fa;
+    --color-bg-overlay: rgba(0, 0, 0, 0.5);
+
+    --bg-primary: var(--color-bg-primary);
+    --bg-secondary: var(--color-bg-secondary);
+    --bg-overlay: var(--color-bg-overlay);
+
+    /* === 图表专用色 === */
+    --color-chart-gray-line: #808080;
+    --color-chart-warning-dash: #ffc000;
+    --color-chart-claim-rate-bar: #87ceeb;
+    --color-chart-expense-rate-bar: #d3d3d3;
+    --color-chart-progress-line: #808080;
+
+    /* === 数据深度色 === */
+    --color-data-depth-light: #e6f3ff;
+    --color-data-depth-medium: #4d94ff;
+    --color-data-depth-dark: #0066cc;
+  
+    /* ========== TYPOGRAPHY SYSTEM ========== */
+
+    /* === 字体族 === */
+    --font-family-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+      'Microsoft YaHei', 'PingFang SC', Arial, sans-serif;
+    --font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono',
+      'Source Code Pro', monospace;
+
+    /* === 字体尺寸 === */
+    --font-size-xs: 0.6875rem; /* 11px */
+    --font-size-sm: 0.75rem; /* 12px */
+    --font-size-base: 0.875rem; /* 14px */
+    --font-size-md: 1rem; /* 16px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-size-xl: 1.5rem; /* 24px */
+    --font-size-xxl: 2rem; /* 32px */
+    --font-size-xxxl: 3rem; /* 48px */
+
+    /* === 字重 === */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* === 行高 === */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.4;
+    --line-height-relaxed: 1.6;
+
+    /* ========== SPACING SYSTEM ========== */
+
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-xxl: 3rem; /* 48px */
+    --spacing-xxxl: 4rem; /* 64px */
+
+    /* ========== BORDER RADIUS ========== */
+
+    --radius-xs: 0.25rem; /* 4px */
+    --radius-sm: 0.5rem; /* 8px */
+    --radius-md: 0.75rem; /* 12px */
+    --radius-lg: 1rem; /* 16px */
+    --radius-xl: 1.25rem; /* 20px */
+    --radius-full: 50%;
+
+    /* === 兼容别名（与 docs/全局设计规范.md 一致） === */
+    --border-radius-xs: var(--radius-xs);
+    --border-radius-sm: var(--radius-sm);
+    --border-radius-md: var(--radius-md);
+    --border-radius-lg: var(--radius-lg);
+    --border-radius-xl: var(--radius-xl);
+    --border-radius-full: var(--radius-full);
+
+    /* ========== SHADOWS ========== */
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --shadow-focus: 0 0 0 3px rgba(0, 112, 192, 0.2);
+
+    /* ========== ANIMATIONS ========== */
+
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 350ms;
+
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --transition-fast: all var(--duration-fast) var(--ease-out);
+    --transition-normal: all var(--duration-normal) var(--ease-out);
+    --transition-slow: all var(--duration-slow) var(--ease-in-out);
+
+    /* ========== LAYOUT SYSTEM ========== */
+
+    --ppt-width: 2400px;
+    --ppt-width-standard: 1600px;
+    --content-max-width: 2100px;
+    --content-max-width-standard: 1400px;
+    --content-max-width-compact: 1100px;
+
+    --chart-height: 600px;
+    --chart-height-sm: 400px;
+    --chart-height-lg: 600px;
+
+    /* ========== BREAKPOINTS ========== */
+
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 768px;
+    --breakpoint-md: 1024px;
+    --breakpoint-lg: 1440px;
+    --breakpoint-xl: 1920px;
+    --breakpoint-xxl: 2560px;
+  }
+
+  /* Apply base font to body */
+  body {
+    font-family: var(--font-family-primary);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+  }
+}

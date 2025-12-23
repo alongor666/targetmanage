@@ -1,0 +1,118 @@
+{
+  "year": {
+    "key": "year",
+    "cn": "年度"
+  },
+  "unit": {
+    "key": "unit",
+    "cn": "金额单位"
+  },
+  "org_id": {
+    "key": "org_id",
+    "cn": "机构主键"
+  },
+  "org_cn": {
+    "key": "org_cn",
+    "cn": "机构名称（中文原始名）"
+  },
+  "org_en": {
+    "key": "org_en",
+    "cn": "机构名称（英文）"
+  },
+  "group": {
+    "key": "group",
+    "cn": "机构分组",
+    "enum": {
+      "local": "同城",
+      "remote": "异地",
+      "all": "全省"
+    }
+  },
+  "product": {
+    "key": "product",
+    "cn": "产品",
+    "enum": {
+      "auto": "车险",
+      "property": "财产险",
+      "life": "人身险",
+      "health": "健康险",
+      "total": "汇总"
+    }
+  },
+  "annual_target": {
+    "key": "annual_target",
+    "cn": "年度目标（万元）"
+  },
+  "annual_actual": {
+    "key": "annual_actual",
+    "cn": "年度实际（万元）"
+  },
+  "monthly_target": {
+    "key": "monthly_target",
+    "cn": "月度目标（万元）"
+  },
+  "monthly_actual": {
+    "key": "monthly_actual",
+    "cn": "月度实际（万元）"
+  },
+  "quarter_target": {
+    "key": "quarter_target",
+    "cn": "季度目标（万元）"
+  },
+  "quarter_actual": {
+    "key": "quarter_actual",
+    "cn": "季度实际（万元）"
+  },
+  "ytd_target": {
+    "key": "ytd_target",
+    "cn": "年累计目标（万元）"
+  },
+  "ytd_actual": {
+    "key": "ytd_actual",
+    "cn": "年累计实际（万元）"
+  },
+  "achievement_rate": {
+    "key": "achievement_rate",
+    "cn": "达成率"
+  },
+  "time_progress_linear": {
+    "key": "time_progress_linear",
+    "cn": "时间进度（线性月份）"
+  },
+  "time_progress_weighted": {
+    "key": "time_progress_weighted",
+    "cn": "时间进度（目标权重）"
+  },
+  "time_achievement_rate_linear": {
+    "key": "time_achievement_rate_linear",
+    "cn": "时间进度达成率（线性）"
+  },
+  "time_achievement_rate_weighted": {
+    "key": "time_achievement_rate_weighted",
+    "cn": "时间进度达成率（权重）"
+  },
+  "growth_rate_month": {
+    "key": "growth_rate_month",
+    "cn": "当月增长率（同比）"
+  },
+  "growth_rate_quarter": {
+    "key": "growth_rate_quarter",
+    "cn": "当季增长率（同比）"
+  },
+  "growth_rate_ytd": {
+    "key": "growth_rate_ytd",
+    "cn": "年累计增长率（同比）"
+  },
+  "increment_premium_month": {
+    "key": "increment_premium_month",
+    "cn": "当月增量保费（同比差额）"
+  },
+  "increment_premium_quarter": {
+    "key": "increment_premium_quarter",
+    "cn": "当季增量保费（同比差额）"
+  },
+  "increment_premium_ytd": {
+    "key": "increment_premium_ytd",
+    "cn": "年累计增量保费（同比差额）"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "year": 2026,
+  "unit": "万元",
+  "type": "actuals_monthly",
+  "records": [
+    {
+      "year": 2026,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 120.50,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 85.30,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 135.80,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "org_id": "SC_remote_chengdu",
+      "product": "auto",
+      "monthly_actual": 95.20,
+      "unit": "万元"
+    }
+  ],
+  "notes_cn": "测试数据：包含天府、成都机构的1-2月实际数据"
+}

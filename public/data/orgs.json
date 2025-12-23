@@ -1,0 +1,89 @@
+{
+  "version": "v1",
+  "orgs": [
+    {
+      "org_id": "SC_remote_yibin",
+      "org_cn": "宜宾",
+      "org_en": "Yibin",
+      "group": "remote"
+    },
+    {
+      "org_id": "SC_remote_deyang",
+      "org_cn": "德阳",
+      "org_en": "Deyang",
+      "group": "remote"
+    },
+    {
+      "org_id": "SC_remote_zigong",
+      "org_cn": "自贡",
+      "org_en": "Zigong",
+      "group": "remote"
+    },
+    {
+      "org_id": "SC_remote_luzhou",
+      "org_cn": "泸州",
+      "org_en": "Luzhou",
+      "group": "remote"
+    },
+    {
+      "org_id": "SC_remote_leshan",
+      "org_cn": "乐山",
+      "org_en": "Leshan",
+      "group": "remote"
+    },
+    {
+      "org_id": "SC_remote_ziyang",
+      "org_cn": "资阳",
+      "org_en": "Ziyang",
+      "group": "remote"
+    },
+    {
+      "org_id": "SC_remote_dazhou",
+      "org_cn": "达州",
+      "org_en": "Dazhou",
+      "group": "remote"
+    },
+    {
+      "org_id": "SC_local_benbu",
+      "org_cn": "本部",
+      "org_en": "Benbu",
+      "group": "local"
+    },
+    {
+      "org_id": "SC_local_tianfu",
+      "org_cn": "天府",
+      "org_en": "Tianfu",
+      "group": "local"
+    },
+    {
+      "org_id": "SC_local_wuhou",
+      "org_cn": "武侯",
+      "org_en": "Wuhou",
+      "group": "local"
+    },
+    {
+      "org_id": "SC_local_gaoxin",
+      "org_cn": "高新",
+      "org_en": "Gaoxin",
+      "group": "local"
+    },
+    {
+      "org_id": "SC_local_xindu",
+      "org_cn": "新都",
+      "org_en": "Xindu",
+      "group": "local"
+    },
+    {
+      "org_id": "SC_local_qingyang",
+      "org_cn": "青羊",
+      "org_en": "Qingyang",
+      "group": "local"
+    },
+    {
+      "org_id": "SC_local_xicai_junyuan",
+      "org_cn": "西财俊苑",
+      "org_en": "Xicai Junyuan",
+      "group": "local"
+    }
+  ]
+}

@@ -1,0 +1,4039 @@
+{
+  "year": 2025,
+  "unit": "万元",
+  "type": "actuals_monthly",
+  "records": [
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 333.749394,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 228.667221,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 271.184024,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 230.714506,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 250.865311,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 243.168791999999,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 247.31355,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 234.556341,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 200.08766,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 206.081977,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 198.999072,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "monthly_actual": 175.853019,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 46.8956516016,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 483.6658865406,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 110.2460618258,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 42.31368210088,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 24.492458217,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 62.6841145,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 22.7525636,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 135.1077147723,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 54.01694256322,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 28.47330499238,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 49.48049951694,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "monthly_actual": 26.5514815024,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 143.9930668,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 143.9576097384,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 148.380468,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 157.7069293742,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 176.8504354,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 180.6703285396,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 149.66053865662,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 113.4164543208,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 141.1737937133,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 132.945424722,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 118.7756411183,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "monthly_actual": 94.7911321371001,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 138.233714,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 105.723498,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 122.0994,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 87.42894,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 81.03287,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 91.006941,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 77.684988,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 111.786601,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 69.379285,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 62.578471,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 61.668253,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "monthly_actual": 46.915301,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 109.776976628,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 32.0221664261,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 58.7341771255,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 36.6844329301,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 30.4020869418,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 67.224036001,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 59.3804853946,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 86.6056049,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 73.5385308522,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 53.5510646415,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 55.2922012424,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "monthly_actual": 52.71456055,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 170.706188,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 134.8783264,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 100.664781,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 81.1944275,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 98.18544,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 124.9694504,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 35.07170505,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 33.7275066258,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 35.8348021289,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 161.777566249998,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 81.0606980706,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "monthly_actual": 23.6742397327,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 49.089469,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 36.198413,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 70.306337,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 80.143285,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 79.435111,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 60.732248,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 63.097362,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 64.23182,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 72.88081,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 69.762018,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 62.668204,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "monthly_actual": 59.878803,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 47.5758425,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 25.8068355,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 45.3492538082,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 45.8111596654,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 55.712506186,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 58.1493897106,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 48.6509999,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 54.6644658,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 57.3256717335,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 30.1596563478,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 16.38905571,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "monthly_actual": 8.7081320881,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 23.4991372157,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 8.6372172875,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 35.928275519,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 41.9321094915,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 52.9700550968,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 71.867480339,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 68.8350540503,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 54.0012385258,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 59.9213118726,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 68.1701353217,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 50.640029705,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "monthly_actual": 40.1102603,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 133.337207,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 82.698715,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 98.464381,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 129.751427,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 111.114801,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 95.183926,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 105.139395,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 99.939812,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 111.892758,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 97.020925,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 118.079839,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "monthly_actual": 80.767744,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 56.5703164261,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 22.92210152,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 39.19453155472,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 37.6832232261,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 24.37509353,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 33.6734872,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 50.34565736592,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 21.8282343925,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 64.0849013745,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 42.219043,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 30.4703809311,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "monthly_actual": 19.947516745275,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 72.0725920125,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 19.6531265,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 94.4237154393375,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 45.43234355,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 69.03951535096,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 66.31087832,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 70.13216614255,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 66.43001754086,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 52.76195751592,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 41.5312909,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 48.0316048,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "monthly_actual": 42.7763419742,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 85.471441,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 55.726933,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 91.517707,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 118.281919,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 118.330782,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 82.717083,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 104.831716,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 110.469098,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 114.13499,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 94.94659,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 114.009835,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "monthly_actual": 94.166942,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 19.8746947786,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 10.8672888055,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 37.1157253875,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 40.3355892805,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 36.9644470629,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 17.1066565,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 23.5425252838,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 16.8955749566,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 22.8919916157,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 22.7001847154,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 19.375736,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "monthly_actual": 25.3014958,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 33.6829046528,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 69.26133095,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 73.9339553,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 36.7551560909,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 27.875009825,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 23.08965265808,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 10.1415702717,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 11.2407505855,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 13.2754476479,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 11.6249598538,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 14.7586031717,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "monthly_actual": 14.5087190786,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 69.726449,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 56.181851,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 72.553128,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 70.916779,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 81.314656,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 72.514316,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 57.350772,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 67.248755,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 100.860459,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 123.896964,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 54.358676,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "monthly_actual": 73.964814,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 9.499571,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 6.0607625157,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 7.4277767094,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 7.8955644,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 14.1550651541,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 7.847344,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 6.224828862275,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 5.916382,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 13.6295331704,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 14.6653991003,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 14.8812060069,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "monthly_actual": 8.8092752587,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 203.4026205,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 175.021642125,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 312.973122699997,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 42.0417879434,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 67.0705862,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 42.4501212799,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 20.813532375,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 17.07626695,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 50.2208912999999,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 35.970259,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 13.6647605409,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "monthly_actual": 20.744603025,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 55.442393,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 33.14877,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 86.956954,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 28.497639,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 11.676531,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 17.367559,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 25.466548,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 26.698676,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 24.046424,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 23.293419,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 33.834946,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "monthly_actual": 16.979613,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 37.5568746,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 28.3736108,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 54.0568509361,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 30.9590913824,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 25.8933634346,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 10.0937204499,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 25.4135535327,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 31.3821746459,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 54.01486185,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 44.3712964478,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 17.595196167925,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "monthly_actual": 17.728469,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 23.04869391886,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 32.773946625,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 242.123078874809,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 20.4503796094,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 23.742945939,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 17.6244188,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 16.2611513,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 16.9212978964,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 53.1562961824001,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 26.9582272692,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 15.8146254698,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "monthly_actual": 9.2705494709,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 2187.227109,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1632.69499,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 2066.03131199999,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1690.157714,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1485.101056,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1460.433328,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1454.846872,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1094.173375,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1057.743828,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 932.659624,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 1089.008704,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 802.743267,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 68.17753519724,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 33.0853631569,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 96.5452241682,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 70.381251131975,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 54.8604508338,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 63.168390617,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 101.899826138153,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 73.61400038384,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 101.00851477856,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 64.90827609406,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 114.23828339318,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 52.406176351584,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 304.6854715,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 156.33848005,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 337.2963663,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 172.83802606428,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 199.255677464652,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 334.1201730824,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 104.24200599884,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 95.0626508333625,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 138.265483304637,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 160.7989637267,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 116.0451487186,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 94.529853435,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 122.82422,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 93.570272,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 131.323021,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 159.642418,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 194.293109,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 132.706497,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 109.208773,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 141.41426,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 178.279553,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 163.792961,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 123.708069,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "monthly_actual": 79.001551,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 227.2526894409,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 136.6497719928,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 291.19266295,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 303.729475493,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 212.2962861312,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 320.3056873369,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 287.5609929394,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 239.5732207297,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 344.4951245955,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 350.7332294654,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 293.522862775085,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "monthly_actual": 192.70615694086,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 84.9608885,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 108.6071903148,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 374.7212808448,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 247.8004702491,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 152.71876145,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 308.2471388849,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 188.9561121605,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 199.5994363391,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 853.8899945325,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 380.4216458153,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 515.2575830046,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "monthly_actual": 120.2372400056,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 689.983122,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 484.266406,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 650.913647,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 597.74394,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 529.603162,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 508.438694,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 475.43088,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 427.616967,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 395.940238,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 464.655606,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 496.982467,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "monthly_actual": 282.043223,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 44.3471331598,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 12.6156121158,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 45.8837112,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 48.5776884645,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 37.7922962264,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 31.7319445,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 17.2293691224,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 34.7919737364,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 32.0165955722,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 32.3849793854,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 55.4654285938,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "monthly_actual": 20.614327,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 129.911388,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 37.665102625,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 79.64412695,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 68.1837894566,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 50.9153624176,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 79.71830857,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 35.6463686914,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 32.6663392535,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 48.74875944412,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 29.8020271402,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 34.107242236,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "monthly_actual": 31.8596434923,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 297.118594,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 213.427229,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 330.767469,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 474.357937,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 471.890452,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 251.053161,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 214.881186,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 393.879083,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 408.156526,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 391.459108,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 323.266116,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "monthly_actual": 134.968441,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 38.83868405,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 31.4136360107,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 63.7143226689,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 70.6413764542,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 56.8848446172,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 37.2467648593,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 42.8043633586,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 41.0323425822,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 42.606262306,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 24.90000688,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 29.08126123764,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "monthly_actual": 26.70683648484,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 25.2859230371,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 24.727012239,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 42.2985373887,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 85.4052720154,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 48.17422969764,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 38.3850920113,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 41.38174126692,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 51.8390737,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 44.6621947547,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 41.458196245,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 42.92477637925,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "monthly_actual": 27.51546035,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 350.791903,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 265.835753,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 342.688367,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 451.318033,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 455.6255,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 306.399056,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 290.196805,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 315.367017,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 382.965194,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 365.401004,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 411.309041,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "monthly_actual": 258.985253,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 334.0735928156,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 54.61797978,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 147.5177506908,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 122.5246733721,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 127.055648577,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 147.84962444555,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 110.07004528032,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 121.9635624669,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 128.3489503313,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 136.48480080605,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 161.1409016552,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "monthly_actual": 82.63550691138,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 52.5691264,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 33.00862645,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 44.3270757206161,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 59.1718429415,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 46.4669545937,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 60.5239022859,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 38.9947432980875,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 46.003825305,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 221.213003584075,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 63.9838065884998,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 67.5101090066624,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "monthly_actual": 28.2967381277,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.115518,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.101887,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.95364,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.011321,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.567814,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.334236,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.011321,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.188148,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_benbu",
+      "product": "auto",
+      "monthly_actual": 0.419072,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.285283,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.021698,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.06868,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.068868,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.021698,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.424527,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_benbu",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 32.496357,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 1.217547,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.500738,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.517574,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.009642,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.075453,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": -0.171735,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.35341,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.500461,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.601255,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.0195,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_benbu",
+      "product": "life",
+      "monthly_actual": 0.09,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 1.919979,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 22.594921,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 11.126741,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "auto",
+      "monthly_actual": 0.640568,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 0.521684,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 7.2710325241,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "property",
+      "monthly_actual": 2.760918,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.001783,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.0,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 0.5886792,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 3.3280375,
+      "unit": "万元"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "org_id": "SC_local_xicai_junyuan",
+      "product": "life",
+      "monthly_actual": 2.6177162893,
+      "unit": "万元"
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "year": 2026,
+  "unit": "万元",
+  "type": "targets_annual",
+  "records": [
+    {
+      "year": 2026,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "annual_target": 3700,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "annual_target": 1120,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "annual_target": 2250,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_yibin",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "annual_target": 1200,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "annual_target": 830,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "annual_target": 1190,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_deyang",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "annual_target": 900,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "annual_target": 600,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "annual_target": 650,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_zigong",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "annual_target": 1420,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "annual_target": 540,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "annual_target": 750,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_luzhou",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "annual_target": 1360,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "annual_target": 360,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "annual_target": 380,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_leshan",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "annual_target": 1720,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "annual_target": 300,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "annual_target": 1200,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_ziyang",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "annual_target": 750,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "annual_target": 500,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "annual_target": 750,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_dazhou",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "annual_target": 17470,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "annual_target": 1080,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "annual_target": 2480,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_tianfu",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "annual_target": 1820,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "annual_target": 3620,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "annual_target": 3730,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_wuhou",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "annual_target": 6200,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "annual_target": 500,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "annual_target": 800,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_gaoxin",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "annual_target": 4350,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "annual_target": 630,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "annual_target": 560,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_xindu",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "annual_target": 4580,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "annual_target": 1970,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "annual_target": 850,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_qingyang",
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    }
+  ]
+}
