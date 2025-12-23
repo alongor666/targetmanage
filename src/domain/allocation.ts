@@ -10,6 +10,18 @@ export function allocateAnnualToMonthly(
   return applyRoundingAndBalance(raw, annual, rounding);
 }
 
+/** 基于2025年实际数据计算贡献度分布权重 */
+export function calculateActual2025Weights(monthlyActuals2025: Array<number | null>): number[] {
+  if (monthlyActuals2025.length !== 12) return Array(12).fill(0);
+  
+  // 计算全年总计（过滤null值）
+  const yearTotal = monthlyActuals2025.reduce((sum: number, v) => sum + (v ?? 0), 0);
+  if (yearTotal === 0) return Array(12).fill(0);
+  
+  // 计算各月贡献度权重
+  return monthlyActuals2025.map((v) => (v === null ? 0 : v / yearTotal));
+}
+
 /** 把月度数组聚合为季度（4 个值） */
 export function monthlyToQuarterly(monthly: number[]): number[] {
   return [0, 1, 2, 3].map((q) => monthly.slice(q * 3, q * 3 + 3).reduce((a, b) => a + b, 0));

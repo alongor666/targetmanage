@@ -40,3 +40,11 @@ export type AllocationRule = {
   weights: number[]; // length 12, sum=1
   notes_cn?: string;
 };
+
+// 总公司目标记录（不按三级机构拆分）
+export type HeadquartersTargetRecord = {
+  year: number;
+  product: Exclude<ProductCode, "total">;
+  annual_target: number;
+  unit: "万元";
+};

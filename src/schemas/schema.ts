@@ -43,6 +43,14 @@ export const AllocationRuleSchema = z.object({
   notes_cn: z.string().optional(),
 });
 
+// 总公司目标记录（不按三级机构拆分，仅分险种）
+export const HeadquartersTargetRecordSchema = z.object({
+  year: z.number().int(),
+  product: z.enum(["auto", "property", "life", "health"]),
+  annual_target: z.number().nonnegative(),
+  unit: z.literal("万元"),
+});
+
 export function validateWeights(weights: number[]) {
   const sum = weights.reduce((a, b) => a + b, 0);
   const eps = 1e-9;

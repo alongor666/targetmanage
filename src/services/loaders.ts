@@ -6,15 +6,34 @@ import {
   AnnualActualRecordSchema,
   MonthlyActualRecordSchema,
   AllocationRuleSchema,
+  HeadquartersTargetRecordSchema,
   validateWeights,
 } from "@/schemas/schema";
 import { LS_KEYS, lsGetJson } from "@/services/storage";
 
 export async function fetchJson<T>(url: string, schema: z.ZodType<T>): Promise<T> {
-  // 在静态导出时，确保URL包含basePath
+  const isServer = typeof window === 'undefined';
+
+  // 在服务器端构建时，从文件系统读取
+  if (isServer) {
+    try {
+      // 动态导入fs和path模块，避免客户端打包
+      const fs = await import('fs/promises');
+      const path = await import('path');
+      const filePath = path.join(process.cwd(), 'public', url);
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      const data = JSON.parse(fileContent);
+      return schema.parse(data);
+    } catch (error) {
+      console.error(`Failed to read file ${url}:`, error);
+      throw new Error(`fetch_failed: ${url}`);
+    }
+  }
+
+  // 在客户端运行时，使用fetch并包含basePath
   const basePath = process.env.NODE_ENV === 'production' ? '/targetmanage' : '';
   const fullUrl = url.startsWith('http') ? url : `${basePath}${url}`;
-  
+
   const res = await fetch(fullUrl, { cache: "no-store" });
   if (!res.ok) throw new Error(`fetch_failed: ${url}`);
   const data = await res.json();
@@ -50,11 +69,23 @@ export const AllocationRulesFileSchema = z.object({
   validation: z.object({ sum_to_one: z.boolean(), min_weight: z.number(), max_weight: z.number() }).optional(),
 });
 
+export const HeadquartersTargetsFileSchema = z.object({
+  year: z.number().int(),
+  unit: z.literal("万元"),
+  type: z.literal("headquarters_targets_annual"),
+  description: z.string().optional(),
+  records: z.array(HeadquartersTargetRecordSchema),
+  notes: z.string().optional(),
+});
+
 export async function loadOrgs() {
   return fetchJson("/data/orgs.json", OrgsFileSchema);
 }
 export async function loadTargetsAnnual2026() {
   return fetchJson("/data/targets_annual_2026.json", TargetsAnnualFileSchema);
+}
+export async function loadHeadquartersTargetsAnnual2026() {
+  return fetchJson("/data/headquarters_targets_annual_2026.json", HeadquartersTargetsFileSchema);
 }
 /**
  * 加载2025年度实际数据，四级优先级：localStorage > 新文件名 > 旧文件名兼容 > fallback

@@ -27,25 +27,30 @@ jobs:
     steps:
     - name: 检出代码
       uses: actions/checkout@v4
-      
+
+    - name: 安装pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+
     - name: 设置Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
-        
+        cache: 'pnpm'
+
     - name: 安装依赖
-      run: npm ci
+      run: pnpm install --frozen-lockfile
       
     - name: 运行类型检查
-      run: npm run typecheck
-      
+      run: pnpm typecheck
+
     # 暂时跳过代码检查直到ESLint配置修复
     # - name: 运行代码检查
-    #   run: npm run lint
-      
+    #   run: pnpm lint
+
     - name: 构建项目
-      run: npm run build:github
+      run: pnpm build:github
       env:
         NODE_ENV: production
         

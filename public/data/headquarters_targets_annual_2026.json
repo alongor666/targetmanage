@@ -1,0 +1,33 @@
+{
+  "year": 2026,
+  "unit": "万元",
+  "type": "headquarters_targets_annual",
+  "description": "总公司下达给四川分公司的年度保费目标（不按三级机构拆分）",
+  "records": [
+    {
+      "year": 2026,
+      "product": "auto",
+      "annual_target": 43000,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "product": "property",
+      "annual_target": 10850,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "product": "life",
+      "annual_target": 13800,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "product": "health",
+      "annual_target": 0,
+      "unit": "万元"
+    }
+  ],
+  "notes": "三级机构目标总和73110万元高于总公司目标总和为67650万元，高于（增长约8.05%）"
+}
