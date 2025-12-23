@@ -11,7 +11,11 @@ import {
 import { LS_KEYS, lsGetJson } from "@/services/storage";
 
 export async function fetchJson<T>(url: string, schema: z.ZodType<T>): Promise<T> {
-  const res = await fetch(url, { cache: "no-store" });
+  // 在静态导出时，确保URL是完整的
+  const baseUrl = process.env.NODE_ENV === 'production' ? '' : '';
+  const fullUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
+  
+  const res = await fetch(fullUrl, { cache: "no-store" });
   if (!res.ok) throw new Error(`fetch_failed: ${url}`);
   const data = await res.json();
   return schema.parse(data);

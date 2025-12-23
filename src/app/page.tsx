@@ -548,6 +548,280 @@ export default function Page() {
     };
   }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
 
+  const monthlyShareChartOption = useMemo(() => {
+    if (!kpi) return null;
+
+    const targetColor = colors.chart.claimRate;
+    const actualColor = colors.chart.expenseRate;
+    const growthColor = colors.status.good;
+    const warningColor = colors.status.warning;
+
+    const monthlyEstimateTargets =
+      progressMode === "linear" ? kpi.monthlyTargetsLinear : kpi.monthlyTargets;
+    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
+      (value, idx) => value ?? monthlyEstimateTargets[idx]
+    );
+    const growthSeries = monthlyCurrentForGrowth.map((current, idx) => {
+      const baseline = monthlyActualSeries2025[idx];
+      if (baseline === null || current === null) return null;
+      return safeDivide(current - baseline, baseline).value;
+    });
+
+    const totalTarget = kpi.annual;
+    const totalActual2025 = monthlyActualSeries2025.reduce(
+      (sum: number, v) => (v === null ? sum : sum + v),
+      0
+    );
+    const targetShare = totalTarget > 0
+      ? monthlyEstimateTargets.map((v) => v / totalTarget)
+      : Array.from({ length: 12 }, () => null);
+    const actualShare = totalActual2025 > 0
+      ? monthlyActualSeries2025.map((v) => (v === null ? null : v / totalActual2025))
+      : Array.from({ length: 12 }, () => null);
+
+    const barWidth = Math.round(24 * 1.618);
+    const barLabel = {
+      show: true,
+      position: "top" as const,
+      fontWeight: "bold" as const,
+      overflow: "truncate" as const,
+      width: barWidth,
+      formatter: (params: any) => {
+        const value = params?.value as number | null;
+        return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+      },
+    };
+
+    return {
+      tooltip: {
+        trigger: "axis",
+        formatter: (params: any) => {
+          const items = Array.isArray(params) ? params : [params];
+          const title = items[0]?.axisValue ?? "";
+          const lines = items.map((item: any) => {
+            const value = item.value as number | null;
+            const isRate = item.seriesName === "增长率";
+            const text = value === null ? "—" : `${(value * 100).toFixed(1)}%`;
+            return `${item.marker}${item.seriesName}: ${text}`;
+          });
+          return [title, ...lines].join("<br/>");
+        },
+      },
+      legend: { data: ["2026规划占比", "2025实际占比", "增长率"] },
+      xAxis: {
+        type: "category",
+        data: Array.from({ length: 12 }, (_, i) => `${i + 1}月`),
+        splitLine: { show: false },
+      },
+      yAxis: [
+        {
+          type: "value",
+          name: "占比",
+          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
+          splitLine: { show: false },
+        },
+        {
+          type: "value",
+          name: "增长率",
+          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
+          splitLine: { show: false },
+        },
+      ],
+      series: [
+        {
+          type: "bar",
+          data: targetShare,
+          name: "2026规划占比",
+          itemStyle: { color: targetColor },
+          barMaxWidth: barWidth,
+          label: barLabel,
+        },
+        {
+          type: "bar",
+          data: actualShare,
+          name: "2025实际占比",
+          itemStyle: { color: actualColor },
+          barMaxWidth: barWidth,
+          label: barLabel,
+          barGap: "30%",
+        },
+        {
+          type: "line",
+          data: growthSeries,
+          name: "增长率",
+          yAxisIndex: 1,
+          lineStyle: { color: growthColor },
+          itemStyle: { color: growthColor },
+          smooth: true,
+          symbol: "circle",
+          symbolSize: 6,
+          label: {
+            show: true,
+            position: "top",
+            fontWeight: "bold",
+            formatter: (params: any) => {
+              const value = params?.value as number | null;
+              return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+            },
+          },
+          markLine: {
+            symbol: "none",
+            lineStyle: { color: warningColor, type: "dashed" },
+            label: { formatter: "预警线 3%" },
+            data: [{ yAxis: 0.03 }],
+          },
+        },
+      ],
+      grid: { left: 48, right: 60, top: 40, bottom: 30 },
+    };
+  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
+
+  const quarterlyShareChartOption = useMemo(() => {
+    if (!kpi) return null;
+
+    const targetColor = colors.chart.claimRate;
+    const actualColor = colors.chart.expenseRate;
+    const growthColor = colors.status.good;
+    const warningColor = colors.status.warning;
+
+    const monthlyEstimateTargets =
+      progressMode === "linear" ? kpi.monthlyTargetsLinear : kpi.monthlyTargets;
+    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
+      (value, idx) => value ?? monthlyEstimateTargets[idx]
+    );
+
+    const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
+    const quarterlyActuals2025 = monthlyToQuarterly(
+      monthlyActualSeries2025.map((v) => v ?? 0)
+    ).map((value, idx) => {
+      const hasAny = monthlyActualSeries2025
+        .slice(idx * 3, idx * 3 + 3)
+        .some((v) => v !== null);
+      return hasAny ? value : null;
+    });
+    const quarterlyCurrent = monthlyToQuarterly(
+      monthlyCurrentForGrowth.map((v) => v ?? 0)
+    ).map((value, idx) => {
+      const hasAny = monthlyCurrentForGrowth
+        .slice(idx * 3, idx * 3 + 3)
+        .some((v) => v !== null);
+      return hasAny ? value : null;
+    });
+
+    const growthSeries = quarterlyCurrent.map((current, idx) => {
+      const baseline = quarterlyActuals2025[idx];
+      if (baseline === null || current === null) return null;
+      return safeDivide(current - baseline, baseline).value;
+    });
+
+    const totalTarget = kpi.annual;
+    const totalActual2025 = quarterlyActuals2025.reduce(
+      (sum: number, v) => (v === null ? sum : sum + v),
+      0
+    );
+    const targetShare = totalTarget > 0
+      ? quarterlyTargets.map((v) => v / totalTarget)
+      : Array.from({ length: 4 }, () => null);
+    const actualShare = totalActual2025 > 0
+      ? quarterlyActuals2025.map((v) => (v === null ? null : v / totalActual2025))
+      : Array.from({ length: 4 }, () => null);
+
+    const barWidth = Math.round(24 * 1.618);
+    const barLabel = {
+      show: true,
+      position: "top" as const,
+      fontWeight: "bold" as const,
+      overflow: "truncate" as const,
+      width: barWidth,
+      formatter: (params: any) => {
+        const value = params?.value as number | null;
+        return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+      },
+    };
+
+    return {
+      tooltip: {
+        trigger: "axis",
+        formatter: (params: any) => {
+          const items = Array.isArray(params) ? params : [params];
+          const title = items[0]?.axisValue ?? "";
+          const lines = items.map((item: any) => {
+            const value = item.value as number | null;
+            const text = value === null ? "—" : `${(value * 100).toFixed(1)}%`;
+            return `${item.marker}${item.seriesName}: ${text}`;
+          });
+          return [title, ...lines].join("<br/>");
+        },
+      },
+      legend: { data: ["2026规划占比", "2025实际占比", "增长率"] },
+      xAxis: {
+        type: "category",
+        data: ["一季度", "二季度", "三季度", "四季度"],
+        splitLine: { show: false },
+      },
+      yAxis: [
+        {
+          type: "value",
+          name: "占比",
+          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
+          splitLine: { show: false },
+        },
+        {
+          type: "value",
+          name: "增长率",
+          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
+          splitLine: { show: false },
+        },
+      ],
+      series: [
+        {
+          type: "bar",
+          data: targetShare,
+          name: "2026规划占比",
+          itemStyle: { color: targetColor },
+          barMaxWidth: barWidth,
+          label: barLabel,
+        },
+        {
+          type: "bar",
+          data: actualShare,
+          name: "2025实际占比",
+          itemStyle: { color: actualColor },
+          barMaxWidth: barWidth,
+          label: barLabel,
+          barGap: "30%",
+        },
+        {
+          type: "line",
+          data: growthSeries,
+          name: "增长率",
+          yAxisIndex: 1,
+          lineStyle: { color: growthColor },
+          itemStyle: { color: growthColor },
+          smooth: true,
+          symbol: "circle",
+          symbolSize: 6,
+          label: {
+            show: true,
+            position: "top",
+            fontWeight: "bold",
+            formatter: (params: any) => {
+              const value = params?.value as number | null;
+              return value === null ? "" : `${(value * 100).toFixed(1)}%`;
+            },
+          },
+          markLine: {
+            symbol: "none",
+            lineStyle: { color: warningColor, type: "dashed" },
+            label: { formatter: "预警线 3%" },
+            data: [{ yAxis: 0.03 }],
+          },
+        },
+      ],
+      grid: { left: 48, right: 60, top: 40, bottom: 30 },
+    };
+  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
+
   const baseline2025 = useMemo(() => {
     if (!annualActualAgg2025) return null;
     const key = `${viewKey}__${product}`;
@@ -639,8 +913,18 @@ export default function Page() {
       </section>
 
       <section className="rounded-xl border p-4">
+        <div className="mb-2 text-sm font-medium">月度规划占比图</div>
+        <ReactECharts option={monthlyShareChartOption} style={{ height: 360 }} />
+      </section>
+
+      <section className="rounded-xl border p-4">
         <div className="mb-2 text-sm font-medium">季度规划图</div>
         <ReactECharts option={quarterlyChartOption} style={{ height: 360 }} />
+      </section>
+
+      <section className="rounded-xl border p-4">
+        <div className="mb-2 text-sm font-medium">季度规划占比图</div>
+        <ReactECharts option={quarterlyShareChartOption} style={{ height: 360 }} />
       </section>
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-6">
