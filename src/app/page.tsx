@@ -326,7 +326,7 @@ export default function Page() {
 
   // 总公司目标达成预测计算
   const hqPrediction = useMemo(() => {
-    if (!headquartersTargets || !monthlyAgg2026) return null;
+    if (!headquartersTargets || !annualTargetAgg || weights.length !== 12) return null;
 
     // 聚合总公司目标
     const hqTargetMap = aggregateHqTargetsByProduct(headquartersTargets.records);
@@ -337,11 +337,48 @@ export default function Page() {
     ["auto", "property", "life", "health", "total"].forEach((prod) => {
       const hqTarget = hqTargetMap.get(prod) ?? 0;
 
+      // 获取月度序列：优先使用实际数据，降级到目标数据
+      let monthlySeries: Array<number | null>;
+      let dataSource: 'actual' | 'target';
+
+      if (monthlyAgg2026) {
+        // 优先使用实际数据
+        monthlySeries = monthlySeriesFor(monthlyAgg2026, "all", prod as ProductView);
+        dataSource = 'actual';
+      } else {
+        // 降级到目标数据：按 progressMode 拆分三级机构年度目标
+        const key = `all__${prod}`;
+        const annual = annualTargetAgg.get(key) ?? 0;
+
+        // 根据 progressMode 选择拆分方式
+        if (progressMode === "linear") {
+          monthlySeries = allocateAnnualToMonthly(annual, Array(12).fill(1 / 12), "2dp");
+        } else if (progressMode === "actual2025") {
+          const actual2025Weights = calculateActual2025Weights(monthlyActualSeries2025);
+          monthlySeries = allocateAnnualToMonthly(annual, actual2025Weights, "2dp");
+        } else {
+          // weighted
+          monthlySeries = allocateAnnualToMonthly(annual, weights, "2dp");
+        }
+        dataSource = 'target';
+      }
+
+      // 计算时间进度（根据 progressMode）
+      const getProgress = (monthIndex: number): number => {
+        if (progressMode === "linear") {
+          return (monthIndex + 1) / 12;
+        } else if (progressMode === "weighted") {
+          return weights.slice(0, monthIndex + 1).reduce((sum, w) => sum + w, 0);
+        } else {
+          // actual2025
+          return actual2025ProgressYear(monthlyActualSeries2025, monthIndex + 1);
+        }
+      };
+
       // 月度预测数据
-      const monthlySeries = monthlySeriesFor(monthlyAgg2026, "all", prod as ProductView);
       const monthlyPredictions = monthlySeries.map((v, idx) => {
         const cumActual = monthlySeries.slice(0, idx + 1).reduce((sum: number, val) => sum + (val ?? 0), 0);
-        const progress = (idx + 1) / 12;
+        const progress = getProgress(idx);
         const cumTarget = hqTarget * progress;
         const rate = calculateHqAchievementRate(cumActual, cumTarget).value;
         return { month: idx + 1, cumActual, cumTarget, rate };
@@ -354,7 +391,10 @@ export default function Page() {
         const quarterActual = monthlySeries
           .slice(quarterStart - 1, quarterEnd)
           .reduce((sum: number, val) => sum + (val ?? 0), 0);
-        const quarterTarget = hqTarget * 0.25; // 简化：假设季度平均分配
+
+        // 计算季度进度
+        const quarterProgress = getProgress(quarterEnd - 1) - (q > 1 ? getProgress(quarterStart - 2) : 0);
+        const quarterTarget = hqTarget * quarterProgress;
         const rate = calculateHqAchievementRate(quarterActual, quarterTarget).value;
         return { quarter: q, actual: quarterActual, target: quarterTarget, rate };
       });
@@ -363,11 +403,12 @@ export default function Page() {
         annualTarget: hqTarget,
         monthly: monthlyPredictions,
         quarterly: quarterlyPredictions,
+        dataSource, // 标记数据来源
       };
     });
 
     return result;
-  }, [headquartersTargets, monthlyAgg2026]);
+  }, [headquartersTargets, monthlyAgg2026, annualTargetAgg, weights, progressMode, monthlyActualSeries2025]);
 
   const chartOption = useMemo(() => {
     if (!kpi) return null;
@@ -1172,8 +1213,17 @@ export default function Page() {
           <div className="mb-4">
             <div className="text-base font-semibold text-blue-900">总公司目标达成预测</div>
             <div className="text-xs text-blue-700 mt-1">
-              基于三级机构实际完成情况，预测四川分公司对总公司目标的达成度（不区分三级机构）
+              {hqPrediction.total?.dataSource === 'actual'
+                ? '基于三级机构实际完成情况，预测四川分公司对总公司目标的达成度（不区分三级机构）'
+                : `基于三级机构年度目标（按${progressMode === 'linear' ? '线性' : progressMode === 'weighted' ? '目标权重' : '2025实际'}口径拆分），预测四川分公司对总公司目标的达成度（不区分三级机构）`
+              }
             </div>
+            {hqPrediction.total?.dataSource === 'target' && (
+              <div className="text-xs text-amber-700 mt-1 flex items-center gap-1">
+                <span className="inline-block w-2 h-2 rounded-full bg-amber-500"></span>
+                当前使用目标数据测算，导入2026年月度实际数据后将自动切换为实际数据
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mb-4">

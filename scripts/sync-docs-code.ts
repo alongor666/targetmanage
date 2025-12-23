@@ -149,7 +149,19 @@ class DocScanner {
     const pathPattern = /`(src\/[^`]+\.(ts|tsx|js|jsx))/g;
     let match;
     while ((match = pathPattern.exec(content)) !== null) {
-      refs.add(match[1]);
+      let codePath = match[1];
+      // 调试输出
+      if (codePath.includes('page')) {
+        console.error(`[DEBUG] Raw match: ${codePath}`);
+      }
+      // 规范化路径：去除 src/ 前缀（因为code Map的键是相对于src/目录的）
+      if (codePath.startsWith('src/')) {
+        codePath = codePath.substring(4); // 去除 "src/" 前缀（4个字符）
+      }
+      if (codePath.includes('page')) {
+        console.error(`[DEBUG] Normalized: ${codePath}`);
+      }
+      refs.add(codePath);
     }
 
     return Array.from(refs);
@@ -279,10 +291,16 @@ class CodeScanner {
     const refs = new Set<string>();
 
     // 从JSDoc注释中提取 @doc 标记
-    const docPattern = /@doc\s+(docs\/[^\s]+)/g;
+    // 支持两种格式：@doc docs/xxx.md 或 @doc xxx.md
+    const docPattern = /@doc\s+(docs\/[^\s]+|[^\s]+\.md)/g;
     let match;
     while ((match = docPattern.exec(content)) !== null) {
-      refs.add(match[1]);
+      let docPath = match[1];
+      // 规范化路径：去除 docs/ 前缀（因为docs Map的键是相对于docs/目录的）
+      if (docPath.startsWith('docs/')) {
+        docPath = docPath.substring(5);
+      }
+      refs.add(docPath);
     }
 
     return Array.from(refs);

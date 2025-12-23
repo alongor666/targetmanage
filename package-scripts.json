@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "ai-check": "node scripts/loop-detector.js",
+    "ai-status": "node scripts/loop-detector.js status",
+    "ai-enable": "node scripts/loop-detector.js enable",
+    "ai-disable": "node scripts/loop-detector.js disable",
+    "ai-reset": "node scripts/loop-detector.js reset",
+    "check:docs-sync": "node scripts/check-docs-sync.js && node scripts/loop-detector.js status"
+  }
+}
