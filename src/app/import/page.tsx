@@ -5,6 +5,7 @@ import Papa from "papaparse";
 import { z } from "zod";
 import { loadOrgs, MonthlyActualsFileSchema } from "@/services/loaders";
 import { LS_KEYS, lsRemove, lsSetJson } from "@/services/storage";
+import { getAssetPath } from "@/lib/paths";
 import type { Org } from "@/schemas/types";
 
 type DatasetKey = "actuals_monthly_2026" | "actuals_monthly_2025";
@@ -282,7 +283,7 @@ export default function ImportPage() {
           </div>
 
           <div className="ml-auto flex gap-2">
-            <a className="rounded border px-3 py-1 text-sm hover:bg-slate-50" href="/data/actuals_monthly_2026_template.json" target="_blank">
+            <a className="rounded border px-3 py-1 text-sm hover:bg-slate-50" href={getAssetPath("/data/actuals_monthly_2026_template.json")} target="_blank">
               下载 JSON 模板
             </a>
           </div>

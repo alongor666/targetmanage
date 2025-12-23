@@ -1,4 +1,5 @@
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata = {
   title: "2026 目标管理可视化",
@@ -16,11 +17,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="text-sm text-slate-600">同城/异地 · 分产品 · 月/季/年 · 双时间进度</p>
             </div>
             <nav className="text-sm text-slate-600">
-              <a className="mr-4 hover:underline" href="/">总览</a>
-              <a className="mr-4 hover:underline" href="/orgs">机构</a>
-              <a className="mr-4 hover:underline" href="/rules">权重规则</a>
-              <a className="mr-4 hover:underline" href="/import">导入</a>
-              <a className="hover:underline" href="/data">数据</a>
+              <Link className="mr-4 hover:underline" href="/">总览</Link>
+              <Link className="mr-4 hover:underline" href="/orgs">机构</Link>
+              <Link className="mr-4 hover:underline" href="/rules">权重规则</Link>
+              <Link className="mr-4 hover:underline" href="/import">导入</Link>
+              <Link className="hover:underline" href="/data">数据</Link>
             </nav>
           </header>
           {children}
