@@ -6,7 +6,7 @@ import { loadOrgs, loadTargetsAnnual2026, loadActualsAnnual2025 } from "@/servic
 import type { Org } from "@/schemas/types";
 
 type GroupView = "all" | "local" | "remote";
-type ProductCode = "auto" | "property" | "life" | "health" | "total";
+type ProductCode = "auto" | "property" | "life" | "total";
 
 /**
  * 产品标签映射，用于显示中文产品名称
@@ -16,8 +16,13 @@ const productLabel: Record<ProductCode, string> = {
   auto: "车险",
   property: "财产险",
   life: "人身险",
-  health: "健康险",
 };
+
+const supportedProducts: Array<Exclude<ProductCode, "total">> = ["auto", "property", "life"];
+
+function isSupportedProduct(value: string): value is Exclude<ProductCode, "total"> {
+  return supportedProducts.includes(value as Exclude<ProductCode, "total">);
+}
 
 export default function OrgsPage() {
   const [orgs, setOrgs] = useState<Org[]>([]);
@@ -45,8 +50,9 @@ export default function OrgsPage() {
     const map = new Map<string, Record<ProductCode, number>>();
 
     for (const r of targets.records) {
-      const prev = map.get(r.org_id) ?? { total: 0, auto: 0, property: 0, life: 0, health: 0 };
-      const product = r.product as ProductCode;
+      if (!isSupportedProduct(r.product)) continue;
+      const prev = map.get(r.org_id) ?? { total: 0, auto: 0, property: 0, life: 0 };
+      const product = r.product as Exclude<ProductCode, "total">;
       prev[product] += r.annual_target;
       prev.total += r.annual_target;
       map.set(r.org_id, prev);
@@ -62,8 +68,9 @@ export default function OrgsPage() {
     const map = new Map<string, Record<ProductCode, number>>();
 
     for (const r of actuals2025.records) {
-      const prev = map.get(r.org_id) ?? { total: 0, auto: 0, property: 0, life: 0, health: 0 };
-      const product = r.product as ProductCode;
+      if (!isSupportedProduct(r.product)) continue;
+      const prev = map.get(r.org_id) ?? { total: 0, auto: 0, property: 0, life: 0 };
+      const product = r.product as Exclude<ProductCode, "total">;
       prev[product] += r.annual_actual;
       prev.total += r.annual_actual;
       map.set(r.org_id, prev);
@@ -127,8 +134,8 @@ export default function OrgsPage() {
             </thead>
             <tbody>
               {filtered.map((o) => {
-                const t = targetByOrg.get(o.org_id) ?? { total: 0, auto: 0, property: 0, life: 0, health: 0 };
-                const a25 = actual2025ByOrg.get(o.org_id) ?? { total: 0, auto: 0, property: 0, life: 0, health: 0 };
+                const t = targetByOrg.get(o.org_id) ?? { total: 0, auto: 0, property: 0, life: 0 };
+                const a25 = actual2025ByOrg.get(o.org_id) ?? { total: 0, auto: 0, property: 0, life: 0 };
 
                 return (
                   <tr key={o.org_id} className="hover:bg-slate-50">
@@ -152,7 +159,7 @@ export default function OrgsPage() {
         </div>
 
         <div className="mt-3 text-xs text-slate-500">
-          注：健康险当前为 0；汇总为系统派生，禁止作为输入事实导入。
+          注：汇总为系统派生，禁止作为输入事实导入。
         </div>
       </section>
     </div>

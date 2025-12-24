@@ -44,6 +44,7 @@ export function aggregateHqTargetsByProduct(
 ): Map<string, number> {
   const map = new Map<string, number>();
   for (const record of records) {
+    if (record.product === "health") continue;
     map.set(record.product, record.annual_target);
   }
   // 计算total

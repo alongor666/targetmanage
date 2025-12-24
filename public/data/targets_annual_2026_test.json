@@ -1,0 +1,343 @@
+{
+  "year": 2026,
+  "unit": "万元",
+  "type": "targets_annual",
+  "records": [
+    {
+      "year": 2026,
+      "org_id": "SC_remote_yibin",
+      "product": "auto",
+      "annual_target": 1000,
+      "compulsory_premium": 400,
+      "commercial_premium": 600,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_yibin",
+      "product": "property",
+      "annual_target": 200,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_yibin",
+      "product": "life",
+      "annual_target": 150,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_remote_deyang",
+      "product": "auto",
+      "annual_target": 1010,
+      "compulsory_premium": 404,
+      "commercial_premium": 606,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_deyang",
+      "product": "property",
+      "annual_target": 205,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_deyang",
+      "product": "life",
+      "annual_target": 154,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_remote_zigong",
+      "product": "auto",
+      "annual_target": 1020,
+      "compulsory_premium": 408,
+      "commercial_premium": 612,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_zigong",
+      "product": "property",
+      "annual_target": 210,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_zigong",
+      "product": "life",
+      "annual_target": 158,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_remote_luzhou",
+      "product": "auto",
+      "annual_target": 1030,
+      "compulsory_premium": 412,
+      "commercial_premium": 618,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_luzhou",
+      "product": "property",
+      "annual_target": 215,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_luzhou",
+      "product": "life",
+      "annual_target": 162,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_remote_leshan",
+      "product": "auto",
+      "annual_target": 1040,
+      "compulsory_premium": 416,
+      "commercial_premium": 624,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_leshan",
+      "product": "property",
+      "annual_target": 220,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_leshan",
+      "product": "life",
+      "annual_target": 166,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_remote_ziyang",
+      "product": "auto",
+      "annual_target": 1050,
+      "compulsory_premium": 420,
+      "commercial_premium": 630,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_ziyang",
+      "product": "property",
+      "annual_target": 225,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_ziyang",
+      "product": "life",
+      "annual_target": 170,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_remote_dazhou",
+      "product": "auto",
+      "annual_target": 1060,
+      "compulsory_premium": 424,
+      "commercial_premium": 636,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_dazhou",
+      "product": "property",
+      "annual_target": 230,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_remote_dazhou",
+      "product": "life",
+      "annual_target": 174,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "annual_target": 1200,
+      "compulsory_premium": 480,
+      "commercial_premium": 720,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "annual_target": 260,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "annual_target": 190,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_local_wuhou",
+      "product": "auto",
+      "annual_target": 1180,
+      "compulsory_premium": 472,
+      "commercial_premium": 708,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_wuhou",
+      "product": "property",
+      "annual_target": 250,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_wuhou",
+      "product": "life",
+      "annual_target": 185,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_local_gaoxin",
+      "product": "auto",
+      "annual_target": 1160,
+      "compulsory_premium": 464,
+      "commercial_premium": 696,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_gaoxin",
+      "product": "property",
+      "annual_target": 245,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_gaoxin",
+      "product": "life",
+      "annual_target": 180,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_local_xindu",
+      "product": "auto",
+      "annual_target": 1140,
+      "compulsory_premium": 456,
+      "commercial_premium": 684,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_xindu",
+      "product": "property",
+      "annual_target": 240,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_xindu",
+      "product": "life",
+      "annual_target": 176,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+
+    {
+      "year": 2026,
+      "org_id": "SC_local_qingyang",
+      "product": "auto",
+      "annual_target": 1120,
+      "compulsory_premium": 448,
+      "commercial_premium": 672,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_qingyang",
+      "product": "property",
+      "annual_target": 235,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "org_id": "SC_local_qingyang",
+      "product": "life",
+      "annual_target": 172,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    }
+  ],
+  "notes": "测试样例：12个三级机构（剔除本部与西财俊苑）。"
+}

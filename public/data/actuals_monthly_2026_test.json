@@ -1,0 +1,68 @@
+{
+  "year": 2026,
+  "unit": "万元",
+  "type": "actuals_monthly",
+  "records": [
+    {
+      "year": 2026,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 120,
+      "compulsory_premium": 45,
+      "commercial_premium": 75,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 30,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 20,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "org_id": "SC_local_tianfu",
+      "product": "auto",
+      "monthly_actual": 130,
+      "compulsory_premium": 50,
+      "commercial_premium": 80,
+      "compulsory_expense_rate": 0.18,
+      "commercial_expense_rate": 0.22,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "org_id": "SC_local_tianfu",
+      "product": "property",
+      "monthly_actual": 28,
+      "property_first_day_expense_rate": 0.25,
+      "unit": "万元"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "org_id": "SC_local_tianfu",
+      "product": "life",
+      "monthly_actual": 18,
+      "life_first_day_expense_rate": 0.3,
+      "unit": "万元"
+    }
+  ],
+  "notes_cn": "示例测试数据：用于已赚保费预测页面验证公式与图表。"
+}

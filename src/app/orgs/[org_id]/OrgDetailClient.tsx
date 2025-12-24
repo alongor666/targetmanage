@@ -16,7 +16,7 @@ import { calculateGrowthMetrics, formatGrowthRate } from "@/domain/growth";
 
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });
 
-type ProductView = "total" | "auto" | "property" | "life" | "health";
+type ProductView = "total" | "auto" | "property" | "life";
 type PeriodMode = "month" | "quarter";
 
 interface OrgDetailClientProps {
@@ -31,8 +31,13 @@ const productLabel: Record<ProductView, string> = {
   auto: "车险",
   property: "财产险",
   life: "人身险",
-  health: "健康险",
 };
+
+const supportedProducts: Array<Exclude<ProductView, "total">> = ["auto", "property", "life"];
+
+function isSupportedProduct(value: string): value is Exclude<ProductView, "total"> {
+  return supportedProducts.includes(value as Exclude<ProductView, "total">);
+}
 
 export default function OrgDetailClient({ orgId }: OrgDetailClientProps) {
   const [orgs, setOrgs] = useState<Org[]>([]);
@@ -78,11 +83,12 @@ export default function OrgDetailClient({ orgId }: OrgDetailClientProps) {
    * 计算当前机构按产品分类的2026年度目标
    */
   const annualTargetByProduct = useMemo(() => {
-    if (!targets) return { total: 0, auto: 0, property: 0, life: 0, health: 0 };
-    const out = { total: 0, auto: 0, property: 0, life: 0, health: 0 } as Record<ProductView, number>;
+    if (!targets) return { total: 0, auto: 0, property: 0, life: 0 };
+    const out = { total: 0, auto: 0, property: 0, life: 0 } as Record<ProductView, number>;
     for (const r of targets.records) {
       if (r.org_id !== orgId) continue;
-      const productCode = r.product as ProductView;
+      if (!isSupportedProduct(r.product)) continue;
+      const productCode = r.product as Exclude<ProductView, "total">;
       out[productCode] += r.annual_target;
       out.total += r.annual_target;
     }
@@ -93,11 +99,12 @@ export default function OrgDetailClient({ orgId }: OrgDetailClientProps) {
    * 计算当前机构按产品分类的2025年度实际数据
    */
   const annualActual2025ByProduct = useMemo(() => {
-    if (!actuals2025) return { total: 0, auto: 0, property: 0, life: 0, health: 0 };
-    const out = { total: 0, auto: 0, property: 0, life: 0, health: 0 } as Record<ProductView, number>;
+    if (!actuals2025) return { total: 0, auto: 0, property: 0, life: 0 };
+    const out = { total: 0, auto: 0, property: 0, life: 0 } as Record<ProductView, number>;
     for (const r of actuals2025.records) {
       if (r.org_id !== orgId) continue;
-      const productCode = r.product as ProductView;
+      if (!isSupportedProduct(r.product)) continue;
+      const productCode = r.product as Exclude<ProductView, "total">;
       out[productCode] += r.annual_actual;
       out.total += r.annual_actual;
     }
@@ -128,6 +135,7 @@ export default function OrgDetailClient({ orgId }: OrgDetailClientProps) {
     let count = 0;
     for (const r of records) {
       if (r.org_id !== orgId) continue;
+      if (!isSupportedProduct(r.product)) continue;
       if (product !== "total" && r.product !== product) continue;
       if (!predicate(r)) continue;
       sum += r.monthly_actual;
@@ -205,7 +213,6 @@ export default function OrgDetailClient({ orgId }: OrgDetailClientProps) {
                 <option value="auto">车险</option>
                 <option value="property">财产险</option>
                 <option value="life">人身险</option>
-                <option value="health">健康险</option>
               </select>
             </div>
             <div>

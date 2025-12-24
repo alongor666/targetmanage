@@ -6,13 +6,11 @@
   :root {
     color-scheme: light;
 
-    /* ========== COLOR SYSTEM ========== */
+    /* ==================== COLOR SYSTEM ==================== */
 
     /* === 品牌色 === */
     --color-primary-red: #a02724;
     --color-tesla-blue: #0070c0;
-
-    /* === 兼容别名（与 docs/全局设计规范.md 一致） === */
     --primary-red: var(--color-primary-red);
     --tesla-blue: var(--color-tesla-blue);
 
@@ -21,18 +19,18 @@
     --color-status-warning: #ffc000;
     --color-status-danger: #c00000;
     --color-status-normal: #666666;
-
+    --color-status-info: #0070c0;
     --status-good: var(--color-status-good);
     --status-warning: var(--color-status-warning);
     --status-danger: var(--color-status-danger);
     --status-normal: var(--color-status-normal);
+    --status-info: var(--color-status-info);
 
     /* === 文字色 === */
     --color-text-primary: #333333;
     --color-text-secondary: #666666;
     --color-text-muted: #999999;
     --color-text-inverse: #ffffff;
-
     --text-primary: var(--color-text-primary);
     --text-secondary: var(--color-text-secondary);
     --text-muted: var(--color-text-muted);
@@ -42,7 +40,6 @@
     --color-border-light: #e0e0e0;
     --color-border-medium: #cccccc;
     --color-border-dark: #999999;
-
     --border-light: var(--color-border-light);
     --border-medium: var(--color-border-medium);
     --border-dark: var(--color-border-dark);
@@ -51,24 +48,103 @@
     --color-bg-primary: #ffffff;
     --color-bg-secondary: #f8f9fa;
     --color-bg-overlay: rgba(0, 0, 0, 0.5);
-
+    --color-bg-tertiary: #f5f5f5;
     --bg-primary: var(--color-bg-primary);
     --bg-secondary: var(--color-bg-secondary);
     --bg-overlay: var(--color-bg-overlay);
+    --bg-tertiary: var(--color-bg-tertiary);
+
+    /* === 交互色 === */
+    --color-interaction-hover: rgba(0, 112, 192, 0.05);
+    --color-interaction-active: rgba(0, 112, 192, 0.1);
+    --color-interaction-focus: rgba(0, 112, 192, 0.2);
+    --color-interaction-disabled: #f0f0f0;
+    --color-interaction-pressed: rgba(0, 112, 192, 0.15);
 
     /* === 图表专用色 === */
+    --color-chart-target-normal: #b0d8ef;
+    --color-chart-target-normal-border: transparent;
+    --width-chart-target-normal-border: 0px;
+    --color-chart-target-warning: #d3d3d3;
+    --color-chart-target-warning-border: #ffc000;
+    --width-chart-target-warning-border: 1px;
+    --color-chart-actual: #d3d3d3;
+    --color-chart-actual-border: transparent;
+    --width-chart-actual-border: 0px;
+    --color-chart-line: #0070c0;
+    --color-chart-warning-line: #ffc000;
+    --color-chart-label-default: #666666;
+    --color-chart-label-warning: #c00000;
+    --color-chart-line-label-default: #0070c0;
+    --color-chart-line-label-warning: #c00000;
     --color-chart-gray-line: #808080;
-    --color-chart-warning-dash: #ffc000;
-    --color-chart-claim-rate-bar: #87ceeb;
-    --color-chart-expense-rate-bar: #d3d3d3;
     --color-chart-progress-line: #808080;
+
+    /* 兼容旧命名 */
+    --color-chart-claim-rate-bar: #b0d8ef;
+    --color-chart-expense-rate-bar: #d3d3d3;
+    --color-chart-warning-dash: #ffc000;
+
+    /* === KPI卡片专用色 === */
+    --color-kpi-card-default-border: #e0e0e0;
+    --color-kpi-card-default-value: #333333;
+    --color-kpi-card-good-border: rgba(0, 176, 80, 0.2);
+    --color-kpi-card-good-value: #00b050;
+    --color-kpi-card-good-bg: rgba(0, 176, 80, 0.1);
+    --color-kpi-card-warning-border: rgba(255, 192, 0, 0.2);
+    --color-kpi-card-warning-value: #ffc000;
+    --color-kpi-card-warning-bg: rgba(255, 192, 0, 0.1);
+    --color-kpi-card-danger-border: rgba(192, 0, 0, 0.2);
+    --color-kpi-card-danger-value: #c00000;
+    --color-kpi-card-danger-bg: rgba(192, 0, 0, 0.1);
+
+    /* === 徽章专用色 === */
+    --color-badge-default-fill: #e0e0e0;
+    --color-badge-good-fill: #00b050;
+    --color-badge-warning-fill: #ffc000;
+    --color-badge-danger-fill: #c00000;
+    --color-badge-info-fill: #0070c0;
+    --color-badge-default-outline: #e0e0e0;
+    --color-badge-good-outline: #00b050;
+    --color-badge-warning-outline: #ffc000;
+    --color-badge-danger-outline: #c00000;
+    --color-badge-info-outline: #0070c0;
+    --color-badge-default-text: #333333;
+    --color-badge-good-text: #ffffff;
+    --color-badge-warning-text: #333333;
+    --color-badge-danger-text: #ffffff;
+    --color-badge-info-text: #ffffff;
+
+    /* === 筛选器专用色 === */
+    --color-filter-default-border: #e0e0e0;
+    --color-filter-hover-border: #0070c0;
+    --color-filter-active-bg: #0070c0;
+    --color-filter-active-text: #ffffff;
+    --color-filter-disabled-bg: #f0f0f0;
+    --color-filter-disabled-text: #999999;
+    --color-filter-focus-shadow: 0 0 0 3px rgba(0, 112, 192, 0.2);
+
+    /* === 表格专用色 === */
+    --color-table-header-bg: #f8f9fa;
+    --color-table-border: #e0e0e0;
+    --color-table-stripe: rgba(0, 0, 0, 0.02);
+    --color-table-hover: rgba(0, 112, 192, 0.05);
+    --color-table-selected: rgba(0, 112, 192, 0.1);
+
+    /* === 反馈状态色 === */
+    --color-feedback-loading: #0070c0;
+    --color-feedback-empty: #999999;
+    --color-feedback-success-bg: rgba(0, 176, 80, 0.1);
+    --color-feedback-success-text: #00b050;
+    --color-feedback-error-bg: rgba(192, 0, 0, 0.1);
+    --color-feedback-error-text: #c00000;
 
     /* === 数据深度色 === */
     --color-data-depth-light: #e6f3ff;
     --color-data-depth-medium: #4d94ff;
     --color-data-depth-dark: #0066cc;
-  
-    /* ========== TYPOGRAPHY SYSTEM ========== */
+
+    /* ==================== TYPOGRAPHY SYSTEM ==================== */
 
     /* === 字体族 === */
     --font-family-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
@@ -98,7 +174,7 @@
     --line-height-normal: 1.4;
     --line-height-relaxed: 1.6;
 
-    /* ========== SPACING SYSTEM ========== */
+    /* ==================== SPACING SYSTEM ==================== */
 
     --spacing-xs: 0.25rem; /* 4px */
     --spacing-sm: 0.5rem; /* 8px */
@@ -108,7 +184,7 @@
     --spacing-xxl: 3rem; /* 48px */
     --spacing-xxxl: 4rem; /* 64px */
 
-    /* ========== BORDER RADIUS ========== */
+    /* ==================== BORDER RADIUS ==================== */
 
     --radius-xs: 0.25rem; /* 4px */
     --radius-sm: 0.5rem; /* 8px */
@@ -117,7 +193,7 @@
     --radius-xl: 1.25rem; /* 20px */
     --radius-full: 50%;
 
-    /* === 兼容别名（与 docs/全局设计规范.md 一致） === */
+    /* 兼容别名 */
     --border-radius-xs: var(--radius-xs);
     --border-radius-sm: var(--radius-sm);
     --border-radius-md: var(--radius-md);
@@ -125,15 +201,16 @@
     --border-radius-xl: var(--radius-xl);
     --border-radius-full: var(--radius-full);
 
-    /* ========== SHADOWS ========== */
+    /* ==================== SHADOWS ==================== */
 
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.12);
     --shadow-focus: 0 0 0 3px rgba(0, 112, 192, 0.2);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 
-    /* ========== ANIMATIONS ========== */
+    /* ==================== ANIMATIONS ==================== */
 
     --duration-fast: 150ms;
     --duration-normal: 250ms;
@@ -141,12 +218,13 @@
 
     --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
 
     --transition-fast: all var(--duration-fast) var(--ease-out);
     --transition-normal: all var(--duration-normal) var(--ease-out);
     --transition-slow: all var(--duration-slow) var(--ease-in-out);
 
-    /* ========== LAYOUT SYSTEM ========== */
+    /* ==================== LAYOUT SYSTEM ==================== */
 
     --ppt-width: 2400px;
     --ppt-width-standard: 1600px;
@@ -158,7 +236,7 @@
     --chart-height-sm: 400px;
     --chart-height-lg: 600px;
 
-    /* ========== BREAKPOINTS ========== */
+    /* ==================== BREAKPOINTS ==================== */
 
     --breakpoint-xs: 480px;
     --breakpoint-sm: 768px;
@@ -166,6 +244,16 @@
     --breakpoint-lg: 1440px;
     --breakpoint-xl: 1920px;
     --breakpoint-xxl: 2560px;
+
+    /* ==================== Z-INDEX LAYERS ==================== */
+
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
   }
 
   /* Apply base font to body */
@@ -173,5 +261,63 @@
     font-family: var(--font-family-primary);
     color: var(--color-text-primary);
     background-color: var(--color-bg-secondary);
+  }
+
+  /* Custom utility classes */
+  .transition-normal {
+    transition: var(--transition-normal);
+  }
+
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+
+  .transition-slow {
+    transition: var(--transition-slow);
+  }
+}
+
+/* Tailwind configuration to use CSS variables */
+@layer utilities {
+  .text-status-good {
+    color: var(--color-status-good);
+  }
+  .text-status-warning {
+    color: var(--color-status-warning);
+  }
+  .text-status-danger {
+    color: var(--color-status-danger);
+  }
+  .text-status-normal {
+    color: var(--color-status-normal);
+  }
+  .text-tesla {
+    color: var(--color-tesla-blue);
+  }
+
+  .bg-status-good {
+    background-color: var(--color-status-good);
+  }
+  .bg-status-warning {
+    background-color: var(--color-status-warning);
+  }
+  .bg-status-danger {
+    background-color: var(--color-status-danger);
+  }
+  .bg-tesla {
+    background-color: var(--color-tesla-blue);
+  }
+
+  .border-status-good {
+    border-color: var(--color-status-good);
+  }
+  .border-status-warning {
+    border-color: var(--color-status-warning);
+  }
+  .border-status-danger {
+    border-color: var(--color-status-danger);
+  }
+  .border-tesla {
+    border-color: var(--color-tesla-blue);
   }
 }

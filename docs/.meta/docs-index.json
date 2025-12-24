@@ -1,5 +1,256 @@
 {
   "documents": {
+    "通用图表组件复用方案.md": {
+      "id": "doc-通用图表组件复用方案-md",
+      "title": "通用图表组件复用方案 - 方案B（全新通用组件）",
+      "category": "other",
+      "tags": [
+        "项目概述",
+        "目标",
+        "组件架构设计",
+        "实施方案",
+        "推荐方案：方案A（扩展现有组件）",
+        "详细实施计划（方案A）",
+        "关键技术决策",
+        "数据映射关系",
+        "验收标准",
+        "预计时间",
+        "风险与缓解",
+        "最终确认",
+        "实施计划总结（方案B - 全部7阶段）",
+        "下一步",
+        "设计目标",
+        "组件结构设计",
+        "核心改进点对比",
+        "实施计划",
+        "集成方式",
+        "技术要点",
+        "关键文件路径",
+        "总预计时间",
+        "风险与注意事项"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [
+        "components/charts/QuarterlyProportionChart/QuarterlyProportionChart.types.ts",
+        "components/charts/QuarterlyProportionChart/hooks/useChartData.ts",
+        "components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts",
+        "components/charts/QuarterlyProportionChart/wrappers/QuarterlyPremiumChart.ts",
+        "components/charts/QuarterlyProportionChart/wrappers/MonthlyPremiumChart.ts",
+        "components/charts/QuarterlyProportionChart/wrappers/MonthlyShareChart.ts",
+        "components/charts/QuarterlyProportionChart/wrappers/HqPredictionChart.ts",
+        "app/page.ts",
+        "components/charts/QuarterlyProportionChart/index.ts",
+        "components/charts/QuarterlyProportionChart/QuarterlyProportionChart.ts",
+        "components/charts/QuarterlyProportionChart/components/ChartHeader.ts",
+        "components/charts/QuarterlyProportionChart/components/DetailPanel.ts",
+        "components/charts/QuarterlyProportionChart/components/ViewSwitcher.ts",
+        "components/charts/QuarterlyChartLegend.ts",
+        "styles/tokens.ts",
+        "domain/allocation.ts",
+        "lib/utils.ts"
+      ],
+      "sections": {
+        "项目概述": {
+          "lineRange": [
+            2,
+            18
+          ],
+          "implementations": []
+        },
+        "目标": {
+          "lineRange": [
+            19,
+            43
+          ],
+          "implementations": []
+        },
+        "组件架构设计": {
+          "lineRange": [
+            44,
+            70
+          ],
+          "implementations": [
+            "src/components/charts/"
+          ]
+        },
+        "实施方案": {
+          "lineRange": [
+            71,
+            154
+          ],
+          "implementations": []
+        },
+        "推荐方案：方案A（扩展现有组件）": {
+          "lineRange": [
+            155,
+            164
+          ],
+          "implementations": []
+        },
+        "详细实施计划（方案A）": {
+          "lineRange": [
+            165,
+            385
+          ],
+          "implementations": [
+            "src/components/charts/QuarterlyProportionChart/QuarterlyProportionChart.types.ts",
+            "src/components/charts/QuarterlyProportionChart/hooks/useChartData.ts",
+            "src/components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts",
+            "src/components/charts/QuarterlyProportionChart/wrappers/QuarterlyPremiumChart.tsx",
+            "src/components/charts/QuarterlyProportionChart/wrappers/MonthlyPremiumChart.tsx",
+            "src/components/charts/QuarterlyProportionChart/wrappers/MonthlyShareChart.tsx",
+            "src/components/charts/QuarterlyProportionChart/wrappers/HqPredictionChart.tsx",
+            "src/app/page.tsx"
+          ]
+        },
+        "关键技术决策": {
+          "lineRange": [
+            386,
+            434
+          ],
+          "implementations": []
+        },
+        "数据映射关系": {
+          "lineRange": [
+            435,
+            514
+          ],
+          "implementations": []
+        },
+        "验收标准": {
+          "lineRange": [
+            894,
+            920
+          ],
+          "implementations": []
+        },
+        "预计时间": {
+          "lineRange": [
+            540,
+            551
+          ],
+          "implementations": []
+        },
+        "风险与缓解": {
+          "lineRange": [
+            552,
+            567
+          ],
+          "implementations": []
+        },
+        "最终确认": {
+          "lineRange": [
+            568,
+            577
+          ],
+          "implementations": []
+        },
+        "实施计划总结（方案B - 全部7阶段）": {
+          "lineRange": [
+            578,
+            634
+          ],
+          "implementations": [
+            "src/components/charts/UniversalChart/"
+          ]
+        },
+        "下一步": {
+          "lineRange": [
+            934,
+            937
+          ],
+          "implementations": []
+        },
+        "设计目标": {
+          "lineRange": [
+            643,
+            669
+          ],
+          "implementations": []
+        },
+        "组件结构设计": {
+          "lineRange": [
+            670,
+            690
+          ],
+          "implementations": [
+            "src/components/charts/QuarterlyProportionChart/"
+          ]
+        },
+        "核心改进点对比": {
+          "lineRange": [
+            691,
+            701
+          ],
+          "implementations": []
+        },
+        "实施计划": {
+          "lineRange": [
+            702,
+            769
+          ],
+          "implementations": [
+            "src/app/page.tsx"
+          ]
+        },
+        "集成方式": {
+          "lineRange": [
+            770,
+            804
+          ],
+          "implementations": [
+            "src/app/page.tsx:1266-1269"
+          ]
+        },
+        "技术要点": {
+          "lineRange": [
+            805,
+            868
+          ],
+          "implementations": [
+            "src/styles/tokens.ts"
+          ]
+        },
+        "关键文件路径": {
+          "lineRange": [
+            869,
+            893
+          ],
+          "implementations": [
+            "src/components/charts/QuarterlyProportionChart/index.ts",
+            "src/components/charts/QuarterlyProportionChart/QuarterlyProportionChart.tsx",
+            "src/components/charts/QuarterlyProportionChart/QuarterlyProportionChart.types.ts",
+            "src/components/charts/QuarterlyProportionChart/components/ChartHeader.tsx",
+            "src/components/charts/QuarterlyProportionChart/components/DetailPanel.tsx",
+            "src/components/charts/QuarterlyProportionChart/components/ViewSwitcher.tsx",
+            "src/components/charts/QuarterlyProportionChart/hooks/useChartData.ts",
+            "src/components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts",
+            "src/app/page.tsx",
+            "src/app/page.tsx:977-1163",
+            "src/components/charts/QuarterlyChartLegend.tsx",
+            "src/styles/tokens.ts",
+            "src/domain/allocation.ts",
+            "src/lib/utils.ts"
+          ]
+        },
+        "总预计时间": {
+          "lineRange": [
+            921,
+            926
+          ],
+          "implementations": []
+        },
+        "风险与注意事项": {
+          "lineRange": [
+            927,
+            933
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-24T11:25:10.659Z",
+      "checksum": "84a62c72912373f2"
+    },
     "实施规划.md": {
       "id": "doc-实施规划-md",
       "title": "Untitled",
@@ -13,7 +264,9 @@
       "relatedDocs": [
         "docs/全局设计规范.md",
         "docs/architecture.md",
-        "docs/metrics_definition.md"
+        "docs/metrics_definition.md",
+        "docs/business/指标定义规范.md",
+        "docs/development/UI开发指南.md"
       ],
       "implementedIn": [
         "services/storage.ts",
@@ -22,13 +275,17 @@
         "domain/validate.ts",
         "domain/time.ts",
         "config/progressWeights.ts",
-        "app/page.ts"
+        "app/page.ts",
+        "schemas/schema.ts",
+        "app/import/page.ts",
+        "app/earned-premium/page.ts",
+        "app/layout.ts"
       ],
       "sections": {
         "📝 待办清单（Task List）": {
           "lineRange": [
             347,
-            461
+            504
           ],
           "implementations": [
             "src/services/storage.ts",
@@ -39,33 +296,38 @@
             "src/domain/time.ts",
             "src/config/progressWeights.ts",
             "src/app/page.tsx",
-            "src/app/page.tsx"
+            "src/app/page.tsx",
+            "src/schemas/schema.ts",
+            "src/domain",
+            "src/domain",
+            "src/app/earned-premium/page.tsx",
+            "src/app/layout.tsx"
           ]
         },
         "🔄 任务依赖关系图": {
           "lineRange": [
-            462,
-            481
+            505,
+            524
           ],
           "implementations": []
         },
         "✅ 验收标准": {
           "lineRange": [
-            482,
-            503
+            525,
+            546
           ],
           "implementations": []
         },
         "📌 关键注意事项": {
           "lineRange": [
-            504,
-            517
+            547,
+            560
           ],
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.906Z",
-      "checksum": "94653afb88d9ed6b"
+      "lastModified": "2025-12-24T11:25:10.660Z",
+      "checksum": "fb91d6314f47ebce"
     },
     "agent.md": {
       "id": "doc-agent-md",
@@ -143,7 +405,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.907Z",
+      "lastModified": "2025-12-24T11:25:10.661Z",
       "checksum": "6951d31a2fed408c"
     },
     "README.md": {
@@ -188,7 +450,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.907Z",
+      "lastModified": "2025-12-24T11:25:10.661Z",
       "checksum": "a9017f3fe8160fad"
     },
     "reference/术语词典.md": {
@@ -257,7 +519,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.907Z",
+      "lastModified": "2025-12-24T11:25:10.661Z",
       "checksum": "ab7668479dfabd71"
     },
     "reference/文档索引.md": {
@@ -310,7 +572,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.908Z",
+      "lastModified": "2025-12-24T11:25:10.661Z",
       "checksum": "77d80570136e3a8a"
     },
     "development/项目导入指南.md": {
@@ -326,20 +588,20 @@
         "JSON（JavaScript Object Notation）约定": {
           "lineRange": [
             2,
-            28
+            40
           ],
           "implementations": []
         },
         "CSV（逗号分隔值）约定": {
           "lineRange": [
-            29,
-            36
+            41,
+            48
           ],
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.908Z",
-      "checksum": "3a8eb8051818ef57"
+      "lastModified": "2025-12-24T11:25:10.661Z",
+      "checksum": "71f19e5c9c132a71"
     },
     "development/质量检查清单.md": {
       "id": "doc-development-质量检查清单-md",
@@ -375,7 +637,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.908Z",
+      "lastModified": "2025-12-24T11:25:10.662Z",
       "checksum": "dd3f7f43b1d06d28"
     },
     "development/开发指南.md": {
@@ -436,7 +698,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.908Z",
+      "lastModified": "2025-12-24T11:25:10.662Z",
       "checksum": "112ae464913e2c0e"
     },
     "development/UI开发指南.md": {
@@ -468,69 +730,69 @@
         "2. 核心口径与规则（必须一致）": {
           "lineRange": [
             22,
-            59
+            58
           ],
           "implementations": []
         },
         "3. 数据与文件（无硬编码）": {
           "lineRange": [
-            60,
-            82
+            59,
+            81
           ],
           "implementations": []
         },
         "4. UI 端展示结构（信息架构 IA）": {
           "lineRange": [
-            83,
-            161
+            82,
+            171
           ],
           "implementations": []
         },
         "5. 组件与复用（UI 层）": {
           "lineRange": [
-            162,
-            178
+            172,
+            188
           ],
           "implementations": []
         },
         "6. 计算引擎（Domain 层纯函数）": {
           "lineRange": [
-            179,
-            198
+            189,
+            208
           ],
           "implementations": []
         },
         "7. 数据加载与导入（Service 层）": {
           "lineRange": [
-            199,
-            213
+            209,
+            223
           ],
           "implementations": []
         },
         "8. UI 风格与交互规范（V0）": {
           "lineRange": [
-            214,
-            227
+            224,
+            237
           ],
           "implementations": []
         },
         "9. 构建与运行": {
           "lineRange": [
-            228,
-            248
+            238,
+            258
           ],
           "implementations": []
         },
         "10. 版本推进建议（路线图）": {
           "lineRange": [
-            249,
-            269
+            259,
+            279
           ],
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.908Z",
-      "checksum": "4fbe6bb25018e216"
+      "lastModified": "2025-12-24T11:25:10.662Z",
+      "checksum": "dce53e605b5c6a35"
     },
     "design/设计系统快速参考.md": {
       "id": "doc-design-设计系统快速参考-md",
@@ -629,7 +891,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-23T15:42:18.908Z",
+      "lastModified": "2025-12-24T11:25:10.662Z",
       "checksum": "ebc301e161728d62"
     },
     "design/设计实现指南.md": {
@@ -702,7 +964,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.908Z",
+      "lastModified": "2025-12-24T11:25:10.663Z",
       "checksum": "dd541a30cc0b81d3"
     },
     "design/组件设计规范.md": {
@@ -794,7 +1056,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-23T15:42:18.909Z",
+      "lastModified": "2025-12-24T11:25:10.663Z",
       "checksum": "380365b2a087fe2d"
     },
     "design/全局设计规范.md": {
@@ -935,123 +1197,8 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.909Z",
+      "lastModified": "2025-12-24T11:25:10.663Z",
       "checksum": "f02bf85125680ce6"
-    },
-    "changelog/总公司目标达成预测功能.md": {
-      "id": "doc-changelog-总公司目标达成预测功能-md",
-      "title": "总公司目标达成预测功能 - 更新日志",
-      "category": "changelog",
-      "tags": [
-        "功能概述",
-        "数据配置",
-        "技术实现",
-        "UI展示",
-        "业务文档",
-        "使用场景",
-        "如何使用",
-        "数据流程",
-        "验证",
-        "版本信息",
-        "未来优化方向"
-      ],
-      "relatedDocs": [
-        "docs/business/指标定义规范.md"
-      ],
-      "implementedIn": [
-        "domain/headquarters.ts",
-        "app/page.ts",
-        "schemas/schema.ts",
-        "schemas/types.ts",
-        "services/loaders.ts"
-      ],
-      "sections": {
-        "功能概述": {
-          "lineRange": [
-            8,
-            11
-          ],
-          "implementations": []
-        },
-        "数据配置": {
-          "lineRange": [
-            12,
-            30
-          ],
-          "implementations": []
-        },
-        "技术实现": {
-          "lineRange": [
-            31,
-            56
-          ],
-          "implementations": [
-            "src/schemas/schema.ts",
-            "src/schemas/types.ts",
-            "src/services/loaders.ts",
-            "src/domain/headquarters.ts",
-            "src/app/page.tsx"
-          ]
-        },
-        "UI展示": {
-          "lineRange": [
-            57,
-            77
-          ],
-          "implementations": []
-        },
-        "业务文档": {
-          "lineRange": [
-            78,
-            89
-          ],
-          "implementations": []
-        },
-        "使用场景": {
-          "lineRange": [
-            90,
-            107
-          ],
-          "implementations": []
-        },
-        "如何使用": {
-          "lineRange": [
-            108,
-            138
-          ],
-          "implementations": []
-        },
-        "数据流程": {
-          "lineRange": [
-            139,
-            154
-          ],
-          "implementations": []
-        },
-        "验证": {
-          "lineRange": [
-            155,
-            163
-          ],
-          "implementations": []
-        },
-        "版本信息": {
-          "lineRange": [
-            164,
-            170
-          ],
-          "implementations": []
-        },
-        "未来优化方向": {
-          "lineRange": [
-            171,
-            178
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-23T15:42:18.909Z",
-      "checksum": "00993e1a9408c809"
     },
     "business/目标分配规则.md": {
       "id": "doc-business-目标分配规则-md",
@@ -1095,7 +1242,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.909Z",
+      "lastModified": "2025-12-24T11:25:10.664Z",
       "checksum": "08601705ecb639a5"
     },
     "business/指标定义规范.md": {
@@ -1106,6 +1253,7 @@
         "维度",
         "核心派生指标（按 机构×产品×月份/季度/累计）",
         "时间进度与时间进度达成率（三口径）",
+        "已赚保费预测（V1）",
         "同比增长与增量（6字段严格口径）",
         "增长率预警规则（可视化展示）",
         "总公司目标达成预测（V1）"
@@ -1134,24 +1282,31 @@
           ],
           "implementations": []
         },
-        "同比增长与增量（6字段严格口径）": {
+        "已赚保费预测（V1）": {
           "lineRange": [
             65,
-            91
+            119
+          ],
+          "implementations": []
+        },
+        "同比增长与增量（6字段严格口径）": {
+          "lineRange": [
+            120,
+            146
           ],
           "implementations": []
         },
         "增长率预警规则（可视化展示）": {
           "lineRange": [
-            92,
-            110
+            147,
+            165
           ],
           "implementations": []
         },
         "总公司目标达成预测（V1）": {
           "lineRange": [
-            111,
-            161
+            166,
+            216
           ],
           "implementations": [
             "src/domain/headquarters.ts:17-22-->",
@@ -1161,8 +1316,8 @@
           ]
         }
       },
-      "lastModified": "2025-12-23T15:42:18.909Z",
-      "checksum": "2633ec0918662dc5"
+      "lastModified": "2025-12-24T11:25:10.664Z",
+      "checksum": "384c67964eb11ff6"
     },
     "business/业务流程规范.md": {
       "id": "doc-business-业务流程规范-md",
@@ -1230,149 +1385,8 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.909Z",
+      "lastModified": "2025-12-24T11:25:10.664Z",
       "checksum": "52d225625997b43a"
-    },
-    "archive/设计思路_旧版备份.md": {
-      "id": "doc-archive-设计思路_旧版备份-md",
-      "title": "全局设计规范 - 快速参考手册",
-      "category": "archive",
-      "tags": [
-        "1. 设计原则",
-        "2. 色彩系统",
-        "3. 字体系统",
-        "4. 间距系统",
-        "5. 圆角系统",
-        "6. 阴影系统",
-        "7. 动画系统",
-        "8. 布局系统",
-        "9. 组件设计规范",
-        "10. 图表设计规范",
-        "11. 交互设计规范",
-        "12. 响应式设计规范",
-        "13. 可访问性规范",
-        "14. 使用指南",
-        "15. 版本管理",
-        "总结"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "1. 设计原则": {
-          "lineRange": [
-            9,
-            21
-          ],
-          "implementations": []
-        },
-        "2. 色彩系统": {
-          "lineRange": [
-            22,
-            119
-          ],
-          "implementations": []
-        },
-        "3. 字体系统": {
-          "lineRange": [
-            120,
-            170
-          ],
-          "implementations": []
-        },
-        "4. 间距系统": {
-          "lineRange": [
-            171,
-            194
-          ],
-          "implementations": []
-        },
-        "5. 圆角系统": {
-          "lineRange": [
-            195,
-            217
-          ],
-          "implementations": []
-        },
-        "6. 阴影系统": {
-          "lineRange": [
-            218,
-            240
-          ],
-          "implementations": []
-        },
-        "7. 动画系统": {
-          "lineRange": [
-            241,
-            271
-          ],
-          "implementations": []
-        },
-        "8. 布局系统": {
-          "lineRange": [
-            272,
-            470
-          ],
-          "implementations": []
-        },
-        "9. 组件设计规范": {
-          "lineRange": [
-            471,
-            581
-          ],
-          "implementations": []
-        },
-        "10. 图表设计规范": {
-          "lineRange": [
-            582,
-            743
-          ],
-          "implementations": []
-        },
-        "11. 交互设计规范": {
-          "lineRange": [
-            744,
-            812
-          ],
-          "implementations": []
-        },
-        "12. 响应式设计规范": {
-          "lineRange": [
-            813,
-            853
-          ],
-          "implementations": []
-        },
-        "13. 可访问性规范": {
-          "lineRange": [
-            854,
-            884
-          ],
-          "implementations": []
-        },
-        "14. 使用指南": {
-          "lineRange": [
-            885,
-            923
-          ],
-          "implementations": []
-        },
-        "15. 版本管理": {
-          "lineRange": [
-            924,
-            938
-          ],
-          "implementations": []
-        },
-        "总结": {
-          "lineRange": [
-            939,
-            949
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-23T15:42:18.910Z",
-      "checksum": "3fea8ce69581d84e"
     },
     "architecture/系统架构设计.md": {
       "id": "doc-architecture-系统架构设计-md",
@@ -1456,7 +1470,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.910Z",
+      "lastModified": "2025-12-24T11:25:10.664Z",
       "checksum": "38fed2bdbddb3e8c"
     },
     "architecture/文档代码索引系统设计.md": {
@@ -1596,7 +1610,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.910Z",
+      "lastModified": "2025-12-24T11:25:10.665Z",
       "checksum": "b4ecd283ce97de71"
     },
     "architecture/技术架构.md": {
@@ -1646,7 +1660,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.910Z",
+      "lastModified": "2025-12-24T11:25:10.665Z",
       "checksum": "bd5adab14e77158d"
     },
     "architecture/业务架构设计.md": {
@@ -1707,8 +1721,264 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-23T15:42:18.910Z",
+      "lastModified": "2025-12-24T11:25:10.665Z",
       "checksum": "b33557e90b7d117a"
+    },
+    "changelog/总公司目标达成预测功能.md": {
+      "id": "doc-changelog-总公司目标达成预测功能-md",
+      "title": "总公司目标达成预测功能 - 更新日志",
+      "category": "changelog",
+      "tags": [
+        "功能概述",
+        "数据配置",
+        "技术实现",
+        "UI展示",
+        "业务文档",
+        "使用场景",
+        "如何使用",
+        "数据流程",
+        "验证",
+        "版本信息",
+        "未来优化方向"
+      ],
+      "relatedDocs": [
+        "docs/business/指标定义规范.md"
+      ],
+      "implementedIn": [
+        "domain/headquarters.ts",
+        "app/page.ts",
+        "schemas/schema.ts",
+        "schemas/types.ts",
+        "services/loaders.ts"
+      ],
+      "sections": {
+        "功能概述": {
+          "lineRange": [
+            8,
+            11
+          ],
+          "implementations": []
+        },
+        "数据配置": {
+          "lineRange": [
+            12,
+            29
+          ],
+          "implementations": []
+        },
+        "技术实现": {
+          "lineRange": [
+            30,
+            55
+          ],
+          "implementations": [
+            "src/schemas/schema.ts",
+            "src/schemas/types.ts",
+            "src/services/loaders.ts",
+            "src/domain/headquarters.ts",
+            "src/app/page.tsx"
+          ]
+        },
+        "UI展示": {
+          "lineRange": [
+            56,
+            76
+          ],
+          "implementations": []
+        },
+        "业务文档": {
+          "lineRange": [
+            77,
+            88
+          ],
+          "implementations": []
+        },
+        "使用场景": {
+          "lineRange": [
+            89,
+            106
+          ],
+          "implementations": []
+        },
+        "如何使用": {
+          "lineRange": [
+            107,
+            137
+          ],
+          "implementations": []
+        },
+        "数据流程": {
+          "lineRange": [
+            138,
+            153
+          ],
+          "implementations": []
+        },
+        "验证": {
+          "lineRange": [
+            154,
+            162
+          ],
+          "implementations": []
+        },
+        "版本信息": {
+          "lineRange": [
+            163,
+            169
+          ],
+          "implementations": []
+        },
+        "未来优化方向": {
+          "lineRange": [
+            170,
+            177
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-24T11:25:10.665Z",
+      "checksum": "3021f23e7617cfc6"
+    },
+    "archive/设计思路_旧版备份.md": {
+      "id": "doc-archive-设计思路_旧版备份-md",
+      "title": "全局设计规范 - 快速参考手册",
+      "category": "archive",
+      "tags": [
+        "1. 设计原则",
+        "2. 色彩系统",
+        "3. 字体系统",
+        "4. 间距系统",
+        "5. 圆角系统",
+        "6. 阴影系统",
+        "7. 动画系统",
+        "8. 布局系统",
+        "9. 组件设计规范",
+        "10. 图表设计规范",
+        "11. 交互设计规范",
+        "12. 响应式设计规范",
+        "13. 可访问性规范",
+        "14. 使用指南",
+        "15. 版本管理",
+        "总结"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "1. 设计原则": {
+          "lineRange": [
+            9,
+            21
+          ],
+          "implementations": []
+        },
+        "2. 色彩系统": {
+          "lineRange": [
+            22,
+            119
+          ],
+          "implementations": []
+        },
+        "3. 字体系统": {
+          "lineRange": [
+            120,
+            170
+          ],
+          "implementations": []
+        },
+        "4. 间距系统": {
+          "lineRange": [
+            171,
+            194
+          ],
+          "implementations": []
+        },
+        "5. 圆角系统": {
+          "lineRange": [
+            195,
+            217
+          ],
+          "implementations": []
+        },
+        "6. 阴影系统": {
+          "lineRange": [
+            218,
+            240
+          ],
+          "implementations": []
+        },
+        "7. 动画系统": {
+          "lineRange": [
+            241,
+            271
+          ],
+          "implementations": []
+        },
+        "8. 布局系统": {
+          "lineRange": [
+            272,
+            470
+          ],
+          "implementations": []
+        },
+        "9. 组件设计规范": {
+          "lineRange": [
+            471,
+            581
+          ],
+          "implementations": []
+        },
+        "10. 图表设计规范": {
+          "lineRange": [
+            582,
+            743
+          ],
+          "implementations": []
+        },
+        "11. 交互设计规范": {
+          "lineRange": [
+            744,
+            812
+          ],
+          "implementations": []
+        },
+        "12. 响应式设计规范": {
+          "lineRange": [
+            813,
+            853
+          ],
+          "implementations": []
+        },
+        "13. 可访问性规范": {
+          "lineRange": [
+            854,
+            884
+          ],
+          "implementations": []
+        },
+        "14. 使用指南": {
+          "lineRange": [
+            885,
+            923
+          ],
+          "implementations": []
+        },
+        "15. 版本管理": {
+          "lineRange": [
+            924,
+            938
+          ],
+          "implementations": []
+        },
+        "总结": {
+          "lineRange": [
+            939,
+            949
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-24T11:25:10.665Z",
+      "checksum": "3fea8ce69581d84e"
     }
   }
 }

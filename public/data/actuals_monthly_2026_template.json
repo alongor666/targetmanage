@@ -9,8 +9,12 @@
       "org_id": "SC_local_tianfu",
       "product": "auto",
       "monthly_actual": 0,
+      "compulsory_premium": 0,
+      "commercial_premium": 0,
+      "compulsory_expense_rate": 0,
+      "commercial_expense_rate": 0,
       "unit": "万元"
     }
   ],
-  "notes_cn": "将 monthly_actual 由 0 改为实际值；可仅填已发生月份。"
+  "notes_cn": "将 monthly_actual 由 0 改为实际值；补充交强险/商业险保费与首日费用率；可仅填已发生月份。"
 }

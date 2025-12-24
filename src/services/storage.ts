@@ -6,6 +6,7 @@ export const LS_KEYS = {
   actualsMonthly2026: "tm:actuals_monthly:2026",
   actualsMonthly2025: "tm:actuals_monthly:2025",
   actualsAnnual2025: "tm:actuals_annual:2025",
+  uiColorSystem: "tm:ui:color_system",
 } as const;
 
 /**

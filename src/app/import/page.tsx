@@ -9,7 +9,7 @@ import { getAssetPath } from "@/lib/paths";
 import type { Org } from "@/schemas/types";
 
 type DatasetKey = "actuals_monthly_2026" | "actuals_monthly_2025";
-type ProductCode = "auto" | "property" | "life" | "health";
+type ProductCode = "auto" | "property" | "life";
 
 /**
  * 产品名称映射，支持中文和英文输入
@@ -21,8 +21,6 @@ const ProductMap: Record<string, ProductCode> = {
   "财产险": "property",
   "life": "life",
   "人身险": "life",
-  "health": "health",
-  "健康险": "health",
 };
 
 /**
@@ -107,7 +105,20 @@ export default function ImportPage() {
     const rows = parsed.data as Array<Record<string, any>>;
 
     // 允许多种列名：year/年度, month/月, org_id/机构编码, org_cn/机构, product/product_cn/险种, value/月度实际/保费 
-    const out: Array<{ year: number; month: number; org_id: string; product: ProductCode; monthly_actual: number; unit: "万元" }> = [];
+    const out: Array<{
+      year: number;
+      month: number;
+      org_id: string;
+      product: ProductCode;
+      monthly_actual: number;
+      compulsory_premium?: number;
+      commercial_premium?: number;
+      compulsory_expense_rate?: number;
+      commercial_expense_rate?: number;
+      property_first_day_expense_rate?: number;
+      life_first_day_expense_rate?: number;
+      unit: "万元";
+    }> = [];
     const errs: string[] = [];
 
     for (let i = 0; i < rows.length; i++) {
@@ -119,10 +130,22 @@ export default function ImportPage() {
       const orgCnRaw = pick(r, ["org_cn", "机构", "机构名称"]);
       const prodRaw = pick(r, ["product", "product_cn", "险种", "产品"]);
       const valRaw = pick(r, ["monthly_actual", "value", "premium", "保费", "当月保费", "月度实际"]);
+      const compulsoryPremiumRaw = pick(r, ["compulsory_premium", "交强险保费", "交强险保费收入"]);
+      const commercialPremiumRaw = pick(r, ["commercial_premium", "商业险保费", "商业险保费收入"]);
+      const compulsoryExpenseRateRaw = pick(r, ["compulsory_expense_rate", "交强险首日费用率"]);
+      const commercialExpenseRateRaw = pick(r, ["commercial_expense_rate", "商业险首日费用率"]);
+      const propertyExpenseRateRaw = pick(r, ["property_first_day_expense_rate", "财产险首日费用率"]);
+      const lifeExpenseRateRaw = pick(r, ["life_first_day_expense_rate", "人身险首日费用率"]);
 
       const y = toNumber(yRaw) ?? year;
       const m = toNumber(mRaw);
       const val = toNumber(valRaw);
+      const compulsoryPremium = toNumber(compulsoryPremiumRaw);
+      const commercialPremium = toNumber(commercialPremiumRaw);
+      const compulsoryExpenseRate = toNumber(compulsoryExpenseRateRaw);
+      const commercialExpenseRate = toNumber(commercialExpenseRateRaw);
+      const propertyExpenseRate = toNumber(propertyExpenseRateRaw);
+      const lifeExpenseRate = toNumber(lifeExpenseRateRaw);
 
       const org_id = 
         (orgIdRaw ? String(orgIdRaw).trim() : "") || 
@@ -137,10 +160,37 @@ export default function ImportPage() {
       if (org_id && !orgById.has(org_id)) errs.push(`第 ${i + 2} 行：org_id 不在机构清单（${org_id}）`);
       if (!product) errs.push(`第 ${i + 2} 行：无法识别产品（${prodKey}）`);
       if (val === null || val < 0) errs.push(`第 ${i + 2} 行：月度实际值非法（${valRaw}）`);
+      if (compulsoryPremium !== null && compulsoryPremium < 0) errs.push(`第 ${i + 2} 行：交强险保费非法（${compulsoryPremiumRaw}）`);
+      if (commercialPremium !== null && commercialPremium < 0) errs.push(`第 ${i + 2} 行：商业险保费非法（${commercialPremiumRaw}）`);
+      if (compulsoryExpenseRate !== null && (compulsoryExpenseRate < 0 || compulsoryExpenseRate > 1)) {
+        errs.push(`第 ${i + 2} 行：交强险首日费用率非法（${compulsoryExpenseRateRaw}）`);
+      }
+      if (commercialExpenseRate !== null && (commercialExpenseRate < 0 || commercialExpenseRate > 1)) {
+        errs.push(`第 ${i + 2} 行：商业险首日费用率非法（${commercialExpenseRateRaw}）`);
+      }
+      if (propertyExpenseRate !== null && (propertyExpenseRate < 0 || propertyExpenseRate > 1)) {
+        errs.push(`第 ${i + 2} 行：财产险首日费用率非法（${propertyExpenseRateRaw}）`);
+      }
+      if (lifeExpenseRate !== null && (lifeExpenseRate < 0 || lifeExpenseRate > 1)) {
+        errs.push(`第 ${i + 2} 行：人身险首日费用率非法（${lifeExpenseRateRaw}）`);
+      }
 
       if (errs.length) continue;
 
-      out.push({ year, month: m!, org_id, product, monthly_actual: val!, unit: "万元" });
+      out.push({
+        year,
+        month: m!,
+        org_id,
+        product,
+        monthly_actual: val!,
+        compulsory_premium: compulsoryPremium ?? undefined,
+        commercial_premium: commercialPremium ?? undefined,
+        compulsory_expense_rate: compulsoryExpenseRate ?? undefined,
+        commercial_expense_rate: commercialExpenseRate ?? undefined,
+        property_first_day_expense_rate: propertyExpenseRate ?? undefined,
+        life_first_day_expense_rate: lifeExpenseRate ?? undefined,
+        unit: "万元",
+      });
     }
 
     // 去重聚合：同 key 默认"求和" 

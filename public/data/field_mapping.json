@@ -35,7 +35,6 @@
       "auto": "车险",
       "property": "财产险",
       "life": "人身险",
-      "health": "健康险",
       "total": "汇总"
     }
   },
@@ -54,6 +53,30 @@
   "monthly_actual": {
     "key": "monthly_actual",
     "cn": "月度实际（万元）"
+  },
+  "compulsory_premium": {
+    "key": "compulsory_premium",
+    "cn": "交强险保费收入（万元）"
+  },
+  "commercial_premium": {
+    "key": "commercial_premium",
+    "cn": "商业险保费收入（万元）"
+  },
+  "compulsory_expense_rate": {
+    "key": "compulsory_expense_rate",
+    "cn": "交强险首日费用率"
+  },
+  "commercial_expense_rate": {
+    "key": "commercial_expense_rate",
+    "cn": "商业险首日费用率"
+  },
+  "property_first_day_expense_rate": {
+    "key": "property_first_day_expense_rate",
+    "cn": "财产险首日费用率"
+  },
+  "life_first_day_expense_rate": {
+    "key": "life_first_day_expense_rate",
+    "cn": "人身险首日费用率"
   },
   "quarter_target": {
     "key": "quarter_target",

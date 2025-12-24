@@ -1,5 +1,127 @@
 {
   "modules": {
+    "styles/tokens.ts": {
+      "id": "code-styles-tokens-ts",
+      "type": "ui-component",
+      "exports": [
+        "colors",
+        "typography",
+        "spacing",
+        "radius",
+        "shadows",
+        "animations",
+        "layout",
+        "breakpoints",
+        "zIndex",
+        "getDataDepthColor",
+        "formatRate",
+        "getStatusColor",
+        "getAchievementStatus",
+        "getGrowthStatus",
+        "getStatusColorByVariant",
+        "getKpiCardColors",
+        "getBadgeColors",
+        "getTargetBarColors",
+        "getGrowthPointColor"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/styles/tokens"
+      ],
+      "functions": {
+        "getDataDepthColor": {
+          "lineRange": [
+            352,
+            358
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "formatRate": {
+          "lineRange": [
+            366,
+            372
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getStatusColor": {
+          "lineRange": [
+            381,
+            383
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getAchievementStatus": {
+          "lineRange": [
+            407,
+            409
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getGrowthStatus": {
+          "lineRange": [
+            434,
+            436
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getStatusColorByVariant": {
+          "lineRange": [
+            449,
+            462
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getKpiCardColors": {
+          "lineRange": [
+            469,
+            497
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getBadgeColors": {
+          "lineRange": [
+            505,
+            521
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getTargetBarColors": {
+          "lineRange": [
+            528,
+            545
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        },
+        "getGrowthPointColor": {
+          "lineRange": [
+            566,
+            573
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        }
+      }
+    },
     "services/storage.ts": {
       "id": "code-services-storage-ts",
       "type": "service",
@@ -15,30 +137,30 @@
       "functions": {
         "lsGetJson": {
           "lineRange": [
-            22,
-            31
+            23,
+            32
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.913Z"
+          "lastModified": "2025-12-24T11:25:10.669Z"
         },
         "lsSetJson": {
           "lineRange": [
-            38,
-            41
+            39,
+            42
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.913Z"
+          "lastModified": "2025-12-24T11:25:10.669Z"
         },
         "lsRemove": {
           "lineRange": [
-            47,
-            50
+            48,
+            51
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.913Z"
+          "lastModified": "2025-12-24T11:25:10.669Z"
         }
       }
     },
@@ -67,58 +189,59 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.913Z"
+          "lastModified": "2025-12-24T11:25:10.669Z"
         }
       }
     },
-    "styles/tokens.ts": {
-      "id": "code-styles-tokens-ts",
+    "lib/utils.ts": {
+      "id": "code-lib-utils-ts",
       "type": "ui-component",
       "exports": [
-        "colors",
-        "typography",
-        "spacing",
-        "radius",
-        "shadows",
-        "animations",
-        "layout",
-        "breakpoints",
-        "getDataDepthColor",
-        "formatRate",
-        "getStatusColor"
+        "cn",
+        "getQuarterlyStatus"
       ],
       "documentedIn": [],
       "usedBy": [],
-      "dependencies": [
-        "@/styles/tokens"
-      ],
+      "dependencies": [],
       "functions": {
-        "getDataDepthColor": {
+        "cn": {
           "lineRange": [
-            190,
-            196
+            11,
+            13
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.913Z"
+          "lastModified": "2025-12-24T11:25:10.669Z"
         },
-        "formatRate": {
+        "getQuarterlyStatus": {
           "lineRange": [
-            204,
-            210
+            76,
+            101
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.913Z"
-        },
-        "getStatusColor": {
+          "lastModified": "2025-12-24T11:25:10.669Z"
+        }
+      }
+    },
+    "lib/paths.ts": {
+      "id": "code-lib-paths-ts",
+      "type": "ui-component",
+      "exports": [
+        "getAssetPath"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "getAssetPath": {
           "lineRange": [
-            218,
-            220
+            4,
+            15
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.913Z"
+          "lastModified": "2025-12-24T11:25:10.670Z"
         }
       }
     },
@@ -142,8 +265,10 @@
         "AnnualActualRecordSchema",
         "MonthlyActualRecordSchema",
         "AllocationRuleSchema",
+        "ThresholdRuleSchema",
         "HeadquartersTargetRecordSchema",
-        "validateWeights"
+        "validateWeights",
+        "validateThresholds"
       ],
       "documentedIn": [],
       "usedBy": [],
@@ -151,54 +276,157 @@
       "functions": {
         "validateWeights": {
           "lineRange": [
-            53,
+            85,
+            91
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.670Z"
+        },
+        "validateThresholds": {
+          "lineRange": [
+            94,
+            113
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.670Z"
+        }
+      }
+    },
+    "app/page.tsx": {
+      "id": "code-app-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "@/domain/allocation",
+        "@/domain/growth",
+        "@/domain/achievement",
+        "@/domain/headquarters",
+        "@/services/loaders",
+        "@/services/storage",
+        "@/styles/tokens",
+        "@/lib/utils",
+        "@/components/charts/QuarterlyChartLegend",
+        "@/components/charts/QuarterlyProportionChart",
+        "@/components/charts/QuarterlyProportionChart/utils"
+      ],
+      "functions": {}
+    },
+    "app/layout.tsx": {
+      "id": "code-app-layout-tsx",
+      "type": "ui-component",
+      "exports": [
+        "metadata"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/system/ColorSystemHydrator"
+      ],
+      "functions": {}
+    },
+    "config/thresholdRules.ts": {
+      "id": "code-config-thresholdRules-ts",
+      "type": "ui-component",
+      "exports": [
+        "DEFAULT_THRESHOLD_RULES",
+        "getAchievementStatus",
+        "getGrowthStatus"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types"
+      ],
+      "functions": {
+        "getAchievementStatus": {
+          "lineRange": [
+            51,
             59
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.670Z"
+        },
+        "getGrowthStatus": {
+          "lineRange": [
+            67,
+            75
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.670Z"
         }
       }
     },
-    "lib/utils.ts": {
-      "id": "code-lib-utils-ts",
+    "config/progressWeights.ts": {
+      "id": "code-config-progressWeights-ts",
       "type": "ui-component",
       "exports": [
-        "cn"
+        "DEFAULT_MONTHLY_WEIGHTS",
+        "DEFAULT_QUARTERLY_WEIGHTS",
+        "validateWeightsSum",
+        "calculateQuarterlyWeights"
       ],
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [],
       "functions": {
-        "cn": {
+        "validateWeightsSum": {
           "lineRange": [
-            11,
-            13
+            34,
+            37
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        },
+        "calculateQuarterlyWeights": {
+          "lineRange": [
+            44,
+            56
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
         }
       }
     },
-    "lib/paths.ts": {
-      "id": "code-lib-paths-ts",
+    "config/organizationModes.ts": {
+      "id": "code-config-organizationModes-ts",
       "type": "ui-component",
       "exports": [
-        "getAssetPath"
+        "organizationModes",
+        "detectOrganizationMode",
+        "generatePageTitle"
       ],
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [],
       "functions": {
-        "getAssetPath": {
+        "detectOrganizationMode": {
           "lineRange": [
-            4,
-            15
+            101,
+            156
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        },
+        "generatePageTitle": {
+          "lineRange": [
+            198,
+            212
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
         }
       }
     },
@@ -221,7 +449,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "generateValidationReport": {
           "lineRange": [
@@ -230,7 +458,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "validateOrganizationCount": {
           "lineRange": [
@@ -239,7 +467,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         }
       }
     },
@@ -266,7 +494,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "linearProgressYear": {
           "lineRange": [
@@ -275,7 +503,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "weightedProgressYear": {
           "lineRange": [
@@ -284,7 +512,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "linearProgressQuarter": {
           "lineRange": [
@@ -293,7 +521,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "weightedProgressQuarter": {
           "lineRange": [
@@ -302,7 +530,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "actual2025ProgressYear": {
           "lineRange": [
@@ -311,7 +539,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "actual2025ProgressQuarter": {
           "lineRange": [
@@ -320,7 +548,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         }
       }
     },
@@ -350,7 +578,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "calculateHqGap": {
           "lineRange": [
@@ -359,34 +587,34 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "aggregateHqTargetsByProduct": {
           "lineRange": [
             41,
-            52
+            53
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "predictMonthlyHqAchievement": {
           "lineRange": [
-            61,
-            90
+            62,
+            91
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "calculateQuarterHqAchievementRate": {
           "lineRange": [
-            98,
-            103
+            99,
+            104
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         }
       }
     },
@@ -411,7 +639,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "formatGrowthRate": {
           "lineRange": [
@@ -420,7 +648,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
         },
         "formatIncrement": {
           "lineRange": [
@@ -429,7 +657,94 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        }
+      }
+    },
+    "domain/earnedPremium.ts": {
+      "id": "code-domain-earnedPremium-ts",
+      "type": "domain-logic",
+      "exports": [
+        "getMonthDays",
+        "calculateMaturityDays",
+        "calculateAutoEarnedPremium",
+        "calculatePropertyEarnedPremium",
+        "calculateLifeEarnedPremium",
+        "calculateMaturityRate"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "./achievement"
+      ],
+      "functions": {
+        "getMonthDays": {
+          "lineRange": [
+            18,
+            20
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        },
+        "calculateMaturityDays": {
+          "lineRange": [
+            29,
+            37
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        },
+        "calculateAutoEarnedPremium": {
+          "lineRange": [
+            43,
+            58
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        },
+        "calculatePropertyEarnedPremium": {
+          "lineRange": [
+            64,
+            71
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        },
+        "calculateLifeEarnedPremium": {
+          "lineRange": [
+            77,
+            87
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
+        },
+        "calculateMaturityRate": {
+          "lineRange": [
+            93,
+            95
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.671Z"
         }
       }
     },
@@ -453,7 +768,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         },
         "calculateActual2025Weights": {
           "lineRange": [
@@ -462,7 +777,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         },
         "monthlyToQuarterly": {
           "lineRange": [
@@ -471,7 +786,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         },
         "monthlyToYtd": {
           "lineRange": [
@@ -480,7 +795,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         }
       }
     },
@@ -503,7 +818,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.914Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         }
       }
     },
@@ -526,7 +841,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         },
         "diff": {
           "lineRange": [
@@ -535,7 +850,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         },
         "growthRate": {
           "lineRange": [
@@ -544,262 +859,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "app/page.tsx": {
-      "id": "code-app-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/domain/allocation",
-        "@/domain/growth",
-        "@/domain/achievement",
-        "@/domain/headquarters",
-        "@/services/loaders",
-        "@/services/storage",
-        "@/styles/tokens"
-      ],
-      "functions": {}
-    },
-    "app/layout.tsx": {
-      "id": "code-app-layout-tsx",
-      "type": "ui-component",
-      "exports": [
-        "metadata"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "config/progressWeights.ts": {
-      "id": "code-config-progressWeights-ts",
-      "type": "ui-component",
-      "exports": [
-        "DEFAULT_MONTHLY_WEIGHTS",
-        "DEFAULT_QUARTERLY_WEIGHTS",
-        "validateWeightsSum",
-        "calculateQuarterlyWeights"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "validateWeightsSum": {
-          "lineRange": [
-            34,
-            37
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        },
-        "calculateQuarterlyWeights": {
-          "lineRange": [
-            44,
-            56
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "config/organizationModes.ts": {
-      "id": "code-config-organizationModes-ts",
-      "type": "ui-component",
-      "exports": [
-        "organizationModes",
-        "detectOrganizationMode",
-        "generatePageTitle"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "detectOrganizationMode": {
-          "lineRange": [
-            101,
-            156
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        },
-        "generatePageTitle": {
-          "lineRange": [
-            198,
-            212
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "components/ui/Badge.tsx": {
-      "id": "code-components-ui-Badge-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Badge"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "Badge": {
-          "lineRange": [
-            58,
-            103
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "components/layout/Section.tsx": {
-      "id": "code-components-layout-Section-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Section"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "Section": {
-          "lineRange": [
-            55,
-            88
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "components/kpi/KpiCard.tsx": {
-      "id": "code-components-kpi-KpiCard-tsx",
-      "type": "ui-component",
-      "exports": [
-        "KpiCard"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "KpiCard": {
-          "lineRange": [
-            59,
-            122
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "components/filters/FilterSelector.tsx": {
-      "id": "code-components-filters-FilterSelector-tsx",
-      "type": "ui-component",
-      "exports": [
-        "FilterSelector"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "FilterSelector": {
-          "lineRange": [
-            65,
-            115
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "components/feedback/LoadingState.tsx": {
-      "id": "code-components-feedback-LoadingState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "LoadingState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "LoadingState": {
-          "lineRange": [
-            42,
-            92
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.915Z"
-        }
-      }
-    },
-    "components/feedback/EmptyState.tsx": {
-      "id": "code-components-feedback-EmptyState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "EmptyState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "EmptyState": {
-          "lineRange": [
-            59,
-            109
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.916Z"
-        }
-      }
-    },
-    "components/data/DataTable.tsx": {
-      "id": "code-components-data-DataTable-tsx",
-      "type": "ui-component",
-      "exports": [
-        "DataTable"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "DataTable": {
-          "lineRange": [
-            112,
-            188
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-23T15:42:18.916Z"
+          "lastModified": "2025-12-24T11:25:10.673Z"
         }
       }
     },
@@ -810,7 +870,10 @@
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [
-        "@/services/loaders"
+        "@/services/loaders",
+        "@/components/config/ThresholdConfig",
+        "@/config/thresholdRules",
+        "@/schemas/types"
       ],
       "functions": {}
     },
@@ -858,6 +921,44 @@
       ],
       "functions": {}
     },
+    "components/ui/Badge.tsx": {
+      "id": "code-components-ui-Badge-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Badge"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "Badge": {
+          "lineRange": [
+            58,
+            103
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.674Z"
+        }
+      }
+    },
+    "app/earned-premium/page.tsx": {
+      "id": "code-app-earned-premium-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "@/domain/allocation",
+        "@/services/loaders",
+        "@/styles/tokens",
+        "@/components/charts/ChartContainer"
+      ],
+      "functions": {}
+    },
     "app/data/page.tsx": {
       "id": "code-app-data-page-tsx",
       "type": "ui-component",
@@ -868,6 +969,181 @@
         "@/services/loaders"
       ],
       "functions": {}
+    },
+    "app/color-system/page.tsx": {
+      "id": "code-app-color-system-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/styles/tokens",
+        "@/services/storage"
+      ],
+      "functions": {}
+    },
+    "components/system/ColorSystemHydrator.tsx": {
+      "id": "code-components-system-ColorSystemHydrator-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ColorSystemHydrator"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/storage"
+      ],
+      "functions": {
+        "ColorSystemHydrator": {
+          "lineRange": [
+            5,
+            19
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.675Z"
+        }
+      }
+    },
+    "components/layout/Section.tsx": {
+      "id": "code-components-layout-Section-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Section"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "Section": {
+          "lineRange": [
+            55,
+            88
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.675Z"
+        }
+      }
+    },
+    "components/feedback/LoadingState.tsx": {
+      "id": "code-components-feedback-LoadingState-tsx",
+      "type": "ui-component",
+      "exports": [
+        "LoadingState"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "LoadingState": {
+          "lineRange": [
+            42,
+            92
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.675Z"
+        }
+      }
+    },
+    "components/feedback/EmptyState.tsx": {
+      "id": "code-components-feedback-EmptyState-tsx",
+      "type": "ui-component",
+      "exports": [
+        "EmptyState"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "EmptyState": {
+          "lineRange": [
+            59,
+            109
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.676Z"
+        }
+      }
+    },
+    "components/data/DataTable.tsx": {
+      "id": "code-components-data-DataTable-tsx",
+      "type": "ui-component",
+      "exports": [
+        "DataTable"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "DataTable": {
+          "lineRange": [
+            112,
+            188
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.677Z"
+        }
+      }
+    },
+    "components/config/ThresholdConfig.tsx": {
+      "id": "code-components-config-ThresholdConfig-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ThresholdConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "@/config/thresholdRules",
+        "@/schemas/schema"
+      ],
+      "functions": {
+        "ThresholdConfig": {
+          "lineRange": [
+            30,
+            270
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.677Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyChartLegend.tsx": {
+      "id": "code-components-charts-QuarterlyChartLegend-tsx",
+      "type": "ui-component",
+      "exports": [
+        "QuarterlyChartLegend"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "QuarterlyChartLegend": {
+          "lineRange": [
+            22,
+            67
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.677Z"
+        }
+      }
     },
     "components/charts/ChartContainer.tsx": {
       "id": "code-components-charts-ChartContainer-tsx",
@@ -888,9 +1164,66 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-23T15:42:18.916Z"
+          "lastModified": "2025-12-24T11:25:10.677Z"
         }
       }
+    },
+    "components/filters/FilterSelector.tsx": {
+      "id": "code-components-filters-FilterSelector-tsx",
+      "type": "ui-component",
+      "exports": [
+        "FilterSelector"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "FilterSelector": {
+          "lineRange": [
+            65,
+            115
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.677Z"
+        }
+      }
+    },
+    "components/kpi/KpiCard.tsx": {
+      "id": "code-components-kpi-KpiCard-tsx",
+      "type": "ui-component",
+      "exports": [
+        "KpiCard"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "KpiCard": {
+          "lineRange": [
+            59,
+            122
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.677Z"
+        }
+      }
+    },
+    "app/test/quarterly-chart/page.tsx": {
+      "id": "code-app-test-quarterly-chart-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/charts/QuarterlyProportionChart"
+      ],
+      "functions": {}
     },
     "app/orgs/[org_id]/page.tsx": {
       "id": "code-app-orgs-[org_id]-page-tsx",
@@ -917,6 +1250,686 @@
         "@/domain/growth"
       ],
       "functions": {}
+    },
+    "app/color-system/preview/page.tsx": {
+      "id": "code-app-color-system-preview-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/ui/Badge",
+        "@/components/kpi/KpiCard"
+      ],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/UniversalChart.types.ts": {
+      "id": "code-components-charts-UniversalChart-UniversalChart-types-ts",
+      "type": "ui-component",
+      "exports": [
+        "QUARTER_LABELS",
+        "MONTH_LABELS",
+        "isValidChartData",
+        "getPeriodLabel",
+        "getAllPeriodLabels"
+      ],
+      "documentedIn": [
+        "fangan.md"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "isValidChartData": {
+          "lineRange": [
+            281,
+            327
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.678Z"
+        },
+        "getPeriodLabel": {
+          "lineRange": [
+            332,
+            338
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.678Z"
+        },
+        "getAllPeriodLabels": {
+          "lineRange": [
+            343,
+            347
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.678Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/index.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-index-ts",
+      "type": "ui-component",
+      "exports": [
+        "COMPONENT_META"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/charts/QuarterlyProportionChart"
+      ],
+      "functions": {}
+    },
+    "components/charts/QuarterlyProportionChart/QuarterlyProportionChart.types.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-QuarterlyProportionChart-types-ts",
+      "type": "ui-component",
+      "exports": [
+        "QUARTER_LABELS",
+        "isValidQuarterData"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "isValidQuarterData": {
+          "lineRange": [
+            198,
+            235
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.678Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/QuarterlyProportionChart.tsx": {
+      "id": "code-components-charts-QuarterlyProportionChart-QuarterlyProportionChart-tsx",
+      "type": "ui-component",
+      "exports": [
+        "QuarterlyProportionChart"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "./hooks/useChartData",
+        "./hooks/useChartConfig"
+      ],
+      "functions": {
+        "QuarterlyProportionChart": {
+          "lineRange": [
+            67,
+            344
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/utils/index.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-utils-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/QuarterlyProportionChart/utils/formatter.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-utils-formatter-ts",
+      "type": "ui-component",
+      "exports": [
+        "formatPercent",
+        "formatNumber",
+        "formatCurrency",
+        "getGrowthArrow",
+        "formatGrowth",
+        "formatQuarterData",
+        "sanitizeFilename",
+        "formatDateTime",
+        "formatFileSize",
+        "formatDuration",
+        "truncateText",
+        "getValueColorClass",
+        "formatRange"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "formatPercent": {
+          "lineRange": [
+            17,
+            22
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatNumber": {
+          "lineRange": [
+            35,
+            43
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatCurrency": {
+          "lineRange": [
+            55,
+            58
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "getGrowthArrow": {
+          "lineRange": [
+            70,
+            77
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatGrowth": {
+          "lineRange": [
+            89,
+            93
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatQuarterData": {
+          "lineRange": [
+            100,
+            116
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "sanitizeFilename": {
+          "lineRange": [
+            123,
+            128
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatDateTime": {
+          "lineRange": [
+            136,
+            158
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatFileSize": {
+          "lineRange": [
+            165,
+            171
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatDuration": {
+          "lineRange": [
+            178,
+            190
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "truncateText": {
+          "lineRange": [
+            198,
+            201
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "getValueColorClass": {
+          "lineRange": [
+            208,
+            215
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "formatRange": {
+          "lineRange": [
+            223,
+            225
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/utils/export.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-utils-export-ts",
+      "type": "ui-component",
+      "exports": [
+        "exportToCSV",
+        "exportQuarterDetails",
+        "exportToJSON",
+        "printChart"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../QuarterlyProportionChart.types",
+        "./formatter"
+      ],
+      "functions": {
+        "exportToCSV": {
+          "lineRange": [
+            14,
+            15
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "exportQuarterDetails": {
+          "lineRange": [
+            137,
+            186
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "exportToJSON": {
+          "lineRange": [
+            193,
+            206
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "printChart": {
+          "lineRange": [
+            213,
+            276
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/utils/colorUtils.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-utils-colorUtils-ts",
+      "type": "ui-component",
+      "exports": [
+        "DEFAULT_COLORS",
+        "WARNING_LEVEL_COLORS",
+        "getWarningLevelColor",
+        "getWarningLevelByGrowth",
+        "getGrowthColorClass",
+        "adjustBrightness",
+        "hexToRgba",
+        "createGradient",
+        "getHeatmapColor",
+        "isDarkColor",
+        "getContrastColor",
+        "blendColors",
+        "withOpacity",
+        "generatePalette"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "getWarningLevelColor": {
+          "lineRange": [
+            80,
+            91
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "getWarningLevelByGrowth": {
+          "lineRange": [
+            98,
+            104
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "getGrowthColorClass": {
+          "lineRange": [
+            111,
+            117
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "adjustBrightness": {
+          "lineRange": [
+            125,
+            142
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "hexToRgba": {
+          "lineRange": [
+            150,
+            157
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "createGradient": {
+          "lineRange": [
+            166,
+            197
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "getHeatmapColor": {
+          "lineRange": [
+            207,
+            237
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "isDarkColor": {
+          "lineRange": [
+            244,
+            253
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "getContrastColor": {
+          "lineRange": [
+            260,
+            262
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "blendColors": {
+          "lineRange": [
+            271,
+            293
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "withOpacity": {
+          "lineRange": [
+            301,
+            303
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        },
+        "generatePalette": {
+          "lineRange": [
+            311,
+            330
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.679Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/hooks/useChartData.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-hooks-useChartData-ts",
+      "type": "ui-component",
+      "exports": [
+        "useChartData"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "useChartData": {
+          "lineRange": [
+            40,
+            168
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-hooks-useChartConfig-ts",
+      "type": "ui-component",
+      "exports": [
+        "useChartConfig",
+        "getWarningLevelColor",
+        "getDefaultColors"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../QuarterlyProportionChart.types",
+        "../utils/formatter"
+      ],
+      "functions": {
+        "useChartConfig": {
+          "lineRange": [
+            133,
+            391
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        },
+        "getWarningLevelColor": {
+          "lineRange": [
+            396,
+            398
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        },
+        "getDefaultColors": {
+          "lineRange": [
+            403,
+            405
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/components/index.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-components-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/QuarterlyProportionChart/components/WarningBadge.tsx": {
+      "id": "code-components-charts-QuarterlyProportionChart-components-WarningBadge-tsx",
+      "type": "ui-component",
+      "exports": [
+        "WarningBadge",
+        "WarningBadgeSelector"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "../QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "WarningBadge": {
+          "lineRange": [
+            110,
+            138
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        },
+        "WarningBadgeSelector": {
+          "lineRange": [
+            143,
+            156
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/components/ViewSwitcher.tsx": {
+      "id": "code-components-charts-QuarterlyProportionChart-components-ViewSwitcher-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ViewSwitcher",
+        "ViewSwitcherSelector"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "../QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "ViewSwitcher": {
+          "lineRange": [
+            180,
+            215
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        },
+        "ViewSwitcherSelector": {
+          "lineRange": [
+            220,
+            245
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/components/DetailPanel.tsx": {
+      "id": "code-components-charts-QuarterlyProportionChart-components-DetailPanel-tsx",
+      "type": "ui-component",
+      "exports": [
+        "DetailPanel",
+        "DetailPanelShowcase"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "./WarningBadge",
+        "../QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "DetailPanel": {
+          "lineRange": [
+            281,
+            290
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        },
+        "DetailPanelShowcase": {
+          "lineRange": [
+            295,
+            328
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.680Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyProportionChart/components/ChartHeader.tsx": {
+      "id": "code-components-charts-QuarterlyProportionChart-components-ChartHeader-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ChartHeader",
+        "CompactChartHeader",
+        "ChartHeaderShowcase"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "./ViewSwitcher",
+        "../QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "ChartHeader": {
+          "lineRange": [
+            107,
+            183
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.681Z"
+        },
+        "CompactChartHeader": {
+          "lineRange": [
+            195,
+            212
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.681Z"
+        },
+        "ChartHeaderShowcase": {
+          "lineRange": [
+            217,
+            245
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-24T11:25:10.681Z"
+        }
+      }
     }
   }
 }

@@ -130,13 +130,18 @@ export async function loadActualsMonthly2026() {
   const local = lsGetJson<unknown>(LS_KEYS.actualsMonthly2026);
   if (local) return MonthlyActualsFileSchema.parse(local);
 
-  // 兜底：没有导入时返回空（避免模板 0 值误导） 
-  return MonthlyActualsFileSchema.parse({ 
-    year: 2026, 
-    unit: "万元", 
-    type: "actuals_monthly", 
-    records: [], 
-    notes_cn: "未导入：默认空数据", 
+  // 兜底：未导入时优先加载测试样例
+  try {
+    return await fetchJson("/data/actuals_monthly_2026_test.json", MonthlyActualsFileSchema);
+  } catch {}
+
+  // 最后兜底：没有导入时返回空（避免模板 0 值误导） 
+  return MonthlyActualsFileSchema.parse({
+    year: 2026,
+    unit: "万元",
+    type: "actuals_monthly",
+    records: [],
+    notes_cn: "未导入：默认空数据",
   });
 }
 
@@ -162,5 +167,4 @@ export async function loadActualsMonthly2025() {
     notes_cn: "未导入：默认空数据", 
   });
 }
-
 

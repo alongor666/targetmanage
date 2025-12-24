@@ -18,12 +18,29 @@ import { safeDivide } from "@/domain/achievement";
 import { aggregateHqTargetsByProduct, calculateHqAchievementRate } from "@/domain/headquarters";
 import { loadAllocationRules, loadOrgs, loadTargetsAnnual2026, loadActualsAnnual2025, loadActualsMonthly2026, loadActualsMonthly2025, loadHeadquartersTargetsAnnual2026 } from "@/services/loaders";
 import { lsRemove, LS_KEYS } from "@/services/storage";
-import { colors } from "@/styles/tokens";
+import { colors, getGrowthPointColor } from "@/styles/tokens";
+import { getQuarterlyStatus } from "@/lib/utils";
+import { QuarterlyChartLegend } from "@/components/charts/QuarterlyChartLegend";
+import { QuarterlyProportionChart } from "@/components/charts/QuarterlyProportionChart";
+import { exportToCSV, exportToImage } from "@/components/charts/QuarterlyProportionChart/utils";
+import {
+  UniversalChart,
+  createQuarterlyPremiumAdapter,
+  createQuarterlyShareAdapter,
+  createMonthlyPremiumAdapter,
+  createMonthlyShareAdapter,
+  createHqPredictionAdapter,
+} from "@/components/charts/UniversalChart";
+import type {
+  QuarterlyDataInput,
+  MonthlyDataInput,
+  HqPredictionDataInput,
+} from "@/components/charts/UniversalChart";
 
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });
 
 type GroupView = "all" | "local" | "remote";
-type ProductView = "total" | "auto" | "property" | "life" | "health";
+type ProductView = "total" | "auto" | "property" | "life";
 type ProgressMode = "linear" | "weighted" | "actual2025";
 
 const productLabel: Record<ProductView, string> = {
@@ -31,8 +48,13 @@ const productLabel: Record<ProductView, string> = {
   auto: "车险",
   property: "财产险",
   life: "人身险",
-  health: "健康险",
 };
+
+const supportedProducts: Array<Exclude<ProductView, "total">> = ["auto", "property", "life"];
+
+function isSupportedProduct(value: string): value is Exclude<ProductView, "total"> {
+  return supportedProducts.includes(value as Exclude<ProductView, "total">);
+}
 
 function aggregateToViewsAndAllWithCounts(rows: any[], orgMap: Map<string, Org>): {
   sums: Map<string, number>;
@@ -48,6 +70,7 @@ function aggregateToViewsAndAllWithCounts(rows: any[], orgMap: Map<string, Org>)
   }
 
   for (const r of rows) {
+    if (!isSupportedProduct(r.product)) continue;
     const o = orgMap.get(r.org_id);
     if (!o) continue;
     add({ view: r.org_id, product: r.product }, r.value);
@@ -81,6 +104,7 @@ function aggregateMonthlyActuals(records: any[], orgMap: Map<string, Org>): Mont
   }
 
   for (const r of records) {
+    if (!isSupportedProduct(r.product)) continue;
     const o = orgMap.get(r.org_id);
     if (!o) continue;
     add(r.month, { view: r.org_id, product: r.product }, r.monthly_actual);
@@ -113,6 +137,7 @@ function aggregateAnnualToViews(rows: any[], orgMap: Map<string, Org>): Map<stri
   }
 
   for (const r of rows) {
+    if (!isSupportedProduct(r.product)) continue;
     const o = orgMap.get(r.org_id);
     if (!o) continue;
     add(r.org_id, r.product, r.value);
@@ -334,7 +359,7 @@ export default function Page() {
     // 计算全省各产品的实际完成情况（分月/分季/累计）
     const result: any = {};
 
-    ["auto", "property", "life", "health", "total"].forEach((prod) => {
+    ["auto", "property", "life", "total"].forEach((prod) => {
       const hqTarget = hqTargetMap.get(prod) ?? 0;
 
       // 获取月度序列：优先使用实际数据，降级到目标数据
@@ -571,25 +596,16 @@ export default function Page() {
   const quarterlyChartOption = useMemo(() => {
     if (!kpi) return null;
 
-    const targetColor = colors.chart.claimRate;
-    const actualColor = colors.chart.expenseRate;
-    const growthColor = colors.status.good;
-    const warningColor = colors.status.warning;
-    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
-    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
-    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
-    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
-    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
-
+    // === 数据准备 ===
     const monthlyEstimateTargets =
       progressMode === "linear" ? kpi.monthlyTargetsLinear :
       progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
       kpi.monthlyTargets;
-    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
-      (value, idx) => value ?? monthlyEstimateTargets[idx]
-    );
 
+    // 2026季度目标
     const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
+
+    // 2025季度实际（使用actuals_monthly_2025.json数据）
     const quarterlyActuals2025 = monthlyToQuarterly(
       monthlyActualSeries2025.map((v) => v ?? 0)
     ).map((value, idx) => {
@@ -598,56 +614,39 @@ export default function Page() {
         .some((v) => v !== null);
       return hasAny ? value : null;
     });
-    const quarterlyCurrent = monthlyToQuarterly(
-      monthlyCurrentForGrowth.map((v) => v ?? 0)
-    ).map((value, idx) => {
-      const hasAny = monthlyCurrentForGrowth
-        .slice(idx * 3, idx * 3 + 3)
-        .some((v) => v !== null);
-      return hasAny ? value : null;
-    });
 
-    const growthSeries = quarterlyCurrent.map((current, idx) => {
+    // 增速计算：2026目标/2025实际-1
+    const growthSeries = quarterlyTargets.map((target, idx) => {
       const baseline = quarterlyActuals2025[idx];
-      if (baseline === null || current === null) return null;
-      return safeDivide(current - baseline, baseline).value;
+      if (baseline === null || baseline === 0 || target === null) return null;
+      return target / baseline - 1;
     });
 
-    const barWidth = Math.round(24 * 1.618);
-    const warningThreshold = 0.05; // 5%预警线
+    // 计算达成率（这里暂时不用，因为对比的是目标vs实际，不是实际vs目标）
+    // 但保留以便状态判断使用
+    const achievementRates = quarterlyActuals2025.map((actual, idx) => {
+      const target = quarterlyTargets[idx];
+      if (target === 0 || actual === null) return null;
+      return actual / target;
+    });
 
-    // 为2025实际数据生成颜色（对应增长率低于5%时变橙色）
-    const actualBarColors = quarterlyActuals2025.map((v, idx) => {
+    // 计算每季度状态（主要基于增速）
+    const quarterlyStatuses = quarterlyTargets.map((target, idx) => {
+      const achievementRate = achievementRates[idx];
       const growthRate = growthSeries[idx];
-      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
+      return getQuarterlyStatus(achievementRate, growthRate, {
+        achievement: { excellent_min: 1.05, normal_min: 1.00, warning_min: 0.95 },
+        growth: { excellent_min: 0.12, normal_min: 0.05 }
+      });
     });
 
-    const barLabel = {
-      show: true,
-      position: "top" as const,
-      fontWeight: "bold" as const,
-      overflow: "truncate" as const,
-      width: barWidth,
-      formatter: (params: any) => {
-        const value = params?.value as number | null;
-        if (value === null) return "";
-        const growthRate = growthSeries[params.dataIndex];
-        const isWarning = growthRate !== null && growthRate < warningThreshold;
-        return `{${isWarning ? 'warning' : 'normal'}|${Math.round(value)}}`;
-      },
-      rich: {
-        normal: {
-          color: grayColor,
-        },
-        warning: {
-          color: darkRedColor,
-        },
-      },
-    };
+    const barWidth = 36;
 
+    // === ECharts配置 ===
     return {
       tooltip: {
         trigger: "axis",
+        axisPointer: { type: 'cross' },
         formatter: (params: any) => {
           const items = Array.isArray(params) ? params : [params];
           const title = items[0]?.axisValue ?? "";
@@ -663,83 +662,168 @@ export default function Page() {
           return [title, ...lines].join("<br/>");
         },
       },
-      legend: { data: ["2026目标", "2025实际", "增长率"] },
+      legend: { show: false }, // 使用自定义HTML图例
+      grid: {
+        left: '70px',
+        right: '70px',
+        bottom: '60px',
+        top: '20px',
+        containLabel: false
+      },
       xAxis: {
         type: "category",
         data: ["一季度", "二季度", "三季度", "四季度"],
-        splitLine: { show: false },
+        axisLine: { lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
+        axisLabel: { color: '#666', fontSize: 12 },
+        axisTick: {
+          alignWithLabel: true,
+          lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
+        },
+        splitLine: { show: false }
       },
       yAxis: [
-        { type: "value", name: "万元", splitLine: { show: false } },
+        {
+          type: "value",
+          name: "保费(万元)",
+          position: 'left',
+          axisLine: { show: true, lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
+          axisLabel: { color: '#666', fontSize: 11 },
+          axisTick: {
+            show: true,
+            lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
+          },
+          splitLine: { show: false },  // 去掉网格线
+          min: 0,
+        },
         {
           type: "value",
           name: "增长率",
-          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
-          splitLine: { show: false },
+          position: 'right',
+          axisLine: { show: true, lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
+          axisLabel: {
+            color: '#666',
+            fontSize: 11,
+            formatter: (value: number) => `${(value * 100).toFixed(0)}%`
+          },
+          axisTick: {
+            show: true,
+            lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
+          },
+          splitLine: { show: false },  // 去掉网格线
         },
       ],
       series: [
+        // Series 1: 2026目标柱
         {
-          type: "bar",
-          data: quarterlyTargets,
-          name: "2026目标",
-          itemStyle: { color: targetColor },
-          barMaxWidth: barWidth,
-          label: barLabel,
+          name: '2026目标',
+          type: 'bar',
+          yAxisIndex: 0,
+          data: quarterlyTargets.map((value, idx) => {
+            const status = quarterlyStatuses[idx];
+            const isWarning = status === 'warning' || status === 'danger';
+
+            return {
+              value: value,
+              itemStyle: {
+                color: colors.chart.targetBarNormal,
+                borderColor: isWarning ? colors.chart.targetBarWarningBorder : 'transparent',
+                borderWidth: isWarning ? 1 : 0
+              },
+              label: {
+                show: true,
+                position: 'top',
+                formatter: Math.round(value).toString(),
+                fontSize: 11,
+                color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
+              }
+            };
+          }),
+          barWidth: barWidth,
+          barGap: '30%',
         },
+        // Series 2: 2025实际柱
         {
-          type: "bar",
-          data: quarterlyActuals2025,
-          name: "2025实际",
-          itemStyle: {
-            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
-          },
-          barMaxWidth: barWidth,
-          label: barLabel,
-          barGap: "30%",
+          name: '2025实际',
+          type: 'bar',
+          yAxisIndex: 0,
+          data: quarterlyActuals2025.map((value, idx) => {
+            const status = quarterlyStatuses[idx];
+            const isWarning = status === 'warning' || status === 'danger';
+
+            return {
+              value: value,
+              itemStyle: {
+                color: colors.chart.actualBarNormal,
+                borderColor: isWarning ? colors.chart.actualBarWarningBorder : 'transparent',
+                borderWidth: isWarning ? 1 : 0
+              },
+              label: {
+                show: true,
+                position: 'top',
+                formatter: (params: any) => {
+                  const val = params.value as number | null;
+                  return val === null ? "" : Math.round(val).toString();
+                },
+                fontSize: 11,
+                color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
+              }
+            };
+          }),
+          barWidth: barWidth,
         },
+        // Series 3: 增长率折线
         {
-          type: "line",
-          data: growthSeries,
-          name: "增长率",
+          name: '增长率',
+          type: 'line',
           yAxisIndex: 1,
-          lineStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
-          itemStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
+          data: growthSeries.map((value, idx) => {
+            const status = quarterlyStatuses[idx];
+            const isWarning = status === 'warning' || status === 'danger';
+
+            return {
+              value: value,
+              label: {
+                show: true,
+                position: 'top',
+                formatter: (params: any) => {
+                  const val = params.value as number | null;
+                  return val === null ? "" : `${(val * 100).toFixed(1)}%`;
+                },
+                fontSize: 12,
+                fontWeight: 'bold',
+                color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
+              }
+            };
+          }),
           smooth: true,
-          symbol: "circle",
-          symbolSize: 6,
-          label: {
-            show: true,
-            position: "top",
-            fontWeight: "bold",
-            formatter: (params: any) => {
-              const value = params?.value as number | null;
-              if (value === null) return "";
-              const isWarning = value !== null && value < warningThreshold;
-              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
-            },
-            rich: {
-              normal: {
-                color: blueColor,
-              },
-              warning: {
-                color: darkRedColor,
-              },
-            },
+          lineStyle: { color: colors.chart.growthLine, width: 1 },
+          itemStyle: {
+            color: (params: any) => {
+              const value = params.value as number | null;
+              return getGrowthPointColor(value);
+            }
           },
+          symbol: 'circle',
+          symbolSize: 8,
           markLine: {
-            symbol: "none",
-            lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 5%" },
-            data: [{ yAxis: 0.05 }],
-          },
-        },
-      ],
-      grid: { left: 48, right: 60, top: 40, bottom: 30 },
+            symbol: ['none', 'none'],
+            label: {
+              show: true,
+              position: 'end',
+              formatter: '预警线 5%',
+              color: '#ffc000',  // 橙色
+              fontSize: 11,
+              fontWeight: 500
+            },
+            lineStyle: {
+              color: '#ffc000',  // 橙色预警线
+              type: 'dashed',
+              width: 1
+            },
+            data: [{ yAxis: 0.05 }]
+          }
+        }
+      ]
     };
   }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
 
@@ -1101,6 +1185,181 @@ export default function Page() {
     };
   }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
 
+  // 准备季度占比数据（用于新的 QuarterlyProportionChart 组件）
+  const quarterlyProportionData = useMemo(() => {
+    if (!kpi || !quarterlyShareChartOption) return null;
+
+    const monthlyEstimateTargets =
+      progressMode === "linear" ? kpi.monthlyTargetsLinear :
+      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
+      kpi.monthlyTargets;
+    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
+      (value, idx) => value ?? monthlyEstimateTargets[idx]
+    );
+
+    const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
+    const quarterlyActuals2025 = monthlyToQuarterly(
+      monthlyActualSeries2025.map((v) => v ?? 0)
+    ).map((value, idx) => {
+      const hasAny = monthlyActualSeries2025
+        .slice(idx * 3, idx * 3 + 3)
+        .some((v) => v !== null);
+      return hasAny ? value : null;
+    });
+    const quarterlyCurrent = monthlyToQuarterly(
+      monthlyCurrentForGrowth.map((v) => v ?? 0)
+    ).map((value, idx) => {
+      const hasAny = monthlyCurrentForGrowth
+        .slice(idx * 3, idx * 3 + 3)
+        .some((v) => v !== null);
+      return hasAny ? value : null;
+    });
+
+    const growthSeries = quarterlyCurrent.map((current, idx) => {
+      const baseline = quarterlyActuals2025[idx];
+      if (baseline === null || current === null) return null;
+      return safeDivide(current - baseline, baseline).value;
+    });
+
+    const totalTarget = kpi.annual;
+    const totalActual2025 = quarterlyActuals2025.reduce(
+      (sum: number, v) => (v === null ? sum : sum + v),
+      0
+    );
+
+    return {
+      quarterlyTargets,
+      quarterlyActuals2025,
+      quarterlyCurrent,
+      totalTarget,
+      totalActual2025,
+      growthSeries,
+    };
+  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode, quarterlyShareChartOption]);
+
+  // 季度保费规划图数据（UniversalChart格式）
+  const quarterlyPremiumData = useMemo<QuarterlyDataInput | null>(() => {
+    if (!kpi) return null;
+
+    const monthlyEstimateTargets =
+      progressMode === "linear" ? kpi.monthlyTargetsLinear :
+      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
+      kpi.monthlyTargets;
+
+    const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
+    const quarterlyActuals2025 = monthlyToQuarterly(
+      monthlyActualSeries2025.map((v) => v ?? 0)
+    ).map((value, idx) => {
+      const hasAny = monthlyActualSeries2025
+        .slice(idx * 3, idx * 3 + 3)
+        .some((v) => v !== null);
+      return hasAny ? value : null;
+    });
+
+    // 当前季度值（2026）- 暂时使用目标值，实际应该使用2026实际数据
+    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
+      (value, idx) => value ?? monthlyEstimateTargets[idx]
+    );
+    const quarterlyCurrent = monthlyToQuarterly(
+      monthlyCurrentForGrowth.map((v) => v ?? 0)
+    ).map((value, idx) => {
+      const hasAny = monthlyCurrentForGrowth
+        .slice(idx * 3, idx * 3 + 3)
+        .some((v) => v !== null);
+      return hasAny ? value : null;
+    });
+
+    return {
+      quarterlyTargets,
+      quarterlyActuals2025,
+      quarterlyCurrent,
+      totalTarget: kpi.annual,
+      totalActual2025: quarterlyActuals2025.reduce(
+        (sum: number, v) => (v === null ? sum : sum + v),
+        0
+      ),
+      valueType: 'absolute',
+    };
+  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
+
+  // 月度保费规划图数据（UniversalChart格式）
+  const monthlyPremiumData = useMemo<MonthlyDataInput | null>(() => {
+    if (!kpi) return null;
+
+    const monthlyEstimateTargets =
+      progressMode === "linear" ? kpi.monthlyTargetsLinear :
+      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
+      kpi.monthlyTargets;
+
+    // 对于没有实际值的月份，使用目标值作为fallback（保证增长率折线完整）
+    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
+      (value, idx) => value ?? monthlyEstimateTargets[idx]
+    );
+
+    return {
+      monthlyTargets: monthlyEstimateTargets,
+      monthlyActuals2025: monthlyActualSeries2025,
+      monthlyCurrent: monthlyCurrentForGrowth,
+      totalTarget: kpi.annual,
+      totalActual2025: monthlyActualSeries2025.reduce(
+        (sum: number, v) => (v === null ? sum : sum + v),
+        0
+      ),
+      valueType: 'absolute',
+    };
+  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
+
+  // 月度占比规划图数据（UniversalChart格式）
+  const monthlyShareData = useMemo<MonthlyDataInput | null>(() => {
+    if (!kpi || !monthlyPremiumData) return null;
+
+    const totalTarget = monthlyPremiumData.totalTarget;
+    const totalActual2025 = monthlyPremiumData.totalActual2025;
+
+    // 计算占比
+    const targetShare = monthlyPremiumData.monthlyTargets.map(v => v / totalTarget);
+    const actualShare2025 = monthlyPremiumData.monthlyActuals2025.map(v =>
+      v === null ? null : v / totalActual2025
+    );
+    const currentShare = monthlyPremiumData.monthlyCurrent.map(v =>
+      v === null ? null : v / totalTarget
+    );
+
+    return {
+      monthlyTargets: targetShare,
+      monthlyActuals2025: actualShare2025,
+      monthlyCurrent: currentShare,
+      totalTarget: 1,
+      totalActual2025: 1,
+      valueType: 'proportion',
+    };
+  }, [kpi, monthlyPremiumData]);
+
+  // 总公司预测图数据（UniversalChart格式）
+  const hqPredictionData = useMemo<HqPredictionDataInput | null>(() => {
+    if (!hqPrediction || !hqPrediction[product]) return null;
+
+    const productData = hqPrediction[product];
+    const monthlyData = productData.monthly;
+
+    // 提取累计目标和累计实际
+    const cumulativeTargets = monthlyData.map((m: any) => m.cumTarget);
+    const cumulativeCurrent = monthlyData.map((m: any) => m.cumActual);
+
+    // 对于2025基线，暂时使用累计目标的80%作为模拟数据
+    // TODO: 如果有2025年总公司实际数据，应该使用真实的累计值
+    const cumulativeActuals2025 = cumulativeTargets.map((target: number) => target * 0.85);
+
+    return {
+      cumulativeTargets,
+      cumulativeActuals2025,
+      cumulativeCurrent,
+      totalTarget: productData.annualTarget,
+      totalActual2025: cumulativeActuals2025[11] || 0, // 12月的累计值即为全年值
+      valueType: 'achievement',
+    };
+  }, [hqPrediction, product]);
+
   const baseline2025 = useMemo(() => {
     if (!annualActualAgg2025) return null;
     const key = `${viewKey}__${product}`;
@@ -1151,7 +1410,6 @@ export default function Page() {
               <option value="auto">车险</option>
               <option value="property">财产险</option>
               <option value="life">人身险</option>
-              <option value="health">健康险</option>
             </select>
           </div>
           <div>
@@ -1187,25 +1445,59 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">{viewLabel}季度保费规划图</div>
-        <ReactECharts option={quarterlyChartOption} style={{ height: 360 }} />
-      </section>
+      {/* 季度保费规划图 - 使用 UniversalChart 组件 */}
+      {quarterlyPremiumData && (
+        <UniversalChart
+          chartType="quarterlyPremium"
+          data={createQuarterlyPremiumAdapter().adapt(quarterlyPremiumData)}
+          config={{
+            title: `${viewLabel}季度保费规划图`,
+            height: 360,
+          }}
+        />
+      )}
 
-      <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">{viewLabel}季度占比规划图</div>
-        <ReactECharts option={quarterlyShareChartOption} style={{ height: 360 }} />
-      </section>
+      {/* 季度占比规划图 - 使用 UniversalChart 组件 */}
+      {quarterlyProportionData && (
+        <UniversalChart
+          chartType="quarterlyShare"
+          data={createQuarterlyShareAdapter().adapt(quarterlyProportionData)}
+          config={{
+            title: `${viewLabel}季度占比规划图`,
+            height: 360,
+          }}
+          onPeriodClick={(index, detail) => {
+            console.log(`${viewLabel} - 季度点击:`, detail.label, detail);
+          }}
+          onViewModeChange={(viewMode) => {
+            console.log(`${viewLabel} - 视图模式切换:`, viewMode);
+          }}
+        />
+      )}
 
-      <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">{viewLabel}月度保费规划图</div>
-        <ReactECharts option={chartOption} style={{ height: 360 }} />
-      </section>
+      {/* 月度保费规划图 - 使用 UniversalChart 组件 */}
+      {monthlyPremiumData && (
+        <UniversalChart
+          chartType="monthlyPremium"
+          data={createMonthlyPremiumAdapter().adapt(monthlyPremiumData)}
+          config={{
+            title: `${viewLabel}月度保费规划图`,
+            height: 360,
+          }}
+        />
+      )}
 
-      <section className="rounded-xl border p-4">
-        <div className="mb-2 text-sm font-medium">{viewLabel}月度占比规划图</div>
-        <ReactECharts option={monthlyShareChartOption} style={{ height: 360 }} />
-      </section>
+      {/* 月度占比规划图 - 使用 UniversalChart 组件 */}
+      {monthlyShareData && (
+        <UniversalChart
+          chartType="monthlyShare"
+          data={createMonthlyShareAdapter().adapt(monthlyShareData)}
+          config={{
+            title: `${viewLabel}月度占比规划图`,
+            height: 360,
+          }}
+        />
+      )}
 
       {/* 总公司目标达成预测 */}
       {hqPrediction && (
@@ -1227,7 +1519,7 @@ export default function Page() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mb-4">
-            {["auto", "property", "life", "health", "total"].map((prod) => {
+            {["auto", "property", "life", "total"].map((prod) => {
               const data = hqPrediction[prod];
               const prodName = productLabel[prod as ProductView];
               const latestMonth = data.monthly[month - 1];
@@ -1251,72 +1543,17 @@ export default function Page() {
             })}
           </div>
 
-          {/* 当前选择产品的详细预测图表 */}
-          <div className="bg-white rounded-lg p-4">
-            <div className="text-sm font-medium text-slate-700 mb-3">
-              {productLabel[product]} - 月度累计达成预测
-            </div>
-            <ReactECharts
-              option={{
-                tooltip: {
-                  trigger: "axis",
-                  formatter: (params: any) => {
-                    const items = Array.isArray(params) ? params : [params];
-                    const title = `${items[0]?.axisValue ?? ""}月`;
-                    const lines = items.map((item: any) => {
-                      const value = item.value as number | null;
-                      const displayValue = value === null ? "—" : Math.round(value);
-                      return `${item.marker}${item.seriesName}: ${displayValue}${item.seriesName.includes("率") ? "%" : " 万元"}`;
-                    });
-                    return [title, ...lines].join("<br/>");
-                  },
-                },
-                legend: {
-                  data: ["累计实际", "累计目标", "达成率"],
-                  bottom: 0,
-                },
-                grid: { left: 60, right: 60, top: 30, bottom: 50 },
-                xAxis: {
-                  type: "category",
-                  data: Array.from({ length: 12 }, (_, i) => `${i + 1}月`),
-                },
-                yAxis: [
-                  {
-                    type: "value",
-                    name: "保费（万元）",
-                    axisLabel: { formatter: "{value}" },
-                  },
-                  {
-                    type: "value",
-                    name: "达成率（%）",
-                    axisLabel: { formatter: "{value}%" },
-                  },
-                ],
-                series: [
-                  {
-                    name: "累计实际",
-                    type: "bar",
-                    data: hqPrediction[product]?.monthly.map((m: any) => Math.round(m.cumActual)) ?? [],
-                    itemStyle: { color: colors.chart.expenseRate },
-                  },
-                  {
-                    name: "累计目标",
-                    type: "line",
-                    data: hqPrediction[product]?.monthly.map((m: any) => Math.round(m.cumTarget)) ?? [],
-                    itemStyle: { color: colors.chart.claimRate },
-                  },
-                  {
-                    name: "达成率",
-                    type: "line",
-                    yAxisIndex: 1,
-                    data: hqPrediction[product]?.monthly.map((m: any) => (m.rate ? (m.rate * 100).toFixed(1) : null)) ?? [],
-                    itemStyle: { color: colors.status.good },
-                  },
-                ],
+          {/* 当前选择产品的详细预测图表 - 使用 UniversalChart 组件 */}
+          {hqPredictionData && (
+            <UniversalChart
+              chartType="hqPrediction"
+              data={createHqPredictionAdapter().adapt(hqPredictionData)}
+              config={{
+                title: `${productLabel[product]} - 月度累计达成预测`,
+                height: 360,
               }}
-              style={{ height: 400 }}
             />
-          </div>
+          )}
         </section>
       )}
 

@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import { ColorSystemHydrator } from "@/components/system/ColorSystemHydrator";
 
 export const metadata = {
   title: "2026 目标管理可视化",
@@ -10,6 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="zh-CN">
       <body className="min-h-screen bg-white text-slate-900">
+        <ColorSystemHydrator />
         <div className="mx-auto max-w-7xl px-4 py-6">
           <header className="mb-6 flex items-center justify-between">
             <div>
@@ -19,9 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="text-sm text-slate-600">
               <Link className="mr-4 hover:underline" href="/">总览</Link>
               <Link className="mr-4 hover:underline" href="/orgs">机构</Link>
+              <Link className="mr-4 hover:underline" href="/earned-premium">已赚保费预测</Link>
               <Link className="mr-4 hover:underline" href="/rules">权重规则</Link>
               <Link className="mr-4 hover:underline" href="/import">导入</Link>
               <Link className="hover:underline" href="/data">数据</Link>
+              <Link className="ml-4 hover:underline" href="/color-system">配色</Link>
             </nav>
           </header>
           {children}
