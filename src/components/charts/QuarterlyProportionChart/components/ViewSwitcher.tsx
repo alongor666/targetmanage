@@ -33,10 +33,10 @@ const VIEW_MODES: ViewModeConfig[] = [
     description: '显示实际数值',
   },
   {
-    value: 'growth',
-    label: '增长率',
-    icon: '📉',
-    description: '突出增长率',
+    value: 'table',
+    label: '表格',
+    icon: '📋',
+    description: '以表格形式展示详细数据',
   },
 ];
 

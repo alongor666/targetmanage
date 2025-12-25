@@ -3,7 +3,7 @@
  *
  * @component UniversalChart
  * @description 高度参数化的通用图表组件，支持月度/季度、绝对值/占比/达成率等多种场景
- * @doc docs/fangan.md
+ * @doc docs/通用图表组件复用方案.md
  */
 
 /**
@@ -43,10 +43,10 @@ export type ChartType =
  * 视图模式枚举
  * - proportion: 占比视图（显示百分比）
  * - absolute: 绝对值视图（显示实际数值）
- * - growth: 增长率聚焦视图（突出显示增长率）
+ * - table: 表格视图（以表格形式展示详细数据）
  * - achievement: 达成率视图（用于总公司预测图）
  */
-export type ViewMode = 'proportion' | 'absolute' | 'growth' | 'achievement';
+export type ViewMode = 'proportion' | 'absolute' | 'table' | 'achievement';
 
 /**
  * 预警级别
@@ -148,6 +148,8 @@ export interface UniversalChartConfig {
   yAxisName?: string;
   /** 自定义右侧Y轴名称（可选，用于增长率） */
   rightYAxisName?: string;
+  /** 当前截至月份（1-12），用于区分实际/规划数据 */
+  currentMonth?: number;
 }
 
 /**

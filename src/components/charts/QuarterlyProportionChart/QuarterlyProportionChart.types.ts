@@ -9,9 +9,9 @@
  * 视图模式枚举
  * - proportion: 占比视图（显示百分比）
  * - absolute: 绝对值视图（显示实际数值）
- * - growth: 增长率聚焦视图（突出显示增长率）
+ * - table: 表格视图（以表格形式展示详细数据）
  */
-export type ViewMode = 'proportion' | 'absolute' | 'growth';
+export type ViewMode = 'proportion' | 'absolute' | 'table';
 
 /**
  * 预警级别

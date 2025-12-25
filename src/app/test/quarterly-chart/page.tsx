@@ -168,7 +168,7 @@ export default function QuarterlyChartTestPage() {
                 视图模式
               </label>
               <div className="flex gap-2">
-                {(['proportion', 'absolute', 'growth'] as ViewMode[]).map((mode) => (
+                {(['proportion', 'absolute', 'table'] as ViewMode[]).map((mode) => (
                   <button
                     key={mode}
                     onClick={() => handleViewModeChange(mode)}
@@ -180,7 +180,7 @@ export default function QuarterlyChartTestPage() {
                   >
                     {mode === 'proportion' && '占比'}
                     {mode === 'absolute' && '绝对值'}
-                    {mode === 'growth' && '增长率'}
+                    {mode === 'table' && '表格'}
                   </button>
                 ))}
               </div>

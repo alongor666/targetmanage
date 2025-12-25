@@ -3,7 +3,7 @@
  *
  * @component UniversalChart
  * @description 高度参数化的通用图表组件，支持月度/季度、绝对值/占比/达成率等多种场景
- * @doc docs/fangan.md
+ * @doc docs/通用图表组件复用方案.md
  */
 
 'use client';
@@ -19,6 +19,7 @@ import { getPresetConfig, mergeConfig } from './configs';
 // 复用QuarterlyProportionChart的子组件
 import { ChartHeader } from '../QuarterlyProportionChart/components/ChartHeader';
 import { DetailPanel } from '../QuarterlyProportionChart/components/DetailPanel';
+import { TableView } from './components/TableView';
 import type { ViewMode as QViewMode, QuarterDetailData } from '../QuarterlyProportionChart/QuarterlyProportionChart.types';
 
 /**
@@ -27,6 +28,7 @@ import type { ViewMode as QViewMode, QuarterDetailData } from '../QuarterlyPropo
 function mapToQuarterlyViewMode(mode: ViewMode): QViewMode {
   // achievement模式映射到absolute模式
   if (mode === 'achievement') return 'absolute';
+  // table模式保持原样
   return mode as QViewMode;
 }
 
@@ -74,7 +76,8 @@ export function UniversalChart({
     state.viewMode,
     data.timeGranularity,
     data.valueType,
-    config
+    config,
+    config.currentMonth
   );
 
   // 处理视图模式切换
@@ -142,6 +145,34 @@ export function UniversalChart({
     );
   }
 
+  // 表格视图模式
+  if (state.viewMode === 'table') {
+    return (
+      <div className={`rounded-xl border p-4 ${className}`}>
+        {/* 图表头部（包含标题、视图切换器） */}
+        <ChartHeader
+          title={config.title || '图表'}
+          viewMode={quarterlyViewMode}
+          onViewModeChange={(mode) => handleViewModeChange(mode as ViewMode)}
+        />
+
+        {/* 表格主体 */}
+        <div className="mt-4">
+          <TableView
+            periodDetails={processedData.periodDetails}
+            timeGranularity={data.timeGranularity}
+          />
+        </div>
+
+        {/* 详情面板 */}
+        {config.showDetailPanel && quarterDetailData && (
+          <DetailPanel detail={quarterDetailData} onClose={handleCloseDetail} />
+        )}
+      </div>
+    );
+  }
+
+  // 图表视图模式（proportion、absolute、achievement）
   return (
     <div className={`rounded-xl border p-4 ${className}`}>
       {/* 图表头部（包含标题、视图切换器、图例） */}
