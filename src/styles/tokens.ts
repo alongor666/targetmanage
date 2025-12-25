@@ -113,6 +113,11 @@ export const colors = {
     quarterlyLabelWarning: '#a02724',     // 季度图标签(预警) - 主红色
 
     warningLineColor: '#a02724',          // 预警线 - 主红色
+
+    // === 实际 vs 规划数据颜色系统 ===
+    actualDataBar: '#d3d3d3',             // 实际数据柱（深灰色，视觉权重高）
+    plannedDataBar: '#e8f4fd',            // 规划数据柱（极浅蓝色，视觉权重低）
+    plannedDataBorder: '#b0d8ef',         // 规划数据柱边框（浅蓝色，增强识别性）
   },
 
   // ==================== KPI卡片专用色 ====================
