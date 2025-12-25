@@ -144,7 +144,7 @@ export function QuarterlyProportionChart({
     () => [
       { value: 'proportion', label: '占比视图', icon: '📊' },
       { value: 'absolute', label: '绝对值', icon: '📈' },
-      { value: 'growth', label: '增长率', icon: '📉' },
+      { value: 'table', label: '表格', icon: '📋' },
     ],
     []
   );
