@@ -37,7 +37,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "formatRate": {
           "lineRange": [
@@ -46,7 +46,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getStatusColor": {
           "lineRange": [
@@ -55,7 +55,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getAchievementStatus": {
           "lineRange": [
@@ -64,7 +64,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getGrowthStatus": {
           "lineRange": [
@@ -73,7 +73,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getStatusColorByVariant": {
           "lineRange": [
@@ -82,7 +82,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getKpiCardColors": {
           "lineRange": [
@@ -91,7 +91,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getBadgeColors": {
           "lineRange": [
@@ -100,7 +100,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getTargetBarColors": {
           "lineRange": [
@@ -109,7 +109,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         },
         "getGrowthPointColor": {
           "lineRange": [
@@ -118,7 +118,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.960Z"
         }
       }
     },
@@ -142,7 +142,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.961Z"
         },
         "lsSetJson": {
           "lineRange": [
@@ -151,7 +151,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.961Z"
         },
         "lsRemove": {
           "lineRange": [
@@ -160,7 +160,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
+          "lastModified": "2025-12-25T10:43:02.961Z"
         }
       }
     },
@@ -189,59 +189,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
-        }
-      }
-    },
-    "lib/utils.ts": {
-      "id": "code-lib-utils-ts",
-      "type": "ui-component",
-      "exports": [
-        "cn",
-        "getQuarterlyStatus"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "cn": {
-          "lineRange": [
-            11,
-            13
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
-        },
-        "getQuarterlyStatus": {
-          "lineRange": [
-            76,
-            101
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.669Z"
-        }
-      }
-    },
-    "lib/paths.ts": {
-      "id": "code-lib-paths-ts",
-      "type": "ui-component",
-      "exports": [
-        "getAssetPath"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "getAssetPath": {
-          "lineRange": [
-            4,
-            15
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.670Z"
+          "lastModified": "2025-12-25T10:43:02.961Z"
         }
       }
     },
@@ -281,7 +229,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.670Z"
+          "lastModified": "2025-12-25T10:43:02.961Z"
         },
         "validateThresholds": {
           "lineRange": [
@@ -290,7 +238,555 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.670Z"
+          "lastModified": "2025-12-25T10:43:02.961Z"
+        }
+      }
+    },
+    "lib/utils.ts": {
+      "id": "code-lib-utils-ts",
+      "type": "ui-component",
+      "exports": [
+        "cn",
+        "getQuarterlyStatus"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "cn": {
+          "lineRange": [
+            11,
+            13
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.962Z"
+        },
+        "getQuarterlyStatus": {
+          "lineRange": [
+            76,
+            101
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.962Z"
+        }
+      }
+    },
+    "lib/sorting.ts": {
+      "id": "code-lib-sorting-ts",
+      "type": "ui-component",
+      "exports": [
+        "sortOrgItems",
+        "reorderArrayByIndex",
+        "createSortMapping",
+        "safeCompare",
+        "genericSort"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/ui/SortButtonGroup"
+      ],
+      "functions": {
+        "sortOrgItems": {
+          "lineRange": [
+            43,
+            73
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.962Z"
+        },
+        "reorderArrayByIndex": {
+          "lineRange": [
+            82,
+            84
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.962Z"
+        },
+        "createSortMapping": {
+          "lineRange": [
+            94,
+            107
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.962Z"
+        },
+        "safeCompare": {
+          "lineRange": [
+            117,
+            128
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.962Z"
+        },
+        "genericSort": {
+          "lineRange": [
+            138,
+            148
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.962Z"
+        }
+      }
+    },
+    "lib/paths.ts": {
+      "id": "code-lib-paths-ts",
+      "type": "ui-component",
+      "exports": [
+        "getAssetPath"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "getAssetPath": {
+          "lineRange": [
+            4,
+            15
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.963Z"
+        }
+      }
+    },
+    "domain/validate.ts": {
+      "id": "code-domain-validate-ts",
+      "type": "domain-logic",
+      "exports": [
+        "validateOrganizationIds",
+        "generateValidationReport",
+        "validateOrganizationCount"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "validateOrganizationIds": {
+          "lineRange": [
+            20,
+            35
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.963Z"
+        },
+        "generateValidationReport": {
+          "lineRange": [
+            43,
+            59
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.963Z"
+        },
+        "validateOrganizationCount": {
+          "lineRange": [
+            66,
+            68
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.963Z"
+        }
+      }
+    },
+    "domain/time.ts": {
+      "id": "code-domain-time-ts",
+      "type": "domain-logic",
+      "exports": [
+        "monthToQuarter",
+        "linearProgressYear",
+        "weightedProgressYear",
+        "linearProgressQuarter",
+        "weightedProgressQuarter",
+        "actual2025ProgressYear",
+        "actual2025ProgressQuarter"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "monthToQuarter": {
+          "lineRange": [
+            0,
+            5
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "linearProgressYear": {
+          "lineRange": [
+            11,
+            13
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "weightedProgressYear": {
+          "lineRange": [
+            20,
+            24
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "linearProgressQuarter": {
+          "lineRange": [
+            30,
+            35
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "weightedProgressQuarter": {
+          "lineRange": [
+            42,
+            53
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "actual2025ProgressYear": {
+          "lineRange": [
+            61,
+            75
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "actual2025ProgressQuarter": {
+          "lineRange": [
+            83,
+            101
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        }
+      }
+    },
+    "domain/headquarters.ts": {
+      "id": "code-domain-headquarters-ts",
+      "type": "domain-logic",
+      "exports": [
+        "calculateHqAchievementRate",
+        "calculateHqGap",
+        "aggregateHqTargetsByProduct",
+        "predictMonthlyHqAchievement",
+        "calculateQuarterHqAchievementRate"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "./achievement"
+      ],
+      "functions": {
+        "calculateHqAchievementRate": {
+          "lineRange": [
+            16,
+            21
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "calculateHqGap": {
+          "lineRange": [
+            29,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "aggregateHqTargetsByProduct": {
+          "lineRange": [
+            41,
+            53
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "predictMonthlyHqAchievement": {
+          "lineRange": [
+            62,
+            91
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        },
+        "calculateQuarterHqAchievementRate": {
+          "lineRange": [
+            99,
+            104
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.964Z"
+        }
+      }
+    },
+    "domain/growth.ts": {
+      "id": "code-domain-growth-ts",
+      "type": "domain-logic",
+      "exports": [
+        "calculateGrowthMetrics",
+        "formatGrowthRate",
+        "formatIncrement"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "./achievement"
+      ],
+      "functions": {
+        "calculateGrowthMetrics": {
+          "lineRange": [
+            46,
+            47
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "formatGrowthRate": {
+          "lineRange": [
+            73,
+            76
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "formatIncrement": {
+          "lineRange": [
+            83,
+            86
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        }
+      }
+    },
+    "domain/earnedPremium.ts": {
+      "id": "code-domain-earnedPremium-ts",
+      "type": "domain-logic",
+      "exports": [
+        "getMonthDays",
+        "calculateMaturityDays",
+        "calculateAutoEarnedPremium",
+        "calculatePropertyEarnedPremium",
+        "calculateLifeEarnedPremium",
+        "calculateMaturityRate"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "./achievement"
+      ],
+      "functions": {
+        "getMonthDays": {
+          "lineRange": [
+            18,
+            20
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "calculateMaturityDays": {
+          "lineRange": [
+            29,
+            37
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "calculateAutoEarnedPremium": {
+          "lineRange": [
+            43,
+            58
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "calculatePropertyEarnedPremium": {
+          "lineRange": [
+            64,
+            71
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "calculateLifeEarnedPremium": {
+          "lineRange": [
+            77,
+            87
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "calculateMaturityRate": {
+          "lineRange": [
+            93,
+            95
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        }
+      }
+    },
+    "domain/allocation.ts": {
+      "id": "code-domain-allocation-ts",
+      "type": "domain-logic",
+      "exports": [
+        "allocateAnnualToMonthly",
+        "calculateActual2025Weights",
+        "monthlyToQuarterly",
+        "monthlyToYtd"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "allocateAnnualToMonthly": {
+          "lineRange": [
+            3,
+            10
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "calculateActual2025Weights": {
+          "lineRange": [
+            13,
+            22
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "monthlyToQuarterly": {
+          "lineRange": [
+            25,
+            27
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "monthlyToYtd": {
+          "lineRange": [
+            30,
+            33
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        }
+      }
+    },
+    "domain/aggregate.ts": {
+      "id": "code-domain-aggregate-ts",
+      "type": "domain-logic",
+      "exports": [
+        "aggregateToGroupAndAll"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types"
+      ],
+      "functions": {
+        "aggregateToGroupAndAll": {
+          "lineRange": [
+            11,
+            27
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        }
+      }
+    },
+    "domain/achievement.ts": {
+      "id": "code-domain-achievement-ts",
+      "type": "domain-logic",
+      "exports": [
+        "safeDivide",
+        "diff",
+        "growthRate"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "safeDivide": {
+          "lineRange": [
+            0,
+            3
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "diff": {
+          "lineRange": [
+            5,
+            7
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
+        },
+        "growthRate": {
+          "lineRange": [
+            9,
+            11
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.965Z"
         }
       }
     },
@@ -352,7 +848,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.670Z"
+          "lastModified": "2025-12-25T10:43:02.967Z"
         },
         "getGrowthStatus": {
           "lineRange": [
@@ -361,7 +857,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.670Z"
+          "lastModified": "2025-12-25T10:43:02.967Z"
         }
       }
     },
@@ -385,7 +881,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
+          "lastModified": "2025-12-25T10:43:02.967Z"
         },
         "calculateQuarterlyWeights": {
           "lineRange": [
@@ -394,7 +890,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
+          "lastModified": "2025-12-25T10:43:02.967Z"
         }
       }
     },
@@ -417,7 +913,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
+          "lastModified": "2025-12-25T10:43:02.967Z"
         },
         "generatePageTitle": {
           "lineRange": [
@@ -426,440 +922,293 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
+          "lastModified": "2025-12-25T10:43:02.967Z"
         }
       }
     },
-    "domain/validate.ts": {
-      "id": "code-domain-validate-ts",
-      "type": "domain-logic",
+    "components/ui/index.ts": {
+      "id": "code-components-ui-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/ui/SortButtonGroup.tsx": {
+      "id": "code-components-ui-SortButtonGroup-tsx",
+      "type": "ui-component",
       "exports": [
-        "validateOrganizationIds",
-        "generateValidationReport",
-        "validateOrganizationCount"
+        "SortButtonGroup",
+        "SortPresets"
       ],
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [],
       "functions": {
-        "validateOrganizationIds": {
+        "SortButtonGroup": {
           "lineRange": [
-            20,
-            35
+            155,
+            201
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "generateValidationReport": {
-          "lineRange": [
-            43,
-            59
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "validateOrganizationCount": {
-          "lineRange": [
-            66,
-            68
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
+          "lastModified": "2025-12-25T10:43:02.968Z"
         }
       }
     },
-    "domain/time.ts": {
-      "id": "code-domain-time-ts",
-      "type": "domain-logic",
+    "components/ui/Badge.tsx": {
+      "id": "code-components-ui-Badge-tsx",
+      "type": "ui-component",
       "exports": [
-        "monthToQuarter",
-        "linearProgressYear",
-        "weightedProgressYear",
-        "linearProgressQuarter",
-        "weightedProgressQuarter",
-        "actual2025ProgressYear",
-        "actual2025ProgressQuarter"
+        "Badge"
       ],
       "documentedIn": [],
       "usedBy": [],
-      "dependencies": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
       "functions": {
-        "monthToQuarter": {
+        "Badge": {
           "lineRange": [
-            0,
-            5
+            58,
+            103
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "linearProgressYear": {
+          "lastModified": "2025-12-25T10:43:02.968Z"
+        }
+      }
+    },
+    "components/system/ColorSystemHydrator.tsx": {
+      "id": "code-components-system-ColorSystemHydrator-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ColorSystemHydrator"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/storage"
+      ],
+      "functions": {
+        "ColorSystemHydrator": {
           "lineRange": [
-            11,
-            13
+            5,
+            19
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "weightedProgressYear": {
+          "lastModified": "2025-12-25T10:43:02.968Z"
+        }
+      }
+    },
+    "components/layout/Section.tsx": {
+      "id": "code-components-layout-Section-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Section"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "Section": {
           "lineRange": [
-            20,
-            24
+            55,
+            88
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "linearProgressQuarter": {
+          "lastModified": "2025-12-25T10:43:02.968Z"
+        }
+      }
+    },
+    "components/filters/FilterSelector.tsx": {
+      "id": "code-components-filters-FilterSelector-tsx",
+      "type": "ui-component",
+      "exports": [
+        "FilterSelector"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "FilterSelector": {
           "lineRange": [
-            30,
-            35
+            65,
+            115
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "weightedProgressQuarter": {
+          "lastModified": "2025-12-25T10:43:02.969Z"
+        }
+      }
+    },
+    "components/feedback/LoadingState.tsx": {
+      "id": "code-components-feedback-LoadingState-tsx",
+      "type": "ui-component",
+      "exports": [
+        "LoadingState"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "LoadingState": {
           "lineRange": [
             42,
-            53
+            92
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "actual2025ProgressYear": {
-          "lineRange": [
-            61,
-            75
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "actual2025ProgressQuarter": {
-          "lineRange": [
-            83,
-            101
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
+          "lastModified": "2025-12-25T10:43:02.969Z"
         }
       }
     },
-    "domain/headquarters.ts": {
-      "id": "code-domain-headquarters-ts",
-      "type": "domain-logic",
+    "components/feedback/EmptyState.tsx": {
+      "id": "code-components-feedback-EmptyState-tsx",
+      "type": "ui-component",
       "exports": [
-        "calculateHqAchievementRate",
-        "calculateHqGap",
-        "aggregateHqTargetsByProduct",
-        "predictMonthlyHqAchievement",
-        "calculateQuarterHqAchievementRate"
+        "EmptyState"
       ],
-      "documentedIn": [
-        "business/指标定义规范.md"
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
       ],
+      "functions": {
+        "EmptyState": {
+          "lineRange": [
+            59,
+            109
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.970Z"
+        }
+      }
+    },
+    "components/data/DataTable.tsx": {
+      "id": "code-components-data-DataTable-tsx",
+      "type": "ui-component",
+      "exports": [
+        "DataTable"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "DataTable": {
+          "lineRange": [
+            112,
+            188
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.970Z"
+        }
+      }
+    },
+    "components/kpi/KpiCard.tsx": {
+      "id": "code-components-kpi-KpiCard-tsx",
+      "type": "ui-component",
+      "exports": [
+        "KpiCard"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "KpiCard": {
+          "lineRange": [
+            59,
+            122
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.970Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyChartLegend.tsx": {
+      "id": "code-components-charts-QuarterlyChartLegend-tsx",
+      "type": "ui-component",
+      "exports": [
+        "QuarterlyChartLegend"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "QuarterlyChartLegend": {
+          "lineRange": [
+            22,
+            67
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.970Z"
+        }
+      }
+    },
+    "components/charts/ChartContainer.tsx": {
+      "id": "code-components-charts-ChartContainer-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ChartContainer"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "ChartContainer": {
+          "lineRange": [
+            57,
+            106
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.971Z"
+        }
+      }
+    },
+    "components/config/ThresholdConfig.tsx": {
+      "id": "code-components-config-ThresholdConfig-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ThresholdConfig"
+      ],
+      "documentedIn": [],
       "usedBy": [],
       "dependencies": [
         "@/schemas/types",
-        "./achievement"
+        "@/config/thresholdRules",
+        "@/schemas/schema"
       ],
       "functions": {
-        "calculateHqAchievementRate": {
-          "lineRange": [
-            16,
-            21
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "calculateHqGap": {
-          "lineRange": [
-            29,
-            34
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "aggregateHqTargetsByProduct": {
-          "lineRange": [
-            41,
-            53
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "predictMonthlyHqAchievement": {
-          "lineRange": [
-            62,
-            91
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "calculateQuarterHqAchievementRate": {
-          "lineRange": [
-            99,
-            104
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        }
-      }
-    },
-    "domain/growth.ts": {
-      "id": "code-domain-growth-ts",
-      "type": "domain-logic",
-      "exports": [
-        "calculateGrowthMetrics",
-        "formatGrowthRate",
-        "formatIncrement"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "./achievement"
-      ],
-      "functions": {
-        "calculateGrowthMetrics": {
-          "lineRange": [
-            46,
-            47
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "formatGrowthRate": {
-          "lineRange": [
-            73,
-            76
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "formatIncrement": {
-          "lineRange": [
-            83,
-            86
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        }
-      }
-    },
-    "domain/earnedPremium.ts": {
-      "id": "code-domain-earnedPremium-ts",
-      "type": "domain-logic",
-      "exports": [
-        "getMonthDays",
-        "calculateMaturityDays",
-        "calculateAutoEarnedPremium",
-        "calculatePropertyEarnedPremium",
-        "calculateLifeEarnedPremium",
-        "calculateMaturityRate"
-      ],
-      "documentedIn": [
-        "business/指标定义规范.md"
-      ],
-      "usedBy": [],
-      "dependencies": [
-        "./achievement"
-      ],
-      "functions": {
-        "getMonthDays": {
-          "lineRange": [
-            18,
-            20
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "calculateMaturityDays": {
-          "lineRange": [
-            29,
-            37
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "calculateAutoEarnedPremium": {
-          "lineRange": [
-            43,
-            58
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "calculatePropertyEarnedPremium": {
-          "lineRange": [
-            64,
-            71
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "calculateLifeEarnedPremium": {
-          "lineRange": [
-            77,
-            87
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        },
-        "calculateMaturityRate": {
-          "lineRange": [
-            93,
-            95
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.671Z"
-        }
-      }
-    },
-    "domain/allocation.ts": {
-      "id": "code-domain-allocation-ts",
-      "type": "domain-logic",
-      "exports": [
-        "allocateAnnualToMonthly",
-        "calculateActual2025Weights",
-        "monthlyToQuarterly",
-        "monthlyToYtd"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "allocateAnnualToMonthly": {
-          "lineRange": [
-            3,
-            10
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
-        },
-        "calculateActual2025Weights": {
-          "lineRange": [
-            13,
-            22
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
-        },
-        "monthlyToQuarterly": {
-          "lineRange": [
-            25,
-            27
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
-        },
-        "monthlyToYtd": {
+        "ThresholdConfig": {
           "lineRange": [
             30,
-            33
+            270
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
-        }
-      }
-    },
-    "domain/aggregate.ts": {
-      "id": "code-domain-aggregate-ts",
-      "type": "domain-logic",
-      "exports": [
-        "aggregateToGroupAndAll"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types"
-      ],
-      "functions": {
-        "aggregateToGroupAndAll": {
-          "lineRange": [
-            11,
-            27
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
-        }
-      }
-    },
-    "domain/achievement.ts": {
-      "id": "code-domain-achievement-ts",
-      "type": "domain-logic",
-      "exports": [
-        "safeDivide",
-        "diff",
-        "growthRate"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "safeDivide": {
-          "lineRange": [
-            0,
-            3
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
-        },
-        "diff": {
-          "lineRange": [
-            5,
-            7
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
-        },
-        "growthRate": {
-          "lineRange": [
-            9,
-            11
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.673Z"
+          "lastModified": "2025-12-25T10:43:02.971Z"
         }
       }
     },
@@ -885,21 +1234,34 @@
       "usedBy": [],
       "dependencies": [
         "@/services/loaders",
+        "@/components/charts/UniversalChart",
         "@/schemas/types"
       ],
       "functions": {}
     },
-    "app/import/page.tsx": {
-      "id": "code-app-import-page-tsx",
+    "app/earned-premium/page.tsx": {
+      "id": "code-app-earned-premium-page-tsx",
       "type": "ui-component",
       "exports": [],
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [
+        "@/schemas/types",
+        "@/domain/allocation",
         "@/services/loaders",
-        "@/services/storage",
-        "@/lib/paths",
-        "@/schemas/types"
+        "@/styles/tokens",
+        "@/components/charts/ChartContainer"
+      ],
+      "functions": {}
+    },
+    "app/universal-chart-test/page.tsx": {
+      "id": "code-app-universal-chart-test-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/charts/UniversalChart"
       ],
       "functions": {}
     },
@@ -921,44 +1283,6 @@
       ],
       "functions": {}
     },
-    "components/ui/Badge.tsx": {
-      "id": "code-components-ui-Badge-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Badge"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "Badge": {
-          "lineRange": [
-            58,
-            103
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.674Z"
-        }
-      }
-    },
-    "app/earned-premium/page.tsx": {
-      "id": "code-app-earned-premium-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/domain/allocation",
-        "@/services/loaders",
-        "@/styles/tokens",
-        "@/components/charts/ChartContainer"
-      ],
-      "functions": {}
-    },
     "app/data/page.tsx": {
       "id": "code-app-data-page-tsx",
       "type": "ui-component",
@@ -967,6 +1291,20 @@
       "usedBy": [],
       "dependencies": [
         "@/services/loaders"
+      ],
+      "functions": {}
+    },
+    "app/import/page.tsx": {
+      "id": "code-app-import-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/loaders",
+        "@/services/storage",
+        "@/lib/paths",
+        "@/schemas/types"
       ],
       "functions": {}
     },
@@ -981,332 +1319,6 @@
         "@/services/storage"
       ],
       "functions": {}
-    },
-    "components/system/ColorSystemHydrator.tsx": {
-      "id": "code-components-system-ColorSystemHydrator-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ColorSystemHydrator"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/storage"
-      ],
-      "functions": {
-        "ColorSystemHydrator": {
-          "lineRange": [
-            5,
-            19
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.675Z"
-        }
-      }
-    },
-    "components/layout/Section.tsx": {
-      "id": "code-components-layout-Section-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Section"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "Section": {
-          "lineRange": [
-            55,
-            88
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.675Z"
-        }
-      }
-    },
-    "components/feedback/LoadingState.tsx": {
-      "id": "code-components-feedback-LoadingState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "LoadingState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "LoadingState": {
-          "lineRange": [
-            42,
-            92
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.675Z"
-        }
-      }
-    },
-    "components/feedback/EmptyState.tsx": {
-      "id": "code-components-feedback-EmptyState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "EmptyState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "EmptyState": {
-          "lineRange": [
-            59,
-            109
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.676Z"
-        }
-      }
-    },
-    "components/data/DataTable.tsx": {
-      "id": "code-components-data-DataTable-tsx",
-      "type": "ui-component",
-      "exports": [
-        "DataTable"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "DataTable": {
-          "lineRange": [
-            112,
-            188
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.677Z"
-        }
-      }
-    },
-    "components/config/ThresholdConfig.tsx": {
-      "id": "code-components-config-ThresholdConfig-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ThresholdConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/config/thresholdRules",
-        "@/schemas/schema"
-      ],
-      "functions": {
-        "ThresholdConfig": {
-          "lineRange": [
-            30,
-            270
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.677Z"
-        }
-      }
-    },
-    "components/charts/QuarterlyChartLegend.tsx": {
-      "id": "code-components-charts-QuarterlyChartLegend-tsx",
-      "type": "ui-component",
-      "exports": [
-        "QuarterlyChartLegend"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "QuarterlyChartLegend": {
-          "lineRange": [
-            22,
-            67
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.677Z"
-        }
-      }
-    },
-    "components/charts/ChartContainer.tsx": {
-      "id": "code-components-charts-ChartContainer-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ChartContainer"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "ChartContainer": {
-          "lineRange": [
-            57,
-            106
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.677Z"
-        }
-      }
-    },
-    "components/filters/FilterSelector.tsx": {
-      "id": "code-components-filters-FilterSelector-tsx",
-      "type": "ui-component",
-      "exports": [
-        "FilterSelector"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "FilterSelector": {
-          "lineRange": [
-            65,
-            115
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.677Z"
-        }
-      }
-    },
-    "components/kpi/KpiCard.tsx": {
-      "id": "code-components-kpi-KpiCard-tsx",
-      "type": "ui-component",
-      "exports": [
-        "KpiCard"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "KpiCard": {
-          "lineRange": [
-            59,
-            122
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.677Z"
-        }
-      }
-    },
-    "app/test/quarterly-chart/page.tsx": {
-      "id": "code-app-test-quarterly-chart-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/components/charts/QuarterlyProportionChart"
-      ],
-      "functions": {}
-    },
-    "app/orgs/[org_id]/page.tsx": {
-      "id": "code-app-orgs-[org_id]-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "./OrgDetailClient",
-        "@/schemas/types",
-        "@/services/loaders"
-      ],
-      "functions": {}
-    },
-    "app/orgs/[org_id]/OrgDetailClient.tsx": {
-      "id": "code-app-orgs-[org_id]-OrgDetailClient-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/domain/allocation",
-        "@/domain/growth"
-      ],
-      "functions": {}
-    },
-    "app/color-system/preview/page.tsx": {
-      "id": "code-app-color-system-preview-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/components/ui/Badge",
-        "@/components/kpi/KpiCard"
-      ],
-      "functions": {}
-    },
-    "components/charts/UniversalChart/UniversalChart.types.ts": {
-      "id": "code-components-charts-UniversalChart-UniversalChart-types-ts",
-      "type": "ui-component",
-      "exports": [
-        "QUARTER_LABELS",
-        "MONTH_LABELS",
-        "isValidChartData",
-        "getPeriodLabel",
-        "getAllPeriodLabels"
-      ],
-      "documentedIn": [
-        "fangan.md"
-      ],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "isValidChartData": {
-          "lineRange": [
-            281,
-            327
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.678Z"
-        },
-        "getPeriodLabel": {
-          "lineRange": [
-            332,
-            338
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.678Z"
-        },
-        "getAllPeriodLabels": {
-          "lineRange": [
-            343,
-            347
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-24T11:25:10.678Z"
-        }
-      }
     },
     "components/charts/QuarterlyProportionChart/index.ts": {
       "id": "code-components-charts-QuarterlyProportionChart-index-ts",
@@ -1339,7 +1351,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.678Z"
+          "lastModified": "2025-12-25T10:43:02.973Z"
         }
       }
     },
@@ -1364,9 +1376,148 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.973Z"
         }
       }
+    },
+    "app/test/quarterly-chart/page.tsx": {
+      "id": "code-app-test-quarterly-chart-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/charts/QuarterlyProportionChart"
+      ],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/index.ts": {
+      "id": "code-components-charts-UniversalChart-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/UniversalChart.types.ts": {
+      "id": "code-components-charts-UniversalChart-UniversalChart-types-ts",
+      "type": "ui-component",
+      "exports": [
+        "QUARTER_LABELS",
+        "MONTH_LABELS",
+        "isValidChartData",
+        "getPeriodLabel",
+        "getAllPeriodLabels"
+      ],
+      "documentedIn": [
+        "fangan.md"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "isValidChartData": {
+          "lineRange": [
+            284,
+            342
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.974Z"
+        },
+        "getPeriodLabel": {
+          "lineRange": [
+            347,
+            353
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.974Z"
+        },
+        "getAllPeriodLabels": {
+          "lineRange": [
+            358,
+            362
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.974Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/UniversalChart.tsx": {
+      "id": "code-components-charts-UniversalChart-UniversalChart-tsx",
+      "type": "ui-component",
+      "exports": [
+        "UniversalChart"
+      ],
+      "documentedIn": [
+        "fangan.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "./UniversalChart.types",
+        "./hooks/useUniversalData",
+        "./hooks/useChartInteractions",
+        "./hooks/useUniversalConfig",
+        "./configs",
+        "../QuarterlyProportionChart/components/ChartHeader",
+        "../QuarterlyProportionChart/components/DetailPanel",
+        "../QuarterlyProportionChart/QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "UniversalChart": {
+          "lineRange": [
+            52,
+            172
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.974Z"
+        }
+      }
+    },
+    "app/orgs/[org_id]/page.tsx": {
+      "id": "code-app-orgs-[org_id]-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "./OrgDetailClient",
+        "@/schemas/types",
+        "@/services/loaders"
+      ],
+      "functions": {}
+    },
+    "app/orgs/[org_id]/OrgDetailClient.tsx": {
+      "id": "code-app-orgs-[org_id]-OrgDetailClient-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "@/domain/allocation",
+        "@/domain/growth",
+        "@/domain/achievement",
+        "@/components/charts/UniversalChart",
+        "@/components/ui/SortButtonGroup",
+        "@/lib/sorting"
+      ],
+      "functions": {}
+    },
+    "app/color-system/preview/page.tsx": {
+      "id": "code-app-color-system-preview-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/ui/Badge",
+        "@/components/kpi/KpiCard"
+      ],
+      "functions": {}
     },
     "components/charts/QuarterlyProportionChart/utils/index.ts": {
       "id": "code-components-charts-QuarterlyProportionChart-utils-index-ts",
@@ -1406,7 +1557,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatNumber": {
           "lineRange": [
@@ -1415,7 +1566,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatCurrency": {
           "lineRange": [
@@ -1424,7 +1575,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "getGrowthArrow": {
           "lineRange": [
@@ -1433,7 +1584,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatGrowth": {
           "lineRange": [
@@ -1442,7 +1593,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatQuarterData": {
           "lineRange": [
@@ -1451,7 +1602,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "sanitizeFilename": {
           "lineRange": [
@@ -1460,7 +1611,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatDateTime": {
           "lineRange": [
@@ -1469,7 +1620,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatFileSize": {
           "lineRange": [
@@ -1478,7 +1629,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatDuration": {
           "lineRange": [
@@ -1487,7 +1638,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "truncateText": {
           "lineRange": [
@@ -1496,7 +1647,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "getValueColorClass": {
           "lineRange": [
@@ -1505,7 +1656,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "formatRange": {
           "lineRange": [
@@ -1514,7 +1665,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         }
       }
     },
@@ -1541,7 +1692,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "exportQuarterDetails": {
           "lineRange": [
@@ -1550,7 +1701,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "exportToJSON": {
           "lineRange": [
@@ -1559,7 +1710,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "printChart": {
           "lineRange": [
@@ -1568,7 +1719,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         }
       }
     },
@@ -1604,7 +1755,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "getWarningLevelByGrowth": {
           "lineRange": [
@@ -1613,7 +1764,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "getGrowthColorClass": {
           "lineRange": [
@@ -1622,7 +1773,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "adjustBrightness": {
           "lineRange": [
@@ -1631,7 +1782,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "hexToRgba": {
           "lineRange": [
@@ -1640,7 +1791,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "createGradient": {
           "lineRange": [
@@ -1649,7 +1800,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "getHeatmapColor": {
           "lineRange": [
@@ -1658,7 +1809,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "isDarkColor": {
           "lineRange": [
@@ -1667,7 +1818,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "getContrastColor": {
           "lineRange": [
@@ -1676,7 +1827,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "blendColors": {
           "lineRange": [
@@ -1685,7 +1836,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "withOpacity": {
           "lineRange": [
@@ -1694,7 +1845,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         },
         "generatePalette": {
           "lineRange": [
@@ -1703,7 +1854,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.679Z"
+          "lastModified": "2025-12-25T10:43:02.975Z"
         }
       }
     },
@@ -1726,7 +1877,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         }
       }
     },
@@ -1752,7 +1903,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         },
         "getWarningLevelColor": {
           "lineRange": [
@@ -1761,7 +1912,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         },
         "getDefaultColors": {
           "lineRange": [
@@ -1770,7 +1921,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         }
       }
     },
@@ -1804,7 +1955,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         },
         "WarningBadgeSelector": {
           "lineRange": [
@@ -1813,7 +1964,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         }
       }
     },
@@ -1838,7 +1989,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         },
         "ViewSwitcherSelector": {
           "lineRange": [
@@ -1847,7 +1998,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.976Z"
         }
       }
     },
@@ -1873,7 +2024,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.977Z"
         },
         "DetailPanelShowcase": {
           "lineRange": [
@@ -1882,7 +2033,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.680Z"
+          "lastModified": "2025-12-25T10:43:02.977Z"
         }
       }
     },
@@ -1909,7 +2060,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.681Z"
+          "lastModified": "2025-12-25T10:43:02.977Z"
         },
         "CompactChartHeader": {
           "lineRange": [
@@ -1918,7 +2069,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.681Z"
+          "lastModified": "2025-12-25T10:43:02.977Z"
         },
         "ChartHeaderShowcase": {
           "lineRange": [
@@ -1927,7 +2078,518 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-24T11:25:10.681Z"
+          "lastModified": "2025-12-25T10:43:02.977Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/utils/index.ts": {
+      "id": "code-components-charts-UniversalChart-utils-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/hooks/useUniversalData.ts": {
+      "id": "code-components-charts-UniversalChart-hooks-useUniversalData-ts",
+      "type": "ui-component",
+      "exports": [
+        "useUniversalData"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "../adapters/shared.adapter"
+      ],
+      "functions": {
+        "useUniversalData": {
+          "lineRange": [
+            26,
+            156
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.977Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/hooks/useUniversalConfig.ts": {
+      "id": "code-components-charts-UniversalChart-hooks-useUniversalConfig-ts",
+      "type": "ui-component",
+      "exports": [
+        "useUniversalConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "useUniversalConfig": {
+          "lineRange": [
+            247,
+            561
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.977Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/hooks/useChartInteractions.ts": {
+      "id": "code-components-charts-UniversalChart-hooks-useChartInteractions-ts",
+      "type": "ui-component",
+      "exports": [
+        "useChartInteractions"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "useChartInteractions": {
+          "lineRange": [
+            24,
+            91
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.978Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/quarterlyShare.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-quarterlyShare-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createQuarterlyShareConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createQuarterlyShareConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.978Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/quarterlyPremium.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-quarterlyPremium-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createQuarterlyPremiumConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createQuarterlyPremiumConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.978Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/orgPremium.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-orgPremium-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createOrgPremiumConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createOrgPremiumConfig": {
+          "lineRange": [
+            24,
+            26
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.978Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/monthlyShare.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-monthlyShare-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createMonthlyShareConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createMonthlyShareConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.978Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/monthlyPremium.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-monthlyPremium-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createMonthlyPremiumConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createMonthlyPremiumConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.979Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/index.ts": {
+      "id": "code-components-charts-UniversalChart-configs-index-ts",
+      "type": "ui-component",
+      "exports": [
+        "getPresetConfig",
+        "mergeConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./quarterlyPremium.config",
+        "./quarterlyShare.config",
+        "./monthlyPremium.config",
+        "./monthlyShare.config",
+        "./hqPrediction.config",
+        "./orgPremium.config"
+      ],
+      "functions": {
+        "getPresetConfig": {
+          "lineRange": [
+            57,
+            75
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.979Z"
+        },
+        "mergeConfig": {
+          "lineRange": [
+            84,
+            94
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.979Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/hqPrediction.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-hqPrediction-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createHqPredictionConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createHqPredictionConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/shared.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-shared-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "calculateGrowthRate",
+        "calculateAchievementRate",
+        "calculateShare",
+        "getWarningLevel",
+        "calculateGrowthRateArray",
+        "calculateAchievementRateArray",
+        "calculateShareArray",
+        "validateArrayLength",
+        "ensureGrowthSeries",
+        "ensureAchievementSeries"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "calculateGrowthRate": {
+          "lineRange": [
+            21,
+            29
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "calculateAchievementRate": {
+          "lineRange": [
+            42,
+            50
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "calculateShare": {
+          "lineRange": [
+            63,
+            68
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "getWarningLevel": {
+          "lineRange": [
+            82,
+            89
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "calculateGrowthRateArray": {
+          "lineRange": [
+            98,
+            111
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "calculateAchievementRateArray": {
+          "lineRange": [
+            120,
+            133
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "calculateShareArray": {
+          "lineRange": [
+            142,
+            147
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "validateArrayLength": {
+          "lineRange": [
+            157,
+            175
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "ensureGrowthSeries": {
+          "lineRange": [
+            183,
+            197
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "ensureAchievementSeries": {
+          "lineRange": [
+            205,
+            219
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/quarterly.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-quarterly-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createQuarterlyPremiumAdapter",
+        "createQuarterlyShareAdapter"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./shared.adapter"
+      ],
+      "functions": {
+        "createQuarterlyPremiumAdapter": {
+          "lineRange": [
+            121,
+            123
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "createQuarterlyShareAdapter": {
+          "lineRange": [
+            128,
+            130
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/organization.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-organization-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createOrganizationPremiumAdapter"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./shared.adapter"
+      ],
+      "functions": {
+        "createOrganizationPremiumAdapter": {
+          "lineRange": [
+            117,
+            119
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/monthly.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-monthly-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createMonthlyPremiumAdapter",
+        "createMonthlyShareAdapter"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./shared.adapter"
+      ],
+      "functions": {
+        "createMonthlyPremiumAdapter": {
+          "lineRange": [
+            121,
+            123
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        },
+        "createMonthlyShareAdapter": {
+          "lineRange": [
+            128,
+            130
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.980Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/index.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/adapters/hqPrediction.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-hqPrediction-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createHqPredictionAdapter",
+        "calculateCumulative",
+        "reverseCalculateCumulative"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createHqPredictionAdapter": {
+          "lineRange": [
+            94,
+            96
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.981Z"
+        },
+        "calculateCumulative": {
+          "lineRange": [
+            107,
+            125
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.981Z"
+        },
+        "reverseCalculateCumulative": {
+          "lineRange": [
+            136,
+            155
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T10:43:02.981Z"
         }
       }
     }

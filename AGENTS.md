@@ -592,4 +592,51 @@ pnpm docs:check || {
 
 ---
 
+## 🧠 AI编程进化知识库
+
+> **核心理念**：记录问题、分析本质、改进Prompt，让你成为顶级的AI编程"总司令"
+
+### 📍 知识库位置
+- **文档**：`docs/ai-evolution/`
+- **索引**：`docs/ai-evolution/.meta/`
+- **Skill**：`/ai-evolve` 或 `/ai-prompt-evolution`
+
+### 🎯 快速使用
+
+```bash
+# 记录问题
+/ai-evolve record
+
+# 查询知识库
+/ai-evolve query "关键词"
+
+# 分析问题本质
+/ai-evolve analyze
+
+# 生成进化报告
+/ai-evolve report
+```
+
+### 🤖 AI自动集成
+
+所有AI Agent应该在以下时机**主动**利用知识库：
+
+1. **任务开始前**：查询类似任务的最佳实践
+2. **遇到困难时**：查询类似问题的解决方案
+3. **任务完成后**：建议记录经验和改进的Prompt
+
+### 📚 知识库结构
+
+```
+问题记录 (problems/) → 根因分析 (analysis/) → 解决方案 (solutions/) → 进化轨迹 (evolution/)
+```
+
+形成**闭环学习系统**。
+
+### 🔗 详细指南
+
+查看 `CLAUDE.md` 中的"AI编程进化知识库"章节获取完整使用指南。
+
+---
+
 **让 AI Agents 成为你的得力助手，而不是增加混乱！** 🤖✨

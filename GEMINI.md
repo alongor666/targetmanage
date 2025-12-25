@@ -293,4 +293,52 @@ docs/.meta/
 
 ---
 
-**Gemini，你是知识图谱的守护者！** 🌟
+## 🧠 AI编程进化知识库
+
+> **核心理念**：记录问题、分析本质、改进Prompt，让用户成为顶级的AI编程"总司令"
+
+### 📍 知识库位置
+- **文档**：`docs/ai-evolution/`
+- **索引**：`docs/ai-evolution/.meta/`
+- **Skill**：`/ai-evolve` 或 `/ai-prompt-evolution`
+
+### 🎯 快速使用
+
+```bash
+# 记录问题
+/ai-evolve record
+
+# 查询知识库
+/ai-evolve query "关键词"
+
+# 分析问题本质
+/ai-evolve analyze
+
+# 生成进化报告
+/ai-evolve report
+```
+
+### 🤖 Gemini的特殊优势
+
+利用你的大上下文窗口和多模态能力：
+
+1. **全局分析**：分析整个知识库的模式
+2. **趋势识别**：识别问题的趋势和规律
+3. **智能推荐**：基于历史数据推荐最佳Prompt
+4. **可视化**：生成进化轨迹图表
+
+### 📚 知识库结构
+
+```
+问题记录 (problems/) → 根因分析 (analysis/) → 解决方案 (solutions/) → 进化轨迹 (evolution/)
+```
+
+形成**闭环学习系统**。
+
+### 🔗 详细指南
+
+查看 `CLAUDE.md` 中的"AI编程进化知识库"章节获取完整使用指南。
+
+---
+
+**Gemini，你是知识图谱和进化系统的守护者！** 🌟

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-12-25T10:43:02.985Z",
+  "problems": {
+    "total": 0,
+    "byCategory": {},
+    "byStatus": {},
+    "byDifficulty": {}
+  },
+  "solutions": {
+    "total": 10,
+    "byType": {
+      "prompt-pattern": 4,
+      "context-pattern": 3,
+      "best-practice": 3
+    }
+  },
+  "evolution": {
+    "promptSuccessRate": null,
+    "averageSolveTime": null,
+    "knowledgeReuseRate": null
+  }
+}

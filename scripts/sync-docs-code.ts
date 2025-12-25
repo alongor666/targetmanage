@@ -619,6 +619,324 @@ async function main() {
   console.log(`   - 代码节点: ${graph.nodes.filter((n) => n.type === 'code').length}`);
   console.log(`   - 关联边: ${graph.edges.length}`);
   console.log(`   - 文档-代码链接: ${graph.edges.filter((e) => e.type === 'defines').length}`);
+
+  // ============= AI进化知识库索引 =============
+  console.log('\n🧠 扫描AI编程进化知识库...\n');
+  await syncAIEvolutionKnowledgeBase(projectRoot);
+}
+
+// ============= AI进化知识库索引生成器 =============
+
+interface AIEvolutionProblem {
+  id: string;
+  title: string;
+  category: string;
+  status: string;
+  difficulty: string;
+  importance: string;
+  filePath: string;
+  createdDate: string;
+  tags: string[];
+}
+
+interface AIEvolutionSolution {
+  id: string;
+  title: string;
+  type: 'prompt-pattern' | 'context-pattern' | 'best-practice';
+  filePath: string;
+  relatedProblems: string[];
+  effectImprovement: string;
+}
+
+interface AIEvolutionIndex {
+  problems: Map<string, AIEvolutionProblem>;
+  solutions: Map<string, AIEvolutionSolution>;
+  categories: Map<string, string[]>;
+  stats: {
+    totalProblems: number;
+    solvedProblems: number;
+    totalSolutions: number;
+    lastUpdated: string;
+  };
+}
+
+async function syncAIEvolutionKnowledgeBase(projectRoot: string) {
+  const aiEvolutionDir = path.join(projectRoot, 'docs', 'ai-evolution');
+  const metaDir = path.join(aiEvolutionDir, '.meta');
+
+  // 确保.meta目录存在
+  await fs.mkdir(metaDir, { recursive: true });
+
+  // 扫描问题记录
+  const problems = await scanProblems(aiEvolutionDir);
+  console.log(`✅ 发现 ${problems.size} 个问题记录`);
+
+  // 扫描解决方案
+  const solutions = await scanSolutions(aiEvolutionDir);
+  console.log(`✅ 发现 ${solutions.size} 个解决方案\n`);
+
+  // 生成分类统计
+  const categories = generateCategoryStats(problems);
+
+  // 生成统计信息
+  const stats = {
+    totalProblems: problems.size,
+    solvedProblems: Array.from(problems.values()).filter(p => p.status === '已解决').length,
+    totalSolutions: solutions.size,
+    lastUpdated: new Date().toISOString(),
+  };
+
+  // 保存问题索引
+  await fs.writeFile(
+    path.join(metaDir, 'problems-index.json'),
+    JSON.stringify({
+      problems: Object.fromEntries(problems),
+      categories: Object.fromEntries(categories),
+      stats,
+    }, null, 2)
+  );
+
+  // 保存解决方案索引
+  await fs.writeFile(
+    path.join(metaDir, 'solutions-index.json'),
+    JSON.stringify({
+      solutions: Object.fromEntries(solutions),
+    }, null, 2)
+  );
+
+  // 生成进化指标
+  await generateEvolutionMetrics(metaDir, problems, solutions);
+
+  console.log(`✅ AI进化知识库索引已保存到 ${metaDir}\n`);
+  console.log('📊 AI进化知识库统计:');
+  console.log(`   - 问题记录: ${stats.totalProblems} 个`);
+  console.log(`   - 已解决: ${stats.solvedProblems} 个`);
+  console.log(`   - 解决方案: ${stats.totalSolutions} 个`);
+  console.log(`   - 问题分类: ${categories.size} 个`);
+}
+
+async function scanProblems(aiEvolutionDir: string): Promise<Map<string, AIEvolutionProblem>> {
+  const problems = new Map<string, AIEvolutionProblem>();
+  const problemsDir = path.join(aiEvolutionDir, 'problems');
+
+  try {
+    const categories = await fs.readdir(problemsDir);
+
+    for (const category of categories) {
+      if (!category.startsWith('P0') || category === 'index.md' || category === 'template.md') {
+        continue;
+      }
+
+      const categoryPath = path.join(problemsDir, category);
+      const stat = await fs.stat(categoryPath);
+
+      if (stat.isDirectory()) {
+        const files = await fs.readdir(categoryPath);
+
+        for (const file of files) {
+          if (file.endsWith('.md')) {
+            const filePath = path.join(categoryPath, file);
+            const content = await fs.readFile(filePath, 'utf-8');
+            const problem = extractProblemMetadata(filePath, content, category);
+            if (problem) {
+              problems.set(problem.id, problem);
+            }
+          }
+        }
+      }
+    }
+  } catch (error) {
+    // problems目录可能为空，忽略错误
+  }
+
+  return problems;
+}
+
+function extractProblemMetadata(
+  filePath: string,
+  content: string,
+  category: string
+): AIEvolutionProblem | null {
+  const lines = content.split('\n');
+  let title = '';
+  let status = '未解决';
+  let difficulty = '中等';
+  let importance = '中';
+  let createdDate = '';
+  const tags: string[] = [];
+
+  // 提取标题
+  for (const line of lines) {
+    if (line.startsWith('# ')) {
+      title = line.replace('# ', '').trim();
+      break;
+    }
+  }
+
+  // 提取frontmatter
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (frontmatterMatch) {
+    const frontmatter = frontmatterMatch[1];
+    const statusMatch = frontmatter.match(/状态[:\s]+(.+)/);
+    const difficultyMatch = frontmatter.match(/难度[:\s]+(.+)/);
+    const importanceMatch = frontmatter.match(/重要性[:\s]+(.+)/);
+    const dateMatch = frontmatter.match(/日期[:\s]+(.+)/);
+    const tagsMatch = frontmatter.match(/标签[:\s]*\n((?:  - .+\n)+)/);
+
+    if (statusMatch) status = statusMatch[1].trim();
+    if (difficultyMatch) difficulty = difficultyMatch[1].trim();
+    if (importanceMatch) importance = importanceMatch[1].trim();
+    if (dateMatch) createdDate = dateMatch[1].trim();
+    if (tagsMatch) {
+      const tagLines = tagsMatch[1].split('\n').filter(l => l.trim());
+      tags.push(...tagLines.map(l => l.replace(/^\s*- /, '').trim()));
+    }
+  }
+
+  if (!title) return null;
+
+  const id = `problem-${crypto.createHash('md5').update(filePath).digest('hex').substring(0, 8)}`;
+
+  return {
+    id,
+    title,
+    category,
+    status,
+    difficulty,
+    importance,
+    filePath: path.relative(path.join(filePath, '../../../..'), filePath),
+    createdDate,
+    tags,
+  };
+}
+
+async function scanSolutions(aiEvolutionDir: string): Promise<Map<string, AIEvolutionSolution>> {
+  const solutions = new Map<string, AIEvolutionSolution>();
+  const solutionsDir = path.join(aiEvolutionDir, 'solutions');
+
+  const types = [
+    { dir: 'prompt-patterns', type: 'prompt-pattern' as const },
+    { dir: 'context-patterns', type: 'context-pattern' as const },
+    { dir: 'best-practices', type: 'best-practice' as const },
+  ];
+
+  for (const { dir, type } of types) {
+    const typePath = path.join(solutionsDir, dir);
+    try {
+      const files = await fs.readdir(typePath);
+
+      for (const file of files) {
+        if (file.endsWith('.md') && file !== 'index.md') {
+          const filePath = path.join(typePath, file);
+          const content = await fs.readFile(filePath, 'utf-8');
+          const solution = extractSolutionMetadata(filePath, content, type);
+          if (solution) {
+            solutions.set(solution.id, solution);
+          }
+        }
+      }
+    } catch (error) {
+      // 目录可能不存在，忽略错误
+    }
+  }
+
+  return solutions;
+}
+
+function extractSolutionMetadata(
+  filePath: string,
+  content: string,
+  type: 'prompt-pattern' | 'context-pattern' | 'best-practice'
+): AIEvolutionSolution | null {
+  const lines = content.split('\n');
+  let title = '';
+  let effectImprovement = '';
+
+  // 提取标题
+  for (const line of lines) {
+    if (line.startsWith('# ')) {
+      title = line.replace('# ', '').trim();
+      break;
+    }
+  }
+
+  // 提取效果提升
+  const effectMatch = content.match(/效果提升[:\s]*(.+)/);
+  if (effectMatch) {
+    effectImprovement = effectMatch[1].trim();
+  }
+
+  if (!title) return null;
+
+  const id = `solution-${crypto.createHash('md5').update(filePath).digest('hex').substring(0, 8)}`;
+
+  return {
+    id,
+    title,
+    type,
+    filePath: path.relative(path.join(filePath, '../../../..'), filePath),
+    relatedProblems: [],
+    effectImprovement,
+  };
+}
+
+function generateCategoryStats(problems: Map<string, AIEvolutionProblem>): Map<string, string[]> {
+  const categories = new Map<string, string[]>();
+
+  problems.forEach((problem) => {
+    if (!categories.has(problem.category)) {
+      categories.set(problem.category, []);
+    }
+    categories.get(problem.category)!.push(problem.id);
+  });
+
+  return categories;
+}
+
+async function generateEvolutionMetrics(
+  metaDir: string,
+  problems: Map<string, AIEvolutionProblem>,
+  solutions: Map<string, AIEvolutionSolution>
+) {
+  const metrics = {
+    timestamp: new Date().toISOString(),
+    problems: {
+      total: problems.size,
+      byCategory: {} as Record<string, number>,
+      byStatus: {} as Record<string, number>,
+      byDifficulty: {} as Record<string, number>,
+    },
+    solutions: {
+      total: solutions.size,
+      byType: {} as Record<string, number>,
+    },
+    evolution: {
+      promptSuccessRate: null as number | null,
+      averageSolveTime: null as number | null,
+      knowledgeReuseRate: null as number | null,
+    },
+  };
+
+  // 统计问题分类
+  problems.forEach((problem) => {
+    metrics.problems.byCategory[problem.category] =
+      (metrics.problems.byCategory[problem.category] || 0) + 1;
+    metrics.problems.byStatus[problem.status] =
+      (metrics.problems.byStatus[problem.status] || 0) + 1;
+    metrics.problems.byDifficulty[problem.difficulty] =
+      (metrics.problems.byDifficulty[problem.difficulty] || 0) + 1;
+  });
+
+  // 统计解决方案类型
+  solutions.forEach((solution) => {
+    metrics.solutions.byType[solution.type] =
+      (metrics.solutions.byType[solution.type] || 0) + 1;
+  });
+
+  await fs.writeFile(
+    path.join(metaDir, 'evolution-metrics.json'),
+    JSON.stringify(metrics, null, 2)
+  );
 }
 
 // 运行

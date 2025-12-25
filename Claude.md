@@ -20,6 +20,7 @@ This file provides comprehensive guidance to Claude Code (claude.ai/code) when w
 - [Quality Standards](#-quality-standards)
 - [CI/CD Pipeline](#-cicd-pipeline)
 - [Common Tasks](#-common-tasks)
+- [AI编程进化知识库](#-ai编程进化知识库)
 - [Troubleshooting](#-troubleshooting)
 
 ---
@@ -1427,6 +1428,321 @@ Explain:
 - **Related updates**: Documentation, indices, dependent files
 - **Validation results**: typecheck, docs:check outcomes
 - **Impact scope**: What parts of the system are affected
+
+---
+
+## 🧠 AI编程进化知识库
+
+> **核心理念**：记录问题、分析本质、改进Prompt、形成体系，让你成为顶级的AI编程"总司令"
+
+**知识库位置**：`docs/ai-evolution/`
+**Skill命令**：`/ai-evolve` 或 `/ai-prompt-evolution`
+**版本**：1.0.0
+
+---
+
+### 📋 知识库概述
+
+AI编程进化知识库是一个系统化的问题记录和Prompt改进系统，包含：
+
+- **问题记录库**：记录遇到的AI理解问题
+- **Prompt模式库**：经过验证的Prompt模式
+- **Context模式库**：高效的Context提供方式
+- **最佳实践库**：AI协作的最佳实践
+- **进化轨迹**：追踪你的进化过程
+
+### 🎯 使用场景
+
+#### 场景1：遇到问题时
+
+当AI理解错误、生成的代码不符合预期时：
+
+```bash
+/ai-evolve record
+```
+
+**Skill会引导你**：
+1. 记录问题描述、原始Prompt、AI输出
+2. 自动分析问题类型
+3. 识别Prompt的问题（描述不清/上下文不足）
+4. 保存到知识库
+
+#### 场景2：分析改进
+
+记录问题后，想深入分析根本原因：
+
+```bash
+/ai-evolve analyze
+```
+
+**AI会分析**：
+- **技术层面**：代码错误的本质原因
+- **Prompt层面**：Prompt表述、上下文、任务分解问题
+- **Context层面**：背景信息、业务规则、依赖关系
+
+并提炼为可复用的Prompt模式。
+
+#### 场景3：开始新任务前
+
+开始新任务前，查询类似问题的最佳实践：
+
+```bash
+/ai-evolve query "组件设计"
+# 或
+/ai-evolve query "类型错误"
+```
+
+**AI会返回**：
+- 类似的问题记录
+- 推荐的Prompt模式
+- 推荐的Context模式
+- 相关的最佳实践
+
+**效果**：避免重复踩坑，Prompt一次成功率大幅提升！
+
+#### 场景4：定期回顾
+
+每周/每月查看进化轨迹：
+
+```bash
+/ai-evolve report
+```
+
+**生成报告包含**：
+- 问题统计（按分类、难度、状态）
+- 进化指标（Prompt成功率、问题解决速度）
+- 成长亮点和改进建议
+
+---
+
+### 🎨 核心Prompt模式
+
+#### [P-001] Context提供模式 ⭐⭐⭐⭐⭐
+
+**问题**：AI不理解项目背景，生成的代码与项目不匹配
+
+**解决方案**：提供完整的Context
+
+```markdown
+[任务描述]
+
+## Context
+
+### 项目背景
+- 项目：川分目标管理系统
+- 技术栈：Next.js 14 + TypeScript + Tailwind CSS
+
+### 设计规范
+- 参考：src/components/charts/UniversalChart/
+- 配色：使用tokens.ts中定义的颜色
+
+### 需求列表
+1. [具体需求1]
+2. [具体需求2]
+
+### 参考代码
+- 类似组件：[文件路径]
+```
+
+**效果**：AI理解准确率 +40%
+
+**详细文档**：`docs/ai-evolution/solutions/prompt-patterns/context-提供模式.md`
+
+#### [P-002] 任务分解模式
+
+**问题**：复杂任务一次性要求，AI可能遗漏关键步骤
+
+**解决方案**：分解为多个小步骤
+
+```markdown
+实现[总体目标]
+
+## 任务分解
+
+### Step 1: [子任务1]
+- 目标：...
+- 输出：...
+
+### Step 2: [子任务2]
+...
+```
+
+**效果**：任务完成质量 +35%
+
+#### [P-003] 错误处理模式
+
+**问题**：Bug修复时信息不全，AI难以定位问题
+
+**解决方案**：系统化提供错误信息
+
+```markdown
+修复以下错误
+
+## 错误信息
+```
+[完整错误堆栈]
+```
+
+## 错误位置
+- 文件：src/domain/time.ts:42
+- 函数：calculateTimeProgress
+
+## 复现步骤
+1. ...
+
+## 期望vs实际
+- 期望：...
+- 实际：...
+```
+
+**效果**：问题定位速度 +50%
+
+---
+
+### 📚 使用最佳实践
+
+#### 1. AI主动使用知识库
+
+**Claude应该在以下情况下主动查询知识库**：
+
+```typescript
+// 伪代码：Claude的自动决策
+if (任务类型 in ['组件设计', '业务逻辑', '类型推断', '性能优化']) {
+  查询 docs/ai-evolution/solutions/
+  应用相关的Prompt模式和最佳实践
+}
+
+if (遇到错误 || 用户表达困惑) {
+  查询 docs/ai-evolution/problems/
+  检查是否有类似问题的解决方案
+}
+
+if (任务完成后 && 遇到过困难) {
+  建议用户：`要不要用 /ai-evolve record 记录这个问题？`
+}
+```
+
+#### 2. 主动建议使用知识库
+
+当用户遇到以下情况时，**主动建议**：
+
+1. **重复性问题**：用户多次遇到类似问题
+   → 建议：`我注意到这个问题之前出现过，要不要记录到进化知识库？用 /ai-evolve record`
+
+2. **复杂问题解决后**：经过多次尝试终于解决
+   → 建议：`这个问题解决得不错！要不要用 /ai-evolve record 记录解决过程和改进的Prompt？`
+
+3. **用户表达困惑**：不知道如何更好地与AI协作
+   → 建议：`要不要用 /ai-evolve query 查询一下知识库，看看类似场景的最佳实践？`
+
+#### 3. 进化式协作流程
+
+```
+任务开始
+    ↓
+查询知识库 (/ai-evolve query) → 应用最佳Prompt模式
+    ↓
+执行任务
+    ↓
+遇到问题？ → 记录问题 (/ai-evolve record)
+    ↓
+问题解决 → 分析改进 (/ai-evolve analyze)
+    ↓
+提炼模式 → 更新知识库
+    ↓
+下次任务 → 复用模式 → 效率提升
+```
+
+---
+
+### 📊 进化指标
+
+#### 目标指标
+
+| 指标 | 基线 | 1个月目标 | 3个月目标 |
+|------|------|-----------|-----------|
+| Prompt一次成功率 | 40-50% | 60%+ | 75%+ |
+| 问题解决时间 | 45分钟 | 30分钟 | 20分钟 |
+| 知识复用率 | 0% | 40%+ | 60%+ |
+| Prompt模式数 | 4 | 9+ | 15+ |
+
+#### 追踪方法
+
+```bash
+# 生成进化报告
+/ai-evolve report
+
+# 查看进化轨迹
+cat docs/ai-evolution/evolution/prompt-evolution.md
+cat docs/ai-evolution/evolution/metrics.md
+```
+
+---
+
+### 🔗 相关资源
+
+- **知识库总索引**：`docs/ai-evolution/README.md`
+- **快速上手指南**：`docs/ai-evolution/QUICKSTART.md`
+- **Prompt模式库**：`docs/ai-evolution/solutions/prompt-patterns/`
+- **最佳实践库**：`docs/ai-evolution/solutions/best-practices/`
+
+---
+
+### ✨ 成功案例示例
+
+#### 案例：创建UniversalChart组件
+
+**原始Prompt（失败）**：
+```
+创建一个通用图表组件
+```
+
+**问题**：AI不知道使用什么技术、遵循什么规范
+
+**使用[P-001] Context提供模式后（成功）**：
+```
+创建一个通用ECharts图表组件
+
+## Context
+
+### 项目背景
+- 项目：目标管理可视化平台
+- 技术栈：Next.js 14 + TypeScript + echarts-for-react
+
+### 需求
+1. 支持多种图表类型（折线、柱状、饼图）
+2. 通过type prop切换类型
+3. TypeScript严格类型，使用泛型
+
+### 参考
+- 现有组件：src/components/charts/
+- 项目配色：src/styles/tokens.ts
+```
+
+**结果**：一次生成，完全符合要求！
+
+---
+
+### 🎯 行动计划
+
+#### 立即开始
+
+1. **回忆最近的问题**：想一想最近遇到的AI理解问题
+2. **记录第一个问题**：`/ai-evolve record`
+3. **分析并改进**：`/ai-evolve analyze`
+4. **查看Prompt模式**：`cat docs/ai-evolution/solutions/prompt-patterns/`
+5. **下次应用模式**：开始新任务前先 `/ai-evolve query`
+
+#### 养成习惯
+
+- **每次遇到问题**：记录到知识库
+- **每周回顾**：查看进化报告
+- **每月总结**：更新Prompt模式库
+- **持续进化**：让AI协作越来越高效
+
+---
+
+**记住**：每个问题都是进化的机会，不要浪费！🚀
 
 ---
 

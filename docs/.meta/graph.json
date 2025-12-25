@@ -118,6 +118,28 @@
       }
     },
     {
+      "id": "doc-features-SortButtonGroup使用指南-md",
+      "type": "doc",
+      "label": "排序按钮组件使用指南",
+      "metadata": {
+        "path": "features/SortButtonGroup使用指南.md",
+        "category": "features",
+        "tags": [
+          "概述",
+          "特性",
+          "基础用法",
+          "预设选项",
+          "自定义选项",
+          "尺寸和样式",
+          "与排序工具结合使用",
+          "在三级机构保费规划图中的应用",
+          "API 参考",
+          "注意事项",
+          "相关文件"
+        ]
+      }
+    },
+    {
       "id": "doc-development-项目导入指南-md",
       "type": "doc",
       "label": "数据导入说明（JSON/CSV）",
@@ -268,53 +290,70 @@
       }
     },
     {
-      "id": "doc-business-目标分配规则-md",
+      "id": "doc-components-组件索引-md",
       "type": "doc",
-      "label": "目标拆解权重规则",
+      "label": "📦 组件索引",
       "metadata": {
-        "path": "business/目标分配规则.md",
-        "category": "business",
+        "path": "components/组件索引.md",
+        "category": "components",
         "tags": [
-          "默认规则（统一）",
-          "季度权重（派生校验）",
-          "口径",
-          "时间进度"
+          "📋 快速查找",
+          "🔘 SortButtonGroup - 排序按钮组",
+          "📊 UniversalChart - 通用图表组件",
+          "🎨 Badge - 徽章组件",
+          "📝 添加新组件到索引",
+          "🔘 YourComponent - 组件名称",
+          "🔍 搜索技巧",
+          "📊 组件统计"
         ]
       }
     },
     {
-      "id": "doc-business-指标定义规范-md",
+      "id": "doc-changelog-总公司目标达成预测功能-md",
       "type": "doc",
-      "label": "指标字典与计算口径（V0）",
+      "label": "总公司目标达成预测功能 - 更新日志",
       "metadata": {
-        "path": "business/指标定义规范.md",
-        "category": "business",
+        "path": "changelog/总公司目标达成预测功能.md",
+        "category": "changelog",
         "tags": [
-          "维度",
-          "核心派生指标（按 机构×产品×月份/季度/累计）",
-          "时间进度与时间进度达成率（三口径）",
-          "已赚保费预测（V1）",
-          "同比增长与增量（6字段严格口径）",
-          "增长率预警规则（可视化展示）",
-          "总公司目标达成预测（V1）"
+          "功能概述",
+          "数据配置",
+          "技术实现",
+          "UI展示",
+          "业务文档",
+          "使用场景",
+          "如何使用",
+          "数据流程",
+          "验证",
+          "版本信息",
+          "未来优化方向"
         ]
       }
     },
     {
-      "id": "doc-business-业务流程规范-md",
+      "id": "doc-archive-设计思路_旧版备份-md",
       "type": "doc",
-      "label": "📋 业务流程规范",
+      "label": "全局设计规范 - 快速参考手册",
       "metadata": {
-        "path": "business/业务流程规范.md",
-        "category": "business",
+        "path": "archive/设计思路_旧版备份.md",
+        "category": "archive",
         "tags": [
-          "📑 流程概览",
-          "🎯 目标管理流程",
-          "📈 业绩分析流程",
-          "📊 数据管理流程",
-          "📋 报表生成流程",
-          "⚠️ 异常处理流程",
-          "📊 流程监控与优化"
+          "1. 设计原则",
+          "2. 色彩系统",
+          "3. 字体系统",
+          "4. 间距系统",
+          "5. 圆角系统",
+          "6. 阴影系统",
+          "7. 动画系统",
+          "8. 布局系统",
+          "9. 组件设计规范",
+          "10. 图表设计规范",
+          "11. 交互设计规范",
+          "12. 响应式设计规范",
+          "13. 可访问性规范",
+          "14. 使用指南",
+          "15. 版本管理",
+          "总结"
         ]
       }
     },
@@ -395,51 +434,386 @@
       }
     },
     {
-      "id": "doc-changelog-总公司目标达成预测功能-md",
+      "id": "doc-ai-evolution-README-md",
       "type": "doc",
-      "label": "总公司目标达成预测功能 - 更新日志",
+      "label": "AI编程进化知识库",
       "metadata": {
-        "path": "changelog/总公司目标达成预测功能.md",
-        "category": "changelog",
+        "path": "ai-evolution/README.md",
+        "category": "ai-evolution",
         "tags": [
-          "功能概述",
-          "数据配置",
-          "技术实现",
-          "UI展示",
-          "业务文档",
-          "使用场景",
-          "如何使用",
-          "数据流程",
-          "验证",
-          "版本信息",
-          "未来优化方向"
+          "📋 目录",
+          "🚀 快速开始",
+          "🗂️ 知识库结构",
+          "🔧 使用方法",
+          "📊 进化指标",
+          "💡 最佳实践",
+          "🔗 相关资源",
+          "🤝 贡献指南",
+          "📅 更新日志",
+          "📞 支持"
         ]
       }
     },
     {
-      "id": "doc-archive-设计思路_旧版备份-md",
+      "id": "doc-ai-evolution-QUICKSTART-md",
       "type": "doc",
-      "label": "全局设计规范 - 快速参考手册",
+      "label": "AI编程进化知识库 - 5分钟快速上手",
       "metadata": {
-        "path": "archive/设计思路_旧版备份.md",
-        "category": "archive",
+        "path": "ai-evolution/QUICKSTART.md",
+        "category": "ai-evolution",
         "tags": [
-          "1. 设计原则",
-          "2. 色彩系统",
-          "3. 字体系统",
-          "4. 间距系统",
-          "5. 圆角系统",
-          "6. 阴影系统",
-          "7. 动画系统",
-          "8. 布局系统",
-          "9. 组件设计规范",
-          "10. 图表设计规范",
-          "11. 交互设计规范",
-          "12. 响应式设计规范",
-          "13. 可访问性规范",
-          "14. 使用指南",
-          "15. 版本管理",
-          "总结"
+          "🎯 核心理念",
+          "🚀 场景1：遇到问题时",
+          "🔍 场景2：分析改进",
+          "📚 场景3：开始新任务前",
+          "📊 场景4：定期回顾",
+          "🎓 进阶技巧",
+          "失败的Prompt ❌",
+          "成功的Prompt ✅",
+          "📈 进化路线图",
+          "💡 常见问题",
+          "🎯 行动计划",
+          "🔗 下一步"
+        ]
+      }
+    },
+    {
+      "id": "doc-business-目标分配规则-md",
+      "type": "doc",
+      "label": "目标拆解权重规则",
+      "metadata": {
+        "path": "business/目标分配规则.md",
+        "category": "business",
+        "tags": [
+          "默认规则（统一）",
+          "季度权重（派生校验）",
+          "口径",
+          "时间进度"
+        ]
+      }
+    },
+    {
+      "id": "doc-business-指标定义规范-md",
+      "type": "doc",
+      "label": "指标字典与计算口径（V0）",
+      "metadata": {
+        "path": "business/指标定义规范.md",
+        "category": "business",
+        "tags": [
+          "维度",
+          "核心派生指标（按 机构×产品×月份/季度/累计）",
+          "时间进度与时间进度达成率（三口径）",
+          "已赚保费预测（V1）",
+          "同比增长与增量（6字段严格口径）",
+          "增长率预警规则（可视化展示）",
+          "总公司目标达成预测（V1）"
+        ]
+      }
+    },
+    {
+      "id": "doc-business-业务流程规范-md",
+      "type": "doc",
+      "label": "📋 业务流程规范",
+      "metadata": {
+        "path": "business/业务流程规范.md",
+        "category": "business",
+        "tags": [
+          "📑 流程概览",
+          "🎯 目标管理流程",
+          "📈 业绩分析流程",
+          "📊 数据管理流程",
+          "📋 报表生成流程",
+          "⚠️ 异常处理流程",
+          "📊 流程监控与优化"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-index-md",
+      "type": "doc",
+      "label": "解决方案索引",
+      "metadata": {
+        "path": "ai-evolution/solutions/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📊 统计概览",
+          "🎨 Prompt模式库",
+          "🧩 Context模式库",
+          "💼 最佳实践库",
+          "🔍 按场景查找",
+          "📈 效果统计",
+          "🚀 快速开始",
+          "📝 贡献新模式"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-problems-template-md",
+      "type": "doc",
+      "label": "[问题编号] - [问题简短标题]",
+      "metadata": {
+        "path": "ai-evolution/problems/template.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📋 问题描述",
+          "💬 Prompt历史",
+          "🔍 本质分析",
+          "💡 改进方案",
+          "🎯 提炼的模式",
+          "📚 相关资源",
+          "✅ 验证清单",
+          "📝 经验总结"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-problems-index-md",
+      "type": "doc",
+      "label": "问题记录索引",
+      "metadata": {
+        "path": "ai-evolution/problems/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📊 统计概览",
+          "🗂️ 按分类索引",
+          "📅 按时间索引",
+          "🏷️ 按标签索引",
+          "📈 问题趋势",
+          "🔍 快速查询"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-evolution-prompt-evolution-md",
+      "type": "doc",
+      "label": "Prompt进化史",
+      "metadata": {
+        "path": "ai-evolution/evolution/prompt-evolution.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📈 进化时间线",
+          "🎯 未来进化方向",
+          "📊 进化指标追踪"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-evolution-metrics-md",
+      "type": "doc",
+      "label": "进化指标追踪",
+      "metadata": {
+        "path": "ai-evolution/evolution/metrics.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📊 核心指标",
+          "📈 进化阶段",
+          "🎯 周报模板"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-context-patterns-依赖关系图-md",
+      "type": "doc",
+      "label": "[C-003] 依赖关系图",
+      "metadata": {
+        "path": "ai-evolution/solutions/context-patterns/依赖关系图.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📝 模板",
+          "依赖关系"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-context-patterns-代码结构说明-md",
+      "type": "doc",
+      "label": "[C-002] 代码结构说明",
+      "metadata": {
+        "path": "ai-evolution/solutions/context-patterns/代码结构说明.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📝 模板",
+          "项目结构"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-context-patterns-业务规则提供-md",
+      "type": "doc",
+      "label": "[C-001] 业务规则提供",
+      "metadata": {
+        "path": "ai-evolution/solutions/context-patterns/业务规则提供.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📝 模板",
+          "业务规则",
+          "💡 关键要素"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-context-patterns-index-md",
+      "type": "doc",
+      "label": "Context模式库",
+      "metadata": {
+        "path": "ai-evolution/solutions/context-patterns/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📚 模式列表"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-问题诊断技巧-md",
+      "type": "doc",
+      "label": "[BP-002] 问题诊断技巧",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/问题诊断技巧.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🔍 诊断流程",
+          "💡 快速修复技巧"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-进化式开发-md",
+      "type": "doc",
+      "label": "[BP-003] 进化式开发",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/进化式开发.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🔄 进化循环",
+          "📊 进化指标",
+          "💡 持续改进建议"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-与AI协作流程-md",
+      "type": "doc",
+      "label": "[BP-001] 与AI协作流程",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/与AI协作流程.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🔄 完整流程",
+          "💡 关键原则"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-index-md",
+      "type": "doc",
+      "label": "最佳实践库",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📚 实践列表"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-prompt-patterns-错误处理模式-md",
+      "type": "doc",
+      "label": "[P-003] 错误处理模式",
+      "metadata": {
+        "path": "ai-evolution/solutions/prompt-patterns/错误处理模式.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📝 Prompt模板",
+          "错误信息",
+          "错误位置",
+          "复现步骤",
+          "期望行为",
+          "实际行为",
+          "Context",
+          "已尝试的解决方案",
+          "💡 关键要素"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-prompt-patterns-任务分解模式-md",
+      "type": "doc",
+      "label": "[P-002] 任务分解模式",
+      "metadata": {
+        "path": "ai-evolution/solutions/prompt-patterns/任务分解模式.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🎯 模式概述",
+          "📝 Prompt模板",
+          "任务分解",
+          "Context",
+          "执行方式",
+          "💡 分解原则"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-prompt-patterns-代码审查模式-md",
+      "type": "doc",
+      "label": "[P-004] 代码审查模式",
+      "metadata": {
+        "path": "ai-evolution/solutions/prompt-patterns/代码审查模式.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📝 Prompt模板",
+          "代码",
+          "审查清单",
+          "Context"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-prompt-patterns-index-md",
+      "type": "doc",
+      "label": "Prompt模式库",
+      "metadata": {
+        "path": "ai-evolution/solutions/prompt-patterns/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🎯 模式概览",
+          "📚 模式列表",
+          "🔍 如何选择模式？",
+          "📝 模式模板"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-prompt-patterns-context-提供模式-md",
+      "type": "doc",
+      "label": "[P-001] Context提供模式",
+      "metadata": {
+        "path": "ai-evolution/solutions/prompt-patterns/context-提供模式.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🎯 模式概述",
+          "Context",
+          "📝 Prompt模板",
+          "💡 使用示例",
+          "✅ Context清单",
+          "🎯 效果验证",
+          "⚠️ 注意事项",
+          "📚 相关模式",
+          "📊 实战案例",
+          "🔄 模式进化"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-analysis-index-md",
+      "type": "doc",
+      "label": "本质分析索引",
+      "metadata": {
+        "path": "ai-evolution/analysis/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📊 统计概览",
+          "🔍 根因分类",
+          "📁 目录结构"
         ]
       }
     },
@@ -504,29 +878,6 @@
       }
     },
     {
-      "id": "code-lib-utils-ts",
-      "type": "code",
-      "label": "lib/utils.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "cn",
-          "getQuarterlyStatus"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-paths-ts",
-      "type": "code",
-      "label": "lib/paths.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "getAssetPath"
-        ]
-      }
-    },
-    {
       "id": "code-schemas-types-ts",
       "type": "code",
       "label": "schemas/types.ts",
@@ -557,62 +908,40 @@
       }
     },
     {
-      "id": "code-app-page-tsx",
+      "id": "code-lib-utils-ts",
       "type": "code",
-      "label": "app/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-layout-tsx",
-      "type": "code",
-      "label": "app/layout.tsx",
+      "label": "lib/utils.ts",
       "metadata": {
         "type": "ui-component",
         "exports": [
-          "metadata"
+          "cn",
+          "getQuarterlyStatus"
         ]
       }
     },
     {
-      "id": "code-config-thresholdRules-ts",
+      "id": "code-lib-sorting-ts",
       "type": "code",
-      "label": "config/thresholdRules.ts",
+      "label": "lib/sorting.ts",
       "metadata": {
         "type": "ui-component",
         "exports": [
-          "DEFAULT_THRESHOLD_RULES",
-          "getAchievementStatus",
-          "getGrowthStatus"
+          "sortOrgItems",
+          "reorderArrayByIndex",
+          "createSortMapping",
+          "safeCompare",
+          "genericSort"
         ]
       }
     },
     {
-      "id": "code-config-progressWeights-ts",
+      "id": "code-lib-paths-ts",
       "type": "code",
-      "label": "config/progressWeights.ts",
+      "label": "lib/paths.ts",
       "metadata": {
         "type": "ui-component",
         "exports": [
-          "DEFAULT_MONTHLY_WEIGHTS",
-          "DEFAULT_QUARTERLY_WEIGHTS",
-          "validateWeightsSum",
-          "calculateQuarterlyWeights"
-        ]
-      }
-    },
-    {
-      "id": "code-config-organizationModes-ts",
-      "type": "code",
-      "label": "config/organizationModes.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "organizationModes",
-          "detectOrganizationMode",
-          "generatePageTitle"
+          "getAssetPath"
         ]
       }
     },
@@ -729,39 +1058,84 @@
       }
     },
     {
-      "id": "code-app-rules-page-tsx",
+      "id": "code-app-page-tsx",
       "type": "code",
-      "label": "app/rules/page.tsx",
+      "label": "app/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-app-orgs-page-tsx",
+      "id": "code-app-layout-tsx",
       "type": "code",
-      "label": "app/orgs/page.tsx",
+      "label": "app/layout.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "metadata"
+        ]
+      }
+    },
+    {
+      "id": "code-config-thresholdRules-ts",
+      "type": "code",
+      "label": "config/thresholdRules.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "DEFAULT_THRESHOLD_RULES",
+          "getAchievementStatus",
+          "getGrowthStatus"
+        ]
+      }
+    },
+    {
+      "id": "code-config-progressWeights-ts",
+      "type": "code",
+      "label": "config/progressWeights.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "DEFAULT_MONTHLY_WEIGHTS",
+          "DEFAULT_QUARTERLY_WEIGHTS",
+          "validateWeightsSum",
+          "calculateQuarterlyWeights"
+        ]
+      }
+    },
+    {
+      "id": "code-config-organizationModes-ts",
+      "type": "code",
+      "label": "config/organizationModes.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "organizationModes",
+          "detectOrganizationMode",
+          "generatePageTitle"
+        ]
+      }
+    },
+    {
+      "id": "code-components-ui-index-ts",
+      "type": "code",
+      "label": "components/ui/index.ts",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-app-import-page-tsx",
+      "id": "code-components-ui-SortButtonGroup-tsx",
       "type": "code",
-      "label": "app/import/page.tsx",
+      "label": "components/ui/SortButtonGroup.tsx",
       "metadata": {
         "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-design-system-page-tsx",
-      "type": "code",
-      "label": "app/design-system/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
+        "exports": [
+          "SortButtonGroup",
+          "SortPresets"
+        ]
       }
     },
     {
@@ -773,33 +1147,6 @@
         "exports": [
           "Badge"
         ]
-      }
-    },
-    {
-      "id": "code-app-earned-premium-page-tsx",
-      "type": "code",
-      "label": "app/earned-premium/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-data-page-tsx",
-      "type": "code",
-      "label": "app/data/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-color-system-page-tsx",
-      "type": "code",
-      "label": "app/color-system/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
       }
     },
     {
@@ -821,6 +1168,17 @@
         "type": "ui-component",
         "exports": [
           "Section"
+        ]
+      }
+    },
+    {
+      "id": "code-components-filters-FilterSelector-tsx",
+      "type": "code",
+      "label": "components/filters/FilterSelector.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "FilterSelector"
         ]
       }
     },
@@ -858,13 +1216,13 @@
       }
     },
     {
-      "id": "code-components-config-ThresholdConfig-tsx",
+      "id": "code-components-kpi-KpiCard-tsx",
       "type": "code",
-      "label": "components/config/ThresholdConfig.tsx",
+      "label": "components/kpi/KpiCard.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": [
-          "ThresholdConfig"
+          "KpiCard"
         ]
       }
     },
@@ -891,76 +1249,86 @@
       }
     },
     {
-      "id": "code-components-filters-FilterSelector-tsx",
+      "id": "code-components-config-ThresholdConfig-tsx",
       "type": "code",
-      "label": "components/filters/FilterSelector.tsx",
+      "label": "components/config/ThresholdConfig.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": [
-          "FilterSelector"
+          "ThresholdConfig"
         ]
       }
     },
     {
-      "id": "code-components-kpi-KpiCard-tsx",
+      "id": "code-app-rules-page-tsx",
       "type": "code",
-      "label": "components/kpi/KpiCard.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "KpiCard"
-        ]
-      }
-    },
-    {
-      "id": "code-app-test-quarterly-chart-page-tsx",
-      "type": "code",
-      "label": "app/test/quarterly-chart/page.tsx",
+      "label": "app/rules/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-app-orgs-[org_id]-page-tsx",
+      "id": "code-app-orgs-page-tsx",
       "type": "code",
-      "label": "app/orgs/[org_id]/page.tsx",
+      "label": "app/orgs/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-app-orgs-[org_id]-OrgDetailClient-tsx",
+      "id": "code-app-earned-premium-page-tsx",
       "type": "code",
-      "label": "app/orgs/[org_id]/OrgDetailClient.tsx",
+      "label": "app/earned-premium/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-app-color-system-preview-page-tsx",
+      "id": "code-app-universal-chart-test-page-tsx",
       "type": "code",
-      "label": "app/color-system/preview/page.tsx",
+      "label": "app/universal-chart-test/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-components-charts-UniversalChart-UniversalChart-types-ts",
+      "id": "code-app-design-system-page-tsx",
       "type": "code",
-      "label": "components/charts/UniversalChart/UniversalChart.types.ts",
+      "label": "app/design-system/page.tsx",
       "metadata": {
         "type": "ui-component",
-        "exports": [
-          "QUARTER_LABELS",
-          "MONTH_LABELS",
-          "isValidChartData",
-          "getPeriodLabel",
-          "getAllPeriodLabels"
-        ]
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-data-page-tsx",
+      "type": "code",
+      "label": "app/data/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-import-page-tsx",
+      "type": "code",
+      "label": "app/import/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-color-system-page-tsx",
+      "type": "code",
+      "label": "app/color-system/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
       }
     },
     {
@@ -995,6 +1363,77 @@
         "exports": [
           "QuarterlyProportionChart"
         ]
+      }
+    },
+    {
+      "id": "code-app-test-quarterly-chart-page-tsx",
+      "type": "code",
+      "label": "app/test/quarterly-chart/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-index-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-UniversalChart-types-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/UniversalChart.types.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "QUARTER_LABELS",
+          "MONTH_LABELS",
+          "isValidChartData",
+          "getPeriodLabel",
+          "getAllPeriodLabels"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-UniversalChart-tsx",
+      "type": "code",
+      "label": "components/charts/UniversalChart/UniversalChart.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "UniversalChart"
+        ]
+      }
+    },
+    {
+      "id": "code-app-orgs-[org_id]-page-tsx",
+      "type": "code",
+      "label": "app/orgs/[org_id]/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-orgs-[org_id]-OrgDetailClient-tsx",
+      "type": "code",
+      "label": "app/orgs/[org_id]/OrgDetailClient.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-color-system-preview-page-tsx",
+      "type": "code",
+      "label": "app/color-system/preview/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
       }
     },
     {
@@ -1148,6 +1587,203 @@
           "ChartHeaderShowcase"
         ]
       }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-utils-index-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/utils/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-hooks-useUniversalData-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/hooks/useUniversalData.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "useUniversalData"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-hooks-useUniversalConfig-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/hooks/useUniversalConfig.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "useUniversalConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-hooks-useChartInteractions-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/hooks/useChartInteractions.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "useChartInteractions"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-configs-quarterlyShare-config-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/configs/quarterlyShare.config.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createQuarterlyShareConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-configs-quarterlyPremium-config-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/configs/quarterlyPremium.config.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createQuarterlyPremiumConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-configs-orgPremium-config-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/configs/orgPremium.config.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createOrgPremiumConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-configs-monthlyShare-config-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/configs/monthlyShare.config.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createMonthlyShareConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-configs-monthlyPremium-config-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/configs/monthlyPremium.config.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createMonthlyPremiumConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-configs-index-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/configs/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "getPresetConfig",
+          "mergeConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-configs-hqPrediction-config-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/configs/hqPrediction.config.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createHqPredictionConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-shared-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/shared.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "calculateGrowthRate",
+          "calculateAchievementRate",
+          "calculateShare",
+          "getWarningLevel",
+          "calculateGrowthRateArray",
+          "calculateAchievementRateArray",
+          "calculateShareArray",
+          "validateArrayLength",
+          "ensureGrowthSeries",
+          "ensureAchievementSeries"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-quarterly-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/quarterly.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createQuarterlyPremiumAdapter",
+          "createQuarterlyShareAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-organization-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/organization.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createOrganizationPremiumAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-monthly-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/monthly.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createMonthlyPremiumAdapter",
+          "createMonthlyShareAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-index-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-hqPrediction-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/hqPrediction.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createHqPredictionAdapter",
+          "calculateCumulative",
+          "reverseCalculateCumulative"
+        ]
+      }
     }
   ],
   "edges": [
@@ -1236,6 +1872,18 @@
       "weight": 2
     },
     {
+      "from": "doc-features-SortButtonGroup使用指南-md",
+      "to": "code-lib-sorting-ts",
+      "type": "defines",
+      "weight": 2
+    },
+    {
+      "from": "doc-features-SortButtonGroup使用指南-md",
+      "to": "code-components-ui-index-ts",
+      "type": "defines",
+      "weight": 2
+    },
+    {
       "from": "doc-design-设计系统快速参考-md",
       "to": "code-config-organizationModes-ts",
       "type": "defines",
@@ -1244,6 +1892,18 @@
     {
       "from": "doc-design-设计系统快速参考-md",
       "to": "code-lib-utils-ts",
+      "type": "defines",
+      "weight": 2
+    },
+    {
+      "from": "doc-design-组件设计规范-md",
+      "to": "code-lib-sorting-ts",
+      "type": "defines",
+      "weight": 2
+    },
+    {
+      "from": "doc-components-组件索引-md",
+      "to": "code-lib-sorting-ts",
       "type": "defines",
       "weight": 2
     },
