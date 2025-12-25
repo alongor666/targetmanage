@@ -23,19 +23,24 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 设置 Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'pnpm'
+    - name: 设置 Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
 
-      - name: 安装 pnpm（固定版本）
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.24.0
+    - name: 启用 Corepack 并固定 pnpm 版本
+      run: |
+        corepack enable
+        corepack prepare pnpm@10.24.0 --activate
+        pnpm -v
 
-      - name: 安装依赖（冻结 lockfile）
-        run: pnpm install --frozen-lockfile
+    - name: 校验 lockfile 存在
+      run: |
+        ls -la
+        ls -la pnpm-lock.yaml
+
+    - name: 安装依赖（冻结 lockfile）
+      run: pnpm install --frozen-lockfile
 
       - name: 运行类型检查
         run: pnpm typecheck
