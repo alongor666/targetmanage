@@ -1,4 +1,3 @@
-# GitHub Actions 工作流 - 自动部署到 GitHub Pages
 name: Deploy to GitHub Pages
 
 on:
@@ -12,42 +11,47 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
 
-    - name: 设置 Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
+      # 先装 Node（不启用 pnpm cache，避免此时找 pnpm）
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-    - name: 启用 Corepack 并固定 pnpm 版本
-      run: |
-        corepack enable
-        corepack prepare pnpm@10.24.0 --activate
-        pnpm -v
+      # 再确保 pnpm 一定存在且版本固定
+      - name: 启用 Corepack 并固定 pnpm 版本
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.24.0 --activate
+          pnpm -v
 
-    - name: 校验 lockfile 存在
-      run: |
-        ls -la
-        ls -la pnpm-lock.yaml
+      # 这时再启用 pnpm 缓存（可选，但建议）
+      - name: 设置 pnpm store 缓存路径
+        id: pnpm-cache
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
 
-    - name: 安装依赖（冻结 lockfile）
-      run: pnpm install --frozen-lockfile
+      - name: 缓存 pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 安装依赖（冻结 lockfile）
+        run: pnpm install --frozen-lockfile
 
       - name: 运行类型检查
         run: pnpm typecheck
-
-      # 如需启用 ESLint，修复配置后再打开
-      # - name: 运行代码检查
-      #   run: pnpm lint
 
       - name: 构建项目（GitHub Pages）
         run: pnpm build:github
@@ -65,11 +69,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: 部署到 GitHub Pages
         id: deployment
