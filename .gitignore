@@ -35,3 +35,6 @@ coverage/
 
 # 测试
 .coverage
+.trae/
+Claude.md
+AGENTS.md
