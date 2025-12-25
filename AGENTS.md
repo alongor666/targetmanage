@@ -2,54 +2,37 @@
 
 > 通用 AI Agents 指令文件 - 知识图谱驱动的协作开发
 
+## 范围与目标
+
+- 适用范围：仓库内所有目录与文件均遵循本文档，除非更深层目录存在新的 `AGENTS.md` 覆盖。
+- 目标：以 Codex 官方最佳实践审视并执行开发流程，确保复用优先、索引驱动、验证闭环和提交规范。
+
 ## 🤖 支持的 AI Agents
 
-本文件为以下AI工具提供统一的知识图谱访问接口：
-- GitHub Copilot
-- Cursor
-- Tabnine
-- Codeium
-- Amazon CodeWhisperer
-- 其他基于LSP的AI助手
+本文档为以下 AI 工具提供统一的知识图谱访问接口：GitHub Copilot、Cursor、Tabnine、Codeium、Amazon CodeWhisperer 以及其他基于 LSP 的助手。
 
-## 🎯 核心原则
+## 🎯 核心原则（Codex 审视后强化）
 
-### 原则0: 复用优先 (最高优先级)
-```
-任何开发任务前：
-AI → 检查可复用资源 → 评估复用性 → 复用或新建 → 更新文档
+### 原则0：复用优先（最高优先级，强制执行）
+1. 任务开始时，先按优先级检查可复用资源：
+   1) UI 组件（`src/components/ui/`, `docs/design/组件设计规范.md`）
+   2) 数据结构（`src/schemas/`, `docs/business/指标定义规范.md`）
+   3. 业务逻辑（`src/domain/`, `src/lib/`, `docs/.meta/code-index.json`）
+   4. 配置数据（`public/data/`, `src/config/`）
+   5. 设计模式（`docs/design/`）
+2. 选择复用时记录来源与使用场景；若新建内容，立即更新相关索引或文档引用。
 
-检查优先级：
-1. UI 组件 (src/components/ui/, docs/design/组件设计规范.md)
-2. 数据结构 (src/schemas/, docs/business/指标定义规范.md)
-3. 业务逻辑 (src/domain/, src/lib/, docs/.meta/code-index.json)
-4. 配置数据 (public/data/, src/config/)
-5. 设计模式 (docs/design/)
+### 原则1：索引优先（先读索引，再读代码）
+- 先查阅 `docs/.meta/docs-index.json` 与 `docs/.meta/code-index.json`，理解模块与文档关系后再修改代码。
+- 若索引缺失，优先补充索引或在 PR 中描述缺口与改进。
 
-如果复用 → 记录使用场景
-如果新建 → 立即更新文档索引
-```
+### 原则2：双向追溯（代码 ↔ 索引 ↔ 文档）
+- 每次变更需检查文档与索引的引用是否仍然正确；新增功能需在索引或文档中体现。
+- 禁止只修改代码而不处理文档/索引的对应关系。
 
-### 原则1: 索引优先
-```
-传统方式：
-AI → 扫描代码 → 猜测意图 → 生成代码
-
-索引方式：
-AI → 读取索引 → 理解上下文 → 精准生成
-```
-
-### 原则2: 双向追溯
-```
-代码 ←→ 索引 ←→ 文档
-
-任何修改都必须保持三者同步
-```
-
-### 原则3: 自动验证
-```
-生成代码 → 自动检查 → 索引验证 → 提交
-```
+### 原则3：自动验证（以脚本为准）
+- 开发完成后运行可用的自动化检查，如 `pnpm test`、`pnpm lint` 或仓库内提供的专用脚本。
+- 若脚本缺失但有验证需求，应在 PR 描述中说明验证方式或缺口。
 
 ## 🗺️ 知识图谱系统
 
