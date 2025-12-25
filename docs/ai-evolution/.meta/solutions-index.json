@@ -1,79 +1,79 @@
 {
   "solutions": {
-    "solution-bcd39381": {
-      "id": "solution-bcd39381",
+    "solution-3cd539cd": {
+      "id": "solution-3cd539cd",
       "title": "[P-001] Context提供模式",
       "type": "prompt-pattern",
       "filePath": "ai-evolution/solutions/prompt-patterns/context-提供模式.md",
       "relatedProblems": [],
       "effectImprovement": "**：AI理解准确率 +40%"
     },
-    "solution-001210a2": {
-      "id": "solution-001210a2",
+    "solution-383f9b34": {
+      "id": "solution-383f9b34",
       "title": "[P-004] 代码审查模式",
       "type": "prompt-pattern",
       "filePath": "ai-evolution/solutions/prompt-patterns/代码审查模式.md",
       "relatedProblems": [],
       "effectImprovement": "**：代码质量提升 +30%"
     },
-    "solution-65b0e2f4": {
-      "id": "solution-65b0e2f4",
+    "solution-392aaa3e": {
+      "id": "solution-392aaa3e",
       "title": "[P-002] 任务分解模式",
       "type": "prompt-pattern",
       "filePath": "ai-evolution/solutions/prompt-patterns/任务分解模式.md",
       "relatedProblems": [],
       "effectImprovement": "**：任务完成质量 +35%"
     },
-    "solution-42e299ae": {
-      "id": "solution-42e299ae",
+    "solution-425cf597": {
+      "id": "solution-425cf597",
       "title": "[P-003] 错误处理模式",
       "type": "prompt-pattern",
       "filePath": "ai-evolution/solutions/prompt-patterns/错误处理模式.md",
       "relatedProblems": [],
       "effectImprovement": "**：问题定位速度 +50%"
     },
-    "solution-1d119a7e": {
-      "id": "solution-1d119a7e",
+    "solution-b1081af2": {
+      "id": "solution-b1081af2",
       "title": "[C-001] 业务规则提供",
       "type": "context-pattern",
       "filePath": "ai-evolution/solutions/context-patterns/业务规则提供.md",
       "relatedProblems": [],
       "effectImprovement": "**：业务理解准确率 +60%"
     },
-    "solution-10dc9cfa": {
-      "id": "solution-10dc9cfa",
+    "solution-acbddf77": {
+      "id": "solution-acbddf77",
       "title": "[C-002] 代码结构说明",
       "type": "context-pattern",
       "filePath": "ai-evolution/solutions/context-patterns/代码结构说明.md",
       "relatedProblems": [],
       "effectImprovement": "**：代码生成一致性 +45%"
     },
-    "solution-6945a644": {
-      "id": "solution-6945a644",
+    "solution-cf499f75": {
+      "id": "solution-cf499f75",
       "title": "[C-003] 依赖关系图",
       "type": "context-pattern",
       "filePath": "ai-evolution/solutions/context-patterns/依赖关系图.md",
       "relatedProblems": [],
       "effectImprovement": "**：集成错误率 -50%"
     },
-    "solution-ee1c620c": {
-      "id": "solution-ee1c620c",
+    "solution-bf903ddb": {
+      "id": "solution-bf903ddb",
       "title": "[BP-001] 与AI协作流程",
       "type": "best-practice",
       "filePath": "ai-evolution/solutions/best-practices/与AI协作流程.md",
       "relatedProblems": [],
       "effectImprovement": "**：整体效率 +40%"
     },
-    "solution-5ccc74f2": {
-      "id": "solution-5ccc74f2",
+    "solution-75ae554e": {
+      "id": "solution-75ae554e",
       "title": "[BP-003] 进化式开发",
       "type": "best-practice",
       "filePath": "ai-evolution/solutions/best-practices/进化式开发.md",
       "relatedProblems": [],
       "effectImprovement": "**：长期效率持续提升"
     },
-    "solution-07f21b9e": {
-      "id": "solution-07f21b9e",
+    "solution-855c037b": {
+      "id": "solution-855c037b",
       "title": "[BP-002] 问题诊断技巧",
       "type": "best-practice",
       "filePath": "ai-evolution/solutions/best-practices/问题诊断技巧.md",

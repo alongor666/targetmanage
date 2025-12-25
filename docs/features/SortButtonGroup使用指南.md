@@ -17,7 +17,7 @@
 ## 基础用法
 
 ```tsx
-import { SortButtonGroup, SortPresets, type SortOrder } from '@/components/ui/SortButtonGroup';
+import { SortButtonGroup, SortPresets, type SortOrder } from 'src/components/ui/SortButtonGroup';
 
 function MyComponent() {
   const [sortKey, setSortKey] = useState<OrgSortKey>('premium');
@@ -42,7 +42,7 @@ function MyComponent() {
 组件提供了常用的预设选项：
 
 ```tsx
-import { SortPresets } from '@/components/ui/SortButtonGroup';
+import { SortPresets } from 'src/components/ui/SortButtonGroup';
 
 // 保费规划图排序选项
 SortPresets.orgPremium
@@ -105,7 +105,7 @@ const customOptions = [
 ## 与排序工具结合使用
 
 ```tsx
-import { sortOrgItems, type SortableOrgItem } from '@/lib/sorting';
+import { sortOrgItems, type SortableOrgItem } from 'src/lib/sorting';
 
 // 准备数据
 const sortableData: SortableOrgItem[] = [
