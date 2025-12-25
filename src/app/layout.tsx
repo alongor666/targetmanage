@@ -1,6 +1,12 @@
 import "./globals.css";
 import Link from "next/link";
-import { ColorSystemHydrator } from "@/components/system/ColorSystemHydrator";
+import dynamic from "next/dynamic";
+
+// 动态导入 ColorSystemHydrator，禁用 SSR 避免水合错误
+const ColorSystemHydrator = dynamic(
+  () => import("@/components/system/ColorSystemHydrator").then(mod => ({ default: mod.ColorSystemHydrator })),
+  { ssr: false }
+);
 
 export const metadata = {
   title: "2026 目标管理可视化",
