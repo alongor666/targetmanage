@@ -940,6 +940,443 @@ cat docs/.meta/coverage-report.txt  # If available
 
 ---
 
+## 🎭 乐高式复用哲学 (LEGO-Style Reuse Philosophy)
+
+> **核心哲学**: "凡是通用性都该复用，凡是特有则在此基础上组合"
+>
+> 我们的目标是构建一个**乐高积木式**的组件系统，让开发像搭积木一样高效。
+
+### 🏗️ 复用决策框架
+
+#### 第一步：识别通用性 vs 特有性
+
+```typescript
+// 通用性特征（应该复用）
+const GENERIC_TRAITS = {
+  ui: [
+    '跨场景可用的交互模式',
+    '标准化的视觉样式',
+    '常见的数据展示形式',
+    '重复的用户操作流程',
+  ],
+  logic: [
+    '纯函数计算逻辑',
+    '数据转换工具',
+    '验证规则',
+    '格式化工具',
+  ],
+  data: [
+    '跨业务实体的属性',
+    '通用的枚举值',
+    '标准化的数据结构',
+  ],
+};
+
+// 特有性特征（需要自定义组合）
+const SPECIFIC_TRAITS = {
+  business: [
+    '特定业务规则',
+    '特殊计算公式',
+    '业务特定的流程',
+  ],
+  ui: [
+    '特定的页面布局',
+    '特殊的交互组合',
+    '业务特定的组件编排',
+  ],
+};
+```
+
+### ✅ 应该复用的内容（乐高积木块）
+
+#### 1. 原子级组件（必须复用）
+
+```yaml
+UI 原子组件:
+  - SortButtonGroup    # 排序按钮组
+  - Button             # 通用按钮
+  - Input              # 输入框
+  - Select             # 下拉选择
+  - Modal              # 模态框
+  - Badge              # 徽章
+  - Tooltip            # 提示框
+
+业务逻辑工具:
+  - calculateAchievementRate  # 达成率计算
+  - calculateGrowthRate       # 增长率计算
+  - formatCurrency           # 货币格式化
+  - formatPercent            # 百分比格式化
+  - safeDivide                # 安全除法
+
+数据结构:
+  - OrgSchema          # 机构结构
+  - Product type       # 产品类型
+  - TimeGranularity    # 时间粒度
+```
+
+#### 2. 复合级组件（应该复用）
+
+```yaml
+数据展示:
+  - UniversalChart     # 通用图表组件
+  - DataTable          # 数据表格
+  - KpiCard           # KPI卡片
+
+交互组件:
+  - FilterSelector    # 筛选选择器
+  - SearchBar         # 搜索栏
+  - Pagination        # 分页器
+
+布局组件:
+  - PageHeader        # 页面头部
+  - ActionBar         # 操作栏
+  - EmptyState        # 空状态
+```
+
+#### 3. 工具函数（必须复用）
+
+```typescript
+// ✅ 复用示例：排序工具
+import { sortOrgItems } from '@/lib/sorting';
+
+// 任何需要排序的场景都用这个
+const sorted = sortOrgItems(data, 'premium', 'desc');
+
+// ✅ 复用示例：格式化工具
+import { formatCurrency, formatPercent } from '@/lib/utils';
+
+// 任何需要格式化的场景都用这些
+const display = formatCurrency(12345.67); // "12,345.67 元"
+```
+
+### ❌ 不应该复用的内容（需要组合）
+
+#### 1. 业务特定逻辑（必须在组合中实现）
+
+```yaml
+业务规则:
+  - 特定的计算公式 (如: 四川分公司的特殊权重)
+  - 业务特定的流程 (如: 三级机构的特殊筛选)
+  - 特殊的数据聚合逻辑
+
+页面布局:
+  - 特定页面的组件编排
+  - 业务特定的数据流
+  - 页面级别的状态管理
+```
+
+#### 2. 组合示例（正确做法）
+
+```tsx
+// ✅ 正确：复用通用组件 + 组合业务逻辑
+import { SortButtonGroup, SortPresets } from '@/components/ui/SortButtonGroup';
+import { UniversalChart } from '@/components/charts/UniversalChart';
+import { sortOrgItems } from '@/lib/sorting';
+
+function OrgPremiumChart() {
+  // 业务特定：计算排序数据
+  const sortableData = useMemo(() => {
+    return orgs.map(o => ({
+      org_id: o.org_id,
+      org_name: o.org_cn,
+      premium: calculatePremium(o),  // 业务逻辑
+      share: calculateShare(o),      // 业务逻辑
+      growth: calculateGrowth(o),    // 业务逻辑
+    }));
+  }, [orgs]);
+
+  // 复用通用排序工具
+  const sorted = sortOrgItems(sortableData, sortKey, sortOrder);
+
+  // 复用通用UI组件
+  return (
+    <>
+      <SortButtonGroup {...sortProps} />
+      <UniversalChart data={sorted} />
+    </>
+  );
+}
+
+// ❌ 错误：为特定场景创建特殊排序组件
+function OrgPremiumSortButton() {
+  // 不应该创建！应该复用 SortButtonGroup
+}
+```
+
+### 🧩 乐高组合模式
+
+#### 模式1：原子组件组合
+
+```tsx
+// 原子组件
+<Button />
+<Input />
+<Badge />
+
+// 组合成业务组件
+function SearchFilterBar() {
+  return (
+    <div className="flex gap-2">
+      <Input placeholder="搜索..." />
+      <Button>搜索</Button>
+      <Badge>{count}</Badge>
+    </div>
+  );
+}
+```
+
+#### 模式2：工具函数组合
+
+```typescript
+// 通用工具
+import { safeDivide, multiply } from '@/lib/math';
+
+// 组合成业务逻辑
+function calculateAchievementRate(actual: number, target: number): number | null {
+  const result = safeDivide(actual, target);  // 复用
+  return result !== null ? multiply(result, 100) : null;  // 复用
+}
+```
+
+#### 模式3：数据流组合
+
+```typescript
+// 通用数据加载器
+import { loadTargets2026, loadActuals2025 } from '@/services/loaders';
+
+// 组合成业务特定的数据流
+function useOrgComparisonData(orgId: string) {
+  // 复用通用加载器
+  const targets = loadTargets2026();
+  const actuals = loadActuals2025();
+
+  // 业务特定的组合逻辑
+  return useMemo(() => {
+    return combineTargetsAndActuals(targets, actuals, orgId);
+  }, [targets, actuals, orgId]);
+}
+```
+
+### 📊 复用度评估标准
+
+#### 高复用度（必须复用）- 得分 ≥ 80%
+
+```yaml
+特征:
+  - 跨 3+ 个场景使用
+  - 不包含业务特定逻辑
+  - 接口通用可配置
+  - 独立性强，无隐式依赖
+
+示例:
+  - SortButtonGroup (可用于任何列表/图表排序)
+  - formatCurrency (可用于任何金额显示)
+  - calculateAchievementRate (通用达成率计算)
+
+行动:
+  - 检查 docs/components/组件索引.md
+  - 直接复用现有组件
+  - 记录使用场景
+```
+
+#### 中等复用度（可考虑复用）- 得分 50-79%
+
+```yaml
+特征:
+  - 跨 2-3 个场景使用
+  - 包含少量业务逻辑
+  - 可通过参数配置适配
+
+示例:
+  - UniversalChart (高度可配置的图表)
+  - FilterSelector (支持多种数据类型)
+
+行动:
+  - 评估扩展性
+  - 如果可通过参数适配 → 复用
+  - 如果需要大量修改 → 组合现有组件构建
+```
+
+#### 低复用度（不需要复用）- 得分 < 50%
+
+```yaml
+特征:
+  - 仅 1 个场景使用
+  - 包含大量业务特定逻辑
+  - 与特定页面/流程强耦合
+
+示例:
+  - OrgDetailClient (机构详情页，业务特定)
+  - QuarterlyProportionChart (特定季度图表)
+
+行动:
+  - 保持为业务组件
+  - 使用原子组件和工具函数组合构建
+  - 不要尝试"通用化"
+```
+
+### 🔍 复用检查流程
+
+```mermaid
+graph TD
+    A[接到开发任务] --> B{需要新组件?}
+    B -->|是| C[检查组件索引]
+    B -->|否| D[使用现有代码]
+
+    C --> E{找到匹配组件?}
+
+    E -->|完全匹配| F[直接复用]
+    F --> G[记录使用场景]
+
+    E -->|部分匹配| H{可扩展适配?}
+    H -->|是| I[扩展现有组件]
+    H -->|否| J[组合现有组件]
+
+    E -->|无匹配| K{检查原子组件}
+    K --> L[组合原子组件]
+    K --> M[创建新组件]
+
+    I --> N[更新文档]
+    J --> N
+    L --> N
+    M --> N
+
+    N --> O[添加到索引]
+    G --> P[完成任务]
+    O --> P
+
+    D --> P
+```
+
+### 💡 判断技巧
+
+#### 问题1：这个功能是否通用？
+
+```
+判断标准：
+1. 如果去掉业务术语，是否还能理解？
+   是 → 可能通用
+   否 → 业务特定
+
+2. 是否能用于其他项目？
+   是 → 通用
+   否 → 特定
+
+3. 是否依赖特定业务概念？
+   是 → 特定
+   否 → 通用
+```
+
+#### 问题2：应该复用还是新建？
+
+```
+复用的成本 < 新建的成本 → 复用
+复用的成本 ≥ 新建的成本 → 组合新建
+
+复用成本计算：
+- 学习成本：阅读文档时间
+- 适配成本：修改现有组件时间
+- 维护成本：未来更新影响
+
+新建成本计算：
+- 开发成本：编写组件时间
+- 测试成本：测试组件时间
+- 文档成本：编写文档时间
+- 维护成本：独立维护成本
+```
+
+#### 问题3：如何组合？
+
+```
+组合层次：
+1. 原子层（不可拆分）
+   - Button, Input, Badge
+
+2. 分子层（原子组合）
+   - SearchBar = Input + Button
+   - FilterBar = Select + Select + Button
+
+3. 聚合层（分子组合）
+   - PageHeader = Title + ActionBar + Breadcrumbs
+   - ChartContainer = Title + Chart + Toolbar
+
+4. 页面层（聚合组合）
+   - Dashboard = PageHeader + KpiCards + Charts
+```
+
+### 🎯 实战示例
+
+#### 示例1：添加机构对比排序功能
+
+```tsx
+// ✅ 正确做法
+import { SortButtonGroup, SortPresets } from '@/components/ui/SortButtonGroup';
+import { sortOrgItems } from '@/lib/sorting';
+
+function OrgComparison() {
+  // 复用排序按钮
+  return <SortButtonGroup options={SortPresets.orgPremium} />;
+
+  // 复用排序工具
+  const sorted = sortOrgItems(data, sortKey, sortOrder);
+}
+
+// ❌ 错误做法
+function OrgComparison() {
+  // 不应该创建 OrgSortButton 组件
+  return <OrgSortButton />;  // 重复造轮子
+}
+```
+
+#### 示例2：创建新的图表页面
+
+```tsx
+// ✅ 正确做法：组合现有组件
+import { UniversalChart } from '@/components/charts/UniversalChart';
+import { FilterBar } from '@/components/ui/FilterBar';
+import { KpiCard } from '@/components/ui/KpiCard';
+
+function NewChartPage() {
+  return (
+    <Page>
+      <FilterBar filters={filters} />
+      <KpiCards data={kpis} />
+      <UniversalChart type="newChartType" data={data} />
+    </Page>
+  );
+}
+
+// ❌ 错误做法：从零开始
+function NewChartPage() {
+  return (
+    <div>
+      {/* 手写所有 UI */}
+      <CustomFilter />  {/* 应该复用 */}
+      <CustomKpi />    {/* 应该复用 */}
+      <CustomChart />  {/* 应该复用 */}
+    </div>
+  );
+}
+```
+
+### 📈 复用效果指标
+
+```yaml
+效率提升:
+  - UI 开发时间: 减少 60-80%
+  - 逻辑开发时间: 减少 40-60%
+  - 测试时间: 减少 50-70%
+  - Bug 修复时间: 减少 70-90%
+
+质量提升:
+  - UI 一致性: 提升 90%+
+  - 代码重复率: 降低 80%+
+  - 维护成本: 降低 60%+
+  - 上手速度: 提升 3-5x
+```
+
+---
+
 ## 🤖 Claude Code Specific Workflow
 
 ### Before Starting Any Task

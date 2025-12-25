@@ -18,7 +18,7 @@ export class HqPredictionConfigPreset implements ConfigPreset {
       defaultViewMode: 'achievement',
       animation: true,
       barMaxWidth: 40, // 月度数据柱宽较小
-      showDataLabel: false, // 月度数据点多，不显示标签
+      showDataLabel: true, // 显示数据标签，便于快速查看累计数值和达成率
       title: '汇总 - 月度累计达成预测',
       showExportButtons: true,
       yAxisName: '累计保费（万元）',

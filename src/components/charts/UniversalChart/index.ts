@@ -70,12 +70,17 @@ export {
   createHqPredictionAdapter,
   calculateCumulative,
   reverseCalculateCumulative,
+
+  // 机构适配器
+  OrganizationPremiumAdapter,
+  createOrganizationPremiumAdapter,
 } from './adapters';
 
 export type {
   QuarterlyDataInput,
   MonthlyDataInput,
   HqPredictionDataInput,
+  OrganizationDataInput,
 } from './adapters';
 
 // 配置预设

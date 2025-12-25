@@ -10,8 +10,9 @@
  * 时间粒度枚举
  * - quarterly: 季度（4个数据点，对应Q1-Q4）
  * - monthly: 月度（12个数据点，对应1-12月）
+ * - organization: 机构（12个数据点，对应三级机构，排除本部和西财俊苑）
  */
-export type TimeGranularity = 'quarterly' | 'monthly';
+export type TimeGranularity = 'quarterly' | 'monthly' | 'organization';
 
 /**
  * 值类型枚举
@@ -28,13 +29,15 @@ export type ValueType = 'absolute' | 'proportion' | 'achievement';
  * - monthlyPremium: 月度保费规划图
  * - monthlyShare: 月度占比规划图
  * - hqPrediction: 总公司预测图
+ * - orgPremium: 三级机构保费规划图
  */
 export type ChartType =
   | 'quarterlyPremium'
   | 'quarterlyShare'
   | 'monthlyPremium'
   | 'monthlyShare'
-  | 'hqPrediction';
+  | 'hqPrediction'
+  | 'orgPremium';
 
 /**
  * 视图模式枚举
@@ -294,23 +297,35 @@ export function isValidChartData(data: UniversalChartInputData): boolean {
 
   // 检查时间粒度和值类型
   if (
-    !['quarterly', 'monthly'].includes(timeGranularity) ||
+    !['quarterly', 'monthly', 'organization'].includes(timeGranularity) ||
     !['absolute', 'proportion', 'achievement'].includes(valueType)
   ) {
     return false;
   }
 
   // 根据时间粒度检查数组长度
-  const expectedLength = timeGranularity === 'quarterly' ? 4 : 12;
+  const expectedLength = timeGranularity === 'quarterly' ? 4 : timeGranularity === 'monthly' ? 12 : null;
+
+  // 对于 organization 粒度，长度可变（1-12个机构）
+  const dataLength = targets.length;
 
   if (
     !Array.isArray(targets) ||
-    targets.length !== expectedLength ||
     !Array.isArray(baseline2025) ||
-    baseline2025.length !== expectedLength ||
     !Array.isArray(current) ||
-    current.length !== expectedLength
+    baseline2025.length !== dataLength ||
+    current.length !== dataLength
   ) {
+    return false;
+  }
+
+  // 对于 quarterly 和 monthly，检查固定长度
+  if (expectedLength !== null && dataLength !== expectedLength) {
+    return false;
+  }
+
+  // 对于 organization，长度应在 1-12 之间
+  if (timeGranularity === 'organization' && (dataLength < 1 || dataLength > 12)) {
     return false;
   }
 

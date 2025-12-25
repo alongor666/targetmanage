@@ -45,3 +45,10 @@ export {
   reverseCalculateCumulative,
 } from './hqPrediction.adapter';
 export type { HqPredictionDataInput } from './hqPrediction.adapter';
+
+// 机构数据适配器
+export {
+  OrganizationPremiumAdapter,
+  createOrganizationPremiumAdapter,
+} from './organization.adapter';
+export type { OrganizationDataInput } from './organization.adapter';

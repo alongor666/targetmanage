@@ -1,5 +1,116 @@
 # 项目规则
 
+## 🔍 组件复用优先原则 (CRITICAL)
+
+> **核心原则**: 开发新功能前，必须先检查是否有可复用的组件、数据、指标、字段、UI、UX设计等。如果没有则新建，并立即更新到文档中，便于后续复用。
+
+### 📋 必须检查的复用资源
+
+AI在任何开发任务开始前，必须按以下优先级检查：
+
+```typescript
+const REUSE_CHECKLIST = {
+  // 1. UI 组件 (最高优先级)
+  uiComponents: [
+    'src/components/ui/index.ts',           // UI组件索引
+    'src/components/charts/UniversalChart', // 通用图表组件
+    'docs/design/组件设计规范.md',           // 组件设计规范
+  ],
+
+  // 2. 数据结构和类型
+  dataStructures: [
+    'src/schemas/types.ts',                 // 类型定义
+    'src/schemas/schema.ts',                // Zod schemas
+    'docs/business/指标定义规范.md',         // 业务指标定义
+  ],
+
+  // 3. 业务逻辑和工具函数
+  businessLogic: [
+    'src/domain/*.ts',                       // 领域逻辑
+    'src/lib/*.ts',                         // 工具函数
+    'docs/.meta/code-index.json',           // 代码索引
+  ],
+
+  // 4. 数据配置
+  dataConfig: [
+    'public/data/*.json',                   // 静态数据
+    'src/config/*.ts',                      // 配置文件
+  ],
+
+  // 5. UI/UX 设计模式
+  designPatterns: [
+    'docs/design/全局设计规范.md',           // 设计规范
+    'docs/design/设计实现指南.md',           // 实现指南
+  ],
+};
+```
+
+### ✅ 复用检查工作流
+
+#### 阶段1: 需求分析时
+```bash
+# AI 接到任务后的第一步
+1. 分析任务需求
+2. 搜索现有组件库
+3. 检查文档中的组件索引
+4. 评估可复用性
+```
+
+#### 阶段2: 实施前
+```bash
+# 如果找到可复用组件
+→ 使用现有组件
+→ 更新使用文档
+→ 记录使用场景
+
+# 如果没有找到可复用组件
+→ 创建新组件
+→ 更新组件索引
+→ 编写使用文档
+→ 添加到设计规范
+```
+
+#### 阶段3: 完成后
+```bash
+# 必须执行的文档更新
+1. 更新 docs/design/组件设计规范.md
+2. 更新 src/components/ui/index.ts
+3. 创建使用示例文档
+4. 更新 docs/.meta/code-index.json (运行 pnpm docs:sync)
+```
+
+### 🚨 违规后果
+
+**如果 AI 直接创建新组件而不检查复用：**
+- ❌ 代码审查会被拒绝
+- ❌ 必须重构为使用现有组件
+- ❌ 记录到开发日志作为负面案例
+
+### 💡 正确示例
+
+```typescript
+// ✅ 正确做法：先检查复用
+// 1. AI 检查 src/components/ui/index.ts
+// 2. 发现 SortButtonGroup 组件已存在
+// 3. 直接复用，无需创建新组件
+import { SortButtonGroup, SortPresets } from '@/components/ui/SortButtonGroup';
+
+// ❌ 错误做法：直接创建新组件
+// 浪费时间，增加维护成本，代码不一致
+```
+
+### 📊 复用率监控
+
+```bash
+# 项目应保持的复用率指标
+- UI 组件复用率: > 80%
+- 业务逻辑复用率: > 70%
+- 类型定义复用率: > 90%
+- 设计模式复用率: > 85%
+```
+
+---
+
 ## 代码变更与文档同步规则
 
 ### 🤖 AI主动协作原则

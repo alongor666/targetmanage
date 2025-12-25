@@ -14,6 +14,22 @@
 
 ## 🎯 核心原则
 
+### 原则0: 复用优先 (最高优先级)
+```
+任何开发任务前：
+AI → 检查可复用资源 → 评估复用性 → 复用或新建 → 更新文档
+
+检查优先级：
+1. UI 组件 (src/components/ui/, docs/design/组件设计规范.md)
+2. 数据结构 (src/schemas/, docs/business/指标定义规范.md)
+3. 业务逻辑 (src/domain/, src/lib/, docs/.meta/code-index.json)
+4. 配置数据 (public/data/, src/config/)
+5. 设计模式 (docs/design/)
+
+如果复用 → 记录使用场景
+如果新建 → 立即更新文档索引
+```
+
 ### 原则1: 索引优先
 ```
 传统方式：
@@ -77,6 +93,65 @@ AI → 读取索引 → 理解上下文 → 精准生成
 ```
 
 ## 🔍 Agent 工作流
+
+### 阶段0: 复用检查 (新增，必须首先执行)
+```typescript
+function checkReusability(task: Task): ReuseCheckResult {
+  // 1. 分析任务需求
+  const requirements = analyzeRequirements(task);
+
+  // 2. 按优先级检查可复用资源
+  const checks = [
+    checkUIComponents(requirements),      // UI组件
+    checkDataStructures(requirements),    // 数据结构
+    checkBusinessLogic(requirements),     // 业务逻辑
+    checkConfigData(requirements),        // 配置数据
+    checkDesignPatterns(requirements),    // 设计模式
+  ];
+
+  // 3. 评估复用可行性
+  const reusable = checks.filter(c => c.found);
+  const needNew = checks.filter(c => !c.found);
+
+  return {
+    canReuse: reusable.length > 0,
+    reusable,
+    needNew,
+    recommendation: generateRecommendation(reusable, needNew)
+  };
+}
+
+// 示例输出
+{
+  canReuse: true,
+  reusable: [
+    {
+      type: 'UI组件',
+      name: 'SortButtonGroup',
+      location: 'src/components/ui/SortButtonGroup.tsx',
+      matchScore: 0.95,
+      reason: '完全符合需求，支持多种排序方式'
+    }
+  ],
+  needNew: [],
+  recommendation: '直接复用 SortButtonGroup 组件，无需创建新组件'
+}
+```
+
+### 复用决策矩阵
+```yaml
+完全复用 (matchScore >= 0.9):
+  动作: 直接使用
+  文档: 记录使用场景
+
+部分复用 (0.7 <= matchScore < 0.9):
+  动作: 扩展现有组件
+  文档: 更新组件文档
+
+不可复用 (matchScore < 0.7):
+  动作: 创建新组件
+  文档: 添加到索引，编写使用指南
+```
 
 ### 阶段1: 上下文理解
 ```typescript

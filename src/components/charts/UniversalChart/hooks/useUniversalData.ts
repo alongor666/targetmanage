@@ -31,8 +31,9 @@ export function useUniversalData(data: UniversalChartInputData) {
   // 处理数据
   const processedData = useMemo<ProcessedChartData>(() => {
     if (!isValid) {
-      const emptyLength = data.timeGranularity === 'quarterly' ? 4 : 12;
-      const emptyArray = Array(emptyLength).fill(null);
+      // 根据数据长度创建空数组
+      const dataLength = data.targets.length || (data.timeGranularity === 'quarterly' ? 4 : 12);
+      const emptyArray = Array(dataLength).fill(null);
 
       return {
         targetShare: emptyArray,
@@ -40,7 +41,7 @@ export function useUniversalData(data: UniversalChartInputData) {
         growthSeries: emptyArray,
         achievementSeries: emptyArray,
         periodDetails: [],
-        xAxisLabels: getAllPeriodLabels(data.timeGranularity),
+        xAxisLabels: data.customLabels || getAllPeriodLabels(data.timeGranularity),
       };
     }
 
@@ -54,6 +55,7 @@ export function useUniversalData(data: UniversalChartInputData) {
       totalBaseline2025,
       growthSeries = [],
       achievementSeries = [],
+      customLabels,
     } = data;
 
     // 计算目标占比
@@ -65,7 +67,7 @@ export function useUniversalData(data: UniversalChartInputData) {
     );
 
     // 计算周期详情
-    const periodLength = timeGranularity === 'quarterly' ? 4 : 12;
+    const periodLength = targets.length;
     const periodDetails: PeriodDetailData[] = [];
 
     for (let i = 0; i < periodLength; i++) {

@@ -1193,9 +1193,6 @@ export default function Page() {
       progressMode === "linear" ? kpi.monthlyTargetsLinear :
       progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
       kpi.monthlyTargets;
-    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
-      (value, idx) => value ?? monthlyEstimateTargets[idx]
-    );
 
     const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
     const quarterlyActuals2025 = monthlyToQuarterly(
@@ -1206,19 +1203,12 @@ export default function Page() {
         .some((v) => v !== null);
       return hasAny ? value : null;
     });
-    const quarterlyCurrent = monthlyToQuarterly(
-      monthlyCurrentForGrowth.map((v) => v ?? 0)
-    ).map((value, idx) => {
-      const hasAny = monthlyCurrentForGrowth
-        .slice(idx * 3, idx * 3 + 3)
-        .some((v) => v !== null);
-      return hasAny ? value : null;
-    });
 
-    const growthSeries = quarterlyCurrent.map((current, idx) => {
+    // 增长率计算：(2026目标 - 2025实际) / 2025实际
+    const growthSeries = quarterlyTargets.map((target, idx) => {
       const baseline = quarterlyActuals2025[idx];
-      if (baseline === null || current === null) return null;
-      return safeDivide(current - baseline, baseline).value;
+      if (baseline === null || baseline === 0 || target === null) return null;
+      return target / baseline - 1;
     });
 
     const totalTarget = kpi.annual;
@@ -1230,12 +1220,12 @@ export default function Page() {
     return {
       quarterlyTargets,
       quarterlyActuals2025,
-      quarterlyCurrent,
+      quarterlyCurrent: quarterlyTargets,  // 使用目标值作为 current
       totalTarget,
       totalActual2025,
       growthSeries,
     };
-  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode, quarterlyShareChartOption]);
+  }, [kpi, monthlyActualSeries2025, progressMode, quarterlyShareChartOption]);
 
   // 季度保费规划图数据（UniversalChart格式）
   const quarterlyPremiumData = useMemo<QuarterlyDataInput | null>(() => {
@@ -1256,31 +1246,26 @@ export default function Page() {
       return hasAny ? value : null;
     });
 
-    // 当前季度值（2026）- 暂时使用目标值，实际应该使用2026实际数据
-    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
-      (value, idx) => value ?? monthlyEstimateTargets[idx]
-    );
-    const quarterlyCurrent = monthlyToQuarterly(
-      monthlyCurrentForGrowth.map((v) => v ?? 0)
-    ).map((value, idx) => {
-      const hasAny = monthlyCurrentForGrowth
-        .slice(idx * 3, idx * 3 + 3)
-        .some((v) => v !== null);
-      return hasAny ? value : null;
+    // 增长率计算：(2026目标 - 2025实际) / 2025实际
+    const growthSeries = quarterlyTargets.map((target, idx) => {
+      const baseline = quarterlyActuals2025[idx];
+      if (baseline === null || baseline === 0 || target === null) return null;
+      return target / baseline - 1;
     });
 
     return {
       quarterlyTargets,
       quarterlyActuals2025,
-      quarterlyCurrent,
+      quarterlyCurrent: quarterlyTargets,  // 使用目标值作为 current
       totalTarget: kpi.annual,
       totalActual2025: quarterlyActuals2025.reduce(
         (sum: number, v) => (v === null ? sum : sum + v),
         0
       ),
       valueType: 'absolute',
+      growthSeries,  // 手动传递增长率
     };
-  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
+  }, [kpi, monthlyActualSeries2025, progressMode]);
 
   // 月度保费规划图数据（UniversalChart格式）
   const monthlyPremiumData = useMemo<MonthlyDataInput | null>(() => {
@@ -1291,23 +1276,26 @@ export default function Page() {
       progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
       kpi.monthlyTargets;
 
-    // 对于没有实际值的月份，使用目标值作为fallback（保证增长率折线完整）
-    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
-      (value, idx) => value ?? monthlyEstimateTargets[idx]
-    );
+    // 增长率计算：(2026目标 - 2025实际) / 2025实际
+    const growthSeries = monthlyEstimateTargets.map((target, idx) => {
+      const baseline = monthlyActualSeries2025[idx];
+      if (baseline === null || baseline === 0 || target === null) return null;
+      return target / baseline - 1;
+    });
 
     return {
       monthlyTargets: monthlyEstimateTargets,
       monthlyActuals2025: monthlyActualSeries2025,
-      monthlyCurrent: monthlyCurrentForGrowth,
+      monthlyCurrent: monthlyEstimateTargets,  // 使用目标值作为 current
       totalTarget: kpi.annual,
       totalActual2025: monthlyActualSeries2025.reduce(
         (sum: number, v) => (v === null ? sum : sum + v),
         0
       ),
       valueType: 'absolute',
+      growthSeries,  // 手动传递增长率
     };
-  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
+  }, [kpi, monthlyActualSeries2025, progressMode]);
 
   // 月度占比规划图数据（UniversalChart格式）
   const monthlyShareData = useMemo<MonthlyDataInput | null>(() => {
@@ -1321,17 +1309,18 @@ export default function Page() {
     const actualShare2025 = monthlyPremiumData.monthlyActuals2025.map(v =>
       v === null ? null : v / totalActual2025
     );
-    const currentShare = monthlyPremiumData.monthlyCurrent.map(v =>
-      v === null ? null : v / totalTarget
-    );
+
+    // 增长率使用绝对值的增长率（与保费图相同）
+    const growthSeries = monthlyPremiumData.growthSeries;
 
     return {
       monthlyTargets: targetShare,
       monthlyActuals2025: actualShare2025,
-      monthlyCurrent: currentShare,
+      monthlyCurrent: targetShare,  // 使用目标占比作为 current
       totalTarget: 1,
       totalActual2025: 1,
       valueType: 'proportion',
+      growthSeries,  // 手动传递增长率
     };
   }, [kpi, monthlyPremiumData]);
 
@@ -1483,6 +1472,7 @@ export default function Page() {
           config={{
             title: `${viewLabel}月度保费规划图`,
             height: 360,
+            showDataLabel: true,  // 显式启用增长率标签
           }}
         />
       )}
@@ -1495,6 +1485,7 @@ export default function Page() {
           config={{
             title: `${viewLabel}月度占比规划图`,
             height: 360,
+            showDataLabel: true,  // 显式启用增长率标签
           }}
         />
       )}

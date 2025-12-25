@@ -262,8 +262,7 @@ export function useUniversalConfig(
   } = config || {};
 
   // 根据时间粒度自动调整柱宽
-  const calculatedBarMaxWidth =
-    barMaxWidth || (timeGranularity === 'quarterly' ? 60 : 40);
+  const calculatedBarMaxWidth = barMaxWidth || (timeGranularity === 'quarterly' ? 60 : timeGranularity === 'organization' ? 36 : 40);
 
   return useMemo<EChartsOption>(() => {
     const { xAxisLabels, growthSeries, achievementSeries, periodDetails } = processedData;
@@ -290,17 +289,7 @@ export function useUniversalConfig(
         yAxisIndex: 0,
         barMaxWidth: calculatedBarMaxWidth,
         itemStyle: {
-          color: {
-            type: 'linear',
-            x: 0,
-            y: 0,
-            x2: 0,
-            y2: 1,
-            colorStops: [
-              { offset: 0, color: DEFAULT_COLORS.target.gradient[0] },
-              { offset: 1, color: DEFAULT_COLORS.target.gradient[1] },
-            ],
-          },
+          color: DEFAULT_COLORS.target.normal,  // 使用纯色
           borderRadius: [4, 4, 0, 0],
         },
         emphasis: {
@@ -381,8 +370,71 @@ export function useUniversalConfig(
           scale: true,
           scaleSize: 12,
         },
-        label: {
-          show: false,
+        label: showDataLabel
+          ? {
+              show: true,
+              position: 'top',
+              fontWeight: 'bold',
+              fontSize: 12,
+              formatter: (params: any) => {
+                const value = params?.value as number | null;
+                if (value === null) return '';
+                const detail = periodDetails[params.dataIndex];
+                const warningLevel = detail?.warningLevel || 'normal';
+
+                // 格式化显示百分比，保留1位小数
+                const formattedValue = `${(value * 100).toFixed(1)}%`;
+
+                // 根据预警级别使用不同的样式标签
+                let styleKey = 'normal';
+                if (warningLevel === 'excellent') styleKey = 'excellent';
+                else if (warningLevel === 'warning') styleKey = 'warning';
+                else if (warningLevel === 'danger') styleKey = 'danger';
+
+                return `{${styleKey}|${formattedValue}}`;
+              },
+              rich: {
+                excellent: {
+                  fontSize: 12,
+                  fontWeight: 'bold',
+                  color: DEFAULT_COLORS.growth.positive, // 绿色
+                },
+                normal: {
+                  fontSize: 12,
+                  fontWeight: 'bold',
+                  color: '#0070c0', // 蓝色
+                },
+                warning: {
+                  fontSize: 12,
+                  fontWeight: 'bold',
+                  color: DEFAULT_COLORS.warning.orange, // 橙色
+                },
+                danger: {
+                  fontSize: 12,
+                  fontWeight: 'bold',
+                  color: DEFAULT_COLORS.growth.negative, // 红色
+                },
+              },
+            }
+          : undefined,
+        // 5%增速预警线（仅在增长率视图下显示）
+        markLine: viewMode === 'achievement' ? undefined : {
+          symbol: ['none', 'none'],
+          silent: true,
+          label: {
+            show: true,
+            position: 'end',
+            formatter: '预警线 5%',
+            color: DEFAULT_COLORS.warning.orange,
+            fontSize: 11,
+            fontWeight: 500,
+          },
+          lineStyle: {
+            color: DEFAULT_COLORS.warning.orange,
+            type: 'dashed',
+            width: 1.5,
+          },
+          data: [{ yAxis: 0.05 }],
         },
       },
     ];

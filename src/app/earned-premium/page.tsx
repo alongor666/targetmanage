@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import type { Org } from "@/schemas/types";
+import type { Org, MonthlyActualRecord, AnnualTargetRecord } from "@/schemas/types";
 import { calculateActual2025Weights } from "@/domain/allocation";
 import {
   calculateAutoEarnedPremium,
@@ -30,6 +30,13 @@ const productLabel: Record<ProductView, string> = {
 };
 
 const supportedProducts: Array<Exclude<ProductView, "total">> = ["auto", "property", "life"];
+
+/**
+ * 类型守卫：检查产品是否在支持列表中
+ */
+function isSupportedProduct(product: string): product is Exclude<ProductView, "total"> {
+  return supportedProducts.includes(product as Exclude<ProductView, "total">);
+}
 
 type AutoSeries = {
   commercial: Array<number | null>;
@@ -82,7 +89,7 @@ function normalizePremium(
 }
 
 function buildActualSeries(
-  records: any[],
+  records: MonthlyActualRecord[],
   orgMap: Map<string, Org>,
   viewKey: ViewKey,
   maturityDays: number[]
@@ -104,7 +111,7 @@ function buildActualSeries(
   const lifeMissingEarned = Array.from({ length: 12 }, () => false);
 
   for (const record of records) {
-    if (!supportedProducts.includes(record.product)) continue;
+    if (!isSupportedProduct(record.product)) continue;
     const org = orgMap.get(record.org_id);
     if (!org || !matchesView(viewKey, org)) continue;
     const idx = record.month - 1;
@@ -207,7 +214,7 @@ function buildActualSeries(
 }
 
 function buildActual2025Totals(
-  records: any[],
+  records: MonthlyActualRecord[],
   orgMap: Map<string, Org>,
   viewKey: ViewKey,
   product: Exclude<ProductView, "total">
@@ -229,7 +236,7 @@ function buildActual2025Totals(
 }
 
 function buildTargetForecast(
-  records: any[],
+  records: AnnualTargetRecord[],
   orgMap: Map<string, Org>,
   viewKey: ViewKey,
   weightsByProduct: Record<Exclude<ProductView, "total">, number[]>,
@@ -252,7 +259,7 @@ function buildTargetForecast(
   const lifeMissingEarned = Array.from({ length: 12 }, () => false);
 
   for (const record of records) {
-    if (!supportedProducts.includes(record.product)) continue;
+    if (!isSupportedProduct(record.product)) continue;
     const org = orgMap.get(record.org_id);
     if (!org || !matchesView(viewKey, org)) continue;
 
@@ -449,10 +456,10 @@ function buildTotalSeries(series: MonthlySeries) {
     const hasEarned = earnedValues.every((value) => value !== null && value !== undefined);
 
     if (hasPremium) {
-      premium[idx] = premiums.reduce((sum, value) => sum + (value ?? 0), 0);
+      premium[idx] = premiums.reduce<number>((sum, value) => sum + (value ?? 0), 0);
     }
     if (hasEarned) {
-      earned[idx] = earnedValues.reduce((sum, value) => sum + (value ?? 0), 0);
+      earned[idx] = earnedValues.reduce<number>((sum, value) => sum + (value ?? 0), 0);
     }
   }
 
@@ -522,8 +529,14 @@ export default function EarnedPremiumPage() {
     });
   }, [statDate, year]);
 
-  const actual2025Weights = useMemo(() => {
-    if (!monthlyActuals2025?.records?.length) return [];
+  const actual2025Weights = useMemo<Record<Exclude<ProductView, "total">, number[]>>(() => {
+    if (!monthlyActuals2025?.records?.length) {
+      return {
+        auto: Array(12).fill(1 / 12),
+        property: Array(12).fill(1 / 12),
+        life: Array(12).fill(1 / 12),
+      };
+    }
     return supportedProducts.reduce((acc, productKey) => {
       const monthlyTotals = buildActual2025Totals(monthlyActuals2025.records, orgMap, viewKey, productKey);
       acc[productKey] = calculateActual2025Weights(monthlyTotals);

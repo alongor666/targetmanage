@@ -11,6 +11,7 @@ import { createQuarterlyShareConfig as createQSConfig } from './quarterlyShare.c
 import { createMonthlyPremiumConfig as createMPConfig } from './monthlyPremium.config';
 import { createMonthlyShareConfig as createMSConfig } from './monthlyShare.config';
 import { createHqPredictionConfig as createHQConfig } from './hqPrediction.config';
+import { createOrgPremiumConfig as createOPConfig } from './orgPremium.config';
 
 // 季度保费配置
 export {
@@ -42,6 +43,12 @@ export {
   createHqPredictionConfig,
 } from './hqPrediction.config';
 
+// 机构保费配置
+export {
+  OrgPremiumConfigPreset,
+  createOrgPremiumConfig,
+} from './orgPremium.config';
+
 /**
  * 根据图表类型获取预设配置
  *
@@ -60,6 +67,8 @@ export function getPresetConfig(chartType: ChartType): Partial<UniversalChartCon
       return createMSConfig();
     case 'hqPrediction':
       return createHQConfig();
+    case 'orgPremium':
+      return createOPConfig();
     default:
       console.warn(`未知的图表类型: ${chartType}`);
       return {};
