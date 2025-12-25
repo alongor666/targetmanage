@@ -16,6 +16,7 @@ import type {
 } from '../QuarterlyProportionChart.types';
 import { QUARTER_LABELS } from '../QuarterlyProportionChart.types';
 import { formatPercent, getGrowthArrow } from '../utils/formatter';
+import { FONT_SIZE } from '@/lib/typography';
 
 /**
  * 默认颜色配置
@@ -69,13 +70,13 @@ function createTooltipFormatter(viewMode: ViewMode) {
     const quarter = QUARTER_LABELS[dataIndex];
 
     let tooltip = `<div style="padding: 6px 8px; min-width: 200px;">
-      <div style="font-weight: bold; margin-bottom: 8px; font-size: 14px; color: #333;">${quarter}</div>`;
+      <div style="font-weight: bold; margin-bottom: 8px; font-size: ${FONT_SIZE.base}px; color: #333;">${quarter}</div>`;
 
     params.forEach((param: any) => {
       const { seriesName, value, marker, color } = param;
 
       if (value === null || value === undefined) {
-        tooltip += `<div style="margin: 4px 0; font-size: 12px; color: #999;">${marker}${seriesName}: —</div>`;
+        tooltip += `<div style="margin: 4px 0; font-size: ${FONT_SIZE.sm}px; color: #999;">${marker}${seriesName}: —</div>`;
         return;
       }
 
@@ -109,7 +110,7 @@ function createTooltipFormatter(viewMode: ViewMode) {
         valueStyle = 'color: #333;';
       }
 
-      tooltip += `<div style="margin: 4px 0; font-size: 13px; display: flex; align-items: center; justify-content: space-between;">
+      tooltip += `<div style="margin: 4px 0; font-size: ${FONT_SIZE.base}px; display: flex; align-items: center; justify-content: space-between;">
         <span style="color: #666;">${marker}${seriesName}:</span>
         <span style="font-weight: 600; ${valueStyle}">${formattedValue}</span>
       </div>`;
@@ -196,7 +197,7 @@ export function useChartConfig(
             if (value === null) return '—';
             return formatPercent(value);
           },
-          fontSize: 11,
+          fontSize: FONT_SIZE.xs,
           color: '#666',
         }
       : { show: false };
@@ -294,7 +295,7 @@ export function useChartConfig(
             show: true,
             position: 'end',
             formatter: '预警线 5%',
-            fontSize: 11,
+            fontSize: FONT_SIZE.xs,
             color: '#ffc000',
             fontWeight: 'bold',
             distance: 5,
@@ -320,7 +321,7 @@ export function useChartConfig(
             const arrow = value > 0 ? '↗' : value < 0 ? '↘' : '→';
             return `${arrow} ${formatPercent(value)}`;
           },
-          fontSize: 11,
+          fontSize: FONT_SIZE.xs,
           color: '#0070c0',
           fontWeight: 'bold',
         },
@@ -346,7 +347,7 @@ export function useChartConfig(
         borderWidth: 1,
         textStyle: {
           color: '#333',
-          fontSize: 12,
+          fontSize: FONT_SIZE.sm,
         },
         extraCssText: 'box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px;',
       },
@@ -357,7 +358,7 @@ export function useChartConfig(
         itemWidth: 30,
         itemHeight: 14,
         textStyle: {
-          fontSize: 12,
+          fontSize: FONT_SIZE.sm,
           color: '#666',
         },
       },
@@ -380,7 +381,7 @@ export function useChartConfig(
           alignWithLabel: true,
         },
         axisLabel: {
-          fontSize: 12,
+          fontSize: FONT_SIZE.sm,
           color: '#666',
           margin: 12,
         },

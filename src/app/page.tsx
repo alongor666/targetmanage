@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import type { Org } from "@/schemas/types";
-import { allocateAnnualToMonthly, monthlyToQuarterly, monthlyToYtd, calculateActual2025Weights } from "@/domain/allocation";
+import { allocateAnnualToMonthly, monthlyToQuarterly, monthlyToYtd, calculateActual2025Weights, calculateFutureTargets } from "@/domain/allocation";
 import {
   linearProgressYear,
   weightedProgressYear,
@@ -20,15 +20,12 @@ import { loadAllocationRules, loadOrgs, loadTargetsAnnual2026, loadActualsAnnual
 import { lsRemove, LS_KEYS } from "@/services/storage";
 import { colors, getGrowthPointColor } from "@/styles/tokens";
 import { getQuarterlyStatus } from "@/lib/utils";
-import { QuarterlyChartLegend } from "@/components/charts/QuarterlyChartLegend";
-import { QuarterlyProportionChart } from "@/components/charts/QuarterlyProportionChart";
-import { exportToCSV, exportToImage } from "@/components/charts/QuarterlyProportionChart/utils";
+import { generateChartTitle } from "@/lib/chart-title";
+import { FONT_SIZE } from "@/lib/typography";
 import {
   UniversalChart,
   createQuarterlyPremiumAdapter,
-  createQuarterlyShareAdapter,
   createMonthlyPremiumAdapter,
-  createMonthlyShareAdapter,
   createHqPredictionAdapter,
 } from "@/components/charts/UniversalChart";
 import type {
@@ -674,7 +671,7 @@ export default function Page() {
         type: "category",
         data: ["一季度", "二季度", "三季度", "四季度"],
         axisLine: { lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
-        axisLabel: { color: '#666', fontSize: 12 },
+        axisLabel: { color: '#666', fontSize: FONT_SIZE.sm },
         axisTick: {
           alignWithLabel: true,
           lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
@@ -687,7 +684,7 @@ export default function Page() {
           name: "保费(万元)",
           position: 'left',
           axisLine: { show: true, lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
-          axisLabel: { color: '#666', fontSize: 11 },
+          axisLabel: { color: '#666', fontSize: FONT_SIZE.xs },
           axisTick: {
             show: true,
             lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
@@ -702,7 +699,7 @@ export default function Page() {
           axisLine: { show: true, lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
           axisLabel: {
             color: '#666',
-            fontSize: 11,
+            fontSize: FONT_SIZE.xs,
             formatter: (value: number) => `${(value * 100).toFixed(0)}%`
           },
           axisTick: {
@@ -733,7 +730,7 @@ export default function Page() {
                 show: true,
                 position: 'top',
                 formatter: Math.round(value).toString(),
-                fontSize: 11,
+                fontSize: FONT_SIZE.xs,
                 color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
               }
             };
@@ -764,7 +761,7 @@ export default function Page() {
                   const val = params.value as number | null;
                   return val === null ? "" : Math.round(val).toString();
                 },
-                fontSize: 11,
+                fontSize: FONT_SIZE.xs,
                 color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
               }
             };
@@ -789,7 +786,7 @@ export default function Page() {
                   const val = params.value as number | null;
                   return val === null ? "" : `${(val * 100).toFixed(1)}%`;
                 },
-                fontSize: 12,
+                fontSize: FONT_SIZE.sm,
                 fontWeight: 'bold',
                 color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
               }
@@ -812,7 +809,7 @@ export default function Page() {
               position: 'end',
               formatter: '预警线 5%',
               color: '#ffc000',  // 橙色
-              fontSize: 11,
+              fontSize: FONT_SIZE.xs,
               fontWeight: 500
             },
             lineStyle: {
@@ -1185,48 +1182,6 @@ export default function Page() {
     };
   }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
 
-  // 准备季度占比数据（用于新的 QuarterlyProportionChart 组件）
-  const quarterlyProportionData = useMemo(() => {
-    if (!kpi || !quarterlyShareChartOption) return null;
-
-    const monthlyEstimateTargets =
-      progressMode === "linear" ? kpi.monthlyTargetsLinear :
-      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
-      kpi.monthlyTargets;
-
-    const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
-    const quarterlyActuals2025 = monthlyToQuarterly(
-      monthlyActualSeries2025.map((v) => v ?? 0)
-    ).map((value, idx) => {
-      const hasAny = monthlyActualSeries2025
-        .slice(idx * 3, idx * 3 + 3)
-        .some((v) => v !== null);
-      return hasAny ? value : null;
-    });
-
-    // 增长率计算：(2026目标 - 2025实际) / 2025实际
-    const growthSeries = quarterlyTargets.map((target, idx) => {
-      const baseline = quarterlyActuals2025[idx];
-      if (baseline === null || baseline === 0 || target === null) return null;
-      return target / baseline - 1;
-    });
-
-    const totalTarget = kpi.annual;
-    const totalActual2025 = quarterlyActuals2025.reduce(
-      (sum: number, v) => (v === null ? sum : sum + v),
-      0
-    );
-
-    return {
-      quarterlyTargets,
-      quarterlyActuals2025,
-      quarterlyCurrent: quarterlyTargets,  // 使用目标值作为 current
-      totalTarget,
-      totalActual2025,
-      growthSeries,
-    };
-  }, [kpi, monthlyActualSeries2025, progressMode, quarterlyShareChartOption]);
-
   // 季度保费规划图数据（UniversalChart格式）
   const quarterlyPremiumData = useMemo<QuarterlyDataInput | null>(() => {
     if (!kpi) return null;
@@ -1271,58 +1226,52 @@ export default function Page() {
   const monthlyPremiumData = useMemo<MonthlyDataInput | null>(() => {
     if (!kpi) return null;
 
-    const monthlyEstimateTargets =
-      progressMode === "linear" ? kpi.monthlyTargetsLinear :
-      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
-      kpi.monthlyTargets;
+    // 1. 计算YTD实际
+    const ytdActual = actualsPeriod2026.ytd ?? 0;
 
-    // 增长率计算：(2026目标 - 2025实际) / 2025实际
-    const growthSeries = monthlyEstimateTargets.map((target, idx) => {
+    // 2. 动态计算未来月份目标
+    const dynamicTargets = calculateFutureTargets(
+      kpi.annual,
+      ytdActual,
+      month,
+      progressMode,
+      weights,
+      monthlyActualSeries2025
+    );
+
+    // 3. 合并实际数据与规划目标
+    const monthlyCurrent = dynamicTargets.map((plannedTarget, idx) => {
+      const monthIndex = idx + 1;
+
+      // 已过月份：优先使用实际数据
+      if (monthIndex <= month) {
+        return monthlyActualSeries2026[idx] ?? plannedTarget;
+      }
+
+      // 未来月份：使用动态计算的规划目标
+      return plannedTarget;
+    });
+
+    // 4. 增长率计算
+    const growthSeries = dynamicTargets.map((target, idx) => {
       const baseline = monthlyActualSeries2025[idx];
       if (baseline === null || baseline === 0 || target === null) return null;
       return target / baseline - 1;
     });
 
     return {
-      monthlyTargets: monthlyEstimateTargets,
+      monthlyTargets: dynamicTargets,
       monthlyActuals2025: monthlyActualSeries2025,
-      monthlyCurrent: monthlyEstimateTargets,  // 使用目标值作为 current
+      monthlyCurrent,
       totalTarget: kpi.annual,
       totalActual2025: monthlyActualSeries2025.reduce(
         (sum: number, v) => (v === null ? sum : sum + v),
         0
       ),
       valueType: 'absolute',
-      growthSeries,  // 手动传递增长率
+      growthSeries,
     };
-  }, [kpi, monthlyActualSeries2025, progressMode]);
-
-  // 月度占比规划图数据（UniversalChart格式）
-  const monthlyShareData = useMemo<MonthlyDataInput | null>(() => {
-    if (!kpi || !monthlyPremiumData) return null;
-
-    const totalTarget = monthlyPremiumData.totalTarget;
-    const totalActual2025 = monthlyPremiumData.totalActual2025;
-
-    // 计算占比
-    const targetShare = monthlyPremiumData.monthlyTargets.map(v => v / totalTarget);
-    const actualShare2025 = monthlyPremiumData.monthlyActuals2025.map(v =>
-      v === null ? null : v / totalActual2025
-    );
-
-    // 增长率使用绝对值的增长率（与保费图相同）
-    const growthSeries = monthlyPremiumData.growthSeries;
-
-    return {
-      monthlyTargets: targetShare,
-      monthlyActuals2025: actualShare2025,
-      monthlyCurrent: targetShare,  // 使用目标占比作为 current
-      totalTarget: 1,
-      totalActual2025: 1,
-      valueType: 'proportion',
-      growthSeries,  // 手动传递增长率
-    };
-  }, [kpi, monthlyPremiumData]);
+  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode, month, weights, actualsPeriod2026]);
 
   // 总公司预测图数据（UniversalChart格式）
   const hqPredictionData = useMemo<HqPredictionDataInput | null>(() => {
@@ -1440,26 +1389,13 @@ export default function Page() {
           chartType="quarterlyPremium"
           data={createQuarterlyPremiumAdapter().adapt(quarterlyPremiumData)}
           config={{
-            title: `${viewLabel}季度保费规划图`,
+            title: generateChartTitle(viewLabel, {
+              product,
+              granularity: 'quarterly',
+              dataType: 'premium',
+              progressMode,
+            }),
             height: 360,
-          }}
-        />
-      )}
-
-      {/* 季度占比规划图 - 使用 UniversalChart 组件 */}
-      {quarterlyProportionData && (
-        <UniversalChart
-          chartType="quarterlyShare"
-          data={createQuarterlyShareAdapter().adapt(quarterlyProportionData)}
-          config={{
-            title: `${viewLabel}季度占比规划图`,
-            height: 360,
-          }}
-          onPeriodClick={(index, detail) => {
-            console.log(`${viewLabel} - 季度点击:`, detail.label, detail);
-          }}
-          onViewModeChange={(viewMode) => {
-            console.log(`${viewLabel} - 视图模式切换:`, viewMode);
           }}
         />
       )}
@@ -1470,22 +1406,15 @@ export default function Page() {
           chartType="monthlyPremium"
           data={createMonthlyPremiumAdapter().adapt(monthlyPremiumData)}
           config={{
-            title: `${viewLabel}月度保费规划图`,
+            title: generateChartTitle(viewLabel, {
+              product,
+              granularity: 'monthly',
+              dataType: 'premium',
+              progressMode,
+            }),
             height: 360,
             showDataLabel: true,  // 显式启用增长率标签
-          }}
-        />
-      )}
-
-      {/* 月度占比规划图 - 使用 UniversalChart 组件 */}
-      {monthlyShareData && (
-        <UniversalChart
-          chartType="monthlyShare"
-          data={createMonthlyShareAdapter().adapt(monthlyShareData)}
-          config={{
-            title: `${viewLabel}月度占比规划图`,
-            height: 360,
-            showDataLabel: true,  // 显式启用增长率标签
+            currentMonth: month,  // 传入当前截至月份
           }}
         />
       )}

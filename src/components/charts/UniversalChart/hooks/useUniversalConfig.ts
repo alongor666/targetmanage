@@ -16,6 +16,7 @@ import type {
   ColorScheme,
   WarningLevel,
 } from '../UniversalChart.types';
+import { FONT_SIZE } from '@/lib/typography';
 
 /**
  * 默认颜色配置
@@ -91,13 +92,13 @@ function createTooltipFormatter(
     const periodLabel = xAxisLabels[dataIndex];
 
     let tooltip = `<div style="padding: 6px 8px; min-width: 200px;">
-      <div style="font-weight: bold; margin-bottom: 8px; font-size: 14px; color: #333;">${periodLabel}</div>`;
+      <div style="font-weight: bold; margin-bottom: 8px; font-size: ${FONT_SIZE.base}px; color: #333;">${periodLabel}</div>`;
 
     params.forEach((param: any) => {
       const { seriesName, value, marker } = param;
 
       if (value === null || value === undefined) {
-        tooltip += `<div style="margin: 4px 0; font-size: 12px; color: #999;">${marker}${seriesName}: —</div>`;
+        tooltip += `<div style="margin: 4px 0; font-size: ${FONT_SIZE.sm}px; color: #999;">${marker}${seriesName}: —</div>`;
         return;
       }
 
@@ -131,7 +132,7 @@ function createTooltipFormatter(
         valueStyle = 'color: #333;';
       }
 
-      tooltip += `<div style="margin: 4px 0; font-size: 13px; display: flex; align-items: center; justify-content: space-between;">
+      tooltip += `<div style="margin: 4px 0; font-size: ${FONT_SIZE.base}px; display: flex; align-items: center; justify-content: space-between;">
         <span style="color: #666;">${marker}${seriesName}:</span>
         <span style="font-weight: 600; ${valueStyle}">${formattedValue}</span>
       </div>`;
@@ -165,13 +166,6 @@ function getYAxisData(
       return {
         targetData: periodDetails.map((d) => d.target),
         baselineData: periodDetails.map((d) => d.baseline2025),
-      };
-
-    case 'growth':
-      // 增长率聚焦视图，仍然显示占比柱状图
-      return {
-        targetData: targetShare,
-        baselineData: baselineShare,
       };
 
     case 'achievement':
@@ -212,13 +206,6 @@ function getSeriesNames(viewMode: ViewMode): {
         growthName: '同比增长率',
       };
 
-    case 'growth':
-      return {
-        targetName: '2026规划占比',
-        baselineName: '2025实际占比',
-        growthName: '同比增长率',
-      };
-
     case 'achievement':
       return {
         targetName: '累计目标',
@@ -250,7 +237,8 @@ export function useUniversalConfig(
   viewMode: ViewMode,
   timeGranularity: TimeGranularity,
   valueType: ValueType,
-  config?: UniversalChartConfig
+  config?: UniversalChartConfig,
+  currentMonth?: number
 ): EChartsOption {
   const {
     height = 400,
@@ -285,13 +273,29 @@ export function useUniversalConfig(
       {
         name: seriesNames.targetName,
         type: 'bar',
-        data: targetData,
+        data: targetData.map((value, index) => {
+          const isFutureMonth = (timeGranularity === 'monthly' && currentMonth !== undefined)
+            ? (index + 1 > currentMonth)
+            : false;
+
+          return {
+            value,
+            itemStyle: {
+              color: isFutureMonth
+                ? '#e8f4fd'    // 未来月份 → 规划色（极浅蓝）
+                : '#dceef9',   // 已过月份 → 实际色（浅蓝）
+
+              borderColor: isFutureMonth
+                ? '#b0d8ef'    // 未来月份加边框（浅蓝）
+                : 'transparent',
+
+              borderWidth: isFutureMonth ? 1 : 0,
+              borderRadius: [4, 4, 0, 0],
+            },
+          };
+        }),
         yAxisIndex: 0,
         barMaxWidth: calculatedBarMaxWidth,
-        itemStyle: {
-          color: DEFAULT_COLORS.target.normal,  // 使用纯色
-          borderRadius: [4, 4, 0, 0],
-        },
         emphasis: {
           itemStyle: {
             color: DEFAULT_COLORS.target.hover,
@@ -303,11 +307,11 @@ export function useUniversalConfig(
               position: 'top',
               formatter: (params: any) => {
                 if (params.value === null) return '';
-                return viewMode === 'proportion' || viewMode === 'growth'
+                return viewMode === 'proportion'
                   ? formatPercent(params.value)
                   : params.value.toFixed(0);
               },
-              fontSize: 11,
+              fontSize: FONT_SIZE.xs,
               color: '#666',
             }
           : undefined,
@@ -334,11 +338,11 @@ export function useUniversalConfig(
               position: 'top',
               formatter: (params: any) => {
                 if (params.value === null) return '';
-                return viewMode === 'proportion' || viewMode === 'growth'
+                return viewMode === 'proportion'
                   ? formatPercent(params.value)
                   : params.value.toFixed(0);
               },
-              fontSize: 11,
+              fontSize: FONT_SIZE.xs,
               color: '#999',
             }
           : undefined,
@@ -375,7 +379,7 @@ export function useUniversalConfig(
               show: true,
               position: 'top',
               fontWeight: 'bold',
-              fontSize: 12,
+              fontSize: FONT_SIZE.sm,
               formatter: (params: any) => {
                 const value = params?.value as number | null;
                 if (value === null) return '';
@@ -395,22 +399,22 @@ export function useUniversalConfig(
               },
               rich: {
                 excellent: {
-                  fontSize: 12,
+                  fontSize: FONT_SIZE.sm,
                   fontWeight: 'bold',
                   color: DEFAULT_COLORS.growth.positive, // 绿色
                 },
                 normal: {
-                  fontSize: 12,
+                  fontSize: FONT_SIZE.sm,
                   fontWeight: 'bold',
                   color: '#0070c0', // 蓝色
                 },
                 warning: {
-                  fontSize: 12,
+                  fontSize: FONT_SIZE.sm,
                   fontWeight: 'bold',
                   color: DEFAULT_COLORS.warning.orange, // 橙色
                 },
                 danger: {
-                  fontSize: 12,
+                  fontSize: FONT_SIZE.sm,
                   fontWeight: 'bold',
                   color: DEFAULT_COLORS.growth.negative, // 红色
                 },
@@ -426,7 +430,7 @@ export function useUniversalConfig(
             position: 'end',
             formatter: '预警线 5%',
             color: DEFAULT_COLORS.warning.orange,
-            fontSize: 11,
+            fontSize: FONT_SIZE.xs,
             fontWeight: 500,
           },
           lineStyle: {
@@ -459,7 +463,7 @@ export function useUniversalConfig(
         },
         axisLabel: {
           color: '#666',
-          fontSize: 12,
+          fontSize: FONT_SIZE.sm,
           interval: 0,
           rotate: timeGranularity === 'monthly' ? 0 : 0,
         },
@@ -474,7 +478,7 @@ export function useUniversalConfig(
           name: yAxisName || (viewMode === 'proportion' ? '占比（%）' : '保费（万元）'),
           nameTextStyle: {
             color: '#666',
-            fontSize: 12,
+            fontSize: FONT_SIZE.sm,
           },
           axisLine: {
             show: false,
@@ -484,9 +488,9 @@ export function useUniversalConfig(
           },
           axisLabel: {
             color: '#999',
-            fontSize: 11,
+            fontSize: FONT_SIZE.xs,
             formatter: (value: number) => {
-              if (viewMode === 'proportion' || viewMode === 'growth') {
+              if (viewMode === 'proportion') {
                 return `${(value * 100).toFixed(0)}%`;
               }
               return value.toLocaleString('zh-CN');
@@ -505,7 +509,7 @@ export function useUniversalConfig(
           name: rightYAxisName || '增长率',
           nameTextStyle: {
             color: '#666',
-            fontSize: 12,
+            fontSize: FONT_SIZE.sm,
           },
           axisLine: {
             show: false,
@@ -515,7 +519,7 @@ export function useUniversalConfig(
           },
           axisLabel: {
             color: '#999',
-            fontSize: 11,
+            fontSize: FONT_SIZE.xs,
             formatter: (value: number) => {
               return `${(value * 100).toFixed(0)}%`;
             },
@@ -540,7 +544,7 @@ export function useUniversalConfig(
         padding: 0,
         formatter: createTooltipFormatter(viewMode, valueType, xAxisLabels),
         textStyle: {
-          fontSize: 13,
+          fontSize: FONT_SIZE.base,
         },
       },
       legend: {
@@ -558,5 +562,6 @@ export function useUniversalConfig(
     showDataLabel,
     yAxisName,
     rightYAxisName,
+    currentMonth,
   ]);
 }
