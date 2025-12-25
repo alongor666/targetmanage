@@ -1,6 +1,6 @@
 /**
  * 增长率与增量计算引擎
- * 口径标准：严格按 metrics_definition.md 定义
+ * @doc docs/business/指标定义规范.md:121-147
  */
 
 import { safeDivide } from "./achievement";
@@ -39,7 +39,8 @@ function safeGrowthRate(current: MaybeNumber, baseline: MaybeNumber): { value: M
 /**
  * 计算增长指标（月/季/年三种口径）
  * 分母为0时返回null，UI显示"—"
- * 
+ * @doc docs/business/指标定义规范.md:121-147
+ *
  * @param current 当前年度数据（当月、当季、年累计）
  * @param baseline 基期年度数据（当月、当季、年累计）
  * @returns 增长指标对象
@@ -68,6 +69,7 @@ export function calculateGrowthMetrics(
 
 /**
  * 格式化增长率为显示文本
+ * @doc docs/business/指标定义规范.md:121-147
  * @param rate 增长率数值
  * @returns 格式化后的字符串（null转为"—"）
  */
@@ -78,6 +80,7 @@ export function formatGrowthRate(rate: number | null): string {
 
 /**
  * 格式化增量为显示文本
+ * @doc docs/business/指标定义规范.md:121-147
  * @param inc 增量数值（万元）
  * @returns 格式化后的字符串（null转为"—"）
  */

@@ -32,93 +32,93 @@
       "functions": {
         "getDataDepthColor": {
           "lineRange": [
-            352,
-            358
+            357,
+            363
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "formatRate": {
           "lineRange": [
-            366,
-            372
+            371,
+            377
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getStatusColor": {
           "lineRange": [
-            381,
-            383
+            386,
+            388
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getAchievementStatus": {
           "lineRange": [
-            407,
-            409
+            412,
+            414
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getGrowthStatus": {
           "lineRange": [
-            434,
-            436
+            439,
+            441
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getStatusColorByVariant": {
           "lineRange": [
-            449,
-            462
+            454,
+            467
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getKpiCardColors": {
           "lineRange": [
-            469,
-            497
+            474,
+            502
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getBadgeColors": {
           "lineRange": [
-            505,
-            521
+            510,
+            526
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getTargetBarColors": {
           "lineRange": [
-            528,
-            545
+            533,
+            550
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "getGrowthPointColor": {
           "lineRange": [
-            566,
-            573
+            571,
+            578
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.960Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         }
       }
     },
@@ -142,7 +142,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.961Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "lsSetJson": {
           "lineRange": [
@@ -151,7 +151,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.961Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         },
         "lsRemove": {
           "lineRange": [
@@ -160,7 +160,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.961Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         }
       }
     },
@@ -189,7 +189,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.961Z"
+          "lastModified": "2025-12-25T15:12:33.218Z"
         }
       }
     },
@@ -229,7 +229,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.961Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         },
         "validateThresholds": {
           "lineRange": [
@@ -238,7 +238,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.961Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         }
       }
     },
@@ -260,7 +260,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.962Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         },
         "getQuarterlyStatus": {
           "lineRange": [
@@ -269,7 +269,42 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.962Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
+        }
+      }
+    },
+    "lib/typography.ts": {
+      "id": "code-lib-typography-ts",
+      "type": "ui-component",
+      "exports": [
+        "FONT_SIZE",
+        "getFontSize",
+        "CHART_FONT_SIZE",
+        "validateFontSizes"
+      ],
+      "documentedIn": [
+        "design/全局设计规范.md:147-166"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "getFontSize": {
+          "lineRange": [
+            49,
+            51
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.219Z"
+        },
+        "validateFontSizes": {
+          "lineRange": [
+            83,
+            114
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.219Z"
         }
       }
     },
@@ -296,7 +331,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.962Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         },
         "reorderArrayByIndex": {
           "lineRange": [
@@ -305,7 +340,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.962Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         },
         "createSortMapping": {
           "lineRange": [
@@ -314,7 +349,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.962Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         },
         "safeCompare": {
           "lineRange": [
@@ -323,7 +358,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.962Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         },
         "genericSort": {
           "lineRange": [
@@ -332,7 +367,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.962Z"
+          "lastModified": "2025-12-25T15:12:33.219Z"
         }
       }
     },
@@ -353,7 +388,28 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.963Z"
+          "lastModified": "2025-12-25T15:12:33.220Z"
+        }
+      }
+    },
+    "lib/chart-title.ts": {
+      "id": "code-lib-chart-title-ts",
+      "type": "ui-component",
+      "exports": [
+        "generateChartTitle"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "generateChartTitle": {
+          "lineRange": [
+            67,
+            95
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.220Z"
         }
       }
     },
@@ -365,36 +421,44 @@
         "generateValidationReport",
         "validateOrganizationCount"
       ],
-      "documentedIn": [],
+      "documentedIn": [
+        "business/指标定义规范.md:9-10"
+      ],
       "usedBy": [],
       "dependencies": [],
       "functions": {
         "validateOrganizationIds": {
           "lineRange": [
-            20,
-            35
+            21,
+            36
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:9-10"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.963Z"
+          "lastModified": "2025-12-25T15:12:33.221Z"
         },
         "generateValidationReport": {
           "lineRange": [
-            43,
-            59
+            45,
+            61
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:9-10"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.963Z"
+          "lastModified": "2025-12-25T15:12:33.221Z"
         },
         "validateOrganizationCount": {
           "lineRange": [
-            66,
-            68
+            69,
+            71
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:9-10"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.963Z"
+          "lastModified": "2025-12-25T15:12:33.221Z"
         }
       }
     },
@@ -410,7 +474,12 @@
         "actual2025ProgressYear",
         "actual2025ProgressQuarter"
       ],
-      "documentedIn": [],
+      "documentedIn": [
+        "business/目标分配规则.md:29-30",
+        "business/目标分配规则.md:31-32",
+        "business/目标分配规则.md:33-34",
+        "business/目标分配规则.md:35-36"
+      ],
       "usedBy": [],
       "dependencies": [],
       "functions": {
@@ -421,61 +490,73 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "linearProgressYear": {
           "lineRange": [
-            11,
-            13
+            12,
+            14
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/目标分配规则.md:29-30"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "weightedProgressYear": {
           "lineRange": [
-            20,
-            24
+            22,
+            26
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/目标分配规则.md:31-32"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "linearProgressQuarter": {
           "lineRange": [
-            30,
-            35
+            33,
+            38
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/目标分配规则.md:33-34"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "weightedProgressQuarter": {
           "lineRange": [
-            42,
-            53
+            46,
+            57
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/目标分配规则.md:31-32"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "actual2025ProgressYear": {
           "lineRange": [
-            61,
-            75
+            66,
+            80
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/目标分配规则.md:35-36"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "actual2025ProgressQuarter": {
           "lineRange": [
-            83,
-            101
+            89,
+            107
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/目标分配规则.md:35-36"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         }
       }
     },
@@ -505,7 +586,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "calculateHqGap": {
           "lineRange": [
@@ -514,7 +595,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "aggregateHqTargetsByProduct": {
           "lineRange": [
@@ -523,7 +604,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "predictMonthlyHqAchievement": {
           "lineRange": [
@@ -532,7 +613,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         },
         "calculateQuarterHqAchievementRate": {
           "lineRange": [
@@ -541,7 +622,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.964Z"
+          "lastModified": "2025-12-25T15:12:33.222Z"
         }
       }
     },
@@ -553,7 +634,9 @@
         "formatGrowthRate",
         "formatIncrement"
       ],
-      "documentedIn": [],
+      "documentedIn": [
+        "business/指标定义规范.md:121-147"
+      ],
       "usedBy": [],
       "dependencies": [
         "./achievement"
@@ -561,30 +644,36 @@
       "functions": {
         "calculateGrowthMetrics": {
           "lineRange": [
-            46,
-            47
+            47,
+            48
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "formatGrowthRate": {
           "lineRange": [
-            73,
-            76
+            75,
+            78
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "formatIncrement": {
           "lineRange": [
-            83,
-            86
+            86,
+            89
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         }
       }
     },
@@ -616,7 +705,7 @@
             "docs/business/指标定义规范.md"
           ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "calculateMaturityDays": {
           "lineRange": [
@@ -627,7 +716,7 @@
             "docs/business/指标定义规范.md"
           ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "calculateAutoEarnedPremium": {
           "lineRange": [
@@ -638,7 +727,7 @@
             "docs/business/指标定义规范.md"
           ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "calculatePropertyEarnedPremium": {
           "lineRange": [
@@ -649,7 +738,7 @@
             "docs/business/指标定义规范.md"
           ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "calculateLifeEarnedPremium": {
           "lineRange": [
@@ -660,7 +749,7 @@
             "docs/business/指标定义规范.md"
           ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "calculateMaturityRate": {
           "lineRange": [
@@ -671,7 +760,7 @@
             "docs/business/指标定义规范.md"
           ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         }
       }
     },
@@ -682,9 +771,12 @@
         "allocateAnnualToMonthly",
         "calculateActual2025Weights",
         "monthlyToQuarterly",
-        "monthlyToYtd"
+        "monthlyToYtd",
+        "calculateFutureTargets"
       ],
-      "documentedIn": [],
+      "documentedIn": [
+        "business/目标分配规则.md:45"
+      ],
       "usedBy": [],
       "dependencies": [],
       "functions": {
@@ -695,7 +787,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "calculateActual2025Weights": {
           "lineRange": [
@@ -704,7 +796,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "monthlyToQuarterly": {
           "lineRange": [
@@ -713,7 +805,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         },
         "monthlyToYtd": {
           "lineRange": [
@@ -722,7 +814,18 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
+        },
+        "calculateFutureTargets": {
+          "lineRange": [
+            82,
+            146
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:45"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.223Z"
         }
       }
     },
@@ -732,7 +835,9 @@
       "exports": [
         "aggregateToGroupAndAll"
       ],
-      "documentedIn": [],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
       "usedBy": [],
       "dependencies": [
         "@/schemas/types"
@@ -740,12 +845,14 @@
       "functions": {
         "aggregateToGroupAndAll": {
           "lineRange": [
-            11,
-            27
+            18,
+            34
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md （数据聚合相关章节）"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.223Z"
         }
       }
     },
@@ -757,73 +864,47 @@
         "diff",
         "growthRate"
       ],
-      "documentedIn": [],
+      "documentedIn": [
+        "business/指标定义规范.md:144-147",
+        "business/指标定义规范.md:121-147"
+      ],
       "usedBy": [],
       "dependencies": [],
       "functions": {
         "safeDivide": {
           "lineRange": [
-            0,
-            3
+            9,
+            12
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:144-147"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         },
         "diff": {
           "lineRange": [
-            5,
-            7
+            22,
+            24
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         },
         "growthRate": {
           "lineRange": [
-            9,
-            11
+            34,
+            36
           ],
-          "documentation": [],
+          "documentation": [
+            "docs/business/指标定义规范.md:144-147"
+          ],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.965Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         }
       }
-    },
-    "app/page.tsx": {
-      "id": "code-app-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/domain/allocation",
-        "@/domain/growth",
-        "@/domain/achievement",
-        "@/domain/headquarters",
-        "@/services/loaders",
-        "@/services/storage",
-        "@/styles/tokens",
-        "@/lib/utils",
-        "@/components/charts/QuarterlyChartLegend",
-        "@/components/charts/QuarterlyProportionChart",
-        "@/components/charts/QuarterlyProportionChart/utils"
-      ],
-      "functions": {}
-    },
-    "app/layout.tsx": {
-      "id": "code-app-layout-tsx",
-      "type": "ui-component",
-      "exports": [
-        "metadata"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/components/system/ColorSystemHydrator"
-      ],
-      "functions": {}
     },
     "config/thresholdRules.ts": {
       "id": "code-config-thresholdRules-ts",
@@ -848,7 +929,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.967Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         },
         "getGrowthStatus": {
           "lineRange": [
@@ -857,7 +938,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.967Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         }
       }
     },
@@ -881,7 +962,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.967Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         },
         "calculateQuarterlyWeights": {
           "lineRange": [
@@ -890,7 +971,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.967Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         }
       }
     },
@@ -913,7 +994,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.967Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         },
         "generatePageTitle": {
           "lineRange": [
@@ -922,9 +1003,368 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.967Z"
+          "lastModified": "2025-12-25T15:12:33.224Z"
         }
       }
+    },
+    "app/page.tsx": {
+      "id": "code-app-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "@/domain/allocation",
+        "@/domain/growth",
+        "@/domain/achievement",
+        "@/domain/headquarters",
+        "@/services/loaders",
+        "@/services/storage",
+        "@/styles/tokens",
+        "@/lib/utils",
+        "@/lib/chart-title"
+      ],
+      "functions": {}
+    },
+    "app/layout.tsx": {
+      "id": "code-app-layout-tsx",
+      "type": "ui-component",
+      "exports": [
+        "metadata"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/layout/Section.tsx": {
+      "id": "code-components-layout-Section-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Section"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "Section": {
+          "lineRange": [
+            55,
+            88
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.225Z"
+        }
+      }
+    },
+    "components/filters/FilterSelector.tsx": {
+      "id": "code-components-filters-FilterSelector-tsx",
+      "type": "ui-component",
+      "exports": [
+        "FilterSelector"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "FilterSelector": {
+          "lineRange": [
+            65,
+            115
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.225Z"
+        }
+      }
+    },
+    "components/feedback/LoadingState.tsx": {
+      "id": "code-components-feedback-LoadingState-tsx",
+      "type": "ui-component",
+      "exports": [
+        "LoadingState"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "LoadingState": {
+          "lineRange": [
+            42,
+            92
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.226Z"
+        }
+      }
+    },
+    "components/feedback/EmptyState.tsx": {
+      "id": "code-components-feedback-EmptyState-tsx",
+      "type": "ui-component",
+      "exports": [
+        "EmptyState"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "EmptyState": {
+          "lineRange": [
+            59,
+            109
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.226Z"
+        }
+      }
+    },
+    "components/kpi/KpiCard.tsx": {
+      "id": "code-components-kpi-KpiCard-tsx",
+      "type": "ui-component",
+      "exports": [
+        "KpiCard"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "KpiCard": {
+          "lineRange": [
+            59,
+            122
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.226Z"
+        }
+      }
+    },
+    "components/data/DataTable.tsx": {
+      "id": "code-components-data-DataTable-tsx",
+      "type": "ui-component",
+      "exports": [
+        "DataTable"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "DataTable": {
+          "lineRange": [
+            112,
+            188
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.226Z"
+        }
+      }
+    },
+    "components/system/ColorSystemHydrator.tsx": {
+      "id": "code-components-system-ColorSystemHydrator-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ColorSystemHydrator"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/storage"
+      ],
+      "functions": {
+        "ColorSystemHydrator": {
+          "lineRange": [
+            5,
+            19
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.226Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyChartLegend.tsx": {
+      "id": "code-components-charts-QuarterlyChartLegend-tsx",
+      "type": "ui-component",
+      "exports": [
+        "QuarterlyChartLegend"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "QuarterlyChartLegend": {
+          "lineRange": [
+            22,
+            67
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.227Z"
+        }
+      }
+    },
+    "components/charts/ChartContainer.tsx": {
+      "id": "code-components-charts-ChartContainer-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ChartContainer"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "ChartContainer": {
+          "lineRange": [
+            57,
+            106
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.227Z"
+        }
+      }
+    },
+    "components/config/ThresholdConfig.tsx": {
+      "id": "code-components-config-ThresholdConfig-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ThresholdConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "@/config/thresholdRules",
+        "@/schemas/schema"
+      ],
+      "functions": {
+        "ThresholdConfig": {
+          "lineRange": [
+            30,
+            270
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.227Z"
+        }
+      }
+    },
+    "app/orgs/page.tsx": {
+      "id": "code-app-orgs-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/loaders",
+        "@/components/charts/UniversalChart",
+        "@/schemas/types"
+      ],
+      "functions": {}
+    },
+    "app/rules/page.tsx": {
+      "id": "code-app-rules-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/loaders",
+        "@/components/config/ThresholdConfig",
+        "@/config/thresholdRules",
+        "@/schemas/types"
+      ],
+      "functions": {}
+    },
+    "app/import/page.tsx": {
+      "id": "code-app-import-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/loaders",
+        "@/services/storage",
+        "@/lib/paths",
+        "@/schemas/types"
+      ],
+      "functions": {}
+    },
+    "app/design-system/page.tsx": {
+      "id": "code-app-design-system-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/kpi/KpiCard",
+        "@/components/filters/FilterSelector",
+        "@/components/layout/Section",
+        "@/components/charts/ChartContainer",
+        "@/components/feedback/EmptyState",
+        "@/components/feedback/LoadingState",
+        "@/components/ui/Badge",
+        "@/components/data/DataTable"
+      ],
+      "functions": {}
+    },
+    "app/earned-premium/page.tsx": {
+      "id": "code-app-earned-premium-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "@/domain/allocation",
+        "@/services/loaders",
+        "@/styles/tokens",
+        "@/components/charts/ChartContainer"
+      ],
+      "functions": {}
+    },
+    "app/data/page.tsx": {
+      "id": "code-app-data-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/loaders"
+      ],
+      "functions": {}
+    },
+    "app/universal-chart-test/page.tsx": {
+      "id": "code-app-universal-chart-test-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/charts/UniversalChart"
+      ],
+      "functions": {}
     },
     "components/ui/index.ts": {
       "id": "code-components-ui-index-ts",
@@ -953,7 +1393,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.968Z"
+          "lastModified": "2025-12-25T15:12:33.228Z"
         }
       }
     },
@@ -976,337 +1416,9 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.968Z"
+          "lastModified": "2025-12-25T15:12:33.229Z"
         }
       }
-    },
-    "components/system/ColorSystemHydrator.tsx": {
-      "id": "code-components-system-ColorSystemHydrator-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ColorSystemHydrator"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/storage"
-      ],
-      "functions": {
-        "ColorSystemHydrator": {
-          "lineRange": [
-            5,
-            19
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.968Z"
-        }
-      }
-    },
-    "components/layout/Section.tsx": {
-      "id": "code-components-layout-Section-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Section"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "Section": {
-          "lineRange": [
-            55,
-            88
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.968Z"
-        }
-      }
-    },
-    "components/filters/FilterSelector.tsx": {
-      "id": "code-components-filters-FilterSelector-tsx",
-      "type": "ui-component",
-      "exports": [
-        "FilterSelector"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "FilterSelector": {
-          "lineRange": [
-            65,
-            115
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.969Z"
-        }
-      }
-    },
-    "components/feedback/LoadingState.tsx": {
-      "id": "code-components-feedback-LoadingState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "LoadingState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "LoadingState": {
-          "lineRange": [
-            42,
-            92
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.969Z"
-        }
-      }
-    },
-    "components/feedback/EmptyState.tsx": {
-      "id": "code-components-feedback-EmptyState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "EmptyState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "EmptyState": {
-          "lineRange": [
-            59,
-            109
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.970Z"
-        }
-      }
-    },
-    "components/data/DataTable.tsx": {
-      "id": "code-components-data-DataTable-tsx",
-      "type": "ui-component",
-      "exports": [
-        "DataTable"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "DataTable": {
-          "lineRange": [
-            112,
-            188
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.970Z"
-        }
-      }
-    },
-    "components/kpi/KpiCard.tsx": {
-      "id": "code-components-kpi-KpiCard-tsx",
-      "type": "ui-component",
-      "exports": [
-        "KpiCard"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "KpiCard": {
-          "lineRange": [
-            59,
-            122
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.970Z"
-        }
-      }
-    },
-    "components/charts/QuarterlyChartLegend.tsx": {
-      "id": "code-components-charts-QuarterlyChartLegend-tsx",
-      "type": "ui-component",
-      "exports": [
-        "QuarterlyChartLegend"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "QuarterlyChartLegend": {
-          "lineRange": [
-            22,
-            67
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.970Z"
-        }
-      }
-    },
-    "components/charts/ChartContainer.tsx": {
-      "id": "code-components-charts-ChartContainer-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ChartContainer"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "ChartContainer": {
-          "lineRange": [
-            57,
-            106
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.971Z"
-        }
-      }
-    },
-    "components/config/ThresholdConfig.tsx": {
-      "id": "code-components-config-ThresholdConfig-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ThresholdConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/config/thresholdRules",
-        "@/schemas/schema"
-      ],
-      "functions": {
-        "ThresholdConfig": {
-          "lineRange": [
-            30,
-            270
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.971Z"
-        }
-      }
-    },
-    "app/rules/page.tsx": {
-      "id": "code-app-rules-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/loaders",
-        "@/components/config/ThresholdConfig",
-        "@/config/thresholdRules",
-        "@/schemas/types"
-      ],
-      "functions": {}
-    },
-    "app/orgs/page.tsx": {
-      "id": "code-app-orgs-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/loaders",
-        "@/components/charts/UniversalChart",
-        "@/schemas/types"
-      ],
-      "functions": {}
-    },
-    "app/earned-premium/page.tsx": {
-      "id": "code-app-earned-premium-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/domain/allocation",
-        "@/services/loaders",
-        "@/styles/tokens",
-        "@/components/charts/ChartContainer"
-      ],
-      "functions": {}
-    },
-    "app/universal-chart-test/page.tsx": {
-      "id": "code-app-universal-chart-test-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/components/charts/UniversalChart"
-      ],
-      "functions": {}
-    },
-    "app/design-system/page.tsx": {
-      "id": "code-app-design-system-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/components/kpi/KpiCard",
-        "@/components/filters/FilterSelector",
-        "@/components/layout/Section",
-        "@/components/charts/ChartContainer",
-        "@/components/feedback/EmptyState",
-        "@/components/feedback/LoadingState",
-        "@/components/ui/Badge",
-        "@/components/data/DataTable"
-      ],
-      "functions": {}
-    },
-    "app/data/page.tsx": {
-      "id": "code-app-data-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/loaders"
-      ],
-      "functions": {}
-    },
-    "app/import/page.tsx": {
-      "id": "code-app-import-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/loaders",
-        "@/services/storage",
-        "@/lib/paths",
-        "@/schemas/types"
-      ],
-      "functions": {}
     },
     "app/color-system/page.tsx": {
       "id": "code-app-color-system-page-tsx",
@@ -1317,6 +1429,104 @@
       "dependencies": [
         "@/styles/tokens",
         "@/services/storage"
+      ],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/index.ts": {
+      "id": "code-components-charts-UniversalChart-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/UniversalChart.types.ts": {
+      "id": "code-components-charts-UniversalChart-UniversalChart-types-ts",
+      "type": "ui-component",
+      "exports": [
+        "QUARTER_LABELS",
+        "MONTH_LABELS",
+        "isValidChartData",
+        "getPeriodLabel",
+        "getAllPeriodLabels"
+      ],
+      "documentedIn": [
+        "通用图表组件复用方案.md"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "isValidChartData": {
+          "lineRange": [
+            286,
+            344
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.229Z"
+        },
+        "getPeriodLabel": {
+          "lineRange": [
+            349,
+            355
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.229Z"
+        },
+        "getAllPeriodLabels": {
+          "lineRange": [
+            360,
+            364
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.229Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/UniversalChart.tsx": {
+      "id": "code-components-charts-UniversalChart-UniversalChart-tsx",
+      "type": "ui-component",
+      "exports": [
+        "UniversalChart"
+      ],
+      "documentedIn": [
+        "通用图表组件复用方案.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "./UniversalChart.types",
+        "./hooks/useUniversalData",
+        "./hooks/useChartInteractions",
+        "./hooks/useUniversalConfig",
+        "./configs",
+        "../QuarterlyProportionChart/components/ChartHeader",
+        "../QuarterlyProportionChart/components/DetailPanel",
+        "./components/TableView",
+        "../QuarterlyProportionChart/QuarterlyProportionChart.types"
+      ],
+      "functions": {
+        "UniversalChart": {
+          "lineRange": [
+            54,
+            203
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.229Z"
+        }
+      }
+    },
+    "app/test/quarterly-chart/page.tsx": {
+      "id": "code-app-test-quarterly-chart-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/charts/QuarterlyProportionChart"
       ],
       "functions": {}
     },
@@ -1351,7 +1561,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.973Z"
+          "lastModified": "2025-12-25T15:12:33.230Z"
         }
       }
     },
@@ -1376,104 +1586,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.973Z"
-        }
-      }
-    },
-    "app/test/quarterly-chart/page.tsx": {
-      "id": "code-app-test-quarterly-chart-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/components/charts/QuarterlyProportionChart"
-      ],
-      "functions": {}
-    },
-    "components/charts/UniversalChart/index.ts": {
-      "id": "code-components-charts-UniversalChart-index-ts",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "components/charts/UniversalChart/UniversalChart.types.ts": {
-      "id": "code-components-charts-UniversalChart-UniversalChart-types-ts",
-      "type": "ui-component",
-      "exports": [
-        "QUARTER_LABELS",
-        "MONTH_LABELS",
-        "isValidChartData",
-        "getPeriodLabel",
-        "getAllPeriodLabels"
-      ],
-      "documentedIn": [
-        "fangan.md"
-      ],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "isValidChartData": {
-          "lineRange": [
-            284,
-            342
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.974Z"
-        },
-        "getPeriodLabel": {
-          "lineRange": [
-            347,
-            353
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.974Z"
-        },
-        "getAllPeriodLabels": {
-          "lineRange": [
-            358,
-            362
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.974Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/UniversalChart.tsx": {
-      "id": "code-components-charts-UniversalChart-UniversalChart-tsx",
-      "type": "ui-component",
-      "exports": [
-        "UniversalChart"
-      ],
-      "documentedIn": [
-        "fangan.md"
-      ],
-      "usedBy": [],
-      "dependencies": [
-        "./UniversalChart.types",
-        "./hooks/useUniversalData",
-        "./hooks/useChartInteractions",
-        "./hooks/useUniversalConfig",
-        "./configs",
-        "../QuarterlyProportionChart/components/ChartHeader",
-        "../QuarterlyProportionChart/components/DetailPanel",
-        "../QuarterlyProportionChart/QuarterlyProportionChart.types"
-      ],
-      "functions": {
-        "UniversalChart": {
-          "lineRange": [
-            52,
-            172
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.974Z"
+          "lastModified": "2025-12-25T15:12:33.230Z"
         }
       }
     },
@@ -1519,6 +1632,543 @@
       ],
       "functions": {}
     },
+    "components/charts/UniversalChart/utils/index.ts": {
+      "id": "code-components-charts-UniversalChart-utils-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/hooks/useUniversalData.ts": {
+      "id": "code-components-charts-UniversalChart-hooks-useUniversalData-ts",
+      "type": "ui-component",
+      "exports": [
+        "useUniversalData"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "../adapters/shared.adapter"
+      ],
+      "functions": {
+        "useUniversalData": {
+          "lineRange": [
+            26,
+            156
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.231Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/hooks/useUniversalConfig.ts": {
+      "id": "code-components-charts-UniversalChart-hooks-useUniversalConfig-ts",
+      "type": "ui-component",
+      "exports": [
+        "useUniversalConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/typography"
+      ],
+      "functions": {
+        "useUniversalConfig": {
+          "lineRange": [
+            234,
+            566
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.231Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/hooks/useChartInteractions.ts": {
+      "id": "code-components-charts-UniversalChart-hooks-useChartInteractions-ts",
+      "type": "ui-component",
+      "exports": [
+        "useChartInteractions"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "useChartInteractions": {
+          "lineRange": [
+            24,
+            91
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.231Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/components/TableView.tsx": {
+      "id": "code-components-charts-UniversalChart-components-TableView-tsx",
+      "type": "ui-component",
+      "exports": [
+        "TableView"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "TableView": {
+          "lineRange": [
+            84,
+            166
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.231Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/quarterlyShare.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-quarterlyShare-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createQuarterlyShareConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createQuarterlyShareConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.231Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/quarterlyPremium.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-quarterlyPremium-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createQuarterlyPremiumConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createQuarterlyPremiumConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/orgPremium.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-orgPremium-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createOrgPremiumConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createOrgPremiumConfig": {
+          "lineRange": [
+            24,
+            26
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/monthlyShare.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-monthlyShare-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createMonthlyShareConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createMonthlyShareConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/monthlyPremium.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-monthlyPremium-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createMonthlyPremiumConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createMonthlyPremiumConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/index.ts": {
+      "id": "code-components-charts-UniversalChart-configs-index-ts",
+      "type": "ui-component",
+      "exports": [
+        "getPresetConfig",
+        "mergeConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./quarterlyPremium.config",
+        "./quarterlyShare.config",
+        "./monthlyPremium.config",
+        "./monthlyShare.config",
+        "./hqPrediction.config",
+        "./orgPremium.config"
+      ],
+      "functions": {
+        "getPresetConfig": {
+          "lineRange": [
+            57,
+            75
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "mergeConfig": {
+          "lineRange": [
+            84,
+            94
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/configs/hqPrediction.config.ts": {
+      "id": "code-components-charts-UniversalChart-configs-hqPrediction-config-ts",
+      "type": "ui-component",
+      "exports": [
+        "createHqPredictionConfig"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createHqPredictionConfig": {
+          "lineRange": [
+            32,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/shared.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-shared-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "calculateGrowthRate",
+        "calculateAchievementRate",
+        "calculateShare",
+        "getWarningLevel",
+        "calculateGrowthRateArray",
+        "calculateAchievementRateArray",
+        "calculateShareArray",
+        "validateArrayLength",
+        "ensureGrowthSeries",
+        "ensureAchievementSeries"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "calculateGrowthRate": {
+          "lineRange": [
+            21,
+            29
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "calculateAchievementRate": {
+          "lineRange": [
+            42,
+            50
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "calculateShare": {
+          "lineRange": [
+            63,
+            68
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "getWarningLevel": {
+          "lineRange": [
+            82,
+            89
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "calculateGrowthRateArray": {
+          "lineRange": [
+            98,
+            111
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "calculateAchievementRateArray": {
+          "lineRange": [
+            120,
+            133
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "calculateShareArray": {
+          "lineRange": [
+            142,
+            147
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "validateArrayLength": {
+          "lineRange": [
+            157,
+            175
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "ensureGrowthSeries": {
+          "lineRange": [
+            183,
+            197
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "ensureAchievementSeries": {
+          "lineRange": [
+            205,
+            219
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/quarterly.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-quarterly-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createQuarterlyPremiumAdapter",
+        "createQuarterlyShareAdapter"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./shared.adapter"
+      ],
+      "functions": {
+        "createQuarterlyPremiumAdapter": {
+          "lineRange": [
+            121,
+            123
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "createQuarterlyShareAdapter": {
+          "lineRange": [
+            128,
+            130
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/organization.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-organization-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createOrganizationPremiumAdapter"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./shared.adapter"
+      ],
+      "functions": {
+        "createOrganizationPremiumAdapter": {
+          "lineRange": [
+            117,
+            119
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/monthly.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-monthly-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createMonthlyPremiumAdapter",
+        "createMonthlyShareAdapter"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types",
+        "./shared.adapter"
+      ],
+      "functions": {
+        "createMonthlyPremiumAdapter": {
+          "lineRange": [
+            121,
+            123
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        },
+        "createMonthlyShareAdapter": {
+          "lineRange": [
+            128,
+            130
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.232Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/adapters/index.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/charts/UniversalChart/adapters/hqPrediction.adapter.ts": {
+      "id": "code-components-charts-UniversalChart-adapters-hqPrediction-adapter-ts",
+      "type": "ui-component",
+      "exports": [
+        "createHqPredictionAdapter",
+        "calculateCumulative",
+        "reverseCalculateCumulative"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "createHqPredictionAdapter": {
+          "lineRange": [
+            94,
+            96
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.233Z"
+        },
+        "calculateCumulative": {
+          "lineRange": [
+            107,
+            125
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.233Z"
+        },
+        "reverseCalculateCumulative": {
+          "lineRange": [
+            136,
+            155
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-25T15:12:33.233Z"
+        }
+      }
+    },
     "components/charts/QuarterlyProportionChart/utils/index.ts": {
       "id": "code-components-charts-QuarterlyProportionChart-utils-index-ts",
       "type": "ui-component",
@@ -1557,7 +2207,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatNumber": {
           "lineRange": [
@@ -1566,7 +2216,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatCurrency": {
           "lineRange": [
@@ -1575,7 +2225,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "getGrowthArrow": {
           "lineRange": [
@@ -1584,7 +2234,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatGrowth": {
           "lineRange": [
@@ -1593,7 +2243,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatQuarterData": {
           "lineRange": [
@@ -1602,7 +2252,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "sanitizeFilename": {
           "lineRange": [
@@ -1611,7 +2261,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatDateTime": {
           "lineRange": [
@@ -1620,7 +2270,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatFileSize": {
           "lineRange": [
@@ -1629,7 +2279,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatDuration": {
           "lineRange": [
@@ -1638,7 +2288,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "truncateText": {
           "lineRange": [
@@ -1647,7 +2297,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "getValueColorClass": {
           "lineRange": [
@@ -1656,7 +2306,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "formatRange": {
           "lineRange": [
@@ -1665,7 +2315,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         }
       }
     },
@@ -1692,7 +2342,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "exportQuarterDetails": {
           "lineRange": [
@@ -1701,7 +2351,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "exportToJSON": {
           "lineRange": [
@@ -1710,7 +2360,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "printChart": {
           "lineRange": [
@@ -1719,7 +2369,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         }
       }
     },
@@ -1755,7 +2405,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "getWarningLevelByGrowth": {
           "lineRange": [
@@ -1764,7 +2414,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "getGrowthColorClass": {
           "lineRange": [
@@ -1773,7 +2423,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "adjustBrightness": {
           "lineRange": [
@@ -1782,7 +2432,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "hexToRgba": {
           "lineRange": [
@@ -1791,7 +2441,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "createGradient": {
           "lineRange": [
@@ -1800,7 +2450,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "getHeatmapColor": {
           "lineRange": [
@@ -1809,7 +2459,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "isDarkColor": {
           "lineRange": [
@@ -1818,7 +2468,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "getContrastColor": {
           "lineRange": [
@@ -1827,7 +2477,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "blendColors": {
           "lineRange": [
@@ -1836,7 +2486,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "withOpacity": {
           "lineRange": [
@@ -1845,7 +2495,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         },
         "generatePalette": {
           "lineRange": [
@@ -1854,74 +2504,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.975Z"
-        }
-      }
-    },
-    "components/charts/QuarterlyProportionChart/hooks/useChartData.ts": {
-      "id": "code-components-charts-QuarterlyProportionChart-hooks-useChartData-ts",
-      "type": "ui-component",
-      "exports": [
-        "useChartData"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../QuarterlyProportionChart.types"
-      ],
-      "functions": {
-        "useChartData": {
-          "lineRange": [
-            40,
-            168
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
-        }
-      }
-    },
-    "components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts": {
-      "id": "code-components-charts-QuarterlyProportionChart-hooks-useChartConfig-ts",
-      "type": "ui-component",
-      "exports": [
-        "useChartConfig",
-        "getWarningLevelColor",
-        "getDefaultColors"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../QuarterlyProportionChart.types",
-        "../utils/formatter"
-      ],
-      "functions": {
-        "useChartConfig": {
-          "lineRange": [
-            133,
-            391
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
-        },
-        "getWarningLevelColor": {
-          "lineRange": [
-            396,
-            398
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
-        },
-        "getDefaultColors": {
-          "lineRange": [
-            403,
-            405
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
+          "lastModified": "2025-12-25T15:12:33.233Z"
         }
       }
     },
@@ -1955,7 +2538,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         },
         "WarningBadgeSelector": {
           "lineRange": [
@@ -1964,7 +2547,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         }
       }
     },
@@ -1989,7 +2572,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         },
         "ViewSwitcherSelector": {
           "lineRange": [
@@ -1998,7 +2581,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.976Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         }
       }
     },
@@ -2024,7 +2607,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.977Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         },
         "DetailPanelShowcase": {
           "lineRange": [
@@ -2033,7 +2616,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.977Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         }
       }
     },
@@ -2060,7 +2643,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.977Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         },
         "CompactChartHeader": {
           "lineRange": [
@@ -2069,7 +2652,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.977Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         },
         "ChartHeaderShowcase": {
           "lineRange": [
@@ -2078,518 +2661,75 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.977Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         }
       }
     },
-    "components/charts/UniversalChart/utils/index.ts": {
-      "id": "code-components-charts-UniversalChart-utils-index-ts",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "components/charts/UniversalChart/hooks/useUniversalData.ts": {
-      "id": "code-components-charts-UniversalChart-hooks-useUniversalData-ts",
+    "components/charts/QuarterlyProportionChart/hooks/useChartData.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-hooks-useChartData-ts",
       "type": "ui-component",
       "exports": [
-        "useUniversalData"
+        "useChartData"
       ],
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [
-        "../UniversalChart.types",
-        "../adapters/shared.adapter"
+        "../QuarterlyProportionChart.types"
       ],
       "functions": {
-        "useUniversalData": {
+        "useChartData": {
           "lineRange": [
-            26,
-            156
+            40,
+            168
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.977Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         }
       }
     },
-    "components/charts/UniversalChart/hooks/useUniversalConfig.ts": {
-      "id": "code-components-charts-UniversalChart-hooks-useUniversalConfig-ts",
+    "components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts": {
+      "id": "code-components-charts-QuarterlyProportionChart-hooks-useChartConfig-ts",
       "type": "ui-component",
       "exports": [
-        "useUniversalConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "useUniversalConfig": {
-          "lineRange": [
-            247,
-            561
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.977Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/hooks/useChartInteractions.ts": {
-      "id": "code-components-charts-UniversalChart-hooks-useChartInteractions-ts",
-      "type": "ui-component",
-      "exports": [
-        "useChartInteractions"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "useChartInteractions": {
-          "lineRange": [
-            24,
-            91
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.978Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/configs/quarterlyShare.config.ts": {
-      "id": "code-components-charts-UniversalChart-configs-quarterlyShare-config-ts",
-      "type": "ui-component",
-      "exports": [
-        "createQuarterlyShareConfig"
+        "useChartConfig",
+        "getWarningLevelColor",
+        "getDefaultColors"
       ],
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [
-        "../UniversalChart.types"
+        "../QuarterlyProportionChart.types",
+        "../utils/formatter",
+        "@/lib/typography"
       ],
       "functions": {
-        "createQuarterlyShareConfig": {
+        "useChartConfig": {
           "lineRange": [
-            32,
-            34
+            134,
+            392
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.978Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/configs/quarterlyPremium.config.ts": {
-      "id": "code-components-charts-UniversalChart-configs-quarterlyPremium-config-ts",
-      "type": "ui-component",
-      "exports": [
-        "createQuarterlyPremiumConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "createQuarterlyPremiumConfig": {
-          "lineRange": [
-            32,
-            34
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.978Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/configs/orgPremium.config.ts": {
-      "id": "code-components-charts-UniversalChart-configs-orgPremium-config-ts",
-      "type": "ui-component",
-      "exports": [
-        "createOrgPremiumConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "createOrgPremiumConfig": {
-          "lineRange": [
-            24,
-            26
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.978Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/configs/monthlyShare.config.ts": {
-      "id": "code-components-charts-UniversalChart-configs-monthlyShare-config-ts",
-      "type": "ui-component",
-      "exports": [
-        "createMonthlyShareConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "createMonthlyShareConfig": {
-          "lineRange": [
-            32,
-            34
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.978Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/configs/monthlyPremium.config.ts": {
-      "id": "code-components-charts-UniversalChart-configs-monthlyPremium-config-ts",
-      "type": "ui-component",
-      "exports": [
-        "createMonthlyPremiumConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "createMonthlyPremiumConfig": {
-          "lineRange": [
-            32,
-            34
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.979Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/configs/index.ts": {
-      "id": "code-components-charts-UniversalChart-configs-index-ts",
-      "type": "ui-component",
-      "exports": [
-        "getPresetConfig",
-        "mergeConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types",
-        "./quarterlyPremium.config",
-        "./quarterlyShare.config",
-        "./monthlyPremium.config",
-        "./monthlyShare.config",
-        "./hqPrediction.config",
-        "./orgPremium.config"
-      ],
-      "functions": {
-        "getPresetConfig": {
-          "lineRange": [
-            57,
-            75
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.979Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         },
-        "mergeConfig": {
+        "getWarningLevelColor": {
           "lineRange": [
-            84,
-            94
+            397,
+            399
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.979Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/configs/hqPrediction.config.ts": {
-      "id": "code-components-charts-UniversalChart-configs-hqPrediction-config-ts",
-      "type": "ui-component",
-      "exports": [
-        "createHqPredictionConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "createHqPredictionConfig": {
-          "lineRange": [
-            32,
-            34
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/adapters/shared.adapter.ts": {
-      "id": "code-components-charts-UniversalChart-adapters-shared-adapter-ts",
-      "type": "ui-component",
-      "exports": [
-        "calculateGrowthRate",
-        "calculateAchievementRate",
-        "calculateShare",
-        "getWarningLevel",
-        "calculateGrowthRateArray",
-        "calculateAchievementRateArray",
-        "calculateShareArray",
-        "validateArrayLength",
-        "ensureGrowthSeries",
-        "ensureAchievementSeries"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "calculateGrowthRate": {
-          "lineRange": [
-            21,
-            29
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         },
-        "calculateAchievementRate": {
+        "getDefaultColors": {
           "lineRange": [
-            42,
-            50
+            404,
+            406
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "calculateShare": {
-          "lineRange": [
-            63,
-            68
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "getWarningLevel": {
-          "lineRange": [
-            82,
-            89
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "calculateGrowthRateArray": {
-          "lineRange": [
-            98,
-            111
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "calculateAchievementRateArray": {
-          "lineRange": [
-            120,
-            133
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "calculateShareArray": {
-          "lineRange": [
-            142,
-            147
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "validateArrayLength": {
-          "lineRange": [
-            157,
-            175
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "ensureGrowthSeries": {
-          "lineRange": [
-            183,
-            197
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "ensureAchievementSeries": {
-          "lineRange": [
-            205,
-            219
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/adapters/quarterly.adapter.ts": {
-      "id": "code-components-charts-UniversalChart-adapters-quarterly-adapter-ts",
-      "type": "ui-component",
-      "exports": [
-        "createQuarterlyPremiumAdapter",
-        "createQuarterlyShareAdapter"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types",
-        "./shared.adapter"
-      ],
-      "functions": {
-        "createQuarterlyPremiumAdapter": {
-          "lineRange": [
-            121,
-            123
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "createQuarterlyShareAdapter": {
-          "lineRange": [
-            128,
-            130
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/adapters/organization.adapter.ts": {
-      "id": "code-components-charts-UniversalChart-adapters-organization-adapter-ts",
-      "type": "ui-component",
-      "exports": [
-        "createOrganizationPremiumAdapter"
-      ],
-      "documentedIn": [
-        "business/指标定义规范.md"
-      ],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types",
-        "./shared.adapter"
-      ],
-      "functions": {
-        "createOrganizationPremiumAdapter": {
-          "lineRange": [
-            117,
-            119
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/adapters/monthly.adapter.ts": {
-      "id": "code-components-charts-UniversalChart-adapters-monthly-adapter-ts",
-      "type": "ui-component",
-      "exports": [
-        "createMonthlyPremiumAdapter",
-        "createMonthlyShareAdapter"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types",
-        "./shared.adapter"
-      ],
-      "functions": {
-        "createMonthlyPremiumAdapter": {
-          "lineRange": [
-            121,
-            123
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        },
-        "createMonthlyShareAdapter": {
-          "lineRange": [
-            128,
-            130
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.980Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/adapters/index.ts": {
-      "id": "code-components-charts-UniversalChart-adapters-index-ts",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "components/charts/UniversalChart/adapters/hqPrediction.adapter.ts": {
-      "id": "code-components-charts-UniversalChart-adapters-hqPrediction-adapter-ts",
-      "type": "ui-component",
-      "exports": [
-        "createHqPredictionAdapter",
-        "calculateCumulative",
-        "reverseCalculateCumulative"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "createHqPredictionAdapter": {
-          "lineRange": [
-            94,
-            96
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.981Z"
-        },
-        "calculateCumulative": {
-          "lineRange": [
-            107,
-            125
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.981Z"
-        },
-        "reverseCalculateCumulative": {
-          "lineRange": [
-            136,
-            155
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-25T10:43:02.981Z"
+          "lastModified": "2025-12-25T15:12:33.234Z"
         }
       }
     }

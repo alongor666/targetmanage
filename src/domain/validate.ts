@@ -14,6 +14,7 @@ export type ValidationResult = {
 
 /**
  * 验证数据文件中的机构ID是否在标准映射表中
+ * @doc docs/business/指标定义规范.md:9-10
  * @param dataOrgIds 数据文件中的机构ID数组
  * @param standardOrgIds 标准映射表中的机构ID数组
  * @returns 验证结果对象
@@ -37,6 +38,7 @@ export function validateOrganizationIds(
 
 /**
  * 生成验证报告文本
+ * @doc docs/business/指标定义规范.md:9-10
  * @param result 验证结果
  * @param dataSource 数据来源描述（如文件名）
  * @returns 格式化的验证报告
@@ -61,6 +63,7 @@ export function generateValidationReport(result: ValidationResult, dataSource: s
 
 /**
  * 验证机构数量是否符合预期（总计14个机构）
+ * @doc docs/business/指标定义规范.md:9-10
  * @param count 机构数量
  * @returns 是否符合预期
  */

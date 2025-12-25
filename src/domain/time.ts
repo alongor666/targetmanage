@@ -7,6 +7,7 @@ export function monthToQuarter(month: number): 1 | 2 | 3 | 4 {
 
 /**
  * 年度线性进度 = m / 12
+ * @doc docs/business/目标分配规则.md:29-30
  * @param month 当前月份（1-12）
  */
 export function linearProgressYear(month: number): number {
@@ -15,6 +16,7 @@ export function linearProgressYear(month: number): number {
 
 /**
  * 年度权重进度 = sum(weights[0..month-1])
+ * @doc docs/business/目标分配规则.md:31-32
  * @param weights 12个月权重数组，总和为1.0
  * @param month 当前月份（1-12）
  */
@@ -26,6 +28,7 @@ export function weightedProgressYear(weights: number[], month: number): number {
 
 /**
  * 季度线性进度 = (m - quarterStart + 1) / quarterMonths
+ * @doc docs/business/目标分配规则.md:33-34
  * @param month 当前月份（1-12）
  */
 export function linearProgressQuarter(month: number): number {
@@ -37,6 +40,7 @@ export function linearProgressQuarter(month: number): number {
 
 /**
  * 季度权重进度 = sum(weights[quarterStart..month]) / sum(weights[quarterStart..quarterEnd])
+ * @doc docs/business/目标分配规则.md:31-32
  * @param weights 12个月权重数组
  * @param month 当前月份（1-12）
  */
@@ -55,6 +59,7 @@ export function weightedProgressQuarter(weights: number[], month: number): numbe
 
 /**
  * 年度2025实际进度 = actuals2025[month-1] / sum(actuals2025[0..11])
+ * @doc docs/business/目标分配规则.md:35-36
  * @param actuals2025 2025年12个月实际数据数组（可能包含null）
  * @param month 当前月份（1-12）
  * @returns 当月占全年保费的占比（0-1），如果数据不足返回0
@@ -77,6 +82,7 @@ export function actual2025ProgressYear(actuals2025: Array<number | null>, month:
 
 /**
  * 季度2025实际进度 = actuals2025[month-1] / sum(actuals2025[quarterStart..quarterEnd])
+ * @doc docs/business/目标分配规则.md:35-36
  * @param actuals2025 2025年12个月实际数据数组（可能包含null）
  * @param month 当前月份（1-12）
  * @returns 当月占季度保费的占比（0-1），如果数据不足返回0

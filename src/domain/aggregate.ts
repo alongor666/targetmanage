@@ -9,6 +9,13 @@ export type FactRow = {
 
 export type AggKey = { group: GroupCode; product: ProductCode };
 
+/**
+ * 按分组和产品聚合数据，生成分组和总计
+ * @doc docs/business/指标定义规范.md （数据聚合相关章节）
+ *
+ * @param rows 原始数据行数组
+ * @returns 聚合后的数据映射，键为"分组__产品"，值为聚合值
+ */
 export function aggregateToGroupAndAll(rows: FactRow[]): Map<string, number> {
   const map = new Map<string, number>();
 
