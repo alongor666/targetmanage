@@ -1,77 +1,71 @@
-# GitHub Actions工作流 - 自动部署到GitHub Pages
+# GitHub Actions 工作流 - 自动部署到 GitHub Pages
 name: Deploy to GitHub Pages
 
 on:
-  # 当推送到main分支时触发
   push:
     branches: [ main ]
-  # 允许手动触发
   workflow_dispatch:
 
-# 设置权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 环境变量
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # 构建任务
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: 检出代码
-      uses: actions/checkout@v4
+      - name: 检出代码
+        uses: actions/checkout@v4
 
-    - name: 安装pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 8
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
 
-    - name: 设置Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'pnpm'
+      - name: 安装 pnpm（固定版本）
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.24.0
 
-    - name: 安装依赖
-      run: pnpm install
-      
-    - name: 运行类型检查
-      run: pnpm typecheck
+      - name: 安装依赖（冻结 lockfile）
+        run: pnpm install --frozen-lockfile
 
-    # 暂时跳过代码检查直到ESLint配置修复
-    # - name: 运行代码检查
-    #   run: pnpm lint
+      - name: 运行类型检查
+        run: pnpm typecheck
 
-    - name: 构建项目
-      run: pnpm build:github
-      env:
-        NODE_ENV: production
-        
-    - name: 设置页面
-      uses: actions/configure-pages@v4
-      
-    - name: 上传构建产物
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: './out'
+      # 如需启用 ESLint，修复配置后再打开
+      # - name: 运行代码检查
+      #   run: pnpm lint
 
-  # 部署任务
+      - name: 构建项目（GitHub Pages）
+        run: pnpm build:github
+        env:
+          NODE_ENV: production
+
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     steps:
-    - name: 部署到GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
