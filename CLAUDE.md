@@ -2,8 +2,8 @@
 
 This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Last Updated:** 2025-12-23
-**Version:** 2.0.0
+**Last Updated:** 2025-12-25
+**Version:** 2.1.0
 **Project:** Target Management & Visualization Platform (川分目标管理系统)
 
 ---
@@ -35,7 +35,9 @@ A Next.js-based business intelligence platform for managing vehicle insurance ta
 - **Real-time Achievement Tracking**: Monthly/Quarterly/Annual achievement rates
 - **Dual Time Progress Modes**: Linear vs Weighted vs 2025-Actual based calculations
 - **Year-over-Year Growth Analytics**: Requires 2025 baseline data (6 metrics)
+- **Earned Premium Analytics**: Auto/Property/Life insurance earned premium calculations
 - **Organization Mode Flexibility**: Branch/Local/Remote/Single/Multi-org views
+- **Universal Chart System**: Flexible, reusable chart components with adapters
 - **Large Screen Optimization**: 2400px PPT container width, 6-column KPI layout
 
 ### Business Context
@@ -98,7 +100,7 @@ pnpm docs:graph         # View knowledge graph
 | **Validation** | Zod | 3.23.8 | Schema validation |
 | **CSV Parsing** | Papa Parse | 5.4.1 | CSV data import |
 | **Build Tool** | Next.js bundler | Built-in | Production optimization |
-| **Package Manager** | pnpm | 8+ | Fast, efficient dependency management |
+| **Package Manager** | pnpm (via Corepack) | 10.24.0 | Fast, efficient dependency management |
 
 ---
 
@@ -141,12 +143,16 @@ src/
 ├── app/                    # Next.js App Router (Presentation)
 │   ├── page.tsx           # Main dashboard
 │   ├── layout.tsx         # Root layout
+│   ├── color-system/      # Color system management
+│   ├── data/              # Data management page
+│   ├── design-system/     # Design system showcase
+│   ├── earned-premium/    # Earned premium analytics
+│   ├── import/            # CSV import page
 │   ├── orgs/              # Organization pages
 │   │   └── [org_id]/      # Dynamic org detail
-│   ├── data/              # Data management page
-│   ├── import/            # CSV import page
 │   ├── rules/             # Rules configuration
-│   └── design-system/     # Design system showcase
+│   ├── test/              # Testing pages
+│   └── universal-chart-test/ # Universal chart testing
 │
 ├── components/             # React UI Components
 │   ├── charts/            # Chart components (ECharts wrappers)
@@ -161,9 +167,10 @@ src/
 │   ├── achievement.ts     # Achievement rate calculations
 │   ├── aggregate.ts       # Data aggregation logic
 │   ├── allocation.ts      # Annual → Monthly/Quarterly allocation
+│   ├── earnedPremium.ts   # Earned premium calculations (auto/property/life)
 │   ├── growth.ts          # YoY growth metrics (6 fields)
-│   ├── time.ts            # Time progress calculations (3 modes)
 │   ├── headquarters.ts    # HQ target prediction
+│   ├── time.ts            # Time progress calculations (3 modes)
 │   └── validate.ts        # Business validation rules
 │
 ├── services/               # Data Services (Side Effects)
@@ -194,6 +201,10 @@ docs/                       # Documentation (Knowledge Graph)
 │   ├── docs-index.json    # Documentation index
 │   ├── code-index.json    # Code index
 │   └── graph.json         # Knowledge graph
+├── ai-evolution/          # AI collaboration evolution system
+│   ├── problems/          # Problem documentation
+│   ├── solutions/         # Solution patterns
+│   └── analysis/          # Analysis reports
 ├── architecture/           # Architecture docs
 ├── business/              # Business rules (AUTHORITY)
 │   ├── 指标定义规范.md     # Metric definitions
@@ -554,7 +565,33 @@ Defined in `src/domain/growth.ts` - requires 2025 baseline:
 - `inc_quarter`: Current quarter - baseline quarter
 - `inc_ytd`: YTD - baseline YTD
 
-### 8. Zod Schemas
+### 8. Earned Premium Calculations
+
+Defined in `src/domain/earnedPremium.ts` - calculates earned premium based on insurance product type:
+
+**Auto Insurance (Vehicle):**
+```typescript
+// Commercial: premium × expenseRate × 0.94 + premium × (1 - expenseRate) × maturityFactor
+// Compulsory: premium × expenseRate × 0.82 + premium × (1 - expenseRate) × maturityFactor
+```
+
+**Property Insurance:**
+```typescript
+// premium × firstDayExpenseRate + premium × (1 - firstDayExpenseRate) × maturityFactor
+```
+
+**Life Insurance:**
+```typescript
+// premium × firstDayExpenseRate × 0.967 + premium × (1 - firstDayExpenseRate) × maturityFactor
+```
+
+**Maturity Factor:** `maturityDays / 365`
+
+**Maturity Days:** `(monthDays / 2) + max(0, daysAfterMonth + 1)`
+
+**Maturity Rate:** `earnedPremium / premium` (null if premium is 0)
+
+### 9. Zod Schemas
 
 All data contracts defined in `src/schemas/schema.ts`:
 
@@ -592,7 +629,7 @@ export const AllocationRuleSchema = z.object({
 });
 ```
 
-### 9. UI Layout Standards
+### 10. UI Layout Standards
 
 From `docs/design/全局设计规范.md`:
 
@@ -616,7 +653,7 @@ const breakpoints = {
 };
 ```
 
-### 10. File Naming Conventions
+### 11. File Naming Conventions
 
 ```
 Components:     PascalCase.tsx        (KpiCard.tsx, ChartContainer.tsx)
@@ -682,13 +719,17 @@ Triggers on push to `main` branch:
 ```yaml
 Steps:
 1. Checkout code
-2. Setup pnpm + Node.js 18
-3. Install dependencies (pnpm install --frozen-lockfile)
-4. Run typecheck (pnpm typecheck)
-5. Build project (pnpm build:github)
-6. Upload to GitHub Pages
-7. Deploy to GitHub Pages
+2. Setup Node.js 18
+3. Enable Corepack and activate pnpm 10.24.0
+4. Setup pnpm store caching
+5. Install dependencies (pnpm install --frozen-lockfile)
+6. Run typecheck (pnpm typecheck)
+7. Build project (pnpm build:github)
+8. Upload to GitHub Pages
+9. Deploy to GitHub Pages
 ```
+
+**Important**: pnpm is now managed via Corepack and pinned to version 10.24.0 for consistency across environments.
 
 #### 2. Documentation Sync Workflow (`.github/workflows/docs-sync.yml`)
 
@@ -1035,11 +1076,29 @@ Explain:
 ---
 
 **Maintainers**: Development Team
-**Version**: 2.0.0
-**Last Updated**: 2025-12-23
+**Version**: 2.1.0
+**Last Updated**: 2025-12-25
 **License**: Private
 
 **Related Files**:
 - `AGENTS.md` - General AI agents guide
 - `GEMINI.md` - Gemini-specific guide
 - `README.md` - User-facing project documentation
+
+---
+
+## 📝 Version History
+
+### v2.1.0 (2025-12-25)
+- Added earned premium calculation module (`src/domain/earnedPremium.ts`)
+- Added new app routes: color-system, earned-premium, universal-chart-test
+- Updated CI/CD pipeline to use Corepack for pnpm management (v10.24.0)
+- Added AI evolution documentation system (`docs/ai-evolution/`)
+- Enhanced component library with UniversalChart and QuarterlyProportionChart
+- Added comprehensive earned premium formulas documentation
+
+### v2.0.0 (2025-12-23)
+- Initial comprehensive CLAUDE.md documentation
+- Complete architecture and workflow documentation
+- Documentation-code indexing system
+- Development workflows and quality standards
