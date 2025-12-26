@@ -1,289 +1,220 @@
 # CLAUDE.md
 
-This file provides essential guidance to Claude Code when working with this repository.
+Essential guidance for Claude Code when working with this repository.
 
-**Last Updated:** 2025-12-25
-**Version:** 3.0.0 (Optimized)
+**Version:** 4.0.0 (Optimized for LLM)
 **Project:** Target Management & Visualization Platform (川分目标管理系统)
+**Last Updated:** 2025-12-26
 
 ---
 
 ## 🎯 Project Overview
 
-**Target Management & Visualization Platform** for Sichuan Branch (2025-2026)
+**Business Intelligence Platform** for Sichuan Branch vehicle insurance target management (2025-2026).
 
-A Next.js-based business intelligence platform for managing vehicle insurance targets with:
-- **Multi-dimensional Target Allocation**: Annual → Monthly/Quarterly breakdown
-- **Real-time Achievement Tracking**: Monthly/Quarterly/Annual achievement rates
-- **3 Time Progress Modes**: Linear, Weighted, 2025-Actual based calculations
-- **Year-over-Year Growth**: Requires 2025 baseline data (6 metrics)
-- **Organization Flexibility**: 14 organizations (7 local + 7 remote)
+**What**: Next.js-based dashboard for multi-dimensional target allocation and achievement tracking across 14 organizations, 5 product lines, with real-time analytics.
+
+**Why**: Enable data-driven decision making for insurance business performance monitoring with year-over-year growth analysis and quarterly/monthly breakdowns.
 
 **Key Business Context**:
 - 14 Organizations: 7 Local (Chengdu) + 7 Remote (other cities)
-- 5 Products: auto, property, life, health, total
-- Critical: Use `null` for impossible calculations, NEVER `0`
+- 5 Products: `auto`, `property`, `life`, `health`, `total`
+- **CRITICAL**: Use `null` for impossible calculations, **NEVER** `0`
+
+---
+
+## 🛠️ Tech Stack
+
+- **Runtime**: Node.js 20+ (managed via nvm)
+- **Framework**: Next.js 15 (App Router)
+- **Package Manager**: pnpm 9+
+- **Language**: TypeScript 5.7+
+- **Validation**: Zod schemas
+- **UI**: Tailwind CSS, shadcn/ui, Recharts
+- **Data Storage**: localStorage + JSON files (no database)
+
+### Essential Commands
+
+```bash
+pnpm dev              # Start dev server (http://localhost:3000)
+pnpm build            # Production build
+pnpm typecheck        # Run TypeScript checks
+pnpm docs:check       # Validate @doc tags
+pnpm docs:sync        # Regenerate code-doc indices
+```
 
 ---
 
 ## 🏗️ Architecture
 
-### Layered Architecture
+**Layered Architecture** (strict separation of concerns):
 
-```
-┌─────────────────────────────────────────────────┐
-│  Presentation Layer (app/)                      │
-│  - Next.js pages, React components              │
-├─────────────────────────────────────────────────┤
-│  Domain Layer (domain/)                         │
-│  - Pure business logic, NO side effects         │
-│  - Implements docs/business rules               │
-├─────────────────────────────────────────────────┤
-│  Service Layer (services/)                      │
-│  - Data loading (localStorage → JSON → fallback)│
-├─────────────────────────────────────────────────┤
-│  Schema Layer (schemas/)                        │
-│  - Zod contracts, TypeScript types              │
-└─────────────────────────────────────────────────┘
-```
+- **Presentation** (`app/`): Next.js pages, React components, UI logic
+- **Domain** (`domain/`): Pure business logic, NO side effects, implements `docs/business/` rules
+- **Service** (`services/`): Data loading with 3-tier priority pattern
+- **Schema** (`schemas/`): Zod contracts, TypeScript types
 
-### Key Directories
-
+**Key Directories**:
 ```
 src/
-├── domain/           # Pure business logic (CRITICAL)
-│   ├── achievement.ts    # Achievement rate calculations
-│   ├── growth.ts         # YoY growth metrics
-│   ├── time.ts           # Time progress (3 modes)
-│   └── validate.ts       # Business validation
-│
-├── services/         # Data loading (side effects)
-│   └── loaders.ts        # 3-tier priority pattern
-│
-├── schemas/          # Data contracts
-│   └── schema.ts         # Zod schemas
-│
-└── app/              # Next.js App Router
-    └── page.tsx          # Main dashboard
+├── domain/          # Business logic (CRITICAL - see below)
+├── services/        # Data loaders (3-tier pattern)
+├── schemas/         # Data contracts (Zod)
+└── app/             # Next.js App Router
 
 docs/
-├── business/         # Business rules (AUTHORITY)
-│   ├── 指标定义规范.md
-│   └── 目标分配规则.md
-│
-└── .meta/            # Auto-generated indices
-    ├── code-index.json    # Code → Doc mapping
-    └── docs-index.json    # Doc → Code mapping
+├── business/        # Business rules (AUTHORITY)
+├── development/     # Code examples, standards
+└── troubleshooting/ # Common issues, commands
 ```
 
 ---
 
 ## 🔄 Critical Workflows
 
-### Documentation-Driven Development
+### 1. Documentation-Driven Development
 
-**ALWAYS follow when modifying business logic:**
+**ALWAYS follow** when modifying business logic in `src/domain/`:
 
-```
-1. Read docs/.meta/code-index.json
-2. Find file → check "documentedIn" field
-3. Read business documentation
+1. Read `docs/.meta/code-index.json`
+2. Find target file → check `"documentedIn"` field
+3. **Read business documentation first**
 4. Modify code
-5. Add @doc JSDoc tag
-6. Run pnpm docs:check
+5. Add/update `@doc` JSDoc tag
+6. Run `pnpm docs:check`
 7. Commit changes
+
+**Why**: Business rules are the source of truth. Code must implement documented rules, not vice versa.
+
+### 2. Data Loading (3-Tier Priority)
+
+**All data loaders follow this pattern**:
+
+```
+localStorage (user import) → public/data/*.json (defaults) → fallback (empty structure)
 ```
 
-### Data Loading Pattern (3-Tier)
+**Never hardcode business data** - all data comes from JSON files or user imports.
 
-**CRITICAL**: All data loaders follow this priority:
+### 3. Domain Layer Requirements
 
-```typescript
-localStorage (user import) → public/data (defaults) → fallback (empty)
-```
+**Every function in `src/domain/` MUST**:
+- Have `@doc` tag pointing to business documentation (format: `docs/business/[file].md:[line]`)
+- Return `number | null` for calculations (never `number` with fallback `0`)
+- Include clear JSDoc with parameters and return value descriptions
 
-**Never hardcode data values** - all business data comes from JSON files or user imports.
-
-### Domain Layer Requirements
-
-**Every function in `src/domain/` MUST have:**
-
-```typescript
-/**
- * [Clear description]
- *
- * @doc docs/business/[file].md:[line]  ← REQUIRED
- * @formula [mathematical formula if applicable]
- *
- * @param [name] [description]
- * @returns [description, including null cases]
- */
-export function functionName(...) {
-  // Implementation
-}
-```
+See `docs/development/code-examples.md` for templates.
 
 ---
 
 ## 🔑 Key Conventions
 
-### 1. Null Safety (Strict Financial Discipline)
+### Null Safety (Financial Discipline)
 
-**Business Rule**: If calculation is impossible (division by zero, missing baseline), return `null` - NEVER `0`.
+**Rule**: If calculation is impossible (target=0, missing baseline), return `null` - **NEVER** `0`.
 
-```typescript
-// ✅ CORRECT
-export function calculateAchievementRate(actual: number, target: number): number | null {
-  if (target === 0) return null;  // Can't calculate
-  return actual / target;
-}
-
-// ❌ WRONG
-export function calculateAchievementRate(actual: number, target: number): number {
-  if (target === 0) return 0;  // ❌ Implies 0% achievement
-  return actual / target;
-}
-```
+**Why**: `0` implies "0% achievement", `null` means "cannot calculate" - critical distinction for business reporting.
 
 **UI Handling**: Display `null` as "—" (em dash).
 
-### 2. Product Types
+### Product & Organization Types
 
 ```typescript
 type Product = 'auto' | 'property' | 'life' | 'health' | 'total';
+type OrgMode = 'branch' | 'local' | 'remote' | 'single' | 'multi';
+type TimeProgressMode = 'linear' | 'weighted' | 'actual2025';
 ```
 
-### 3. File Naming
+### File Naming
 
-```
-Components:   PascalCase.tsx     (KpiCard.tsx)
-Utilities:    camelCase.ts       (formatCurrency.ts)
-Directories:  kebab-case/        (kpi-card/)
-Types:        PascalCase.types.ts
-```
+- Components: `PascalCase.tsx` (e.g., `KpiCard.tsx`)
+- Utilities: `camelCase.ts` (e.g., `formatCurrency.ts`)
+- Directories: `kebab-case/` (e.g., `kpi-card/`)
+- Types: `PascalCase.types.ts`
 
-### 4. Organization Modes
+---
 
-- `branch`: All 14 organizations
-- `local`: Chengdu area (7)
-- `remote`: Other cities (7)
-- `single`: Individual org
-- `multi`: Custom selection
-
-### 5. Always Do ✅ / Never Do ❌
+## ✅ Always Do / ❌ Never Do
 
 **ALWAYS**:
-- ✅ Read business documentation before modifying domain logic
-- ✅ Add `@doc` tags to domain layer functions
-- ✅ Follow 3-tier data loading pattern
-- ✅ Return `null` for impossible calculations (not `0`)
+- ✅ Read business docs before modifying `domain/` logic
+- ✅ Add `@doc` tags to domain functions
+- ✅ Return `null` for impossible calculations
 - ✅ Run `pnpm docs:check` before committing
-- ✅ Use `git mv` when moving files
+- ✅ Use `git mv` when moving files (preserves history)
+- ✅ Follow 3-tier data loading pattern
 
 **NEVER**:
 - ❌ Hardcode business data in code
-- ❌ Return `0` when calculation is impossible (use `null`)
+- ❌ Return `0` when calculation is impossible
 - ❌ Skip `@doc` tags in domain layer
-- ❌ Modify code without reading business documentation
-- ❌ Delete and recreate files (use `git mv`)
+- ❌ Modify domain logic without reading documentation
+- ❌ Delete and recreate files (breaks git history)
+- ❌ Use `npm` or `yarn` (project uses `pnpm`)
 
 ---
 
 ## 🧩 Reuse Philosophy
 
-> **核心原则**: "通用性必须复用，特有性在此基础上组合"
+> "通用性必须复用，特有性在此基础上组合"
+> (Reuse generic components, compose business-specific ones)
 
-**判断标准**:
-- 通用性：跨3+场景使用，不含业务逻辑 → 复用
-- 特有性：仅1个场景，含业务特定逻辑 → 组合构建
+**Guidelines**:
+- **Reuse**: Used in 3+ places, no business logic → Extract to shared component/utility
+- **Compose**: Used in 1 place, has business logic → Build with generic components
 
-**实践**:
-- ✅ 复用原子组件: Button, Input, formatCurrency, sortOrgItems
-- ✅ 组合构建业务组件: 使用通用组件 + 业务逻辑
-- ❌ 避免重复造轮子: 检查现有组件索引
-
-详见: `docs/development/设计理念.md`
+See `docs/development/设计理念.md` for details.
 
 ---
 
-## 🧠 AI Programming Evolution
+## 🔧 Code Quality Enforcement
 
-**核心理念**: 记录问题、分析本质、改进Prompt、形成体系
+**Use tools, not LLM instructions**:
+- **Formatting**: Prettier (auto-format on save)
+- **Linting**: ESLint with strict rules
+- **Type Safety**: `pnpm typecheck` (run before commits)
+- **Doc Validation**: Pre-commit hook runs `pnpm docs:check`
 
-**使用场景**:
-- 遇到AI理解问题 → `/ai-evolve record`
-- 需要最佳实践 → `/ai-evolve query "关键词"`
-- 定期回顾 → `/ai-evolve report`
-
-**知识库位置**: `docs/ai-evolution/`
-
----
-
-## 🐛 Common Issues
-
-### Documentation Sync Issues
-```bash
-# Indices out of sync
-pnpm docs:sync --force
-
-# Broken links
-pnpm docs:check
-```
-
-### Build Failures
-```bash
-# TypeScript errors
-pnpm typecheck
-
-# Next.js errors
-rm -rf .next && pnpm build
-
-# Dependency issues
-rm -rf node_modules pnpm-lock.yaml && pnpm install
-```
-
-### Data Loading Issues
-- Check browser console for errors
-- Verify JSON file exists in `public/data/`
-- Check Zod schema validation
-- Clear localStorage if corrupted
+Claude should focus on business logic, not code style.
 
 ---
 
-## 📚 Essential Reading
+## 🧠 AI Collaboration
 
-**For Claude (Priority Order)**:
-1. This file (CLAUDE.md) - Essential guidance
-2. `docs/.meta/ai-context.md` - AI tools workflow
-3. `docs/business/指标定义规范.md` - Business metrics authority
-4. `docs/.meta/code-index.json` - Code → Doc mapping
+**Skill**: `/ai-evolve` - Track AI understanding issues and evolve prompts
 
-**For Humans**:
-- `README.md` - Project overview
-- `docs/.meta/QUICKSTART.md` - 5-minute intro
-- `docs/development/开发指南.md` - Coding standards
+**Use cases**:
+- Encountered misunderstanding → `/ai-evolve record`
+- Need best practices → `/ai-evolve query "关键词"`
+- Review learnings → `/ai-evolve report`
+
+Knowledge base: `docs/ai-evolution/`
 
 ---
 
-## 🔗 Quick Links
+## 📚 Key Documentation
 
-**Business Rules**:
-- `docs/business/指标定义规范.md` - Metric definitions
-- `docs/business/目标分配规则.md` - Allocation rules
+**For Claude** (read as needed):
+1. **Business Rules**: `docs/business/指标定义规范.md`, `docs/business/目标分配规则.md`
+2. **Code Examples**: `docs/development/code-examples.md` (templates, patterns)
+3. **Troubleshooting**: `docs/troubleshooting/common-issues.md` (commands, fixes)
+4. **Architecture**: `docs/architecture/系统架构设计.md`
 
-**Development**:
-- `docs/development/开发指南.md` - Development standards
-- `docs/architecture/系统架构设计.md` - System architecture
-- `docs/architecture/文档代码索引系统设计.md` - Index system
+**Index Files** (auto-generated):
+- `docs/.meta/code-index.json` - Maps code files to documentation
+- `docs/.meta/docs-index.json` - Maps documentation to code files
 
-**Design**:
-- `docs/design/全局设计规范.md` - Design system specs
+---
+
+## 🆘 When Things Break
+
+**Don't guess** - consult `docs/troubleshooting/common-issues.md` for:
+- Build failures (TypeScript, Next.js, dependencies)
+- Data loading issues (JSON, Zod validation, localStorage)
+- Documentation sync problems
 
 ---
 
 **Maintainers**: Development Team
-**Version**: 3.0.0 (Optimized)
-**Last Updated**: 2025-12-25
 **License**: Private
-
 **Related**: `README.md` | `AGENTS.md` | `GEMINI.md`
