@@ -1,0 +1,126 @@
+/**
+ * 语义化字体工具类
+ *
+ * @description 提供基于场景的字体大小组合，用于快速应用一致的样式
+ * @doc docs/design/全局设计规范.md:147-166
+ */
+
+/* ==================== 图表文字 ==================== */
+
+.text-chart-axis {
+  font-size: var(--font-size-sm); /* 12px */
+  color: var(--color-text-secondary);
+}
+
+.text-chart-label {
+  font-size: var(--font-size-xs); /* 11px */
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.text-chart-title {
+  font-size: var(--font-size-lg); /* 18px */
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* ==================== KPI 文字 ==================== */
+
+.text-kpi-title {
+  font-size: var(--font-size-xs); /* 11px */
+  color: var(--color-text-secondary);
+}
+
+.text-kpi-value {
+  font-size: var(--font-size-lg); /* 18px */
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.text-kpi-value-large {
+  font-size: var(--font-size-xxxl); /* 48px */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+/* ==================== 表格文字 ==================== */
+
+.text-table-header {
+  font-size: var(--font-size-sm); /* 12px */
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.text-table-cell {
+  font-size: var(--font-size-sm); /* 12px */
+  color: var(--color-text-primary);
+}
+
+.text-table-cell-number {
+  font-size: var(--font-size-sm); /* 12px */
+  color: var(--color-text-primary);
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==================== 按钮文字 ==================== */
+
+.text-button {
+  font-size: var(--font-size-base); /* 14px */
+  font-weight: var(--font-weight-medium);
+}
+
+.text-button-small {
+  font-size: var(--font-size-sm); /* 12px */
+  font-weight: var(--font-weight-medium);
+}
+
+/* ==================== 表单文字 ==================== */
+
+.text-form-label {
+  font-size: var(--font-size-sm); /* 12px */
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.text-form-hint {
+  font-size: var(--font-size-xs); /* 11px */
+  color: var(--color-text-secondary);
+}
+
+.text-form-error {
+  font-size: var(--font-size-xs); /* 11px */
+  color: var(--color-error);
+}
+
+/* ==================== 标题文字 ==================== */
+
+.text-title-section {
+  font-size: var(--font-size-xl); /* 24px */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.text-title-subsection {
+  font-size: var(--font-size-lg); /* 18px */
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+/* ==================== 正文文字 ==================== */
+
+.text-body-primary {
+  font-size: var(--font-size-base); /* 14px */
+  color: var(--color-text-primary);
+}
+
+.text-body-secondary {
+  font-size: var(--font-size-base); /* 14px */
+  color: var(--color-text-secondary);
+}
+
+.text-caption {
+  font-size: var(--font-size-xs); /* 11px */
+  color: var(--color-text-secondary);
+}
