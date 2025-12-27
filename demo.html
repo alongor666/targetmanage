@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据柱状图配色方案对比 - 四川分公司目标管理系统</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Microsoft YaHei', 'PingFang SC', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #a02724;
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .scheme-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .scheme-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-recommended {
+            background: #00b050;
+            color: white;
+        }
+
+        .badge-alternative {
+            background: #0070c0;
+            color: white;
+        }
+
+        .scheme-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .chart-wrapper {
+            height: 500px;
+            margin-bottom: 24px;
+        }
+
+        .color-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .legend-item:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        .color-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .legend-info {
+            flex: 1;
+        }
+
+        .legend-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .legend-meta {
+            font-size: 12px;
+            color: #999;
+            font-family: 'SF Mono', 'Monaco', monospace;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+            padding: 20px;
+            background: #f0f7ff;
+            border-radius: 12px;
+            border-left: 4px solid #0070c0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .feature-icon {
+            color: #00b050;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .comparison-card {
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .comparison-card h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .comparison-card li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .comparison-card li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-card li:before {
+            content: "→ ";
+            color: #0070c0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>数据柱状图配色方案对比</h1>
+        <p class="subtitle">2025年实际 | 2026年实际 | 2026年目标 | 2026年实际规划</p>
+
+        <!-- 方案1: 双维度配色 (推荐) -->
+        <div class="scheme-section">
+            <h2 class="scheme-title">
+                方案1: 双维度配色系统
+                <span class="badge badge-recommended">推荐方案</span>
+            </h2>
+            <p class="scheme-desc">
+                采用<strong>年份色系</strong>（蓝色系 vs 灰色系）+ <strong>确定性饱和度</strong>（实心 vs 浅色 vs 边框）双维度编码，
+                既能快速区分年份，又能体现数据的确定性层次。
+            </p>
+
+            <div id="chart1" class="chart-wrapper"></div>
+
+            <div class="color-legend">
+                <div class="legend-item">
+                    <div class="color-box" style="background: #95A5A6;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2025年实际</div>
+                        <div class="legend-meta">#95A5A6 石板灰 | 实心柱</div>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #5B9BD5;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2026年实际</div>
+                        <div class="legend-meta">#5B9BD5 中蓝色 | 实心柱</div>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #B0D8EF;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2026年目标</div>
+                        <div class="legend-meta">#B0D8EF 浅天蓝 | 实心柱</div>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #E8F4FD; border: 2px solid #B0D8EF;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2026年实际规划</div>
+                        <div class="legend-meta">#E8F4FD 极浅蓝 | 2px边框 #B0D8EF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text"><strong>年份维度清晰:</strong> 蓝色系(2026) vs 灰色系(2025)</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text"><strong>确定性梯度:</strong> 实心深色 > 实心浅色 > 极浅边框</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text"><strong>视觉联系:</strong> 2026年三种数据形成蓝色家族</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text"><strong>业务语义:</strong> 灰=历史基线，蓝=当前执行</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 方案2: 渐变色序列 -->
+        <div class="scheme-section">
+            <h2 class="scheme-title">
+                方案2: 渐变色序列
+                <span class="badge badge-alternative">备选方案</span>
+            </h2>
+            <p class="scheme-desc">
+                采用从灰色到蓝色的连续渐变序列，视觉过渡更加柔和平滑，但年份分组识别度相对降低。
+                适合需要强调时间连续性的场景。
+            </p>
+
+            <div id="chart2" class="chart-wrapper"></div>
+
+            <div class="color-legend">
+                <div class="legend-item">
+                    <div class="color-box" style="background: #BDC3C7;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2025年实际</div>
+                        <div class="legend-meta">#BDC3C7 浅灰色 | 渐变起点</div>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #7FB3D5;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2026年实际</div>
+                        <div class="legend-meta">#7FB3D5 中蓝灰 | 渐变过渡</div>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #B0D8EF;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2026年目标</div>
+                        <div class="legend-meta">#B0D8EF 浅蓝色 | 渐变中段</div>
+                    </div>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #E8F4FD; border: 2px solid #B0D8EF;"></div>
+                    <div class="legend-info">
+                        <div class="legend-name">2026年实际规划</div>
+                        <div class="legend-meta">#E8F4FD 极浅蓝 | 渐变终点</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text"><strong>视觉平滑:</strong> 灰→蓝连续渐变，色相过渡柔和</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text"><strong>时间暗示:</strong> 色彩由暗到亮，隐喻时间推进</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span class="feature-text"><strong>美学一致:</strong> 单一色相渐变，视觉统一性强</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 方案对比 -->
+        <div class="comparison">
+            <div class="comparison-card">
+                <h3>✅ 方案1 优势</h3>
+                <ul>
+                    <li>年份对比清晰（2025 vs 2026业务常见需求）</li>
+                    <li>符合现有设计系统的色彩逻辑</li>
+                    <li>确定性层次更明显（实际→目标→规划）</li>
+                    <li>保留现有token定义，改动最小</li>
+                    <li>视觉权重分配更合理</li>
+                </ul>
+            </div>
+            <div class="comparison-card">
+                <h3>✅ 方案2 优势</h3>
+                <ul>
+                    <li>视觉过渡更柔和平滑</li>
+                    <li>色彩和谐度更高</li>
+                    <li>适合需要强调时间连续性的场景</li>
+                    <li>美学上更加统一</li>
+                    <li>减少视觉跳跃感</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 模拟数据
+        const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+        const actual2025 = [850, 920, 1050, 980, 1100, 1150, 1200, 1180, 1250, 1300, 1350, 1400];
+        const actual2026 = [900, 980, 1120, 1050, 1180, 1230, 1280, null, null, null, null, null];
+        const target2026 = [1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350, 1400, 1450, 1500, 1550];
+        const planned2026 = [1020, 1070, 1130, 1180, 1230, 1280, 1330, 1380, 1430, 1480, 1530, 1580];
+
+        // 方案1: 双维度配色
+        const chart1 = echarts.init(document.getElementById('chart1'));
+        chart1.setOption({
+            title: {
+                text: '方案1效果演示: 双维度配色',
+                left: 'center',
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 600,
+                    color: '#333'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['2025年实际', '2026年实际', '2026年目标', '2026年实际规划'],
+                bottom: 0,
+                textStyle: {
+                    fontSize: 13
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '12%',
+                top: '15%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: months,
+                axisLabel: {
+                    fontSize: 12,
+                    color: '#666'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: '保费(万元)',
+                axisLabel: {
+                    fontSize: 12,
+                    color: '#666'
+                }
+            },
+            series: [
+                {
+                    name: '2025年实际',
+                    type: 'bar',
+                    data: actual2025,
+                    itemStyle: {
+                        color: '#95A5A6',
+                        borderWidth: 0
+                    },
+                    label: {
+                        show: false
+                    },
+                    barGap: '10%'
+                },
+                {
+                    name: '2026年实际',
+                    type: 'bar',
+                    data: actual2026,
+                    itemStyle: {
+                        color: '#5B9BD5',
+                        borderWidth: 0
+                    },
+                    label: {
+                        show: false
+                    }
+                },
+                {
+                    name: '2026年目标',
+                    type: 'bar',
+                    data: target2026,
+                    itemStyle: {
+                        color: '#B0D8EF',
+                        borderWidth: 0
+                    },
+                    label: {
+                        show: false
+                    }
+                },
+                {
+                    name: '2026年实际规划',
+                    type: 'bar',
+                    data: planned2026,
+                    itemStyle: {
+                        color: '#E8F4FD',
+                        borderColor: '#B0D8EF',
+                        borderWidth: 2,
+                        borderType: 'solid'
+                    },
+                    label: {
+                        show: false
+                    }
+                }
+            ]
+        });
+
+        // 方案2: 渐变色序列
+        const chart2 = echarts.init(document.getElementById('chart2'));
+        chart2.setOption({
+            title: {
+                text: '方案2效果演示: 渐变色序列',
+                left: 'center',
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 600,
+                    color: '#333'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['2025年实际', '2026年实际', '2026年目标', '2026年实际规划'],
+                bottom: 0,
+                textStyle: {
+                    fontSize: 13
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '12%',
+                top: '15%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: months,
+                axisLabel: {
+                    fontSize: 12,
+                    color: '#666'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: '保费(万元)',
+                axisLabel: {
+                    fontSize: 12,
+                    color: '#666'
+                }
+            },
+            series: [
+                {
+                    name: '2025年实际',
+                    type: 'bar',
+                    data: actual2025,
+                    itemStyle: {
+                        color: '#BDC3C7',
+                        borderWidth: 0
+                    },
+                    label: {
+                        show: false
+                    },
+                    barGap: '10%'
+                },
+                {
+                    name: '2026年实际',
+                    type: 'bar',
+                    data: actual2026,
+                    itemStyle: {
+                        color: '#7FB3D5',
+                        borderWidth: 0
+                    },
+                    label: {
+                        show: false
+                    }
+                },
+                {
+                    name: '2026年目标',
+                    type: 'bar',
+                    data: target2026,
+                    itemStyle: {
+                        color: '#B0D8EF',
+                        borderWidth: 0
+                    },
+                    label: {
+                        show: false
+                    }
+                },
+                {
+                    name: '2026年实际规划',
+                    type: 'bar',
+                    data: planned2026,
+                    itemStyle: {
+                        color: '#E8F4FD',
+                        borderColor: '#B0D8EF',
+                        borderWidth: 2,
+                        borderType: 'solid'
+                    },
+                    label: {
+                        show: false
+                    }
+                }
+            ]
+        });
+
+        // 响应式调整
+        window.addEventListener('resize', () => {
+            chart1.resize();
+            chart2.resize();
+        });
+    </script>
+</body>
+</html>
