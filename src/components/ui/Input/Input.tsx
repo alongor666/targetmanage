@@ -308,7 +308,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
 
   // 获取样式配置
   const sizeConfig = getInputSize(size);
-  const colors = getInputColors(disabled, !!error);
+  const inputColors = getInputColors(disabled, !!error);
 
   // 处理值变化
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -405,10 +405,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
     <div className={containerClasses}>
       {/* 标签 */}
       {label && (
-        <label 
+        <label
           htmlFor={inputId}
           className={labelClasses}
-          style={{ color: colors.label }}
+          style={{ color: inputColors.label }}
         >
           {label}
           {required && <span className="text-red-500 ml-1">*</span>}
@@ -419,10 +419,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
       <div className="relative">
         {/* 左侧图标 */}
         {leftIcon && (
-          <div 
+          <div
             className="absolute left-3 top-1/2 transform -translate-y-1/2 flex items-center justify-center"
-            style={{ 
-              color: colors.placeholder,
+            style={{
+              color: inputColors.placeholder,
               width: `${sizeConfig.iconSize}px`,
               height: `${sizeConfig.iconSize}px`
             }}
@@ -455,14 +455,14 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
           onKeyDown={onKeyDown}
           style={{
             height: sizeConfig.height,
-            padding: leftIcon ? 
-              `6px ${sizeConfig.iconSize + 12}px 6px 16px` : 
+            padding: leftIcon ?
+              `6px ${sizeConfig.iconSize + 12}px 6px 16px` :
               sizeConfig.padding,
             fontSize: `${sizeConfig.fontSize}px`,
             borderRadius: `${sizeConfig.borderRadius}px`,
-            backgroundColor: colors.bg,
-            borderColor: colors.border,
-            color: colors.text,
+            backgroundColor: inputColors.bg,
+            borderColor: inputColors.border,
+            color: inputColors.text,
             paddingLeft: leftIcon ? `${sizeConfig.iconSize + 16}px` : undefined,
             paddingRight: (rightIcon || showClearButton) ? `${sizeConfig.iconSize + 16}px` : undefined
           }}
@@ -471,10 +471,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
         
         {/* 右侧图标 */}
         {rightIcon && !showClearButton && (
-          <div 
+          <div
             className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center justify-center"
-            style={{ 
-              color: colors.placeholder,
+            style={{
+              color: inputColors.placeholder,
               width: `${sizeConfig.iconSize}px`,
               height: `${sizeConfig.iconSize}px`
             }}
@@ -506,17 +506,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
       
       {/* 错误信息 */}
       {error && (
-        <div 
+        <div
           className={helpTextClasses}
           style={{ color: colors.status.danger }}
         >
           {error}
         </div>
       )}
-      
+
       {/* 帮助文本 */}
       {helpText && !error && (
-        <div 
+        <div
           className={helpTextClasses}
           style={{ color: colors.text.muted }}
         >

@@ -14,49 +14,52 @@ export type ModalSize = 'md' | 'lg';
 export interface ModalProps {
   /** 是否显示模态框 */
   open: boolean;
-  
+
   /** 关闭模态框的回调 */
   onClose: () => void;
-  
+
+  /** 模态框内容 */
+  children: React.ReactNode;
+
   /** 模态框尺寸 */
   size?: ModalSize;
-  
+
   /** 模态框标题 */
   title?: React.ReactNode;
-  
+
   /** 模态框副标题 */
   subtitle?: React.ReactNode;
-  
+
   /** 底部操作区域 */
   footer?: React.ReactNode;
-  
+
   /** 是否显示关闭按钮 */
   closable?: boolean;
-  
+
   /** 是否显示遮罩层 */
   mask?: boolean;
-  
+
   /** 点击遮罩是否关闭 */
   maskClosable?: boolean;
-  
+
   /** 按ESC键是否关闭 */
   keyboard?: boolean;
-  
+
   /** 是否居中显示 */
   centered?: boolean;
-  
+
   /** 自定义类名 */
   className?: string;
-  
+
   /** 内容区域自定义类名 */
   contentClassName?: string;
-  
+
   /** 最大高度 */
   maxHeight?: number | string;
-  
+
   /** 动画持续时间（毫秒） */
   animationDuration?: number;
-  
+
   /** 渲染容器 */
   container?: HTMLElement;
 }
@@ -371,6 +374,7 @@ const ModalContent: React.FC<{
 export const Modal: React.FC<ModalProps> = ({
   open,
   onClose,
+  children,
   size = 'md',
   title,
   subtitle,
@@ -461,7 +465,7 @@ export const Modal: React.FC<ModalProps> = ({
         animationDuration={animationDuration}
         onClose={onClose}
       >
-        {/* children 作为 ModalContent 的子组件传递 */}
+        {children}
       </ModalContent>
     </>
   );

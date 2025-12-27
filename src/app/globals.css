@@ -124,6 +124,14 @@
     --color-filter-disabled-text: #999999;
     --color-filter-focus-shadow: 0 0 0 3px rgba(0, 112, 192, 0.2);
 
+    /* === 维度颜色标识 === */
+    --color-dimension-org: #0070c0;       /* 三级机构 - 蓝色 */
+    --color-dimension-customer: #00b050;  /* 客户类别 - 绿色 */
+    --color-dimension-business: #ff0000;  /* 业务类型 - 红色 */
+    --color-dimension-energy: #5b9bd5;    /* 能源类型 - 浅蓝 */
+    --color-dimension-renewal: #a9d18e;   /* 续保状态 - 浅绿 */
+    --color-dimension-terminal: #ffd966;  /* 终端来源 - 黄色 */
+
     /* === 表格专用色 === */
     --color-table-header-bg: #f8f9fa;
     --color-table-border: #e0e0e0;
@@ -209,6 +217,7 @@
     --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.12);
     --shadow-focus: 0 0 0 3px rgba(0, 112, 192, 0.2);
     --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 2px 8px rgba(0, 112, 192, 0.15); /* 悬停阴影 - 极浅蓝色阴影 */
 
     /* ==================== ANIMATIONS ==================== */
 
@@ -319,5 +328,107 @@
   }
   .border-tesla {
     border-color: var(--color-tesla-blue);
+  }
+
+  /* Shadow utilities */
+  .shadow-hover {
+    box-shadow: 0 2px 8px rgba(0, 112, 192, 0.15);
+  }
+}
+
+/* ==================== FOCUS MANAGEMENT ==================== */
+@layer utilities {
+  /* 焦点环样式 - 蓝色焦点环 */
+  .focusable:focus,
+  .focus-ring:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 112, 192, 0.2);
+  }
+
+  /* 焦点可见性 - 仅在键盘导航时显示 */
+  .focus-visible:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .focus-visible:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 112, 192, 0.2);
+  }
+}
+
+/* ==================== CARD & CONTAINER EFFECTS ==================== */
+@layer components {
+  /* 卡片悬停效果 - 上浮 + 阴影加强 */
+  .card-hover-lift {
+    transition: transform var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+  }
+
+  .card-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 玻璃质感容器 */
+  .glass-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-container-light {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* ==================== ANIMATIONS ==================== */
+@layer utilities {
+  /* 淡入动画 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn var(--duration-normal) var(--ease-out);
+  }
+
+  /* 从上滑入动画 */
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-8px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-in {
+    animation: slideInFromTop var(--duration-normal) var(--ease-out);
+  }
+
+  /* 缩放进入动画 */
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn var(--duration-fast) var(--ease-out);
   }
 }

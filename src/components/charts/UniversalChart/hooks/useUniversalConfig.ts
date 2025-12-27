@@ -17,6 +17,12 @@ import type {
   WarningLevel,
 } from '../UniversalChart.types';
 import { FONT_SIZE } from '@/lib/typography';
+import {
+  getOptimizedXAxisConfig,
+  getStandardYAxisConfig,
+  getStandardGridConfig,
+  getStandardTooltipConfig
+} from '@/lib/echarts-utils';
 
 /**
  * 默认颜色配置
@@ -208,9 +214,9 @@ function getSeriesNames(viewMode: ViewMode): {
 
     case 'achievement':
       return {
-        targetName: '累计目标',
-        baselineName: '累计实际',
-        growthName: '累计达成率',
+        targetName: '目标',
+        baselineName: '实际达成',
+        growthName: '达成率',
       };
 
     default:
@@ -446,29 +452,16 @@ export function useUniversalConfig(
     // 配置对象
     return {
       animation,
-      grid: {
-        left: '60px',
-        right: '60px',
-        top: '40px',
-        bottom: '40px',
-        containLabel: true,
-      },
+      // 使用标准网格配置
+      grid: getStandardGridConfig(),
+      // 使用优化的X轴配置（自动45度倾斜和文本截断）
       xAxis: {
-        type: 'category',
+        ...getOptimizedXAxisConfig(8),
         data: xAxisLabels,
-        axisLine: {
-          lineStyle: {
-            color: '#e0e0e0',
-          },
-        },
+        // 季度和月度视图不需要倾斜
         axisLabel: {
-          color: '#666',
-          fontSize: FONT_SIZE.sm,
-          interval: 0,
-          rotate: timeGranularity === 'monthly' ? 0 : 0,
-        },
-        axisTick: {
-          show: false,
+          ...(getOptimizedXAxisConfig(8).axisLabel),
+          rotate: timeGranularity === 'organization' ? 45 : 0,
         },
       },
       yAxis: [

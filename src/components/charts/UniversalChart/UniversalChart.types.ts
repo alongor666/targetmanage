@@ -30,6 +30,8 @@ export type ValueType = 'absolute' | 'proportion' | 'achievement';
  * - monthlyShare: 月度占比规划图
  * - hqPrediction: 总公司预测图
  * - orgPremium: 三级机构保费规划图
+ * - quarterlyAchievement: 季度目标达成图
+ * - monthlyAchievement: 月度目标达成图
  */
 export type ChartType =
   | 'quarterlyPremium'
@@ -37,7 +39,9 @@ export type ChartType =
   | 'monthlyPremium'
   | 'monthlyShare'
   | 'hqPrediction'
-  | 'orgPremium';
+  | 'orgPremium'
+  | 'quarterlyAchievement'
+  | 'monthlyAchievement';
 
 /**
  * 视图模式枚举

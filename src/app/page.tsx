@@ -33,6 +33,8 @@ import type {
   MonthlyDataInput,
   HqPredictionDataInput,
 } from "@/components/charts/UniversalChart";
+import { KpiCard } from "@/components/kpi/KpiCard";
+import { Button } from "@/components/ui/Button/Button";
 
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });
 
@@ -432,756 +434,6 @@ export default function Page() {
     return result;
   }, [headquartersTargets, monthlyAgg2026, annualTargetAgg, weights, progressMode, monthlyActualSeries2025]);
 
-  const chartOption = useMemo(() => {
-    if (!kpi) return null;
-
-    const targetColor = colors.chart.claimRate;
-    const actualColor = colors.chart.expenseRate;
-    const growthColor = colors.status.good;
-    const warningColor = colors.status.warning;
-    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
-    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
-    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
-    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
-    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
-
-    const monthlyEstimateTargets =
-      progressMode === "linear" ? kpi.monthlyTargetsLinear :
-      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
-      kpi.monthlyTargets;
-    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
-      (value, idx) => value ?? monthlyEstimateTargets[idx]
-    );
-    const growthSeries = monthlyCurrentForGrowth.map((current, idx) => {
-      const baseline = monthlyActualSeries2025[idx];
-      if (baseline === null || current === null) return null;
-      return safeDivide(current - baseline, baseline).value;
-    });
-
-    const barWidth = Math.round(24 * 1.618);
-    const warningThreshold = 0.05; // 5%预警线
-
-    // 为2025实际数据生成颜色（对应增长率低于5%时变橙色）
-    const actualBarColors = monthlyActualSeries2025.map((v, idx) => {
-      const growthRate = growthSeries[idx];
-      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
-    });
-
-    const barLabel = {
-      show: true,
-      position: "top" as const,
-      fontWeight: "bold" as const,
-      overflow: "truncate" as const,
-      width: barWidth,
-      formatter: (params: any) => {
-        const value = params?.value as number | null;
-        if (value === null) return "";
-        const growthRate = growthSeries[params.dataIndex];
-        const isWarning = growthRate !== null && growthRate < warningThreshold;
-        const color = isWarning ? darkRedColor : grayColor;
-        return `{${isWarning ? 'warning' : 'normal'}|${Math.round(value)}}`;
-      },
-      rich: {
-        normal: {
-          color: grayColor,
-        },
-        warning: {
-          color: darkRedColor,
-        },
-      },
-    };
-
-    return {
-      tooltip: {
-        trigger: "axis",
-        formatter: (params: any) => {
-          const items = Array.isArray(params) ? params : [params];
-          const title = items[0]?.axisValue ?? "";
-          const lines = items.map((item: any) => {
-            const value = item.value as number | null;
-            if (item.seriesName === "增长率") {
-              const text = value === null ? "—" : `${(value * 100).toFixed(1)}%`;
-              return `${item.marker}${item.seriesName}: ${text}`;
-            }
-            const text = value === null ? "—" : Number(value).toFixed(0);
-            return `${item.marker}${item.seriesName}: ${text}`;
-          });
-          return [title, ...lines].join("<br/>");
-        },
-      },
-      legend: { data: ["2026目标", "2025实际", "增长率"] },
-      xAxis: {
-        type: "category",
-        data: Array.from({ length: 12 }, (_, i) => `${i + 1}月`),
-        splitLine: { show: false },
-      },
-      yAxis: [
-        { type: "value", name: "万元", splitLine: { show: false } },
-        {
-          type: "value",
-          name: "增长率",
-          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
-          splitLine: { show: false },
-        },
-      ],
-      series: [
-        {
-          type: "bar",
-          data: monthlyEstimateTargets,
-          name: "2026目标",
-          itemStyle: { color: targetColor },
-          barMaxWidth: barWidth,
-          label: barLabel,
-        },
-        {
-          type: "bar",
-          data: monthlyActualSeries2025,
-          name: "2025实际",
-          itemStyle: {
-            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
-          },
-          barMaxWidth: barWidth,
-          label: barLabel,
-          barGap: "30%",
-        },
-        {
-          type: "line",
-          data: growthSeries,
-          name: "增长率",
-          yAxisIndex: 1,
-          lineStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
-          itemStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
-          smooth: true,
-          symbol: "circle",
-          symbolSize: 6,
-          label: {
-            show: true,
-            position: "top",
-            fontWeight: "bold",
-            formatter: (params: any) => {
-              const value = params?.value as number | null;
-              if (value === null) return "";
-              const isWarning = value !== null && value < warningThreshold;
-              const color = isWarning ? darkRedColor : blueColor;
-              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
-            },
-            rich: {
-              normal: {
-                color: blueColor,
-              },
-              warning: {
-                color: darkRedColor,
-              },
-            },
-          },
-          markLine: {
-            symbol: "none",
-            lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 5%" },
-            data: [{ yAxis: 0.05 }],
-          },
-        },
-      ],
-      grid: { left: 48, right: 60, top: 40, bottom: 30 },
-    };
-  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
-
-  const quarterlyChartOption = useMemo(() => {
-    if (!kpi) return null;
-
-    // === 数据准备 ===
-    const monthlyEstimateTargets =
-      progressMode === "linear" ? kpi.monthlyTargetsLinear :
-      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
-      kpi.monthlyTargets;
-
-    // 2026季度目标
-    const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
-
-    // 2025季度实际（使用actuals_monthly_2025.json数据）
-    const quarterlyActuals2025 = monthlyToQuarterly(
-      monthlyActualSeries2025.map((v) => v ?? 0)
-    ).map((value, idx) => {
-      const hasAny = monthlyActualSeries2025
-        .slice(idx * 3, idx * 3 + 3)
-        .some((v) => v !== null);
-      return hasAny ? value : null;
-    });
-
-    // 增速计算：2026目标/2025实际-1
-    const growthSeries = quarterlyTargets.map((target, idx) => {
-      const baseline = quarterlyActuals2025[idx];
-      if (baseline === null || baseline === 0 || target === null) return null;
-      return target / baseline - 1;
-    });
-
-    // 计算达成率（这里暂时不用，因为对比的是目标vs实际，不是实际vs目标）
-    // 但保留以便状态判断使用
-    const achievementRates = quarterlyActuals2025.map((actual, idx) => {
-      const target = quarterlyTargets[idx];
-      if (target === 0 || actual === null) return null;
-      return actual / target;
-    });
-
-    // 计算每季度状态（主要基于增速）
-    const quarterlyStatuses = quarterlyTargets.map((target, idx) => {
-      const achievementRate = achievementRates[idx];
-      const growthRate = growthSeries[idx];
-      return getQuarterlyStatus(achievementRate, growthRate, {
-        achievement: { excellent_min: 1.05, normal_min: 1.00, warning_min: 0.95 },
-        growth: { excellent_min: 0.12, normal_min: 0.05 }
-      });
-    });
-
-    const barWidth = 36;
-
-    // === ECharts配置 ===
-    return {
-      tooltip: {
-        trigger: "axis",
-        axisPointer: { type: 'cross' },
-        formatter: (params: any) => {
-          const items = Array.isArray(params) ? params : [params];
-          const title = items[0]?.axisValue ?? "";
-          const lines = items.map((item: any) => {
-            const value = item.value as number | null;
-            if (item.seriesName === "增长率") {
-              const text = value === null ? "—" : `${(value * 100).toFixed(1)}%`;
-              return `${item.marker}${item.seriesName}: ${text}`;
-            }
-            const text = value === null ? "—" : Number(value).toFixed(0);
-            return `${item.marker}${item.seriesName}: ${text}`;
-          });
-          return [title, ...lines].join("<br/>");
-        },
-      },
-      legend: { show: false }, // 使用自定义HTML图例
-      grid: {
-        left: '70px',
-        right: '70px',
-        bottom: '60px',
-        top: '20px',
-        containLabel: false
-      },
-      xAxis: {
-        type: "category",
-        data: ["一季度", "二季度", "三季度", "四季度"],
-        axisLine: { lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
-        axisLabel: { color: '#666', fontSize: FONT_SIZE.sm },
-        axisTick: {
-          alignWithLabel: true,
-          lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
-        },
-        splitLine: { show: false }
-      },
-      yAxis: [
-        {
-          type: "value",
-          name: "保费(万元)",
-          position: 'left',
-          axisLine: { show: true, lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
-          axisLabel: { color: '#666', fontSize: FONT_SIZE.xs },
-          axisTick: {
-            show: true,
-            lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
-          },
-          splitLine: { show: false },  // 去掉网格线
-          min: 0,
-        },
-        {
-          type: "value",
-          name: "增长率",
-          position: 'right',
-          axisLine: { show: true, lineStyle: { color: '#d3d3d3' } },  // 浅灰色轴线
-          axisLabel: {
-            color: '#666',
-            fontSize: FONT_SIZE.xs,
-            formatter: (value: number) => `${(value * 100).toFixed(0)}%`
-          },
-          axisTick: {
-            show: true,
-            lineStyle: { color: '#d3d3d3' }  // 浅灰色刻度线
-          },
-          splitLine: { show: false },  // 去掉网格线
-        },
-      ],
-      series: [
-        // Series 1: 2026目标柱
-        {
-          name: '2026目标',
-          type: 'bar',
-          yAxisIndex: 0,
-          data: quarterlyTargets.map((value, idx) => {
-            const status = quarterlyStatuses[idx];
-            const isWarning = status === 'warning' || status === 'danger';
-
-            return {
-              value: value,
-              itemStyle: {
-                color: colors.chart.targetBarNormal,
-                borderColor: isWarning ? colors.chart.targetBarWarningBorder : 'transparent',
-                borderWidth: isWarning ? 1 : 0
-              },
-              label: {
-                show: true,
-                position: 'top',
-                formatter: Math.round(value).toString(),
-                fontSize: FONT_SIZE.xs,
-                color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
-              }
-            };
-          }),
-          barWidth: barWidth,
-          barGap: '30%',
-        },
-        // Series 2: 2025实际柱
-        {
-          name: '2025实际',
-          type: 'bar',
-          yAxisIndex: 0,
-          data: quarterlyActuals2025.map((value, idx) => {
-            const status = quarterlyStatuses[idx];
-            const isWarning = status === 'warning' || status === 'danger';
-
-            return {
-              value: value,
-              itemStyle: {
-                color: colors.chart.actualBarNormal,
-                borderColor: isWarning ? colors.chart.actualBarWarningBorder : 'transparent',
-                borderWidth: isWarning ? 1 : 0
-              },
-              label: {
-                show: true,
-                position: 'top',
-                formatter: (params: any) => {
-                  const val = params.value as number | null;
-                  return val === null ? "" : Math.round(val).toString();
-                },
-                fontSize: FONT_SIZE.xs,
-                color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
-              }
-            };
-          }),
-          barWidth: barWidth,
-        },
-        // Series 3: 增长率折线
-        {
-          name: '增长率',
-          type: 'line',
-          yAxisIndex: 1,
-          data: growthSeries.map((value, idx) => {
-            const status = quarterlyStatuses[idx];
-            const isWarning = status === 'warning' || status === 'danger';
-
-            return {
-              value: value,
-              label: {
-                show: true,
-                position: 'top',
-                formatter: (params: any) => {
-                  const val = params.value as number | null;
-                  return val === null ? "" : `${(val * 100).toFixed(1)}%`;
-                },
-                fontSize: FONT_SIZE.sm,
-                fontWeight: 'bold',
-                color: isWarning ? colors.chart.quarterlyLabelWarning : colors.chart.quarterlyLabelNormal
-              }
-            };
-          }),
-          smooth: true,
-          lineStyle: { color: colors.chart.growthLine, width: 1 },
-          itemStyle: {
-            color: (params: any) => {
-              const value = params.value as number | null;
-              return getGrowthPointColor(value);
-            }
-          },
-          symbol: 'circle',
-          symbolSize: 8,
-          markLine: {
-            symbol: ['none', 'none'],
-            label: {
-              show: true,
-              position: 'end',
-              formatter: '预警线 5%',
-              color: '#ffc000',  // 橙色
-              fontSize: FONT_SIZE.xs,
-              fontWeight: 500
-            },
-            lineStyle: {
-              color: '#ffc000',  // 橙色预警线
-              type: 'dashed',
-              width: 1
-            },
-            data: [{ yAxis: 0.05 }]
-          }
-        }
-      ]
-    };
-  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
-
-  const monthlyShareChartOption = useMemo(() => {
-    if (!kpi) return null;
-
-    const targetColor = colors.chart.claimRate;
-    const actualColor = colors.chart.expenseRate;
-    const growthColor = colors.status.good;
-    const warningColor = colors.status.warning;
-    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
-    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
-    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
-    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
-    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
-
-    const monthlyEstimateTargets =
-      progressMode === "linear" ? kpi.monthlyTargetsLinear :
-      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
-      kpi.monthlyTargets;
-    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
-      (value, idx) => value ?? monthlyEstimateTargets[idx]
-    );
-    const growthSeries = monthlyCurrentForGrowth.map((current, idx) => {
-      const baseline = monthlyActualSeries2025[idx];
-      if (baseline === null || current === null) return null;
-      return safeDivide(current - baseline, baseline).value;
-    });
-
-    const totalTarget = kpi.annual;
-    const totalActual2025 = monthlyActualSeries2025.reduce(
-      (sum: number, v) => (v === null ? sum : sum + v),
-      0
-    );
-    const targetShare = totalTarget > 0
-      ? monthlyEstimateTargets.map((v) => v / totalTarget)
-      : Array.from({ length: 12 }, () => null);
-    const actualShare = totalActual2025 > 0
-      ? monthlyActualSeries2025.map((v) => (v === null ? null : v / totalActual2025))
-      : Array.from({ length: 12 }, () => null);
-
-    const barWidth = Math.round(24 * 1.618);
-    const warningThreshold = 0.05; // 5%预警线
-
-    // 为2025实际占比数据生成颜色（对应增长率低于5%时变橙色）
-    const actualBarColors = actualShare.map((v, idx) => {
-      const growthRate = growthSeries[idx];
-      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
-    });
-
-    const barLabel = {
-      show: true,
-      position: "top" as const,
-      fontWeight: "bold" as const,
-      overflow: "truncate" as const,
-      width: barWidth,
-      formatter: (params: any) => {
-        const value = params?.value as number | null;
-        if (value === null) return "";
-        const growthRate = growthSeries[params.dataIndex];
-        const isWarning = growthRate !== null && growthRate < warningThreshold;
-        return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
-      },
-      rich: {
-        normal: {
-          color: grayColor,
-        },
-        warning: {
-          color: darkRedColor,
-        },
-      },
-    };
-
-    return {
-      tooltip: {
-        trigger: "axis",
-        formatter: (params: any) => {
-          const items = Array.isArray(params) ? params : [params];
-          const title = items[0]?.axisValue ?? "";
-          const lines = items.map((item: any) => {
-            const value = item.value as number | null;
-            const isRate = item.seriesName === "增长率";
-            const text = value === null ? "—" : `${(value * 100).toFixed(1)}%`;
-            return `${item.marker}${item.seriesName}: ${text}`;
-          });
-          return [title, ...lines].join("<br/>");
-        },
-      },
-      legend: { data: ["2026规划占比", "2025实际占比", "增长率"] },
-      xAxis: {
-        type: "category",
-        data: Array.from({ length: 12 }, (_, i) => `${i + 1}月`),
-        splitLine: { show: false },
-      },
-      yAxis: [
-        {
-          type: "value",
-          name: "占比",
-          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
-          splitLine: { show: false },
-        },
-        {
-          type: "value",
-          name: "增长率",
-          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
-          splitLine: { show: false },
-        },
-      ],
-      series: [
-        {
-          type: "bar",
-          data: targetShare,
-          name: "2026规划占比",
-          itemStyle: { color: targetColor },
-          barMaxWidth: barWidth,
-          label: barLabel,
-        },
-        {
-          type: "bar",
-          data: actualShare,
-          name: "2025实际占比",
-          itemStyle: {
-            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
-          },
-          barMaxWidth: barWidth,
-          label: barLabel,
-          barGap: "30%",
-        },
-        {
-          type: "line",
-          data: growthSeries,
-          name: "增长率",
-          yAxisIndex: 1,
-          lineStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
-          itemStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
-          smooth: true,
-          symbol: "circle",
-          symbolSize: 6,
-          label: {
-            show: true,
-            position: "top",
-            fontWeight: "bold",
-            formatter: (params: any) => {
-              const value = params?.value as number | null;
-              if (value === null) return "";
-              const isWarning = value !== null && value < warningThreshold;
-              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
-            },
-            rich: {
-              normal: {
-                color: blueColor,
-              },
-              warning: {
-                color: darkRedColor,
-              },
-            },
-          },
-          markLine: {
-            symbol: "none",
-            lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 5%" },
-            data: [{ yAxis: 0.05 }],
-          },
-        },
-      ],
-      grid: { left: 48, right: 60, top: 40, bottom: 30 },
-    };
-  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
-
-  const quarterlyShareChartOption = useMemo(() => {
-    if (!kpi) return null;
-
-    const targetColor = colors.chart.claimRate;
-    const actualColor = colors.chart.expenseRate;
-    const growthColor = colors.status.good;
-    const warningColor = colors.status.warning;
-    const orangeColor = "#FF9500"; // 橙色（预警时柱状图）
-    const darkRedColor = "#8B0000"; // 深红色（预警时文字）
-    const grayColor = "#6B7280"; // 灰色（柱状图标签默认）
-    const blueColor = "#3B82F6"; // 蓝色（折线图标签默认）
-    const darkBlueColor = "#1E40AF"; // 深蓝色（折线图线条）
-
-    const monthlyEstimateTargets =
-      progressMode === "linear" ? kpi.monthlyTargetsLinear :
-      progressMode === "actual2025" ? kpi.monthlyTargetsActual2025 :
-      kpi.monthlyTargets;
-    const monthlyCurrentForGrowth = monthlyActualSeries2026.map(
-      (value, idx) => value ?? monthlyEstimateTargets[idx]
-    );
-
-    const quarterlyTargets = monthlyToQuarterly(monthlyEstimateTargets);
-    const quarterlyActuals2025 = monthlyToQuarterly(
-      monthlyActualSeries2025.map((v) => v ?? 0)
-    ).map((value, idx) => {
-      const hasAny = monthlyActualSeries2025
-        .slice(idx * 3, idx * 3 + 3)
-        .some((v) => v !== null);
-      return hasAny ? value : null;
-    });
-    const quarterlyCurrent = monthlyToQuarterly(
-      monthlyCurrentForGrowth.map((v) => v ?? 0)
-    ).map((value, idx) => {
-      const hasAny = monthlyCurrentForGrowth
-        .slice(idx * 3, idx * 3 + 3)
-        .some((v) => v !== null);
-      return hasAny ? value : null;
-    });
-
-    const growthSeries = quarterlyCurrent.map((current, idx) => {
-      const baseline = quarterlyActuals2025[idx];
-      if (baseline === null || current === null) return null;
-      return safeDivide(current - baseline, baseline).value;
-    });
-
-    const totalTarget = kpi.annual;
-    const totalActual2025 = quarterlyActuals2025.reduce(
-      (sum: number, v) => (v === null ? sum : sum + v),
-      0
-    );
-    const targetShare = totalTarget > 0
-      ? quarterlyTargets.map((v) => v / totalTarget)
-      : Array.from({ length: 4 }, () => null);
-    const actualShare = totalActual2025 > 0
-      ? quarterlyActuals2025.map((v) => (v === null ? null : v / totalActual2025))
-      : Array.from({ length: 4 }, () => null);
-
-    const barWidth = Math.round(24 * 1.618);
-    const warningThreshold = 0.05; // 5%预警线
-
-    // 为2025实际占比数据生成颜色（对应增长率低于5%时变橙色）
-    const actualBarColors = actualShare.map((v, idx) => {
-      const growthRate = growthSeries[idx];
-      return growthRate !== null && growthRate < warningThreshold ? orangeColor : actualColor;
-    });
-
-    const barLabel = {
-      show: true,
-      position: "top" as const,
-      fontWeight: "bold" as const,
-      overflow: "truncate" as const,
-      width: barWidth,
-      formatter: (params: any) => {
-        const value = params?.value as number | null;
-        if (value === null) return "";
-        const growthRate = growthSeries[params.dataIndex];
-        const isWarning = growthRate !== null && growthRate < warningThreshold;
-        return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
-      },
-      rich: {
-        normal: {
-          color: grayColor,
-        },
-        warning: {
-          color: darkRedColor,
-        },
-      },
-    };
-
-    return {
-      tooltip: {
-        trigger: "axis",
-        formatter: (params: any) => {
-          const items = Array.isArray(params) ? params : [params];
-          const title = items[0]?.axisValue ?? "";
-          const lines = items.map((item: any) => {
-            const value = item.value as number | null;
-            const text = value === null ? "—" : `${(value * 100).toFixed(1)}%`;
-            return `${item.marker}${item.seriesName}: ${text}`;
-          });
-          return [title, ...lines].join("<br/>");
-        },
-      },
-      legend: { data: ["2026规划占比", "2025实际占比", "增长率"] },
-      xAxis: {
-        type: "category",
-        data: ["一季度", "二季度", "三季度", "四季度"],
-        splitLine: { show: false },
-      },
-      yAxis: [
-        {
-          type: "value",
-          name: "占比",
-          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
-          splitLine: { show: false },
-        },
-        {
-          type: "value",
-          name: "增长率",
-          axisLabel: { formatter: (value: number) => `${(value * 100).toFixed(1)}%` },
-          splitLine: { show: false },
-        },
-      ],
-      series: [
-        {
-          type: "bar",
-          data: targetShare,
-          name: "2026规划占比",
-          itemStyle: { color: targetColor },
-          barMaxWidth: barWidth,
-          label: barLabel,
-        },
-        {
-          type: "bar",
-          data: actualShare,
-          name: "2025实际占比",
-          itemStyle: {
-            color: (params: any) => actualBarColors[params.dataIndex] ?? actualColor,
-          },
-          barMaxWidth: barWidth,
-          label: barLabel,
-          barGap: "30%",
-        },
-        {
-          type: "line",
-          data: growthSeries,
-          name: "增长率",
-          yAxisIndex: 1,
-          lineStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
-          itemStyle: {
-            color: darkBlueColor, // 统一为深蓝色
-          },
-          smooth: true,
-          symbol: "circle",
-          symbolSize: 6,
-          label: {
-            show: true,
-            position: "top",
-            fontWeight: "bold",
-            formatter: (params: any) => {
-              const value = params?.value as number | null;
-              if (value === null) return "";
-              const isWarning = value !== null && value < warningThreshold;
-              return `{${isWarning ? 'warning' : 'normal'}|${(value * 100).toFixed(1)}%}`;
-            },
-            rich: {
-              normal: {
-                color: blueColor,
-              },
-              warning: {
-                color: darkRedColor,
-              },
-            },
-          },
-          markLine: {
-            symbol: "none",
-            lineStyle: { color: warningColor, type: "dashed" },
-            label: { formatter: "预警线 5%" },
-            data: [{ yAxis: 0.05 }],
-          },
-        },
-      ],
-      grid: { left: 48, right: 60, top: 40, bottom: 30 },
-    };
-  }, [kpi, monthlyActualSeries2025, monthlyActualSeries2026, progressMode]);
-
   // 季度保费规划图数据（UniversalChart格式）
   const quarterlyPremiumData = useMemo<QuarterlyDataInput | null>(() => {
     if (!kpi) return null;
@@ -1311,7 +563,7 @@ export default function Page() {
     return { count2025, count2026, first2025 };
   }, [monthlyActuals2025, monthlyActuals2026, monthlyActualSeries2025]);
 
-  if (!kpi || !chartOption) {
+  if (!kpi) {
     return <div className="text-sm text-slate-600">正在加载数据…</div>;
   }
 
@@ -1320,12 +572,14 @@ export default function Page() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-xl border p-4">
+      {/* 筛选器区域 - 毛玻璃效果 */}
+      <section className="glass-container rounded-xl border border-gray-200 p-6 shadow-md">
         <div className="flex flex-wrap gap-4 items-end">
-          <div>
-            <label className="block text-xs text-slate-600">视角</label>
+          {/* 视角选择器 */}
+          <div className="min-w-[140px]">
+            <label className="block text-xs font-medium text-text-secondary mb-1">视角</label>
             <select
-              className="mt-1 rounded border px-2 py-1 text-sm"
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm transition-all duration-150 hover:border-tesla focus:outline-none focus:ring-2 focus:ring-tesla/20 focus:border-tesla"
               value={viewKey}
               onChange={(e) => setViewKey(e.target.value)}
             >
@@ -1341,36 +595,60 @@ export default function Page() {
                 ))}
             </select>
           </div>
-          <div>
-            <label className="block text-xs text-slate-600">产品</label>
-            <select className="mt-1 rounded border px-2 py-1 text-sm" value={product} onChange={(e) => setProduct(e.target.value as any)}>
+
+          {/* 产品选择器 */}
+          <div className="min-w-[120px]">
+            <label className="block text-xs font-medium text-text-secondary mb-1">产品</label>
+            <select
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm transition-all duration-150 hover:border-tesla focus:outline-none focus:ring-2 focus:ring-tesla/20 focus:border-tesla"
+              value={product}
+              onChange={(e) => setProduct(e.target.value as any)}
+            >
               <option value="total">汇总</option>
               <option value="auto">车险</option>
               <option value="property">财产险</option>
               <option value="life">人身险</option>
             </select>
           </div>
+
+          {/* 截至月份 */}
           <div>
-            <label className="block text-xs text-slate-600">截至月份</label>
-            <input className="mt-1 w-24 rounded border px-2 py-1 text-sm" type="number" min={1} max={12} value={month} onChange={(e) => setMonth(Number(e.target.value))} />
+            <label className="block text-xs font-medium text-text-secondary mb-1">截至月份</label>
+            <input
+              className="w-24 px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm transition-all duration-150 hover:border-tesla focus:outline-none focus:ring-2 focus:ring-tesla/20 focus:border-tesla"
+              type="number"
+              min={1}
+              max={12}
+              value={month}
+              onChange={(e) => setMonth(Number(e.target.value))}
+            />
           </div>
-          <div>
-            <label className="block text-xs text-slate-600">时间进度口径</label>
-            <select className="mt-1 rounded border px-2 py-1 text-sm" value={progressMode} onChange={(e) => setProgressMode(e.target.value as any)}>
+
+          {/* 时间进度口径 */}
+          <div className="min-w-[140px]">
+            <label className="block text-xs font-medium text-text-secondary mb-1">时间进度口径</label>
+            <select
+              className="w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm transition-all duration-150 hover:border-tesla focus:outline-none focus:ring-2 focus:ring-tesla/20 focus:border-tesla"
+              value={progressMode}
+              onChange={(e) => setProgressMode(e.target.value as any)}
+            >
               <option value="weighted">目标权重</option>
               <option value="linear">线性月份</option>
               <option value="actual2025">2025年实际</option>
             </select>
           </div>
-          <div className="ml-auto text-xs text-slate-500">
-            2025 年度基线：{baseline2025 ?? "—"}（万元） · 同比口径：2026 实际 vs 2025 同期实际
-            <div className="mt-1">
-              数据诊断：2025 分月 {dataDiagnostics.count2025} 条，2026 分月 {dataDiagnostics.count2026} 条，
-              2025 首月汇总 {dataDiagnostics.first2025 === null ? "—" : Math.round(dataDiagnostics.first2025)} 万元
+
+          {/* 数据诊断信息 */}
+          <div className="ml-auto">
+            <div className="text-xs text-text-muted">
+              <div>2025 年度基线：{baseline2025 ?? "—"}（万元）</div>
+              <div className="mt-1">
+                数据诊断：2025 分月 {dataDiagnostics.count2025} 条，2026 分月 {dataDiagnostics.count2026} 条
+              </div>
             </div>
-            <button
-              type="button"
-              className="mt-2 rounded border px-2 py-1 text-xs text-slate-600 hover:bg-slate-50"
+            <Button
+              variant="outline"
+              size="sm"
               onClick={() => {
                 lsRemove(LS_KEYS.actualsMonthly2025);
                 lsRemove(LS_KEYS.actualsMonthly2026);
@@ -1378,7 +656,7 @@ export default function Page() {
               }}
             >
               清空本地分月数据缓存
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -1477,7 +755,7 @@ export default function Page() {
         </section>
       )}
 
-      <section className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-6">
+      <section className="grid gap-4 grid-cols-kpi-mobile sm:grid-cols-kpi-tablet lg:grid-cols-kpi-desktop">
         <KpiCard title="年度目标" value={`${Math.round(kpi.annual)} 万元`} />
         <KpiCard title="截至本月目标（YTD）" value={`${Math.round(kpi.ytdTarget)} 万元`} />
         <KpiCard title="YTD实际" value={actualsPeriod2026.ytd === null ? "—" : `${Math.round(actualsPeriod2026.ytd)} 万元`} />
@@ -1525,33 +803,6 @@ export default function Page() {
           <li>导入 2025 分月基线后，当月/当季/年累计增长率与增量自动点亮。</li>
         </ul>
       </section>
-    </div>
-  );
-}
-
-function KpiCard({
-  title,
-  value,
-  hint,
-  variant,
-}: {
-  title: string;
-  value: string;
-  hint?: string;
-  variant?: "good" | "danger";
-}) {
-  const variantCls =
-    variant === "good"
-      ? "border-[color:var(--status-good)]"
-      : variant === "danger"
-        ? "border-[color:var(--status-danger)]"
-        : "";
-
-  return (
-    <div className={`rounded-xl border p-4 ${variantCls}`.trim()}>
-      <div className="text-xs text-slate-600">{title}</div>
-      <div className="mt-2 text-lg font-semibold">{value}</div>
-      {hint ? <div className="mt-2 text-xs text-slate-500">{hint}</div> : null}
     </div>
   );
 }

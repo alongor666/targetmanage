@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { layout } from '@/styles/tokens';
 
 export interface ChartContainerProps {
   /** 可选的图表标题 */
@@ -25,7 +26,7 @@ export interface ChartContainerProps {
  * ChartContainer - 图表容器组件
  *
  * 为 ECharts 图表提供标准化的容器样式和布局。
- * 支持预设高度和自定义高度。
+ * 采用浅色玻璃质感、12px圆角、标准阴影效果。
  *
  * @example
  * 基础用法（默认高度）：
@@ -71,9 +72,9 @@ export function ChartContainer({
 
     // 使用设计token定义的高度
     const heightMap = {
-      sm: '400px', // --chart-height-sm
-      md: '600px', // --chart-height
-      lg: '600px', // --chart-height-lg
+      sm: `${layout.chartHeightSm}px`,   // 400px
+      md: `${layout.chartHeight}px`,     // 600px
+      lg: `${layout.chartHeightLg}px`,   // 600px
     };
 
     return heightMap[height];
@@ -95,9 +96,18 @@ export function ChartContainer({
         </div>
       )}
 
-      {/* 图表区域 */}
+      {/* 图表区域 - 浅色玻璃质感 */}
       <div
-        className={cn('w-full', chartClassName)}
+        className={cn(
+          'w-full',
+          // 玻璃质感背景
+          'bg-white/95 backdrop-blur-sm',
+          // 圆角和阴影
+          'rounded-xl shadow-md',
+          // 内边距
+          'p-4',
+          chartClassName
+        )}
         style={{ height: getHeight() }}
       >
         {children}

@@ -74,6 +74,14 @@ export {
   // 机构适配器
   OrganizationPremiumAdapter,
   createOrganizationPremiumAdapter,
+
+  // 季度达成适配器
+  QuarterlyAchievementAdapter,
+  createQuarterlyAchievementAdapter,
+
+  // 月度达成适配器
+  MonthlyAchievementAdapter,
+  createMonthlyAchievementAdapter,
 } from './adapters';
 
 export type {
@@ -81,6 +89,8 @@ export type {
   MonthlyDataInput,
   HqPredictionDataInput,
   OrganizationDataInput,
+  QuarterlyAchievementDataInput,
+  MonthlyAchievementDataInput,
 } from './adapters';
 
 // 配置预设
@@ -95,6 +105,10 @@ export {
   createMonthlyShareConfig,
   HqPredictionConfigPreset,
   createHqPredictionConfig,
+  QuarterlyAchievementConfigPreset,
+  createQuarterlyAchievementConfig,
+  MonthlyAchievementConfigPreset,
+  createMonthlyAchievementConfig,
   getPresetConfig,
   mergeConfig,
 } from './configs';

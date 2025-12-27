@@ -100,11 +100,17 @@ export function validateFontSizes(): void {
   const errors: string[] = [];
 
   checks.forEach(({ name, cssVar, value }) => {
-    const cssValue = rootStyles.getPropertyValue(cssVar);
-    const cssNum = parseFloat(cssValue);
+    const cssValue = rootStyles.getPropertyValue(cssVar).trim();
 
-    if (Math.abs(cssNum - value) > 0.1) { // 允许浮点误差
-      errors.push(`${cssVar}: CSS=${cssValue}, TS=${value}px`);
+    // 创建临时元素获取计算后的像素值
+    const tempElement = document.createElement('div');
+    tempElement.style.fontSize = `var(${cssVar})`;
+    document.body.appendChild(tempElement);
+    const computedValue = parseFloat(getComputedStyle(tempElement).fontSize);
+    document.body.removeChild(tempElement);
+
+    if (Math.abs(computedValue - value) > 0.1) { // 允许浮点误差
+      errors.push(`${cssVar}: CSS=${cssValue} (${computedValue}px), TS=${value}px`);
     }
   });
 

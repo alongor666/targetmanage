@@ -52,3 +52,17 @@ export {
   createOrganizationPremiumAdapter,
 } from './organization.adapter';
 export type { OrganizationDataInput } from './organization.adapter';
+
+// 季度达成数据适配器
+export {
+  QuarterlyAchievementAdapter,
+  createQuarterlyAchievementAdapter,
+} from './quarterlyAchievement.adapter';
+export type { QuarterlyAchievementDataInput } from './quarterlyAchievement.adapter';
+
+// 月度达成数据适配器
+export {
+  MonthlyAchievementAdapter,
+  createMonthlyAchievementAdapter,
+} from './monthlyAchievement.adapter';
+export type { MonthlyAchievementDataInput } from './monthlyAchievement.adapter';

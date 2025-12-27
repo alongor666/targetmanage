@@ -61,6 +61,16 @@ module.exports = {
           medium: 'var(--color-data-depth-medium)',
           dark: 'var(--color-data-depth-dark)',
         },
+
+        // Dimension colors (for filter tags)
+        dimension: {
+          org: 'var(--color-dimension-org)',
+          customer: 'var(--color-dimension-customer)',
+          business: 'var(--color-dimension-business)',
+          energy: 'var(--color-dimension-energy)',
+          renewal: 'var(--color-dimension-renewal)',
+          terminal: 'var(--color-dimension-terminal)',
+        },
       },
 
       // ========== TYPOGRAPHY ==========
@@ -122,6 +132,7 @@ module.exports = {
         lg: 'var(--shadow-lg)',
         xl: 'var(--shadow-xl)',
         focus: 'var(--shadow-focus)',
+        hover: 'var(--shadow-hover)',
       },
 
       // ========== ANIMATIONS ==========
@@ -159,6 +170,24 @@ module.exports = {
         lg: '1440px', // Override to match spec
         xl: '1920px', // Override to match spec
         '2xl': '2560px', // Add custom
+        '3xl': '2400px', // PPT mode
+      },
+
+      // ========== GRID SYSTEM ==========
+      gridTemplateColumns: {
+        // KPI卡片网格系统
+        'kpi-mobile': 'repeat(1, minmax(0, 1fr))',      // 手机: 1列
+        'kpi-tablet': 'repeat(2, minmax(0, 1fr))',      // 平板: 2列
+        'kpi-desktop': 'repeat(6, minmax(0, 1fr))',     // 桌面: 6列
+      },
+
+      // ========== BACKDROP BLUR ==========
+      backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '10px',
+        lg: '20px',
+        xl: '40px',
       },
     },
   },

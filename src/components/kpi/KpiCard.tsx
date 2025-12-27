@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { colors, typography } from '@/styles/tokens';
 
 export interface KpiCardProps {
   /** 卡片标题（如 "年度目标"） */
@@ -24,7 +25,8 @@ export interface KpiCardProps {
 /**
  * KpiCard - 显示单个KPI指标
  *
- * 遵循设计规范的KPI卡片组件，支持状态变体和交互。
+ * 遵循麦肯锡风格设计规范的KPI卡片组件，支持状态变体和交互。
+ * 采用毛玻璃效果、大字号数值（48px）、悬停上浮动画。
  *
  * @example
  * 基础用法：
@@ -67,21 +69,52 @@ export function KpiCard({
 }: KpiCardProps) {
   const isClickable = Boolean(onClick);
 
+  // 获取状态变体颜色
+  const variantColors = {
+    default: {
+      border: colors.kpiCard.defaultBorder,
+      value: colors.kpiCard.defaultValue,
+      bg: undefined,
+    },
+    good: {
+      border: colors.kpiCard.goodBorder,
+      value: colors.kpiCard.goodValue,
+      bg: colors.kpiCard.goodBg,
+    },
+    warning: {
+      border: colors.kpiCard.warningBorder,
+      value: colors.kpiCard.warningValue,
+      bg: colors.kpiCard.warningBg,
+    },
+    danger: {
+      border: colors.kpiCard.dangerBorder,
+      value: colors.kpiCard.dangerValue,
+      bg: colors.kpiCard.dangerBg,
+    },
+  };
+
+  const currentColors = variantColors[variant];
+
   return (
     <div
       className={cn(
-        // 基础样式 - 使用设计token
-        'rounded-xl border p-4 bg-white shadow-md',
-        'transition-normal',
+        // 基础样式 - 毛玻璃效果
+        'relative overflow-hidden',
+        'rounded-xl border p-6',
+        'bg-white/90 backdrop-blur-[20px]',
 
-        // 交互样式
-        isClickable && 'cursor-pointer hover:shadow-lg hover:-translate-y-0.5',
+        // 阴影系统
+        'shadow-md',
+        isClickable && 'hover:shadow-hover',
 
-        // 状态变体 - 边框颜色
-        variant === 'good' && 'border-status-good/20',
-        variant === 'warning' && 'border-status-warning/20',
-        variant === 'danger' && 'border-status-danger/20',
-        variant === 'default' && 'border-border-light',
+        // 过渡动画 - 250ms标准时长
+        'transition-all duration-normal ease-out',
+
+        // 交互样式 - 悬停上浮2px（精确）
+        isClickable && 'cursor-pointer hover:-translate-y-[2px]',
+
+        // 焦点管理
+        isClickable && 'focus:outline-none focus:ring-2 focus:ring-tesla/20 focus:ring-offset-2',
 
         // 自定义类名
         className
@@ -99,25 +132,46 @@ export function KpiCard({
             }
           : undefined
       }
+      style={{
+        borderColor: currentColors.border,
+        backgroundColor: currentColors.bg,
+      }}
     >
-      {/* 标题 */}
-      <div className="text-xs text-text-secondary">{title}</div>
-
-      {/* 指标值 */}
+      {/* 标题 - 11px辅助信息字号 */}
       <div
-        className={cn(
-          'mt-2 text-lg font-semibold',
-          // 状态变体 - 文字颜色
-          variant === 'good' && 'text-status-good',
-          variant === 'warning' && 'text-status-warning',
-          variant === 'danger' && 'text-status-danger'
-        )}
+        className="text-xs font-normal tracking-wide"
+        style={{
+          fontSize: `${typography.fontSize.xs}px`,
+          color: colors.text.secondary,
+        }}
+      >
+        {title}
+      </div>
+
+      {/* 指标值 - 48px超大字号，粗体 */}
+      <div
+        className="mt-3 font-semibold leading-tight"
+        style={{
+          fontSize: `${typography.fontSize.xxxl}px`,
+          fontWeight: typography.fontWeight.semibold,
+          color: currentColors.value,
+        }}
       >
         {value}
       </div>
 
-      {/* 提示文本 */}
-      {hint && <div className="mt-2 text-xs text-text-muted">{hint}</div>}
+      {/* 提示文本 - 11px辅助信息 */}
+      {hint && (
+        <div
+          className="mt-3 text-xs"
+          style={{
+            fontSize: `${typography.fontSize.xs}px`,
+            color: colors.text.muted,
+          }}
+        >
+          {hint}
+        </div>
+      )}
     </div>
   );
 }

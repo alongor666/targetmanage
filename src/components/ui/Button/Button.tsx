@@ -15,42 +15,39 @@ export type ButtonSize = 'sm' | 'md' | 'lg';
 /**
  * 按钮组件属性
  */
-export interface ButtonProps {
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
   /** 按钮内容 */
   children: React.ReactNode;
-  
+
   /** 按钮变体 */
   variant?: ButtonVariant;
-  
+
   /** 按钮尺寸 */
   size?: ButtonSize;
-  
+
   /** 是否禁用 */
   disabled?: boolean;
-  
+
   /** 是否加载中 */
   loading?: boolean;
-  
+
   /** 是否全宽 */
   fullWidth?: boolean;
-  
+
   /** 左侧图标 */
   leftIcon?: React.ReactNode;
-  
+
   /** 右侧图标 */
   rightIcon?: React.ReactNode;
-  
+
   /** 自定义类名 */
   className?: string;
-  
+
   /** 点击事件 */
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  
+
   /** 按钮类型 */
   type?: 'button' | 'submit' | 'reset';
-  
-  /** HTML属性 */
-  [key: string]: any;
 }
 
 /**
@@ -80,8 +77,8 @@ function getButtonColors(variant: ButtonVariant, disabled: boolean) {
         border: colors.brand.primaryRed,
         text: colors.text.inverse,
         hover: {
-          bg: '#b92b27', // 稍微亮一点的红
-          border: '#b92b27',
+          bg: colors.brand.primaryRedHover, // 略深的主题红
+          border: colors.brand.primaryRedHover,
           text: colors.text.inverse
         }
       };
@@ -230,27 +227,30 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
     'gap-2', // 图标和文字的间距
     'font-medium',
     'transition-all',
-    'duration-250',
+    'duration-normal',  // 使用语义化动画时长
     'ease-out',
     'focus:outline-none',
     'focus:ring-2',
     'focus:ring-offset-2',
     'cursor-pointer',
     'select-none',
-    
+
     // 尺寸相关
     'border',
     'box-border',
-    
+
     // 禁用状态
     (disabled || loading) && 'cursor-not-allowed',
-    
+
     // 全宽
-    fullWidth && 'w-full'
+    fullWidth && 'w-full',
+
+    // 悬停上浮动画（非禁用状态）- 精确2px
+    !(disabled || loading) && 'hover:-translate-y-[2px]',
   ];
 
   // 变体特定样式
-  const variantClasses = {
+  const variantClasses: Record<ButtonVariant, string[]> = {
     default: [
       `bg-[${buttonColors.bg}]`,
       `border-[${buttonColors.border}]`,
@@ -258,9 +258,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
       `hover:bg-[${buttonColors.hover.bg}]`,
       `hover:border-[${buttonColors.hover.border}]`,
       `hover:text-[${buttonColors.hover.text}]`,
+      'hover:shadow-hover', // 悬停阴影加强
       'focus:ring-[var(--tesla-blue)]'
     ],
-    
+
     outline: [
       `bg-[${buttonColors.bg}]`,
       `border-[${buttonColors.border}]`,
@@ -268,6 +269,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
       `hover:bg-[${buttonColors.hover.bg}]`,
       `hover:border-[${buttonColors.hover.border}]`,
       `hover:text-[${buttonColors.hover.text}]`,
+      'hover:shadow-sm', // 轻微阴影
       'focus:ring-[var(--tesla-blue)]'
     ],
 
@@ -292,21 +294,21 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   };
 
   // 尺寸特定样式
-  const sizeClasses = {
+  const sizeClasses: Record<ButtonSize, string[]> = {
     sm: [
       'h-8', // 32px
       'px-2', // 8px
       'text-xs', // 12px
       'rounded-sm' // 8px
     ],
-    
+
     md: [
       'h-10', // 40px
       'px-4', // 16px
       'text-sm', // 14px
       'rounded-sm' // 8px
     ],
-    
+
     lg: [
       'h-12', // 48px
       'px-6', // 24px

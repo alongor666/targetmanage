@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "mode": "api",
+  "server": {
+    "url": "http://localhost:8000",
+    "timeout": 30000,
+    "retryAttempts": 3
+  },
+  "skills": {
+    "data-validation": {
+      "enabled": true,
+      "endpoint": "/api/validate",
+      "timeout": 10000
+    },
+    "business-analysis": {
+      "enabled": true,
+      "endpoint": "/api/analyze",
+      "timeout": 30000
+    },
+    "code-review": {
+      "enabled": true,
+      "endpoint": "/api/review",
+      "timeout": 20000
+    },
+    "test-generation": {
+      "enabled": true,
+      "endpoint": "/api/generate-tests",
+      "timeout": 15000
+    }
+  },
+  "fallback": {
+    "mode": "cli",
+    "command": "minion"
+  }
+}

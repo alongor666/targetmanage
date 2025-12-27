@@ -12,6 +12,8 @@ import { createMonthlyPremiumConfig as createMPConfig } from './monthlyPremium.c
 import { createMonthlyShareConfig as createMSConfig } from './monthlyShare.config';
 import { createHqPredictionConfig as createHQConfig } from './hqPrediction.config';
 import { createOrgPremiumConfig as createOPConfig } from './orgPremium.config';
+import { createQuarterlyAchievementConfig as createQAConfig } from './quarterlyAchievement.config';
+import { createMonthlyAchievementConfig as createMAConfig } from './monthlyAchievement.config';
 
 // 季度保费配置
 export {
@@ -49,6 +51,18 @@ export {
   createOrgPremiumConfig,
 } from './orgPremium.config';
 
+// 季度达成配置
+export {
+  QuarterlyAchievementConfigPreset,
+  createQuarterlyAchievementConfig,
+} from './quarterlyAchievement.config';
+
+// 月度达成配置
+export {
+  MonthlyAchievementConfigPreset,
+  createMonthlyAchievementConfig,
+} from './monthlyAchievement.config';
+
 /**
  * 根据图表类型获取预设配置
  *
@@ -69,6 +83,10 @@ export function getPresetConfig(chartType: ChartType): Partial<UniversalChartCon
       return createHQConfig();
     case 'orgPremium':
       return createOPConfig();
+    case 'quarterlyAchievement':
+      return createQAConfig();
+    case 'monthlyAchievement':
+      return createMAConfig();
     default:
       console.warn(`未知的图表类型: ${chartType}`);
       return {};

@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "mode": "api",
+  "server": {
+    "url": "http://localhost:8000",
+    "timeout": 30000,
+    "retryAttempts": 3
+  },
+  "skills": {
+    "data-validation": {
+      "enabled": true,
+      "endpoint": "/api/validate",
+      "timeout": 10000
+    }
+  },
+  "fallback": {
+    "mode": "cli",
+    "command": "minion"
+  }
+}
