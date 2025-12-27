@@ -248,7 +248,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.050Z",
+      "lastModified": "2025-12-27T13:51:00.293Z",
       "checksum": "a18bbbc87c895db8"
     },
     "实施规划.md": {
@@ -326,7 +326,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.051Z",
+      "lastModified": "2025-12-27T13:51:00.296Z",
       "checksum": "fb91d6314f47ebce"
     },
     "agent.md": {
@@ -405,7 +405,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.051Z",
+      "lastModified": "2025-12-27T13:51:00.296Z",
       "checksum": "6951d31a2fed408c"
     },
     "README.md": {
@@ -450,7 +450,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.052Z",
+      "lastModified": "2025-12-27T13:51:00.297Z",
       "checksum": "a9017f3fe8160fad"
     },
     "troubleshooting/common-issues.md": {
@@ -517,7 +517,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.052Z",
+      "lastModified": "2025-12-27T13:51:00.297Z",
       "checksum": "6ee376567ad4f7d3"
     },
     "reference/术语词典.md": {
@@ -586,7 +586,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.052Z",
+      "lastModified": "2025-12-27T13:51:00.297Z",
       "checksum": "ab7668479dfabd71"
     },
     "reference/文档索引.md": {
@@ -639,7 +639,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.052Z",
+      "lastModified": "2025-12-27T13:51:00.298Z",
       "checksum": "77d80570136e3a8a"
     },
     "features/SortButtonGroup使用指南.md": {
@@ -758,7 +758,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-27T13:14:17.052Z",
+      "lastModified": "2025-12-27T13:51:00.298Z",
       "checksum": "0a0088fd19ba0fdb"
     },
     "development/项目导入指南.md": {
@@ -786,7 +786,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.053Z",
+      "lastModified": "2025-12-27T13:51:00.298Z",
       "checksum": "71f19e5c9c132a71"
     },
     "development/质量检查清单.md": {
@@ -823,7 +823,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.053Z",
+      "lastModified": "2025-12-27T13:51:00.298Z",
       "checksum": "dd3f7f43b1d06d28"
     },
     "development/开发指南.md": {
@@ -904,7 +904,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.053Z",
+      "lastModified": "2025-12-27T13:51:00.299Z",
       "checksum": "d302419bdc37897b"
     },
     "development/echarts-usage-examples.md": {
@@ -970,7 +970,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.054Z",
+      "lastModified": "2025-12-27T13:51:00.299Z",
       "checksum": "a2393c632a37bb42"
     },
     "development/code-examples.md": {
@@ -1074,7 +1074,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.054Z",
+      "lastModified": "2025-12-27T13:51:00.299Z",
       "checksum": "ceaba88ad6d7feea"
     },
     "development/UI组件使用指南.md": {
@@ -1156,7 +1156,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.054Z",
+      "lastModified": "2025-12-27T13:51:00.299Z",
       "checksum": "fc4699adee10ddcf"
     },
     "development/UI开发指南.md": {
@@ -1249,7 +1249,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.054Z",
+      "lastModified": "2025-12-27T13:51:00.300Z",
       "checksum": "dce53e605b5c6a35"
     },
     "design/设计系统快速参考.md": {
@@ -1349,7 +1349,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-27T13:14:17.055Z",
+      "lastModified": "2025-12-27T13:51:00.300Z",
       "checksum": "ebc301e161728d62"
     },
     "design/设计实现指南.md": {
@@ -1422,7 +1422,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.055Z",
+      "lastModified": "2025-12-27T13:51:00.300Z",
       "checksum": "dd541a30cc0b81d3"
     },
     "design/组件设计规范.md": {
@@ -1528,7 +1528,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-27T13:14:17.055Z",
+      "lastModified": "2025-12-27T13:51:00.301Z",
       "checksum": "f4a24f67daee10fb"
     },
     "design/字体系统速查.md": {
@@ -1605,7 +1605,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.055Z",
+      "lastModified": "2025-12-27T13:51:00.301Z",
       "checksum": "1c59c7368a22775d"
     },
     "design/全局设计规范.md": {
@@ -1746,7 +1746,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.056Z",
+      "lastModified": "2025-12-27T13:51:00.301Z",
       "checksum": "56f0986c6dd98e35"
     },
     "components/组件索引.md": {
@@ -1864,7 +1864,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.056Z",
+      "lastModified": "2025-12-27T13:51:00.302Z",
       "checksum": "904fb1ff6adf831a"
     },
     "changelog/表格视图功能.md": {
@@ -1960,7 +1960,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.056Z",
+      "lastModified": "2025-12-27T13:51:00.302Z",
       "checksum": "fdcd0d884c5af630"
     },
     "changelog/总公司目标达成预测功能.md": {
@@ -2075,7 +2075,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.057Z",
+      "lastModified": "2025-12-27T13:51:00.302Z",
       "checksum": "3021f23e7617cfc6"
     },
     "business/目标分配规则.md": {
@@ -2120,7 +2120,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.057Z",
+      "lastModified": "2025-12-27T13:51:00.302Z",
       "checksum": "08601705ecb639a5"
     },
     "business/指标定义规范.md": {
@@ -2194,7 +2194,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-27T13:14:17.057Z",
+      "lastModified": "2025-12-27T13:51:00.302Z",
       "checksum": "384c67964eb11ff6"
     },
     "business/业务流程规范.md": {
@@ -2263,7 +2263,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.057Z",
+      "lastModified": "2025-12-27T13:51:00.303Z",
       "checksum": "52d225625997b43a"
     },
     "archive/设计思路_旧版备份.md": {
@@ -2404,7 +2404,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.058Z",
+      "lastModified": "2025-12-27T13:51:00.303Z",
       "checksum": "3fea8ce69581d84e"
     },
     "archive/AI编程知识库系统完整实施报告.md": {
@@ -2417,7 +2417,7 @@
       ],
       "implementedIn": [],
       "sections": {},
-      "lastModified": "2025-12-27T13:14:17.058Z",
+      "lastModified": "2025-12-27T13:51:00.303Z",
       "checksum": "163215d84580e5e2"
     },
     "architecture/系统架构设计.md": {
@@ -2502,7 +2502,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.058Z",
+      "lastModified": "2025-12-27T13:51:00.304Z",
       "checksum": "38fed2bdbddb3e8c"
     },
     "architecture/文档代码索引系统设计.md": {
@@ -2642,7 +2642,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.058Z",
+      "lastModified": "2025-12-27T13:51:00.304Z",
       "checksum": "b4ecd283ce97de71"
     },
     "architecture/技术架构.md": {
@@ -2692,7 +2692,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.059Z",
+      "lastModified": "2025-12-27T13:51:00.304Z",
       "checksum": "bd5adab14e77158d"
     },
     "architecture/业务架构设计.md": {
@@ -2753,7 +2753,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.059Z",
+      "lastModified": "2025-12-27T13:51:00.304Z",
       "checksum": "b33557e90b7d117a"
     },
     "ai-evolution/README.md": {
@@ -2848,7 +2848,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.059Z",
+      "lastModified": "2025-12-27T13:51:00.305Z",
       "checksum": "dd405fefdd15a3db"
     },
     "ai-evolution/QUICKSTART.md": {
@@ -2961,7 +2961,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.059Z",
+      "lastModified": "2025-12-27T13:51:00.305Z",
       "checksum": "b56587c59333014e"
     },
     "ai-evolution/solutions/index.md": {
@@ -3040,8 +3040,119 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.059Z",
+      "lastModified": "2025-12-27T13:51:00.305Z",
       "checksum": "015812bf491147c4"
+    },
+    "ai-evolution/evolution/prompt-evolution.md": {
+      "id": "doc-ai-evolution-evolution-prompt-evolution-md",
+      "title": "Prompt进化史",
+      "category": "ai-evolution",
+      "tags": [
+        "📈 进化时间线",
+        "🎯 未来进化方向",
+        "📊 进化指标追踪"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "📈 进化时间线": {
+          "lineRange": [
+            9,
+            24
+          ],
+          "implementations": []
+        },
+        "🎯 未来进化方向": {
+          "lineRange": [
+            25,
+            32
+          ],
+          "implementations": []
+        },
+        "📊 进化指标追踪": {
+          "lineRange": [
+            33,
+            40
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:51:00.305Z",
+      "checksum": "9d6e90bfa0099a09"
+    },
+    "ai-evolution/evolution/metrics.md": {
+      "id": "doc-ai-evolution-evolution-metrics-md",
+      "title": "进化指标追踪",
+      "category": "ai-evolution",
+      "tags": [
+        "📊 核心指标",
+        "📈 进化阶段",
+        "🎯 周报模板"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "📊 核心指标": {
+          "lineRange": [
+            9,
+            48
+          ],
+          "implementations": []
+        },
+        "📈 进化阶段": {
+          "lineRange": [
+            49,
+            69
+          ],
+          "implementations": []
+        },
+        "🎯 周报模板": {
+          "lineRange": [
+            70,
+            88
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:51:00.306Z",
+      "checksum": "be18f5a4e28ef074"
+    },
+    "ai-evolution/analysis/index.md": {
+      "id": "doc-ai-evolution-analysis-index-md",
+      "title": "本质分析索引",
+      "category": "ai-evolution",
+      "tags": [
+        "📊 统计概览",
+        "🔍 根因分类",
+        "📁 目录结构"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "📊 统计概览": {
+          "lineRange": [
+            6,
+            12
+          ],
+          "implementations": []
+        },
+        "🔍 根因分类": {
+          "lineRange": [
+            13,
+            25
+          ],
+          "implementations": []
+        },
+        "📁 目录结构": {
+          "lineRange": [
+            26,
+            34
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:51:00.306Z",
+      "checksum": "ff6972439a39663c"
     },
     "ai-evolution/problems/template.md": {
       "id": "doc-ai-evolution-problems-template-md",
@@ -3117,7 +3228,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.060Z",
+      "lastModified": "2025-12-27T13:51:00.306Z",
       "checksum": "649311d319b11df5"
     },
     "ai-evolution/problems/index.md": {
@@ -3178,7 +3289,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.060Z",
+      "lastModified": "2025-12-27T13:51:00.306Z",
       "checksum": "fc43516878955504"
     },
     "ai-evolution/solutions/prompt-patterns/错误处理模式.md": {
@@ -3263,7 +3374,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.060Z",
+      "lastModified": "2025-12-27T13:51:00.306Z",
       "checksum": "922b932cc3bb9e58"
     },
     "ai-evolution/solutions/prompt-patterns/任务分解模式.md": {
@@ -3324,7 +3435,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.060Z",
+      "lastModified": "2025-12-27T13:51:00.306Z",
       "checksum": "c4dc82cfe7d976da"
     },
     "ai-evolution/solutions/prompt-patterns/代码审查模式.md": {
@@ -3369,7 +3480,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.060Z",
+      "lastModified": "2025-12-27T13:51:00.306Z",
       "checksum": "8b7a6ee12ad3a352"
     },
     "ai-evolution/solutions/prompt-patterns/index.md": {
@@ -3414,7 +3525,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "664fa683ab2f4e13"
     },
     "ai-evolution/solutions/prompt-patterns/context-提供模式.md": {
@@ -3513,7 +3624,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "3258f8a7967e280b"
     },
     "ai-evolution/solutions/context-patterns/依赖关系图.md": {
@@ -3542,7 +3653,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "9ca62ebd012fd142"
     },
     "ai-evolution/solutions/context-patterns/代码结构说明.md": {
@@ -3571,7 +3682,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "36b3a94e1ac71c71"
     },
     "ai-evolution/solutions/context-patterns/业务规则提供.md": {
@@ -3610,7 +3721,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "2ab467f763caf283"
     },
     "ai-evolution/solutions/context-patterns/index.md": {
@@ -3631,45 +3742,8 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "ab86c7a0f0a111a5"
-    },
-    "ai-evolution/analysis/index.md": {
-      "id": "doc-ai-evolution-analysis-index-md",
-      "title": "本质分析索引",
-      "category": "ai-evolution",
-      "tags": [
-        "📊 统计概览",
-        "🔍 根因分类",
-        "📁 目录结构"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "📊 统计概览": {
-          "lineRange": [
-            6,
-            12
-          ],
-          "implementations": []
-        },
-        "🔍 根因分类": {
-          "lineRange": [
-            13,
-            25
-          ],
-          "implementations": []
-        },
-        "📁 目录结构": {
-          "lineRange": [
-            26,
-            34
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-27T13:14:17.061Z",
-      "checksum": "ff6972439a39663c"
     },
     "ai-evolution/solutions/best-practices/问题诊断技巧.md": {
       "id": "doc-ai-evolution-solutions-best-practices-问题诊断技巧-md",
@@ -3697,7 +3771,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "64c0c19f25e087f3"
     },
     "ai-evolution/solutions/best-practices/进化式开发.md": {
@@ -3734,7 +3808,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "9fb57a1fedafab5b"
     },
     "ai-evolution/solutions/best-practices/与AI协作流程.md": {
@@ -3763,7 +3837,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "a49538a9688b1b2a"
     },
     "ai-evolution/solutions/best-practices/index.md": {
@@ -3784,82 +3858,8 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-27T13:14:17.061Z",
+      "lastModified": "2025-12-27T13:51:00.307Z",
       "checksum": "b71f4d34bc002428"
-    },
-    "ai-evolution/evolution/prompt-evolution.md": {
-      "id": "doc-ai-evolution-evolution-prompt-evolution-md",
-      "title": "Prompt进化史",
-      "category": "ai-evolution",
-      "tags": [
-        "📈 进化时间线",
-        "🎯 未来进化方向",
-        "📊 进化指标追踪"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "📈 进化时间线": {
-          "lineRange": [
-            9,
-            24
-          ],
-          "implementations": []
-        },
-        "🎯 未来进化方向": {
-          "lineRange": [
-            25,
-            32
-          ],
-          "implementations": []
-        },
-        "📊 进化指标追踪": {
-          "lineRange": [
-            33,
-            40
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-27T13:14:17.062Z",
-      "checksum": "9d6e90bfa0099a09"
-    },
-    "ai-evolution/evolution/metrics.md": {
-      "id": "doc-ai-evolution-evolution-metrics-md",
-      "title": "进化指标追踪",
-      "category": "ai-evolution",
-      "tags": [
-        "📊 核心指标",
-        "📈 进化阶段",
-        "🎯 周报模板"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "📊 核心指标": {
-          "lineRange": [
-            9,
-            48
-          ],
-          "implementations": []
-        },
-        "📈 进化阶段": {
-          "lineRange": [
-            49,
-            69
-          ],
-          "implementations": []
-        },
-        "🎯 周报模板": {
-          "lineRange": [
-            70,
-            88
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-27T13:14:17.062Z",
-      "checksum": "be18f5a4e28ef074"
     }
   }
 }

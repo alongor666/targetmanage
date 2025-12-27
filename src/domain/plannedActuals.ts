@@ -71,8 +71,8 @@ export function generateMonthlyPlannedActuals(
   // Step 1: 构建月度实际值映射（1-12月）
   const actualMap = new Map<number, number>();
   actualRecords.forEach((record) => {
-    if (record.month >= 1 && record.month <= 12 && record.actual !== null) {
-      actualMap.set(record.month, record.actual);
+    if (record.month >= 1 && record.month <= 12 && record.monthly_actual !== null) {
+      actualMap.set(record.month, record.monthly_actual);
     }
   });
 
