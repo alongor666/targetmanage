@@ -248,7 +248,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.201Z",
+      "lastModified": "2025-12-27T13:14:17.050Z",
       "checksum": "a18bbbc87c895db8"
     },
     "实施规划.md": {
@@ -326,7 +326,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.202Z",
+      "lastModified": "2025-12-27T13:14:17.051Z",
       "checksum": "fb91d6314f47ebce"
     },
     "agent.md": {
@@ -405,7 +405,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.202Z",
+      "lastModified": "2025-12-27T13:14:17.051Z",
       "checksum": "6951d31a2fed408c"
     },
     "README.md": {
@@ -450,8 +450,75 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.203Z",
+      "lastModified": "2025-12-27T13:14:17.052Z",
       "checksum": "a9017f3fe8160fad"
+    },
+    "troubleshooting/common-issues.md": {
+      "id": "doc-troubleshooting-common-issues-md",
+      "title": "常见问题排查指南",
+      "category": "troubleshooting",
+      "tags": [
+        "📝 文档同步问题",
+        "🏗️ 构建失败",
+        "📊 数据加载问题",
+        "🎨 UI 显示问题",
+        "🔧 开发环境问题",
+        "📚 相关文档"
+      ],
+      "relatedDocs": [
+        "docs/development/开发指南.md",
+        "docs/architecture/系统架构设计.md",
+        "docs/development/code-examples.md"
+      ],
+      "implementedIn": [],
+      "sections": {
+        "📝 文档同步问题": {
+          "lineRange": [
+            8,
+            36
+          ],
+          "implementations": []
+        },
+        "🏗️ 构建失败": {
+          "lineRange": [
+            37,
+            126
+          ],
+          "implementations": []
+        },
+        "📊 数据加载问题": {
+          "lineRange": [
+            127,
+            227
+          ],
+          "implementations": [
+            "src/schemas/schema.ts"
+          ]
+        },
+        "🎨 UI 显示问题": {
+          "lineRange": [
+            228,
+            280
+          ],
+          "implementations": []
+        },
+        "🔧 开发环境问题": {
+          "lineRange": [
+            281,
+            327
+          ],
+          "implementations": []
+        },
+        "📚 相关文档": {
+          "lineRange": [
+            328,
+            339
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.052Z",
+      "checksum": "6ee376567ad4f7d3"
     },
     "reference/术语词典.md": {
       "id": "doc-reference-术语词典-md",
@@ -519,7 +586,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.203Z",
+      "lastModified": "2025-12-27T13:14:17.052Z",
       "checksum": "ab7668479dfabd71"
     },
     "reference/文档索引.md": {
@@ -572,7 +639,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.203Z",
+      "lastModified": "2025-12-27T13:14:17.052Z",
       "checksum": "77d80570136e3a8a"
     },
     "features/SortButtonGroup使用指南.md": {
@@ -691,7 +758,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-25T15:12:33.203Z",
+      "lastModified": "2025-12-27T13:14:17.052Z",
       "checksum": "0a0088fd19ba0fdb"
     },
     "development/项目导入指南.md": {
@@ -719,7 +786,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.204Z",
+      "lastModified": "2025-12-27T13:14:17.053Z",
       "checksum": "71f19e5c9c132a71"
     },
     "development/质量检查清单.md": {
@@ -756,7 +823,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.204Z",
+      "lastModified": "2025-12-27T13:14:17.053Z",
       "checksum": "dd3f7f43b1d06d28"
     },
     "development/开发指南.md": {
@@ -837,8 +904,260 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.204Z",
+      "lastModified": "2025-12-27T13:14:17.053Z",
       "checksum": "d302419bdc37897b"
+    },
+    "development/echarts-usage-examples.md": {
+      "id": "doc-development-echarts-usage-examples-md",
+      "title": "ECharts 配置使用示例",
+      "category": "development",
+      "tags": [
+        "核心工具函数",
+        "完整实战示例",
+        "迁移指南",
+        "设计原则",
+        "常见问题",
+        "总结"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [
+        "lib/echarts-utils.ts",
+        "styles/tokens.ts"
+      ],
+      "sections": {
+        "核心工具函数": {
+          "lineRange": [
+            4,
+            168
+          ],
+          "implementations": []
+        },
+        "完整实战示例": {
+          "lineRange": [
+            169,
+            252
+          ],
+          "implementations": []
+        },
+        "迁移指南": {
+          "lineRange": [
+            253,
+            308
+          ],
+          "implementations": []
+        },
+        "设计原则": {
+          "lineRange": [
+            309,
+            335
+          ],
+          "implementations": [
+            "src/styles/tokens.ts"
+          ]
+        },
+        "常见问题": {
+          "lineRange": [
+            336,
+            386
+          ],
+          "implementations": []
+        },
+        "总结": {
+          "lineRange": [
+            387,
+            402
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.054Z",
+      "checksum": "a2393c632a37bb42"
+    },
+    "development/code-examples.md": {
+      "id": "doc-development-code-examples-md",
+      "title": "代码示例与模式",
+      "category": "development",
+      "tags": [
+        "🎯 Domain Layer 函数模板",
+        "🛡️ Null Safety 模式",
+        "📊 TypeScript 类型定义",
+        "🔄 Data Loading Pattern",
+        "📝 JSDoc 标签规范",
+        "🎨 Component 模式",
+        "🧪 Testing 模式",
+        "📂 File Naming 示例",
+        "🔧 Git 操作模式",
+        "📚 相关文档"
+      ],
+      "relatedDocs": [
+        "docs/business/[文件名].md",
+        "docs/business/指标定义规范.md",
+        "docs/development/开发指南.md",
+        "docs/architecture/系统架构设计.md",
+        "docs/troubleshooting/common-issues.md"
+      ],
+      "implementedIn": [],
+      "sections": {
+        "🎯 Domain Layer 函数模板": {
+          "lineRange": [
+            8,
+            64
+          ],
+          "implementations": []
+        },
+        "🛡️ Null Safety 模式": {
+          "lineRange": [
+            65,
+            128
+          ],
+          "implementations": []
+        },
+        "📊 TypeScript 类型定义": {
+          "lineRange": [
+            129,
+            172
+          ],
+          "implementations": []
+        },
+        "🔄 Data Loading Pattern": {
+          "lineRange": [
+            173,
+            231
+          ],
+          "implementations": []
+        },
+        "📝 JSDoc 标签规范": {
+          "lineRange": [
+            232,
+            269
+          ],
+          "implementations": []
+        },
+        "🎨 Component 模式": {
+          "lineRange": [
+            270,
+            303
+          ],
+          "implementations": []
+        },
+        "🧪 Testing 模式": {
+          "lineRange": [
+            304,
+            329
+          ],
+          "implementations": []
+        },
+        "📂 File Naming 示例": {
+          "lineRange": [
+            330,
+            357
+          ],
+          "implementations": []
+        },
+        "🔧 Git 操作模式": {
+          "lineRange": [
+            358,
+            392
+          ],
+          "implementations": [
+            "src/components/OldName.tsx",
+            "src/components/NewName.tsx",
+            "src/components/NewName.tsx",
+            "src/components/OldName.tsx"
+          ]
+        },
+        "📚 相关文档": {
+          "lineRange": [
+            393,
+            405
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.054Z",
+      "checksum": "ceaba88ad6d7feea"
+    },
+    "development/UI组件使用指南.md": {
+      "id": "doc-development-UI组件使用指南-md",
+      "title": "UI组件使用指南",
+      "category": "development",
+      "tags": [
+        "📦 核心组件库",
+        "🎨 工具函数库",
+        "🎯 设计Token使用",
+        "✅ 最佳实践",
+        "🚨 常见问题",
+        "📚 相关文档"
+      ],
+      "relatedDocs": [
+        "docs/design/全局设计规范.md",
+        "docs/development/echarts-usage-examples.md"
+      ],
+      "implementedIn": [
+        "components/ui/Button/Button.ts",
+        "components/kpi/KpiCard.ts",
+        "components/filters/FilterTag.ts",
+        "components/filters/FilterDropdown.ts",
+        "components/charts/ChartContainer.ts",
+        "lib/echarts-utils.ts",
+        "styles/tokens.ts"
+      ],
+      "sections": {
+        "📦 核心组件库": {
+          "lineRange": [
+            9,
+            247
+          ],
+          "implementations": [
+            "src/components/ui/Button/Button.tsx",
+            "src/components/kpi/KpiCard.tsx",
+            "src/components/filters/FilterTag.tsx",
+            "src/components/filters/FilterDropdown.tsx",
+            "src/components/charts/ChartContainer.tsx"
+          ]
+        },
+        "🎨 工具函数库": {
+          "lineRange": [
+            248,
+            377
+          ],
+          "implementations": [
+            "src/lib/echarts-utils.ts"
+          ]
+        },
+        "🎯 设计Token使用": {
+          "lineRange": [
+            378,
+            451
+          ],
+          "implementations": [
+            "src/styles/tokens.ts"
+          ]
+        },
+        "✅ 最佳实践": {
+          "lineRange": [
+            452,
+            511
+          ],
+          "implementations": []
+        },
+        "🚨 常见问题": {
+          "lineRange": [
+            512,
+            531
+          ],
+          "implementations": []
+        },
+        "📚 相关文档": {
+          "lineRange": [
+            532,
+            543
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.054Z",
+      "checksum": "fc4699adee10ddcf"
     },
     "development/UI开发指南.md": {
       "id": "doc-development-UI开发指南-md",
@@ -930,7 +1249,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.204Z",
+      "lastModified": "2025-12-27T13:14:17.054Z",
       "checksum": "dce53e605b5c6a35"
     },
     "design/设计系统快速参考.md": {
@@ -1030,7 +1349,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-25T15:12:33.205Z",
+      "lastModified": "2025-12-27T13:14:17.055Z",
       "checksum": "ebc301e161728d62"
     },
     "design/设计实现指南.md": {
@@ -1103,7 +1422,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.205Z",
+      "lastModified": "2025-12-27T13:14:17.055Z",
       "checksum": "dd541a30cc0b81d3"
     },
     "design/组件设计规范.md": {
@@ -1209,8 +1528,85 @@
           ]
         }
       },
-      "lastModified": "2025-12-25T15:12:33.206Z",
+      "lastModified": "2025-12-27T13:14:17.055Z",
       "checksum": "f4a24f67daee10fb"
+    },
+    "design/字体系统速查.md": {
+      "id": "doc-design-字体系统速查-md",
+      "title": "字体系统快速参考",
+      "category": "design",
+      "tags": [
+        "📏 字体大小速查表",
+        "🎯 ECharts 配置速查",
+        "🎨 语义化工具类速查",
+        "⚠️ 常见错误",
+        "🔧 验证工具",
+        "📚 相关文件",
+        "💡 最佳实践"
+      ],
+      "relatedDocs": [
+        "docs/design/全局设计规范.md"
+      ],
+      "implementedIn": [
+        "lib/typography.ts"
+      ],
+      "sections": {
+        "📏 字体大小速查表": {
+          "lineRange": [
+            6,
+            18
+          ],
+          "implementations": []
+        },
+        "🎯 ECharts 配置速查": {
+          "lineRange": [
+            19,
+            90
+          ],
+          "implementations": []
+        },
+        "🎨 语义化工具类速查": {
+          "lineRange": [
+            91,
+            124
+          ],
+          "implementations": []
+        },
+        "⚠️ 常见错误": {
+          "lineRange": [
+            125,
+            167
+          ],
+          "implementations": []
+        },
+        "🔧 验证工具": {
+          "lineRange": [
+            168,
+            191
+          ],
+          "implementations": []
+        },
+        "📚 相关文件": {
+          "lineRange": [
+            192,
+            198
+          ],
+          "implementations": [
+            "src/lib/typography.ts",
+            "src/styles/typography.css",
+            "src/app/globals.css"
+          ]
+        },
+        "💡 最佳实践": {
+          "lineRange": [
+            199,
+            223
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.055Z",
+      "checksum": "1c59c7368a22775d"
     },
     "design/全局设计规范.md": {
       "id": "doc-design-全局设计规范-md",
@@ -1247,111 +1643,111 @@
         "2. 色彩系统": {
           "lineRange": [
             22,
-            137
+            160
           ],
           "implementations": []
         },
         "3. 字体系统": {
           "lineRange": [
-            138,
-            188
+            161,
+            211
           ],
           "implementations": []
         },
         "4. 间距系统": {
           "lineRange": [
-            189,
-            212
-          ],
-          "implementations": []
-        },
-        "5. 圆角系统": {
-          "lineRange": [
-            213,
+            212,
             235
           ],
           "implementations": []
         },
-        "6. 阴影系统": {
+        "5. 圆角系统": {
           "lineRange": [
             236,
             258
           ],
           "implementations": []
         },
-        "7. 动画系统": {
+        "6. 阴影系统": {
           "lineRange": [
             259,
-            289
+            281
+          ],
+          "implementations": []
+        },
+        "7. 动画系统": {
+          "lineRange": [
+            282,
+            312
           ],
           "implementations": []
         },
         "8. 布局系统": {
           "lineRange": [
-            290,
-            561
+            313,
+            584
           ],
           "implementations": []
         },
         "10. 组件设计规范": {
           "lineRange": [
-            562,
-            672
+            585,
+            695
           ],
           "implementations": []
         },
         "11. 图表设计规范": {
           "lineRange": [
-            673,
-            888
+            696,
+            911
           ],
           "implementations": []
         },
         "12. 交互设计规范": {
           "lineRange": [
-            889,
-            957
+            912,
+            980
           ],
           "implementations": []
         },
         "13. 响应式设计规范": {
           "lineRange": [
-            958,
-            998
+            981,
+            1021
           ],
           "implementations": []
         },
         "14. 可访问性规范": {
           "lineRange": [
-            999,
-            1029
+            1022,
+            1052
           ],
           "implementations": []
         },
         "15. 使用指南": {
           "lineRange": [
-            1030,
-            1068
+            1053,
+            1091
           ],
           "implementations": []
         },
         "16. 版本管理": {
           "lineRange": [
-            1069,
-            1083
+            1092,
+            1106
           ],
           "implementations": []
         },
         "总结": {
           "lineRange": [
-            1084,
-            1094
+            1107,
+            1117
           ],
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.206Z",
-      "checksum": "f02bf85125680ce6"
+      "lastModified": "2025-12-27T13:14:17.056Z",
+      "checksum": "56f0986c6dd98e35"
     },
     "components/组件索引.md": {
       "id": "doc-components-组件索引-md",
@@ -1468,7 +1864,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.206Z",
+      "lastModified": "2025-12-27T13:14:17.056Z",
       "checksum": "904fb1ff6adf831a"
     },
     "changelog/表格视图功能.md": {
@@ -1564,7 +1960,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.206Z",
+      "lastModified": "2025-12-27T13:14:17.056Z",
       "checksum": "fdcd0d884c5af630"
     },
     "changelog/总公司目标达成预测功能.md": {
@@ -1679,7 +2075,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.207Z",
+      "lastModified": "2025-12-27T13:14:17.057Z",
       "checksum": "3021f23e7617cfc6"
     },
     "business/目标分配规则.md": {
@@ -1724,7 +2120,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.207Z",
+      "lastModified": "2025-12-27T13:14:17.057Z",
       "checksum": "08601705ecb639a5"
     },
     "business/指标定义规范.md": {
@@ -1798,7 +2194,7 @@
           ]
         }
       },
-      "lastModified": "2025-12-25T15:12:33.207Z",
+      "lastModified": "2025-12-27T13:14:17.057Z",
       "checksum": "384c67964eb11ff6"
     },
     "business/业务流程规范.md": {
@@ -1867,7 +2263,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.207Z",
+      "lastModified": "2025-12-27T13:14:17.057Z",
       "checksum": "52d225625997b43a"
     },
     "archive/设计思路_旧版备份.md": {
@@ -2008,7 +2404,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.208Z",
+      "lastModified": "2025-12-27T13:14:17.058Z",
       "checksum": "3fea8ce69581d84e"
     },
     "archive/AI编程知识库系统完整实施报告.md": {
@@ -2021,7 +2417,7 @@
       ],
       "implementedIn": [],
       "sections": {},
-      "lastModified": "2025-12-25T15:12:33.208Z",
+      "lastModified": "2025-12-27T13:14:17.058Z",
       "checksum": "163215d84580e5e2"
     },
     "architecture/系统架构设计.md": {
@@ -2106,7 +2502,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.208Z",
+      "lastModified": "2025-12-27T13:14:17.058Z",
       "checksum": "38fed2bdbddb3e8c"
     },
     "architecture/文档代码索引系统设计.md": {
@@ -2246,7 +2642,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.209Z",
+      "lastModified": "2025-12-27T13:14:17.058Z",
       "checksum": "b4ecd283ce97de71"
     },
     "architecture/技术架构.md": {
@@ -2296,7 +2692,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.209Z",
+      "lastModified": "2025-12-27T13:14:17.059Z",
       "checksum": "bd5adab14e77158d"
     },
     "architecture/业务架构设计.md": {
@@ -2357,7 +2753,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.209Z",
+      "lastModified": "2025-12-27T13:14:17.059Z",
       "checksum": "b33557e90b7d117a"
     },
     "ai-evolution/README.md": {
@@ -2452,7 +2848,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.209Z",
+      "lastModified": "2025-12-27T13:14:17.059Z",
       "checksum": "dd405fefdd15a3db"
     },
     "ai-evolution/QUICKSTART.md": {
@@ -2565,7 +2961,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.210Z",
+      "lastModified": "2025-12-27T13:14:17.059Z",
       "checksum": "b56587c59333014e"
     },
     "ai-evolution/solutions/index.md": {
@@ -2644,7 +3040,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.210Z",
+      "lastModified": "2025-12-27T13:14:17.059Z",
       "checksum": "015812bf491147c4"
     },
     "ai-evolution/problems/template.md": {
@@ -2721,7 +3117,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.210Z",
+      "lastModified": "2025-12-27T13:14:17.060Z",
       "checksum": "649311d319b11df5"
     },
     "ai-evolution/problems/index.md": {
@@ -2782,119 +3178,8 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.211Z",
+      "lastModified": "2025-12-27T13:14:17.060Z",
       "checksum": "fc43516878955504"
-    },
-    "ai-evolution/analysis/index.md": {
-      "id": "doc-ai-evolution-analysis-index-md",
-      "title": "本质分析索引",
-      "category": "ai-evolution",
-      "tags": [
-        "📊 统计概览",
-        "🔍 根因分类",
-        "📁 目录结构"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "📊 统计概览": {
-          "lineRange": [
-            6,
-            12
-          ],
-          "implementations": []
-        },
-        "🔍 根因分类": {
-          "lineRange": [
-            13,
-            25
-          ],
-          "implementations": []
-        },
-        "📁 目录结构": {
-          "lineRange": [
-            26,
-            34
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-25T15:12:33.211Z",
-      "checksum": "ff6972439a39663c"
-    },
-    "ai-evolution/evolution/prompt-evolution.md": {
-      "id": "doc-ai-evolution-evolution-prompt-evolution-md",
-      "title": "Prompt进化史",
-      "category": "ai-evolution",
-      "tags": [
-        "📈 进化时间线",
-        "🎯 未来进化方向",
-        "📊 进化指标追踪"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "📈 进化时间线": {
-          "lineRange": [
-            9,
-            24
-          ],
-          "implementations": []
-        },
-        "🎯 未来进化方向": {
-          "lineRange": [
-            25,
-            32
-          ],
-          "implementations": []
-        },
-        "📊 进化指标追踪": {
-          "lineRange": [
-            33,
-            40
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-25T15:12:33.211Z",
-      "checksum": "9d6e90bfa0099a09"
-    },
-    "ai-evolution/evolution/metrics.md": {
-      "id": "doc-ai-evolution-evolution-metrics-md",
-      "title": "进化指标追踪",
-      "category": "ai-evolution",
-      "tags": [
-        "📊 核心指标",
-        "📈 进化阶段",
-        "🎯 周报模板"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "📊 核心指标": {
-          "lineRange": [
-            9,
-            48
-          ],
-          "implementations": []
-        },
-        "📈 进化阶段": {
-          "lineRange": [
-            49,
-            69
-          ],
-          "implementations": []
-        },
-        "🎯 周报模板": {
-          "lineRange": [
-            70,
-            88
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-25T15:12:33.211Z",
-      "checksum": "be18f5a4e28ef074"
     },
     "ai-evolution/solutions/prompt-patterns/错误处理模式.md": {
       "id": "doc-ai-evolution-solutions-prompt-patterns-错误处理模式-md",
@@ -2978,7 +3263,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.211Z",
+      "lastModified": "2025-12-27T13:14:17.060Z",
       "checksum": "922b932cc3bb9e58"
     },
     "ai-evolution/solutions/prompt-patterns/任务分解模式.md": {
@@ -3039,7 +3324,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.211Z",
+      "lastModified": "2025-12-27T13:14:17.060Z",
       "checksum": "c4dc82cfe7d976da"
     },
     "ai-evolution/solutions/prompt-patterns/代码审查模式.md": {
@@ -3084,7 +3369,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.211Z",
+      "lastModified": "2025-12-27T13:14:17.060Z",
       "checksum": "8b7a6ee12ad3a352"
     },
     "ai-evolution/solutions/prompt-patterns/index.md": {
@@ -3129,7 +3414,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.212Z",
+      "lastModified": "2025-12-27T13:14:17.061Z",
       "checksum": "664fa683ab2f4e13"
     },
     "ai-evolution/solutions/prompt-patterns/context-提供模式.md": {
@@ -3228,124 +3513,8 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.212Z",
+      "lastModified": "2025-12-27T13:14:17.061Z",
       "checksum": "3258f8a7967e280b"
-    },
-    "ai-evolution/solutions/best-practices/问题诊断技巧.md": {
-      "id": "doc-ai-evolution-solutions-best-practices-问题诊断技巧-md",
-      "title": "[BP-002] 问题诊断技巧",
-      "category": "ai-evolution",
-      "tags": [
-        "🔍 诊断流程",
-        "💡 快速修复技巧"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "🔍 诊断流程": {
-          "lineRange": [
-            8,
-            27
-          ],
-          "implementations": []
-        },
-        "💡 快速修复技巧": {
-          "lineRange": [
-            28,
-            37
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-25T15:12:33.212Z",
-      "checksum": "64c0c19f25e087f3"
-    },
-    "ai-evolution/solutions/best-practices/进化式开发.md": {
-      "id": "doc-ai-evolution-solutions-best-practices-进化式开发-md",
-      "title": "[BP-003] 进化式开发",
-      "category": "ai-evolution",
-      "tags": [
-        "🔄 进化循环",
-        "📊 进化指标",
-        "💡 持续改进建议"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "🔄 进化循环": {
-          "lineRange": [
-            8,
-            17
-          ],
-          "implementations": []
-        },
-        "📊 进化指标": {
-          "lineRange": [
-            18,
-            36
-          ],
-          "implementations": []
-        },
-        "💡 持续改进建议": {
-          "lineRange": [
-            37,
-            46
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-25T15:12:33.212Z",
-      "checksum": "9fb57a1fedafab5b"
-    },
-    "ai-evolution/solutions/best-practices/与AI协作流程.md": {
-      "id": "doc-ai-evolution-solutions-best-practices-与AI协作流程-md",
-      "title": "[BP-001] 与AI协作流程",
-      "category": "ai-evolution",
-      "tags": [
-        "🔄 完整流程",
-        "💡 关键原则"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "🔄 完整流程": {
-          "lineRange": [
-            8,
-            36
-          ],
-          "implementations": []
-        },
-        "💡 关键原则": {
-          "lineRange": [
-            37,
-            47
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-25T15:12:33.212Z",
-      "checksum": "a49538a9688b1b2a"
-    },
-    "ai-evolution/solutions/best-practices/index.md": {
-      "id": "doc-ai-evolution-solutions-best-practices-index-md",
-      "title": "最佳实践库",
-      "category": "ai-evolution",
-      "tags": [
-        "📚 实践列表"
-      ],
-      "relatedDocs": [],
-      "implementedIn": [],
-      "sections": {
-        "📚 实践列表": {
-          "lineRange": [
-            6,
-            16
-          ],
-          "implementations": []
-        }
-      },
-      "lastModified": "2025-12-25T15:12:33.212Z",
-      "checksum": "b71f4d34bc002428"
     },
     "ai-evolution/solutions/context-patterns/依赖关系图.md": {
       "id": "doc-ai-evolution-solutions-context-patterns-依赖关系图-md",
@@ -3373,7 +3542,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.212Z",
+      "lastModified": "2025-12-27T13:14:17.061Z",
       "checksum": "9ca62ebd012fd142"
     },
     "ai-evolution/solutions/context-patterns/代码结构说明.md": {
@@ -3402,7 +3571,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.212Z",
+      "lastModified": "2025-12-27T13:14:17.061Z",
       "checksum": "36b3a94e1ac71c71"
     },
     "ai-evolution/solutions/context-patterns/业务规则提供.md": {
@@ -3441,7 +3610,7 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.212Z",
+      "lastModified": "2025-12-27T13:14:17.061Z",
       "checksum": "2ab467f763caf283"
     },
     "ai-evolution/solutions/context-patterns/index.md": {
@@ -3462,8 +3631,235 @@
           "implementations": []
         }
       },
-      "lastModified": "2025-12-25T15:12:33.212Z",
+      "lastModified": "2025-12-27T13:14:17.061Z",
       "checksum": "ab86c7a0f0a111a5"
+    },
+    "ai-evolution/analysis/index.md": {
+      "id": "doc-ai-evolution-analysis-index-md",
+      "title": "本质分析索引",
+      "category": "ai-evolution",
+      "tags": [
+        "📊 统计概览",
+        "🔍 根因分类",
+        "📁 目录结构"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "📊 统计概览": {
+          "lineRange": [
+            6,
+            12
+          ],
+          "implementations": []
+        },
+        "🔍 根因分类": {
+          "lineRange": [
+            13,
+            25
+          ],
+          "implementations": []
+        },
+        "📁 目录结构": {
+          "lineRange": [
+            26,
+            34
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.061Z",
+      "checksum": "ff6972439a39663c"
+    },
+    "ai-evolution/solutions/best-practices/问题诊断技巧.md": {
+      "id": "doc-ai-evolution-solutions-best-practices-问题诊断技巧-md",
+      "title": "[BP-002] 问题诊断技巧",
+      "category": "ai-evolution",
+      "tags": [
+        "🔍 诊断流程",
+        "💡 快速修复技巧"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "🔍 诊断流程": {
+          "lineRange": [
+            8,
+            27
+          ],
+          "implementations": []
+        },
+        "💡 快速修复技巧": {
+          "lineRange": [
+            28,
+            37
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.061Z",
+      "checksum": "64c0c19f25e087f3"
+    },
+    "ai-evolution/solutions/best-practices/进化式开发.md": {
+      "id": "doc-ai-evolution-solutions-best-practices-进化式开发-md",
+      "title": "[BP-003] 进化式开发",
+      "category": "ai-evolution",
+      "tags": [
+        "🔄 进化循环",
+        "📊 进化指标",
+        "💡 持续改进建议"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "🔄 进化循环": {
+          "lineRange": [
+            8,
+            17
+          ],
+          "implementations": []
+        },
+        "📊 进化指标": {
+          "lineRange": [
+            18,
+            36
+          ],
+          "implementations": []
+        },
+        "💡 持续改进建议": {
+          "lineRange": [
+            37,
+            46
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.061Z",
+      "checksum": "9fb57a1fedafab5b"
+    },
+    "ai-evolution/solutions/best-practices/与AI协作流程.md": {
+      "id": "doc-ai-evolution-solutions-best-practices-与AI协作流程-md",
+      "title": "[BP-001] 与AI协作流程",
+      "category": "ai-evolution",
+      "tags": [
+        "🔄 完整流程",
+        "💡 关键原则"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "🔄 完整流程": {
+          "lineRange": [
+            8,
+            36
+          ],
+          "implementations": []
+        },
+        "💡 关键原则": {
+          "lineRange": [
+            37,
+            47
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.061Z",
+      "checksum": "a49538a9688b1b2a"
+    },
+    "ai-evolution/solutions/best-practices/index.md": {
+      "id": "doc-ai-evolution-solutions-best-practices-index-md",
+      "title": "最佳实践库",
+      "category": "ai-evolution",
+      "tags": [
+        "📚 实践列表"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "📚 实践列表": {
+          "lineRange": [
+            6,
+            16
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.061Z",
+      "checksum": "b71f4d34bc002428"
+    },
+    "ai-evolution/evolution/prompt-evolution.md": {
+      "id": "doc-ai-evolution-evolution-prompt-evolution-md",
+      "title": "Prompt进化史",
+      "category": "ai-evolution",
+      "tags": [
+        "📈 进化时间线",
+        "🎯 未来进化方向",
+        "📊 进化指标追踪"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "📈 进化时间线": {
+          "lineRange": [
+            9,
+            24
+          ],
+          "implementations": []
+        },
+        "🎯 未来进化方向": {
+          "lineRange": [
+            25,
+            32
+          ],
+          "implementations": []
+        },
+        "📊 进化指标追踪": {
+          "lineRange": [
+            33,
+            40
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.062Z",
+      "checksum": "9d6e90bfa0099a09"
+    },
+    "ai-evolution/evolution/metrics.md": {
+      "id": "doc-ai-evolution-evolution-metrics-md",
+      "title": "进化指标追踪",
+      "category": "ai-evolution",
+      "tags": [
+        "📊 核心指标",
+        "📈 进化阶段",
+        "🎯 周报模板"
+      ],
+      "relatedDocs": [],
+      "implementedIn": [],
+      "sections": {
+        "📊 核心指标": {
+          "lineRange": [
+            9,
+            48
+          ],
+          "implementations": []
+        },
+        "📈 进化阶段": {
+          "lineRange": [
+            49,
+            69
+          ],
+          "implementations": []
+        },
+        "🎯 周报模板": {
+          "lineRange": [
+            70,
+            88
+          ],
+          "implementations": []
+        }
+      },
+      "lastModified": "2025-12-27T13:14:17.062Z",
+      "checksum": "be18f5a4e28ef074"
     }
   }
 }

@@ -8,6 +8,8 @@ import type { WarningLevel } from '../QuarterlyProportionChart.types';
 
 /**
  * 默认颜色配置
+ *
+ * @doc docs/design/全局设计规范.md:106-119
  */
 export const DEFAULT_COLORS = {
   // 目标柱颜色
@@ -32,6 +34,15 @@ export const DEFAULT_COLORS = {
   warning: {
     orange: '#ffc000',
     red: '#d32f2f',
+  },
+  // 年度对比数据颜色（2025-12-27新增）
+  // 渐变色序列：灰→蓝连续渐变，体现时间推进和确定性层次
+  yearlyComparison: {
+    actual2025: '#BDC3C7',      // 2025年实际（浅灰色，历史基线）
+    actual2026: '#7FB3D5',      // 2026年实际（中蓝灰，当期数据）
+    target2026: '#B0D8EF',      // 2026年目标（浅蓝色，计划目标）
+    planned2026: '#E8F4FD',     // 2026年规划（极浅蓝，预测规划）
+    planned2026Border: '#B0D8EF', // 2026年规划边框
   },
 } as const;
 
@@ -328,4 +339,53 @@ export function generatePalette(baseColor: string, steps: number = 5): string[] 
   }
 
   return palette;
+}
+
+/**
+ * 获取年度对比数据颜色
+ *
+ * @doc docs/design/全局设计规范.md:106-119
+ *
+ * @param dataType - 数据类型
+ * @returns 颜色配置对象
+ *
+ * @example
+ * getYearlyComparisonColor('actual2025') // { fill: '#BDC3C7', border: 'transparent', borderWidth: 0 }
+ * getYearlyComparisonColor('planned2026') // { fill: '#E8F4FD', border: '#B0D8EF', borderWidth: 2 }
+ */
+export function getYearlyComparisonColor(
+  dataType: 'actual2025' | 'actual2026' | 'target2026' | 'planned2026'
+): {
+  fill: string;
+  border: string;
+  borderWidth: number;
+} {
+  const colors = DEFAULT_COLORS.yearlyComparison;
+
+  switch (dataType) {
+    case 'actual2025':
+      return {
+        fill: colors.actual2025,
+        border: 'transparent',
+        borderWidth: 0,
+      };
+    case 'actual2026':
+      return {
+        fill: colors.actual2026,
+        border: 'transparent',
+        borderWidth: 0,
+      };
+    case 'target2026':
+      return {
+        fill: colors.target2026,
+        border: 'transparent',
+        borderWidth: 0,
+      };
+    case 'planned2026':
+      return {
+        fill: colors.planned2026,
+        border: colors.planned2026Border,
+        borderWidth: 2,
+      };
+  }
 }

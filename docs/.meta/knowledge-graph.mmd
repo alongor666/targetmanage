@@ -3,16 +3,21 @@ graph TB
   doc-实施规划-md["Untitled"]
   doc-agent-md["🤖 文档协作指引（Agent）"]
   doc-README-md["📚 川分目标管理 - 文档中心"]
+  doc-troubleshooting-common-issues-md["常见问题排查指南"]
   doc-reference-术语词典-md["📚 术语词典"]
   doc-reference-文档索引-md["📋 文档索引"]
   doc-features-SortButtonGroup使用指南-md["排序按钮组件使用指南"]
   doc-development-项目导入指南-md["数据导入说明（JSON/CSV）"]
   doc-development-质量检查清单-md["对账校验清单（上线前必过）"]
   doc-development-开发指南-md["💻 开发指南"]
+  doc-development-echarts-usage-examples-md["ECharts 配置使用示例"]
+  doc-development-code-examples-md["代码示例与模式"]
+  doc-development-UI组件使用指南-md["UI组件使用指南"]
   doc-development-UI开发指南-md["2026 目标管理可视化 — 项目开发文档（UI 端结构与构建）"]
   doc-design-设计系统快速参考-md["设计系统 - 快速参考手册"]
   doc-design-设计实现指南-md["⚡ 设计实现指南"]
   doc-design-组件设计规范-md["🧩 组件设计规范"]
+  doc-design-字体系统速查-md["字体系统快速参考"]
   doc-design-全局设计规范-md["全局设计规范 - 快速参考手册"]
   doc-components-组件索引-md["📦 组件索引"]
   doc-changelog-表格视图功能-md["表格视图功能更新"]
@@ -31,70 +36,105 @@ graph TB
   doc-ai-evolution-solutions-index-md["解决方案索引"]
   doc-ai-evolution-problems-template-md["[问题编号] - [问题简短标题]"]
   doc-ai-evolution-problems-index-md["问题记录索引"]
-  doc-ai-evolution-analysis-index-md["本质分析索引"]
-  doc-ai-evolution-evolution-prompt-evolution-md["Prompt进化史"]
-  doc-ai-evolution-evolution-metrics-md["进化指标追踪"]
   doc-ai-evolution-solutions-prompt-patterns-错误处理模式-md["[P-003] 错误处理模式"]
   doc-ai-evolution-solutions-prompt-patterns-任务分解模式-md["[P-002] 任务分解模式"]
   doc-ai-evolution-solutions-prompt-patterns-代码审查模式-md["[P-004] 代码审查模式"]
   doc-ai-evolution-solutions-prompt-patterns-index-md["Prompt模式库"]
   doc-ai-evolution-solutions-prompt-patterns-context-提供模式-md["[P-001] Context提供模式"]
-  doc-ai-evolution-solutions-best-practices-问题诊断技巧-md["[BP-002] 问题诊断技巧"]
-  doc-ai-evolution-solutions-best-practices-进化式开发-md["[BP-003] 进化式开发"]
-  doc-ai-evolution-solutions-best-practices-与AI协作流程-md["[BP-001] 与AI协作流程"]
-  doc-ai-evolution-solutions-best-practices-index-md["最佳实践库"]
   doc-ai-evolution-solutions-context-patterns-依赖关系图-md["[C-003] 依赖关系图"]
   doc-ai-evolution-solutions-context-patterns-代码结构说明-md["[C-002] 代码结构说明"]
   doc-ai-evolution-solutions-context-patterns-业务规则提供-md["[C-001] 业务规则提供"]
   doc-ai-evolution-solutions-context-patterns-index-md["Context模式库"]
+  doc-ai-evolution-analysis-index-md["本质分析索引"]
+  doc-ai-evolution-solutions-best-practices-问题诊断技巧-md["[BP-002] 问题诊断技巧"]
+  doc-ai-evolution-solutions-best-practices-进化式开发-md["[BP-003] 进化式开发"]
+  doc-ai-evolution-solutions-best-practices-与AI协作流程-md["[BP-001] 与AI协作流程"]
+  doc-ai-evolution-solutions-best-practices-index-md["最佳实践库"]
+  doc-ai-evolution-evolution-prompt-evolution-md["Prompt进化史"]
+  doc-ai-evolution-evolution-metrics-md["进化指标追踪"]
   code-styles-tokens-ts("styles/tokens.ts")
-  code-services-storage-ts("services/storage.ts")
-  code-services-loaders-ts("services/loaders.ts")
-  code-schemas-types-ts("schemas/types.ts")
-  code-schemas-schema-ts("schemas/schema.ts")
+  code-styles-design-tokens-v2-ts("styles/design-tokens-v2.ts")
   code-lib-utils-ts("lib/utils.ts")
   code-lib-typography-ts("lib/typography.ts")
   code-lib-sorting-ts("lib/sorting.ts")
   code-lib-paths-ts("lib/paths.ts")
+  code-lib-minion-config-ts("lib/minion-config.ts")
+  code-lib-minion-client-ts("lib/minion-client.ts")
+  code-lib-echarts-utils-ts("lib/echarts-utils.ts")
   code-lib-chart-title-ts("lib/chart-title.ts")
+  code-config-thresholdRules-ts("config/thresholdRules.ts")
+  code-config-progressWeights-ts("config/progressWeights.ts")
+  code-config-organizationModes-ts("config/organizationModes.ts")
+  code-schemas-types-ts("schemas/types.ts")
+  code-schemas-schema-ts("schemas/schema.ts")
+  code-app-page-tsx("app/page.tsx")
+  code-app-layout-tsx("app/layout.tsx")
+  code-services-storage-ts("services/storage.ts")
+  code-services-loaders-ts("services/loaders.ts")
   code-domain-validate-ts("domain/validate.ts")
   code-domain-time-ts("domain/time.ts")
+  code-domain-plannedActuals-ts("domain/plannedActuals.ts")
   code-domain-headquarters-ts("domain/headquarters.ts")
   code-domain-growth-ts("domain/growth.ts")
   code-domain-earnedPremium-ts("domain/earnedPremium.ts")
   code-domain-allocation-ts("domain/allocation.ts")
   code-domain-aggregate-ts("domain/aggregate.ts")
   code-domain-achievement-ts("domain/achievement.ts")
-  code-config-thresholdRules-ts("config/thresholdRules.ts")
-  code-config-progressWeights-ts("config/progressWeights.ts")
-  code-config-organizationModes-ts("config/organizationModes.ts")
-  code-app-page-tsx("app/page.tsx")
-  code-app-layout-tsx("app/layout.tsx")
-  code-components-layout-Section-tsx("components/layout/Section.tsx")
-  code-components-filters-FilterSelector-tsx("components/filters/FilterSelector.tsx")
-  code-components-feedback-LoadingState-tsx("components/feedback/LoadingState.tsx")
-  code-components-feedback-EmptyState-tsx("components/feedback/EmptyState.tsx")
-  code-components-kpi-KpiCard-tsx("components/kpi/KpiCard.tsx")
-  code-components-data-DataTable-tsx("components/data/DataTable.tsx")
-  code-components-system-ColorSystemHydrator-tsx("components/system/ColorSystemHydrator.tsx")
-  code-components-charts-QuarterlyChartLegend-tsx("components/charts/QuarterlyChartLegend.tsx")
-  code-components-charts-ChartContainer-tsx("components/charts/ChartContainer.tsx")
-  code-components-config-ThresholdConfig-tsx("components/config/ThresholdConfig.tsx")
-  code-app-orgs-page-tsx("app/orgs/page.tsx")
-  code-app-rules-page-tsx("app/rules/page.tsx")
-  code-app-import-page-tsx("app/import/page.tsx")
-  code-app-design-system-page-tsx("app/design-system/page.tsx")
-  code-app-earned-premium-page-tsx("app/earned-premium/page.tsx")
-  code-app-data-page-tsx("app/data/page.tsx")
-  code-app-universal-chart-test-page-tsx("app/universal-chart-test/page.tsx")
+  code-lib-skill-loader-types-ts("lib/skill-loader/types.ts")
+  code-lib-skill-loader-registry-ts("lib/skill-loader/registry.ts")
+  code-lib-skill-loader-loader-ts("lib/skill-loader/loader.ts")
+  code-lib-skill-loader-index-ts("lib/skill-loader/index.ts")
+  code-lib-skill-loader-hooks-ts("lib/skill-loader/hooks.ts")
+  code-lib-skill-loader-executor-ts("lib/skill-loader/executor.ts")
   code-components-ui-index-ts("components/ui/index.ts")
   code-components-ui-SortButtonGroup-tsx("components/ui/SortButtonGroup.tsx")
   code-components-ui-Badge-tsx("components/ui/Badge.tsx")
+  code-components-v2-index-ts("components/v2/index.ts")
+  code-components-v2-Navbar-tsx("components/v2/Navbar.tsx")
+  code-components-v2-KpiCard-tsx("components/v2/KpiCard.tsx")
+  code-components-v2-FilterTag-tsx("components/v2/FilterTag.tsx")
+  code-components-v2-Dropdown-tsx("components/v2/Dropdown.tsx")
+  code-components-v2-Card-tsx("components/v2/Card.tsx")
+  code-components-v2-Button-tsx("components/v2/Button.tsx")
+  code-components-kpi-KpiCard-tsx("components/kpi/KpiCard.tsx")
+  code-components-system-ColorSystemHydrator-tsx("components/system/ColorSystemHydrator.tsx")
+  code-components-filters-FilterTag-tsx("components/filters/FilterTag.tsx")
+  code-components-filters-FilterSelector-tsx("components/filters/FilterSelector.tsx")
+  code-components-filters-FilterDropdown-tsx("components/filters/FilterDropdown.tsx")
+  code-components-layout-Section-tsx("components/layout/Section.tsx")
+  code-components-feedback-LoadingState-tsx("components/feedback/LoadingState.tsx")
+  code-components-feedback-EmptyState-tsx("components/feedback/EmptyState.tsx")
+  code-components-config-ThresholdConfig-tsx("components/config/ThresholdConfig.tsx")
+  code-components-data-DataTable-tsx("components/data/DataTable.tsx")
+  code-app-universal-chart-test-page-tsx("app/universal-chart-test/page.tsx")
+  code-components-charts-QuarterlyChartLegend-tsx("components/charts/QuarterlyChartLegend.tsx")
+  code-components-charts-ChartContainer-tsx("components/charts/ChartContainer.tsx")
+  code-app-orgs-page-tsx("app/orgs/page.tsx")
+  code-app-rules-page-tsx("app/rules/page.tsx")
+  code-app-import-page-tsx("app/import/page.tsx")
+  code-app-skills-demo-page-tsx("app/skills-demo/page.tsx")
+  code-app-earned-premium-page-tsx("app/earned-premium/page.tsx")
+  code-app-design-system-page-tsx("app/design-system/page.tsx")
+  code-app-data-page-tsx("app/data/page.tsx")
   code-app-color-system-page-tsx("app/color-system/page.tsx")
+  code-app-demo-page-tsx("app/demo/page.tsx")
+  code-app-demo-v2-page-tsx("app/demo-v2/page.tsx")
+  code-components-ui-Modal-index-ts("components/ui/Modal/index.ts")
+  code-components-ui-Modal-Modal-tsx("components/ui/Modal/Modal.tsx")
+  code-components-ui-Modal-Modal-test-tsx("components/ui/Modal/Modal.test.tsx")
+  code-components-ui-Input-index-ts("components/ui/Input/index.ts")
+  code-components-ui-Input-Input-tsx("components/ui/Input/Input.tsx")
+  code-components-ui-Input-Input-test-tsx("components/ui/Input/Input.test.tsx")
+  code-components-ui-Button-index-ts("components/ui/Button/index.ts")
+  code-components-ui-Button-Button-tsx("components/ui/Button/Button.tsx")
+  code-components-ui-Button-Button-test-tsx("components/ui/Button/Button.test.tsx")
+  code-components-ui-Card-index-ts("components/ui/Card/index.ts")
+  code-components-ui-Card-Card-tsx("components/ui/Card/Card.tsx")
+  code-components-ui-Card-Card-test-tsx("components/ui/Card/Card.test.tsx")
+  code-app-test-quarterly-chart-page-tsx("app/test/quarterly-chart/page.tsx")
   code-components-charts-UniversalChart-index-ts("components/charts/UniversalChart/index.ts")
   code-components-charts-UniversalChart-UniversalChart-types-ts("components/charts/UniversalChart/UniversalChart.types.ts")
   code-components-charts-UniversalChart-UniversalChart-tsx("components/charts/UniversalChart/UniversalChart.tsx")
-  code-app-test-quarterly-chart-page-tsx("app/test/quarterly-chart/page.tsx")
   code-components-charts-QuarterlyProportionChart-index-ts("components/charts/QuarterlyProportionChart/index.ts")
   code-components-charts-QuarterlyProportionChart-QuarterlyProportionChart-types-ts("components/charts/QuarterlyProportionChart/QuarterlyProportionChart.types.ts")
   code-components-charts-QuarterlyProportionChart-QuarterlyProportionChart-tsx("components/charts/QuarterlyProportionChart/QuarterlyProportionChart.tsx")
@@ -105,31 +145,35 @@ graph TB
   code-components-charts-UniversalChart-hooks-useUniversalData-ts("components/charts/UniversalChart/hooks/useUniversalData.ts")
   code-components-charts-UniversalChart-hooks-useUniversalConfig-ts("components/charts/UniversalChart/hooks/useUniversalConfig.ts")
   code-components-charts-UniversalChart-hooks-useChartInteractions-ts("components/charts/UniversalChart/hooks/useChartInteractions.ts")
-  code-components-charts-UniversalChart-components-TableView-tsx("components/charts/UniversalChart/components/TableView.tsx")
-  code-components-charts-UniversalChart-configs-quarterlyShare-config-ts("components/charts/UniversalChart/configs/quarterlyShare.config.ts")
-  code-components-charts-UniversalChart-configs-quarterlyPremium-config-ts("components/charts/UniversalChart/configs/quarterlyPremium.config.ts")
-  code-components-charts-UniversalChart-configs-orgPremium-config-ts("components/charts/UniversalChart/configs/orgPremium.config.ts")
-  code-components-charts-UniversalChart-configs-monthlyShare-config-ts("components/charts/UniversalChart/configs/monthlyShare.config.ts")
-  code-components-charts-UniversalChart-configs-monthlyPremium-config-ts("components/charts/UniversalChart/configs/monthlyPremium.config.ts")
-  code-components-charts-UniversalChart-configs-index-ts("components/charts/UniversalChart/configs/index.ts")
-  code-components-charts-UniversalChart-configs-hqPrediction-config-ts("components/charts/UniversalChart/configs/hqPrediction.config.ts")
   code-components-charts-UniversalChart-adapters-shared-adapter-ts("components/charts/UniversalChart/adapters/shared.adapter.ts")
+  code-components-charts-UniversalChart-adapters-quarterlyAchievement-adapter-ts("components/charts/UniversalChart/adapters/quarterlyAchievement.adapter.ts")
   code-components-charts-UniversalChart-adapters-quarterly-adapter-ts("components/charts/UniversalChart/adapters/quarterly.adapter.ts")
   code-components-charts-UniversalChart-adapters-organization-adapter-ts("components/charts/UniversalChart/adapters/organization.adapter.ts")
+  code-components-charts-UniversalChart-adapters-monthlyAchievement-adapter-ts("components/charts/UniversalChart/adapters/monthlyAchievement.adapter.ts")
   code-components-charts-UniversalChart-adapters-monthly-adapter-ts("components/charts/UniversalChart/adapters/monthly.adapter.ts")
   code-components-charts-UniversalChart-adapters-index-ts("components/charts/UniversalChart/adapters/index.ts")
   code-components-charts-UniversalChart-adapters-hqPrediction-adapter-ts("components/charts/UniversalChart/adapters/hqPrediction.adapter.ts")
+  code-components-charts-UniversalChart-configs-quarterlyShare-config-ts("components/charts/UniversalChart/configs/quarterlyShare.config.ts")
+  code-components-charts-UniversalChart-configs-quarterlyPremium-config-ts("components/charts/UniversalChart/configs/quarterlyPremium.config.ts")
+  code-components-charts-UniversalChart-configs-quarterlyAchievement-config-ts("components/charts/UniversalChart/configs/quarterlyAchievement.config.ts")
+  code-components-charts-UniversalChart-configs-orgPremium-config-ts("components/charts/UniversalChart/configs/orgPremium.config.ts")
+  code-components-charts-UniversalChart-configs-monthlyShare-config-ts("components/charts/UniversalChart/configs/monthlyShare.config.ts")
+  code-components-charts-UniversalChart-configs-monthlyPremium-config-ts("components/charts/UniversalChart/configs/monthlyPremium.config.ts")
+  code-components-charts-UniversalChart-configs-monthlyAchievement-config-ts("components/charts/UniversalChart/configs/monthlyAchievement.config.ts")
+  code-components-charts-UniversalChart-configs-index-ts("components/charts/UniversalChart/configs/index.ts")
+  code-components-charts-UniversalChart-configs-hqPrediction-config-ts("components/charts/UniversalChart/configs/hqPrediction.config.ts")
+  code-components-charts-UniversalChart-components-TableView-tsx("components/charts/UniversalChart/components/TableView.tsx")
   code-components-charts-QuarterlyProportionChart-utils-index-ts("components/charts/QuarterlyProportionChart/utils/index.ts")
   code-components-charts-QuarterlyProportionChart-utils-formatter-ts("components/charts/QuarterlyProportionChart/utils/formatter.ts")
   code-components-charts-QuarterlyProportionChart-utils-export-ts("components/charts/QuarterlyProportionChart/utils/export.ts")
   code-components-charts-QuarterlyProportionChart-utils-colorUtils-ts("components/charts/QuarterlyProportionChart/utils/colorUtils.ts")
+  code-components-charts-QuarterlyProportionChart-hooks-useChartData-ts("components/charts/QuarterlyProportionChart/hooks/useChartData.ts")
+  code-components-charts-QuarterlyProportionChart-hooks-useChartConfig-ts("components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts")
   code-components-charts-QuarterlyProportionChart-components-index-ts("components/charts/QuarterlyProportionChart/components/index.ts")
   code-components-charts-QuarterlyProportionChart-components-WarningBadge-tsx("components/charts/QuarterlyProportionChart/components/WarningBadge.tsx")
   code-components-charts-QuarterlyProportionChart-components-ViewSwitcher-tsx("components/charts/QuarterlyProportionChart/components/ViewSwitcher.tsx")
   code-components-charts-QuarterlyProportionChart-components-DetailPanel-tsx("components/charts/QuarterlyProportionChart/components/DetailPanel.tsx")
   code-components-charts-QuarterlyProportionChart-components-ChartHeader-tsx("components/charts/QuarterlyProportionChart/components/ChartHeader.tsx")
-  code-components-charts-QuarterlyProportionChart-hooks-useChartData-ts("components/charts/QuarterlyProportionChart/hooks/useChartData.ts")
-  code-components-charts-QuarterlyProportionChart-hooks-useChartConfig-ts("components/charts/QuarterlyProportionChart/hooks/useChartConfig.ts")
   doc-通用图表组件复用方案-md ==> code-components-charts-QuarterlyProportionChart-QuarterlyProportionChart-types-ts
   doc-通用图表组件复用方案-md ==> code-components-charts-QuarterlyProportionChart-hooks-useChartData-ts
   doc-通用图表组件复用方案-md ==> code-components-charts-QuarterlyProportionChart-hooks-useChartConfig-ts
@@ -146,9 +190,14 @@ graph TB
   doc-实施规划-md ==> code-schemas-schema-ts
   doc-features-SortButtonGroup使用指南-md ==> code-lib-sorting-ts
   doc-features-SortButtonGroup使用指南-md ==> code-components-ui-index-ts
+  doc-development-echarts-usage-examples-md ==> code-lib-echarts-utils-ts
+  doc-development-echarts-usage-examples-md ==> code-styles-tokens-ts
+  doc-development-UI组件使用指南-md ==> code-lib-echarts-utils-ts
+  doc-development-UI组件使用指南-md ==> code-styles-tokens-ts
   doc-design-设计系统快速参考-md ==> code-config-organizationModes-ts
   doc-design-设计系统快速参考-md ==> code-lib-utils-ts
   doc-design-组件设计规范-md ==> code-lib-sorting-ts
+  doc-design-字体系统速查-md ==> code-lib-typography-ts
   doc-components-组件索引-md ==> code-lib-sorting-ts
   doc-changelog-表格视图功能-md ==> code-components-charts-UniversalChart-UniversalChart-types-ts
   doc-changelog-表格视图功能-md ==> code-components-charts-QuarterlyProportionChart-QuarterlyProportionChart-types-ts
