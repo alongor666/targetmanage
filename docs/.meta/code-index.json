@@ -39,7 +39,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "formatRate": {
           "lineRange": [
@@ -48,7 +48,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getStatusColor": {
           "lineRange": [
@@ -57,7 +57,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getAchievementStatus": {
           "lineRange": [
@@ -66,7 +66,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getGrowthStatus": {
           "lineRange": [
@@ -75,7 +75,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getStatusColorByVariant": {
           "lineRange": [
@@ -84,7 +84,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getKpiCardColors": {
           "lineRange": [
@@ -93,7 +93,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getBadgeColors": {
           "lineRange": [
@@ -102,7 +102,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getTargetBarColors": {
           "lineRange": [
@@ -111,7 +111,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         },
         "getGrowthPointColor": {
           "lineRange": [
@@ -120,7 +120,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.316Z"
         }
       }
     },
@@ -159,7 +159,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.317Z"
         },
         "getStatusBlockColors": {
           "lineRange": [
@@ -168,7 +168,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.317Z"
         },
         "generateResponsiveClass": {
           "lineRange": [
@@ -177,7 +177,758 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.069Z"
+          "lastModified": "2025-12-27T13:51:00.317Z"
+        }
+      }
+    },
+    "schemas/types.ts": {
+      "id": "code-schemas-types-ts",
+      "type": "schema",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "schemas/schema.ts": {
+      "id": "code-schemas-schema-ts",
+      "type": "schema",
+      "exports": [
+        "GroupCodeSchema",
+        "ProductCodeSchema",
+        "OrgSchema",
+        "AnnualTargetRecordSchema",
+        "AnnualActualRecordSchema",
+        "MonthlyActualRecordSchema",
+        "AllocationRuleSchema",
+        "ThresholdRuleSchema",
+        "HeadquartersTargetRecordSchema",
+        "validateWeights",
+        "validateThresholds"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "validateWeights": {
+          "lineRange": [
+            85,
+            91
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.317Z"
+        },
+        "validateThresholds": {
+          "lineRange": [
+            94,
+            113
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.317Z"
+        }
+      }
+    },
+    "config/thresholdRules.ts": {
+      "id": "code-config-thresholdRules-ts",
+      "type": "ui-component",
+      "exports": [
+        "DEFAULT_THRESHOLD_RULES",
+        "getAchievementStatus",
+        "getGrowthStatus"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types"
+      ],
+      "functions": {
+        "getAchievementStatus": {
+          "lineRange": [
+            51,
+            59
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        },
+        "getGrowthStatus": {
+          "lineRange": [
+            67,
+            75
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        }
+      }
+    },
+    "config/progressWeights.ts": {
+      "id": "code-config-progressWeights-ts",
+      "type": "ui-component",
+      "exports": [
+        "DEFAULT_MONTHLY_WEIGHTS",
+        "DEFAULT_QUARTERLY_WEIGHTS",
+        "validateWeightsSum",
+        "calculateQuarterlyWeights"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "validateWeightsSum": {
+          "lineRange": [
+            34,
+            37
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        },
+        "calculateQuarterlyWeights": {
+          "lineRange": [
+            44,
+            56
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        }
+      }
+    },
+    "config/organizationModes.ts": {
+      "id": "code-config-organizationModes-ts",
+      "type": "ui-component",
+      "exports": [
+        "organizationModes",
+        "detectOrganizationMode",
+        "generatePageTitle"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "detectOrganizationMode": {
+          "lineRange": [
+            101,
+            156
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        },
+        "generatePageTitle": {
+          "lineRange": [
+            198,
+            212
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        }
+      }
+    },
+    "services/storage.ts": {
+      "id": "code-services-storage-ts",
+      "type": "service",
+      "exports": [
+        "LS_KEYS",
+        "lsGetJson",
+        "lsSetJson",
+        "lsRemove"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "lsGetJson": {
+          "lineRange": [
+            23,
+            32
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        },
+        "lsSetJson": {
+          "lineRange": [
+            39,
+            42
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        },
+        "lsRemove": {
+          "lineRange": [
+            48,
+            51
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        }
+      }
+    },
+    "services/loaders.ts": {
+      "id": "code-services-loaders-ts",
+      "type": "service",
+      "exports": [
+        "OrgsFileSchema",
+        "TargetsAnnualFileSchema",
+        "ActualsAnnualFileSchema",
+        "MonthlyActualsFileSchema",
+        "AllocationRulesFileSchema",
+        "HeadquartersTargetsFileSchema",
+        "parseMonthlyCsv"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/storage"
+      ],
+      "functions": {
+        "parseMonthlyCsv": {
+          "lineRange": [
+            118,
+            122
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        }
+      }
+    },
+    "domain/validate.ts": {
+      "id": "code-domain-validate-ts",
+      "type": "domain-logic",
+      "exports": [
+        "validateOrganizationIds",
+        "generateValidationReport",
+        "validateOrganizationCount"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md:9-10"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "validateOrganizationIds": {
+          "lineRange": [
+            21,
+            36
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:9-10"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        },
+        "generateValidationReport": {
+          "lineRange": [
+            45,
+            61
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:9-10"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        },
+        "validateOrganizationCount": {
+          "lineRange": [
+            69,
+            71
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:9-10"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.318Z"
+        }
+      }
+    },
+    "domain/time.ts": {
+      "id": "code-domain-time-ts",
+      "type": "domain-logic",
+      "exports": [
+        "monthToQuarter",
+        "linearProgressYear",
+        "weightedProgressYear",
+        "linearProgressQuarter",
+        "weightedProgressQuarter",
+        "actual2025ProgressYear",
+        "actual2025ProgressQuarter"
+      ],
+      "documentedIn": [
+        "business/目标分配规则.md:29-30",
+        "business/目标分配规则.md:31-32",
+        "business/目标分配规则.md:33-34",
+        "business/目标分配规则.md:35-36"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "monthToQuarter": {
+          "lineRange": [
+            0,
+            5
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "linearProgressYear": {
+          "lineRange": [
+            12,
+            14
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:29-30"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "weightedProgressYear": {
+          "lineRange": [
+            22,
+            26
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:31-32"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "linearProgressQuarter": {
+          "lineRange": [
+            33,
+            38
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:33-34"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "weightedProgressQuarter": {
+          "lineRange": [
+            46,
+            57
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:31-32"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "actual2025ProgressYear": {
+          "lineRange": [
+            66,
+            80
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:35-36"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "actual2025ProgressQuarter": {
+          "lineRange": [
+            89,
+            107
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:35-36"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        }
+      }
+    },
+    "domain/plannedActuals.ts": {
+      "id": "code-domain-plannedActuals-ts",
+      "type": "domain-logic",
+      "exports": [
+        "generateMonthlyPlannedActuals",
+        "filterMonthlyActuals"
+      ],
+      "documentedIn": [
+        "business/目标分配规则.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types"
+      ],
+      "functions": {
+        "generateMonthlyPlannedActuals": {
+          "lineRange": [
+            52,
+            123
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "filterMonthlyActuals": {
+          "lineRange": [
+            221,
+            229
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        }
+      }
+    },
+    "domain/headquarters.ts": {
+      "id": "code-domain-headquarters-ts",
+      "type": "domain-logic",
+      "exports": [
+        "calculateHqAchievementRate",
+        "calculateHqGap",
+        "aggregateHqTargetsByProduct",
+        "predictMonthlyHqAchievement",
+        "calculateQuarterHqAchievementRate"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types",
+        "./achievement"
+      ],
+      "functions": {
+        "calculateHqAchievementRate": {
+          "lineRange": [
+            16,
+            21
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "calculateHqGap": {
+          "lineRange": [
+            29,
+            34
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "aggregateHqTargetsByProduct": {
+          "lineRange": [
+            41,
+            53
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "predictMonthlyHqAchievement": {
+          "lineRange": [
+            62,
+            91
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        },
+        "calculateQuarterHqAchievementRate": {
+          "lineRange": [
+            99,
+            104
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.319Z"
+        }
+      }
+    },
+    "domain/growth.ts": {
+      "id": "code-domain-growth-ts",
+      "type": "domain-logic",
+      "exports": [
+        "calculateGrowthMetrics",
+        "formatGrowthRate",
+        "formatIncrement"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md:121-147"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "./achievement"
+      ],
+      "functions": {
+        "calculateGrowthMetrics": {
+          "lineRange": [
+            47,
+            48
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "formatGrowthRate": {
+          "lineRange": [
+            75,
+            78
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "formatIncrement": {
+          "lineRange": [
+            86,
+            89
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        }
+      }
+    },
+    "domain/earnedPremium.ts": {
+      "id": "code-domain-earnedPremium-ts",
+      "type": "domain-logic",
+      "exports": [
+        "getMonthDays",
+        "calculateMaturityDays",
+        "calculateAutoEarnedPremium",
+        "calculatePropertyEarnedPremium",
+        "calculateLifeEarnedPremium",
+        "calculateMaturityRate"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "./achievement"
+      ],
+      "functions": {
+        "getMonthDays": {
+          "lineRange": [
+            18,
+            20
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "calculateMaturityDays": {
+          "lineRange": [
+            29,
+            37
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "calculateAutoEarnedPremium": {
+          "lineRange": [
+            43,
+            58
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "calculatePropertyEarnedPremium": {
+          "lineRange": [
+            64,
+            71
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "calculateLifeEarnedPremium": {
+          "lineRange": [
+            77,
+            87
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "calculateMaturityRate": {
+          "lineRange": [
+            93,
+            95
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        }
+      }
+    },
+    "domain/allocation.ts": {
+      "id": "code-domain-allocation-ts",
+      "type": "domain-logic",
+      "exports": [
+        "allocateAnnualToMonthly",
+        "calculateActual2025Weights",
+        "monthlyToQuarterly",
+        "monthlyToYtd",
+        "calculateFutureTargets"
+      ],
+      "documentedIn": [
+        "business/目标分配规则.md:45"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "allocateAnnualToMonthly": {
+          "lineRange": [
+            3,
+            10
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "calculateActual2025Weights": {
+          "lineRange": [
+            13,
+            22
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "monthlyToQuarterly": {
+          "lineRange": [
+            25,
+            27
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "monthlyToYtd": {
+          "lineRange": [
+            30,
+            33
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "calculateFutureTargets": {
+          "lineRange": [
+            82,
+            146
+          ],
+          "documentation": [
+            "docs/business/目标分配规则.md:45"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        }
+      }
+    },
+    "domain/aggregate.ts": {
+      "id": "code-domain-aggregate-ts",
+      "type": "domain-logic",
+      "exports": [
+        "aggregateToGroupAndAll"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md"
+      ],
+      "usedBy": [],
+      "dependencies": [
+        "@/schemas/types"
+      ],
+      "functions": {
+        "aggregateToGroupAndAll": {
+          "lineRange": [
+            18,
+            34
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md （数据聚合相关章节）"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        }
+      }
+    },
+    "domain/achievement.ts": {
+      "id": "code-domain-achievement-ts",
+      "type": "domain-logic",
+      "exports": [
+        "safeDivide",
+        "diff",
+        "growthRate"
+      ],
+      "documentedIn": [
+        "business/指标定义规范.md:144-147",
+        "business/指标定义规范.md:121-147"
+      ],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {
+        "safeDivide": {
+          "lineRange": [
+            9,
+            12
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:144-147"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "diff": {
+          "lineRange": [
+            22,
+            24
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:121-147"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
+        },
+        "growthRate": {
+          "lineRange": [
+            34,
+            36
+          ],
+          "documentation": [
+            "docs/business/指标定义规范.md:144-147"
+          ],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.320Z"
         }
       }
     },
@@ -199,7 +950,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.070Z"
+          "lastModified": "2025-12-27T13:51:00.320Z"
         },
         "getQuarterlyStatus": {
           "lineRange": [
@@ -208,7 +959,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.070Z"
+          "lastModified": "2025-12-27T13:51:00.320Z"
         }
       }
     },
@@ -234,7 +985,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.070Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         },
         "validateFontSizes": {
           "lineRange": [
@@ -243,7 +994,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.070Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         }
       }
     },
@@ -270,7 +1021,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         },
         "reorderArrayByIndex": {
           "lineRange": [
@@ -279,7 +1030,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         },
         "createSortMapping": {
           "lineRange": [
@@ -288,7 +1039,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         },
         "safeCompare": {
           "lineRange": [
@@ -297,7 +1048,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         },
         "genericSort": {
           "lineRange": [
@@ -306,7 +1057,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         }
       }
     },
@@ -327,7 +1078,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.321Z"
         }
       }
     },
@@ -375,7 +1126,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         },
         "getStandardYAxisConfig": {
           "lineRange": [
@@ -384,7 +1135,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         },
         "getStandardGridConfig": {
           "lineRange": [
@@ -393,7 +1144,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         },
         "getStandardTooltipConfig": {
           "lineRange": [
@@ -402,7 +1153,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         },
         "getStandardLegendConfig": {
           "lineRange": [
@@ -411,7 +1162,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         },
         "createBarSeries": {
           "lineRange": [
@@ -420,7 +1171,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         },
         "createLineSeries": {
           "lineRange": [
@@ -429,7 +1180,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         }
       }
     },
@@ -450,157 +1201,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.071Z"
-        }
-      }
-    },
-    "config/thresholdRules.ts": {
-      "id": "code-config-thresholdRules-ts",
-      "type": "ui-component",
-      "exports": [
-        "DEFAULT_THRESHOLD_RULES",
-        "getAchievementStatus",
-        "getGrowthStatus"
-      ],
-      "documentedIn": [
-        "business/指标定义规范.md"
-      ],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types"
-      ],
-      "functions": {
-        "getAchievementStatus": {
-          "lineRange": [
-            51,
-            59
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
-        },
-        "getGrowthStatus": {
-          "lineRange": [
-            67,
-            75
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
-        }
-      }
-    },
-    "config/progressWeights.ts": {
-      "id": "code-config-progressWeights-ts",
-      "type": "ui-component",
-      "exports": [
-        "DEFAULT_MONTHLY_WEIGHTS",
-        "DEFAULT_QUARTERLY_WEIGHTS",
-        "validateWeightsSum",
-        "calculateQuarterlyWeights"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "validateWeightsSum": {
-          "lineRange": [
-            34,
-            37
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
-        },
-        "calculateQuarterlyWeights": {
-          "lineRange": [
-            44,
-            56
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
-        }
-      }
-    },
-    "config/organizationModes.ts": {
-      "id": "code-config-organizationModes-ts",
-      "type": "ui-component",
-      "exports": [
-        "organizationModes",
-        "detectOrganizationMode",
-        "generatePageTitle"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "detectOrganizationMode": {
-          "lineRange": [
-            101,
-            156
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
-        },
-        "generatePageTitle": {
-          "lineRange": [
-            198,
-            212
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
-        }
-      }
-    },
-    "schemas/types.ts": {
-      "id": "code-schemas-types-ts",
-      "type": "schema",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "schemas/schema.ts": {
-      "id": "code-schemas-schema-ts",
-      "type": "schema",
-      "exports": [
-        "GroupCodeSchema",
-        "ProductCodeSchema",
-        "OrgSchema",
-        "AnnualTargetRecordSchema",
-        "AnnualActualRecordSchema",
-        "MonthlyActualRecordSchema",
-        "AllocationRuleSchema",
-        "ThresholdRuleSchema",
-        "HeadquartersTargetRecordSchema",
-        "validateWeights",
-        "validateThresholds"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "validateWeights": {
-          "lineRange": [
-            85,
-            91
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
-        },
-        "validateThresholds": {
-          "lineRange": [
-            94,
-            113
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.072Z"
+          "lastModified": "2025-12-27T13:51:00.322Z"
         }
       }
     },
@@ -638,59 +1239,65 @@
       "dependencies": [],
       "functions": {}
     },
-    "services/storage.ts": {
-      "id": "code-services-storage-ts",
-      "type": "service",
+    "components/ui/index.ts": {
+      "id": "code-components-ui-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/ui/SortButtonGroup.tsx": {
+      "id": "code-components-ui-SortButtonGroup-tsx",
+      "type": "ui-component",
       "exports": [
-        "LS_KEYS",
-        "lsGetJson",
-        "lsSetJson",
-        "lsRemove"
+        "SortButtonGroup",
+        "SortPresets"
       ],
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [],
       "functions": {
-        "lsGetJson": {
+        "SortButtonGroup": {
           "lineRange": [
-            23,
-            32
+            155,
+            201
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "lsSetJson": {
-          "lineRange": [
-            39,
-            42
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "lsRemove": {
-          "lineRange": [
-            48,
-            51
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
+          "lastModified": "2025-12-27T13:51:00.323Z"
         }
       }
     },
-    "services/loaders.ts": {
-      "id": "code-services-loaders-ts",
-      "type": "service",
+    "components/ui/Badge.tsx": {
+      "id": "code-components-ui-Badge-tsx",
+      "type": "ui-component",
       "exports": [
-        "OrgsFileSchema",
-        "TargetsAnnualFileSchema",
-        "ActualsAnnualFileSchema",
-        "MonthlyActualsFileSchema",
-        "AllocationRulesFileSchema",
-        "HeadquartersTargetsFileSchema",
-        "parseMonthlyCsv"
+        "Badge"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "Badge": {
+          "lineRange": [
+            58,
+            103
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.323Z"
+        }
+      }
+    },
+    "components/system/ColorSystemHydrator.tsx": {
+      "id": "code-components-system-ColorSystemHydrator-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ColorSystemHydrator"
       ],
       "documentedIn": [],
       "usedBy": [],
@@ -698,544 +1305,429 @@
         "@/services/storage"
       ],
       "functions": {
-        "parseMonthlyCsv": {
+        "ColorSystemHydrator": {
           "lineRange": [
-            118,
-            122
+            5,
+            19
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
+          "lastModified": "2025-12-27T13:51:00.323Z"
         }
       }
     },
-    "domain/validate.ts": {
-      "id": "code-domain-validate-ts",
-      "type": "domain-logic",
-      "exports": [
-        "validateOrganizationIds",
-        "generateValidationReport",
-        "validateOrganizationCount"
-      ],
-      "documentedIn": [
-        "business/指标定义规范.md:9-10"
-      ],
+    "components/v2/index.ts": {
+      "id": "code-components-v2-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
       "usedBy": [],
       "dependencies": [],
-      "functions": {
-        "validateOrganizationIds": {
-          "lineRange": [
-            21,
-            36
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md:9-10"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "generateValidationReport": {
-          "lineRange": [
-            45,
-            61
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md:9-10"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "validateOrganizationCount": {
-          "lineRange": [
-            69,
-            71
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md:9-10"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        }
-      }
+      "functions": {}
     },
-    "domain/time.ts": {
-      "id": "code-domain-time-ts",
-      "type": "domain-logic",
+    "components/v2/Navbar.tsx": {
+      "id": "code-components-v2-Navbar-tsx",
+      "type": "ui-component",
       "exports": [
-        "monthToQuarter",
-        "linearProgressYear",
-        "weightedProgressYear",
-        "linearProgressQuarter",
-        "weightedProgressQuarter",
-        "actual2025ProgressYear",
-        "actual2025ProgressQuarter"
+        "Navbar"
       ],
-      "documentedIn": [
-        "business/目标分配规则.md:29-30",
-        "business/目标分配规则.md:31-32",
-        "business/目标分配规则.md:33-34",
-        "business/目标分配规则.md:35-36"
-      ],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "monthToQuarter": {
-          "lineRange": [
-            0,
-            5
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "linearProgressYear": {
-          "lineRange": [
-            12,
-            14
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md:29-30"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "weightedProgressYear": {
-          "lineRange": [
-            22,
-            26
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md:31-32"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "linearProgressQuarter": {
-          "lineRange": [
-            33,
-            38
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md:33-34"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "weightedProgressQuarter": {
-          "lineRange": [
-            46,
-            57
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md:31-32"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "actual2025ProgressYear": {
-          "lineRange": [
-            66,
-            80
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md:35-36"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        },
-        "actual2025ProgressQuarter": {
-          "lineRange": [
-            89,
-            107
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md:35-36"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.073Z"
-        }
-      }
-    },
-    "domain/plannedActuals.ts": {
-      "id": "code-domain-plannedActuals-ts",
-      "type": "domain-logic",
-      "exports": [
-        "generateMonthlyPlannedActuals",
-        "filterMonthlyActuals"
-      ],
-      "documentedIn": [
-        "business/目标分配规则.md"
-      ],
+      "documentedIn": [],
       "usedBy": [],
       "dependencies": [
-        "@/schemas/types"
+        "@/lib/utils",
+        "@/styles/design-tokens-v2"
       ],
       "functions": {
-        "generateMonthlyPlannedActuals": {
+        "Navbar": {
           "lineRange": [
-            52,
-            123
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "filterMonthlyActuals": {
-          "lineRange": [
-            221,
-            229
+            58,
+            130
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
+          "lastModified": "2025-12-27T13:51:00.323Z"
         }
       }
     },
-    "domain/headquarters.ts": {
-      "id": "code-domain-headquarters-ts",
-      "type": "domain-logic",
+    "components/v2/KpiCard.tsx": {
+      "id": "code-components-v2-KpiCard-tsx",
+      "type": "ui-component",
       "exports": [
-        "calculateHqAchievementRate",
-        "calculateHqGap",
-        "aggregateHqTargetsByProduct",
-        "predictMonthlyHqAchievement",
-        "calculateQuarterHqAchievementRate"
+        "KpiCard"
       ],
-      "documentedIn": [
-        "business/指标定义规范.md"
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "./Card",
+        "@/styles/design-tokens-v2"
       ],
+      "functions": {
+        "KpiCard": {
+          "lineRange": [
+            54,
+            149
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.324Z"
+        }
+      }
+    },
+    "components/v2/FilterTag.tsx": {
+      "id": "code-components-v2-FilterTag-tsx",
+      "type": "ui-component",
+      "exports": [
+        "FilterTag"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/design-tokens-v2"
+      ],
+      "functions": {
+        "FilterTag": {
+          "lineRange": [
+            36,
+            88
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.324Z"
+        }
+      }
+    },
+    "components/v2/Dropdown.tsx": {
+      "id": "code-components-v2-Dropdown-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Dropdown"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/design-tokens-v2"
+      ],
+      "functions": {
+        "Dropdown": {
+          "lineRange": [
+            63,
+            147
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.324Z"
+        }
+      }
+    },
+    "components/v2/Card.tsx": {
+      "id": "code-components-v2-Card-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Card"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/design-tokens-v2"
+      ],
+      "functions": {
+        "Card": {
+          "lineRange": [
+            44,
+            93
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.324Z"
+        }
+      }
+    },
+    "components/v2/Button.tsx": {
+      "id": "code-components-v2-Button-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Button"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/design-tokens-v2"
+      ],
+      "functions": {
+        "Button": {
+          "lineRange": [
+            44,
+            160
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.324Z"
+        }
+      }
+    },
+    "components/layout/Section.tsx": {
+      "id": "code-components-layout-Section-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Section"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "Section": {
+          "lineRange": [
+            55,
+            88
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.324Z"
+        }
+      }
+    },
+    "components/kpi/KpiCard.tsx": {
+      "id": "code-components-kpi-KpiCard-tsx",
+      "type": "ui-component",
+      "exports": [
+        "KpiCard"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/tokens"
+      ],
+      "functions": {
+        "KpiCard": {
+          "lineRange": [
+            61,
+            176
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.325Z"
+        }
+      }
+    },
+    "components/filters/FilterTag.tsx": {
+      "id": "code-components-filters-FilterTag-tsx",
+      "type": "ui-component",
+      "exports": [
+        "FilterTag"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/tokens"
+      ],
+      "functions": {
+        "FilterTag": {
+          "lineRange": [
+            47,
+            114
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.325Z"
+        }
+      }
+    },
+    "components/filters/FilterSelector.tsx": {
+      "id": "code-components-filters-FilterSelector-tsx",
+      "type": "ui-component",
+      "exports": [
+        "FilterSelector"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "FilterSelector": {
+          "lineRange": [
+            65,
+            115
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.325Z"
+        }
+      }
+    },
+    "components/filters/FilterDropdown.tsx": {
+      "id": "code-components-filters-FilterDropdown-tsx",
+      "type": "ui-component",
+      "exports": [
+        "FilterDropdown"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/tokens",
+        "@/components/ui/Button/Button",
+        "./FilterTag"
+      ],
+      "functions": {
+        "FilterDropdown": {
+          "lineRange": [
+            62,
+            293
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.325Z"
+        }
+      }
+    },
+    "components/config/ThresholdConfig.tsx": {
+      "id": "code-components-config-ThresholdConfig-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ThresholdConfig"
+      ],
+      "documentedIn": [],
       "usedBy": [],
       "dependencies": [
         "@/schemas/types",
-        "./achievement"
+        "@/config/thresholdRules",
+        "@/schemas/schema"
       ],
       "functions": {
-        "calculateHqAchievementRate": {
-          "lineRange": [
-            16,
-            21
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateHqGap": {
-          "lineRange": [
-            29,
-            34
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "aggregateHqTargetsByProduct": {
-          "lineRange": [
-            41,
-            53
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "predictMonthlyHqAchievement": {
-          "lineRange": [
-            62,
-            91
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateQuarterHqAchievementRate": {
-          "lineRange": [
-            99,
-            104
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        }
-      }
-    },
-    "domain/growth.ts": {
-      "id": "code-domain-growth-ts",
-      "type": "domain-logic",
-      "exports": [
-        "calculateGrowthMetrics",
-        "formatGrowthRate",
-        "formatIncrement"
-      ],
-      "documentedIn": [
-        "business/指标定义规范.md:121-147"
-      ],
-      "usedBy": [],
-      "dependencies": [
-        "./achievement"
-      ],
-      "functions": {
-        "calculateGrowthMetrics": {
-          "lineRange": [
-            47,
-            48
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md:121-147"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "formatGrowthRate": {
-          "lineRange": [
-            75,
-            78
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md:121-147"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "formatIncrement": {
-          "lineRange": [
-            86,
-            89
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md:121-147"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        }
-      }
-    },
-    "domain/earnedPremium.ts": {
-      "id": "code-domain-earnedPremium-ts",
-      "type": "domain-logic",
-      "exports": [
-        "getMonthDays",
-        "calculateMaturityDays",
-        "calculateAutoEarnedPremium",
-        "calculatePropertyEarnedPremium",
-        "calculateLifeEarnedPremium",
-        "calculateMaturityRate"
-      ],
-      "documentedIn": [
-        "business/指标定义规范.md"
-      ],
-      "usedBy": [],
-      "dependencies": [
-        "./achievement"
-      ],
-      "functions": {
-        "getMonthDays": {
-          "lineRange": [
-            18,
-            20
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateMaturityDays": {
-          "lineRange": [
-            29,
-            37
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateAutoEarnedPremium": {
-          "lineRange": [
-            43,
-            58
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculatePropertyEarnedPremium": {
-          "lineRange": [
-            64,
-            71
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateLifeEarnedPremium": {
-          "lineRange": [
-            77,
-            87
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateMaturityRate": {
-          "lineRange": [
-            93,
-            95
-          ],
-          "documentation": [
-            "docs/business/指标定义规范.md"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        }
-      }
-    },
-    "domain/allocation.ts": {
-      "id": "code-domain-allocation-ts",
-      "type": "domain-logic",
-      "exports": [
-        "allocateAnnualToMonthly",
-        "calculateActual2025Weights",
-        "monthlyToQuarterly",
-        "monthlyToYtd",
-        "calculateFutureTargets"
-      ],
-      "documentedIn": [
-        "business/目标分配规则.md:45"
-      ],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "allocateAnnualToMonthly": {
-          "lineRange": [
-            3,
-            10
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateActual2025Weights": {
-          "lineRange": [
-            13,
-            22
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "monthlyToQuarterly": {
-          "lineRange": [
-            25,
-            27
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "monthlyToYtd": {
+        "ThresholdConfig": {
           "lineRange": [
             30,
-            33
+            270
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
-        },
-        "calculateFutureTargets": {
-          "lineRange": [
-            82,
-            146
-          ],
-          "documentation": [
-            "docs/business/目标分配规则.md:45"
-          ],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.074Z"
+          "lastModified": "2025-12-27T13:51:00.326Z"
         }
       }
     },
-    "domain/aggregate.ts": {
-      "id": "code-domain-aggregate-ts",
-      "type": "domain-logic",
+    "components/data/DataTable.tsx": {
+      "id": "code-components-data-DataTable-tsx",
+      "type": "ui-component",
       "exports": [
-        "aggregateToGroupAndAll"
+        "DataTable"
       ],
-      "documentedIn": [
-        "business/指标定义规范.md"
-      ],
+      "documentedIn": [],
       "usedBy": [],
       "dependencies": [
-        "@/schemas/types"
+        "@/lib/utils"
       ],
       "functions": {
-        "aggregateToGroupAndAll": {
+        "DataTable": {
           "lineRange": [
-            18,
-            34
+            112,
+            188
           ],
-          "documentation": [
-            "docs/business/指标定义规范.md （数据聚合相关章节）"
-          ],
+          "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.075Z"
+          "lastModified": "2025-12-27T13:51:00.326Z"
         }
       }
     },
-    "domain/achievement.ts": {
-      "id": "code-domain-achievement-ts",
-      "type": "domain-logic",
+    "components/feedback/LoadingState.tsx": {
+      "id": "code-components-feedback-LoadingState-tsx",
+      "type": "ui-component",
       "exports": [
-        "safeDivide",
-        "diff",
-        "growthRate"
+        "LoadingState"
       ],
-      "documentedIn": [
-        "business/指标定义规范.md:144-147",
-        "business/指标定义规范.md:121-147"
-      ],
+      "documentedIn": [],
       "usedBy": [],
-      "dependencies": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
       "functions": {
-        "safeDivide": {
+        "LoadingState": {
           "lineRange": [
-            9,
-            12
+            42,
+            92
           ],
-          "documentation": [
-            "docs/business/指标定义规范.md:144-147"
-          ],
+          "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.075Z"
-        },
-        "diff": {
+          "lastModified": "2025-12-27T13:51:00.326Z"
+        }
+      }
+    },
+    "components/feedback/EmptyState.tsx": {
+      "id": "code-components-feedback-EmptyState-tsx",
+      "type": "ui-component",
+      "exports": [
+        "EmptyState"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "EmptyState": {
+          "lineRange": [
+            59,
+            109
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.326Z"
+        }
+      }
+    },
+    "components/charts/QuarterlyChartLegend.tsx": {
+      "id": "code-components-charts-QuarterlyChartLegend-tsx",
+      "type": "ui-component",
+      "exports": [
+        "QuarterlyChartLegend"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils"
+      ],
+      "functions": {
+        "QuarterlyChartLegend": {
           "lineRange": [
             22,
-            24
+            67
           ],
-          "documentation": [
-            "docs/business/指标定义规范.md:121-147"
-          ],
+          "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.075Z"
-        },
-        "growthRate": {
+          "lastModified": "2025-12-27T13:51:00.327Z"
+        }
+      }
+    },
+    "components/charts/ChartContainer.tsx": {
+      "id": "code-components-charts-ChartContainer-tsx",
+      "type": "ui-component",
+      "exports": [
+        "ChartContainer"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/tokens"
+      ],
+      "functions": {
+        "ChartContainer": {
           "lineRange": [
-            34,
-            36
+            58,
+            116
           ],
-          "documentation": [
-            "docs/business/指标定义规范.md:144-147"
-          ],
+          "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.075Z"
+          "lastModified": "2025-12-27T13:51:00.327Z"
         }
       }
     },
@@ -1306,7 +1798,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.076Z"
+          "lastModified": "2025-12-27T13:51:00.328Z"
         },
         "useSkill": {
           "lineRange": [
@@ -1315,7 +1807,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.076Z"
+          "lastModified": "2025-12-27T13:51:00.328Z"
         },
         "useSkillExecution": {
           "lineRange": [
@@ -1324,7 +1816,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.076Z"
+          "lastModified": "2025-12-27T13:51:00.328Z"
         },
         "useSkillsByCategory": {
           "lineRange": [
@@ -1333,7 +1825,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.076Z"
+          "lastModified": "2025-12-27T13:51:00.328Z"
         }
       }
     },
@@ -1349,451 +1841,6 @@
       ],
       "functions": {}
     },
-    "components/ui/index.ts": {
-      "id": "code-components-ui-index-ts",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "components/ui/SortButtonGroup.tsx": {
-      "id": "code-components-ui-SortButtonGroup-tsx",
-      "type": "ui-component",
-      "exports": [
-        "SortButtonGroup",
-        "SortPresets"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {
-        "SortButtonGroup": {
-          "lineRange": [
-            155,
-            201
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.076Z"
-        }
-      }
-    },
-    "components/ui/Badge.tsx": {
-      "id": "code-components-ui-Badge-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Badge"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "Badge": {
-          "lineRange": [
-            58,
-            103
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.077Z"
-        }
-      }
-    },
-    "components/v2/index.ts": {
-      "id": "code-components-v2-index-ts",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "components/v2/Navbar.tsx": {
-      "id": "code-components-v2-Navbar-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Navbar"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/design-tokens-v2"
-      ],
-      "functions": {
-        "Navbar": {
-          "lineRange": [
-            58,
-            130
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.077Z"
-        }
-      }
-    },
-    "components/v2/KpiCard.tsx": {
-      "id": "code-components-v2-KpiCard-tsx",
-      "type": "ui-component",
-      "exports": [
-        "KpiCard"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "./Card",
-        "@/styles/design-tokens-v2"
-      ],
-      "functions": {
-        "KpiCard": {
-          "lineRange": [
-            54,
-            149
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.078Z"
-        }
-      }
-    },
-    "components/v2/FilterTag.tsx": {
-      "id": "code-components-v2-FilterTag-tsx",
-      "type": "ui-component",
-      "exports": [
-        "FilterTag"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/design-tokens-v2"
-      ],
-      "functions": {
-        "FilterTag": {
-          "lineRange": [
-            36,
-            88
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.078Z"
-        }
-      }
-    },
-    "components/v2/Dropdown.tsx": {
-      "id": "code-components-v2-Dropdown-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Dropdown"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/design-tokens-v2"
-      ],
-      "functions": {
-        "Dropdown": {
-          "lineRange": [
-            63,
-            147
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.078Z"
-        }
-      }
-    },
-    "components/v2/Card.tsx": {
-      "id": "code-components-v2-Card-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Card"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/design-tokens-v2"
-      ],
-      "functions": {
-        "Card": {
-          "lineRange": [
-            44,
-            93
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.078Z"
-        }
-      }
-    },
-    "components/v2/Button.tsx": {
-      "id": "code-components-v2-Button-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Button"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/design-tokens-v2"
-      ],
-      "functions": {
-        "Button": {
-          "lineRange": [
-            44,
-            160
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.078Z"
-        }
-      }
-    },
-    "components/kpi/KpiCard.tsx": {
-      "id": "code-components-kpi-KpiCard-tsx",
-      "type": "ui-component",
-      "exports": [
-        "KpiCard"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/tokens"
-      ],
-      "functions": {
-        "KpiCard": {
-          "lineRange": [
-            61,
-            176
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.078Z"
-        }
-      }
-    },
-    "components/system/ColorSystemHydrator.tsx": {
-      "id": "code-components-system-ColorSystemHydrator-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ColorSystemHydrator"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/storage"
-      ],
-      "functions": {
-        "ColorSystemHydrator": {
-          "lineRange": [
-            5,
-            19
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.078Z"
-        }
-      }
-    },
-    "components/filters/FilterTag.tsx": {
-      "id": "code-components-filters-FilterTag-tsx",
-      "type": "ui-component",
-      "exports": [
-        "FilterTag"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/tokens"
-      ],
-      "functions": {
-        "FilterTag": {
-          "lineRange": [
-            47,
-            114
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.079Z"
-        }
-      }
-    },
-    "components/filters/FilterSelector.tsx": {
-      "id": "code-components-filters-FilterSelector-tsx",
-      "type": "ui-component",
-      "exports": [
-        "FilterSelector"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "FilterSelector": {
-          "lineRange": [
-            65,
-            115
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.079Z"
-        }
-      }
-    },
-    "components/filters/FilterDropdown.tsx": {
-      "id": "code-components-filters-FilterDropdown-tsx",
-      "type": "ui-component",
-      "exports": [
-        "FilterDropdown"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/tokens",
-        "@/components/ui/Button/Button",
-        "./FilterTag"
-      ],
-      "functions": {
-        "FilterDropdown": {
-          "lineRange": [
-            62,
-            293
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.079Z"
-        }
-      }
-    },
-    "components/layout/Section.tsx": {
-      "id": "code-components-layout-Section-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Section"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "Section": {
-          "lineRange": [
-            55,
-            88
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.079Z"
-        }
-      }
-    },
-    "components/feedback/LoadingState.tsx": {
-      "id": "code-components-feedback-LoadingState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "LoadingState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "LoadingState": {
-          "lineRange": [
-            42,
-            92
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.079Z"
-        }
-      }
-    },
-    "components/feedback/EmptyState.tsx": {
-      "id": "code-components-feedback-EmptyState-tsx",
-      "type": "ui-component",
-      "exports": [
-        "EmptyState"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "EmptyState": {
-          "lineRange": [
-            59,
-            109
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.080Z"
-        }
-      }
-    },
-    "components/config/ThresholdConfig.tsx": {
-      "id": "code-components-config-ThresholdConfig-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ThresholdConfig"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/schemas/types",
-        "@/config/thresholdRules",
-        "@/schemas/schema"
-      ],
-      "functions": {
-        "ThresholdConfig": {
-          "lineRange": [
-            30,
-            270
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.080Z"
-        }
-      }
-    },
-    "components/data/DataTable.tsx": {
-      "id": "code-components-data-DataTable-tsx",
-      "type": "ui-component",
-      "exports": [
-        "DataTable"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "DataTable": {
-          "lineRange": [
-            112,
-            188
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.080Z"
-        }
-      }
-    },
     "app/universal-chart-test/page.tsx": {
       "id": "code-app-universal-chart-test-page-tsx",
       "type": "ui-component",
@@ -1802,66 +1849,6 @@
       "usedBy": [],
       "dependencies": [
         "@/components/charts/UniversalChart"
-      ],
-      "functions": {}
-    },
-    "components/charts/QuarterlyChartLegend.tsx": {
-      "id": "code-components-charts-QuarterlyChartLegend-tsx",
-      "type": "ui-component",
-      "exports": [
-        "QuarterlyChartLegend"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils"
-      ],
-      "functions": {
-        "QuarterlyChartLegend": {
-          "lineRange": [
-            22,
-            67
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.081Z"
-        }
-      }
-    },
-    "components/charts/ChartContainer.tsx": {
-      "id": "code-components-charts-ChartContainer-tsx",
-      "type": "ui-component",
-      "exports": [
-        "ChartContainer"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/tokens"
-      ],
-      "functions": {
-        "ChartContainer": {
-          "lineRange": [
-            58,
-            116
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.081Z"
-        }
-      }
-    },
-    "app/orgs/page.tsx": {
-      "id": "code-app-orgs-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/services/loaders",
-        "@/components/charts/UniversalChart",
-        "@/schemas/types"
       ],
       "functions": {}
     },
@@ -1875,6 +1862,30 @@
         "@/services/loaders",
         "@/components/config/ThresholdConfig",
         "@/config/thresholdRules",
+        "@/schemas/types"
+      ],
+      "functions": {}
+    },
+    "app/skills-demo/page.tsx": {
+      "id": "code-app-skills-demo-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/skill-loader/hooks"
+      ],
+      "functions": {}
+    },
+    "app/orgs/page.tsx": {
+      "id": "code-app-orgs-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/services/loaders",
+        "@/components/charts/UniversalChart",
         "@/schemas/types"
       ],
       "functions": {}
@@ -1893,17 +1904,6 @@
       ],
       "functions": {}
     },
-    "app/skills-demo/page.tsx": {
-      "id": "code-app-skills-demo-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/skill-loader/hooks"
-      ],
-      "functions": {}
-    },
     "app/earned-premium/page.tsx": {
       "id": "code-app-earned-premium-page-tsx",
       "type": "ui-component",
@@ -1916,6 +1916,17 @@
         "@/services/loaders",
         "@/styles/tokens",
         "@/components/charts/ChartContainer"
+      ],
+      "functions": {}
+    },
+    "app/demo/page.tsx": {
+      "id": "code-app-demo-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/styles/design-tokens-v2"
       ],
       "functions": {}
     },
@@ -1948,29 +1959,6 @@
       ],
       "functions": {}
     },
-    "app/color-system/page.tsx": {
-      "id": "code-app-color-system-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/styles/tokens",
-        "@/services/storage"
-      ],
-      "functions": {}
-    },
-    "app/demo/page.tsx": {
-      "id": "code-app-demo-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/styles/design-tokens-v2"
-      ],
-      "functions": {}
-    },
     "app/demo-v2/page.tsx": {
       "id": "code-app-demo-v2-page-tsx",
       "type": "ui-component",
@@ -1986,6 +1974,18 @@
         "@/domain/plannedActuals",
         "@/services/storage",
         "@/lib/chart-title"
+      ],
+      "functions": {}
+    },
+    "app/color-system/page.tsx": {
+      "id": "code-app-color-system-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/styles/tokens",
+        "@/services/storage"
       ],
       "functions": {}
     },
@@ -2025,6 +2025,41 @@
       ],
       "functions": {}
     },
+    "components/ui/Button/index.ts": {
+      "id": "code-components-ui-Button-index-ts",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [],
+      "functions": {}
+    },
+    "components/ui/Button/Button.tsx": {
+      "id": "code-components-ui-Button-Button-tsx",
+      "type": "ui-component",
+      "exports": [
+        "Button"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "@/styles/tokens"
+      ],
+      "functions": {}
+    },
+    "components/ui/Button/Button.test.tsx": {
+      "id": "code-components-ui-Button-Button-test-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@testing-library/react",
+        "./Button"
+      ],
+      "functions": {}
+    },
     "components/ui/Input/index.ts": {
       "id": "code-components-ui-Input-index-ts",
       "type": "ui-component",
@@ -2058,41 +2093,6 @@
         "@testing-library/react",
         "@testing-library/user-event",
         "./Input"
-      ],
-      "functions": {}
-    },
-    "components/ui/Button/index.ts": {
-      "id": "code-components-ui-Button-index-ts",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [],
-      "functions": {}
-    },
-    "components/ui/Button/Button.tsx": {
-      "id": "code-components-ui-Button-Button-tsx",
-      "type": "ui-component",
-      "exports": [
-        "Button"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "@/styles/tokens"
-      ],
-      "functions": {}
-    },
-    "components/ui/Button/Button.test.tsx": {
-      "id": "code-components-ui-Button-Button-test-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@testing-library/react",
-        "./Button"
       ],
       "functions": {}
     },
@@ -2132,17 +2132,6 @@
       ],
       "functions": {}
     },
-    "app/test/quarterly-chart/page.tsx": {
-      "id": "code-app-test-quarterly-chart-page-tsx",
-      "type": "ui-component",
-      "exports": [],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/components/charts/QuarterlyProportionChart"
-      ],
-      "functions": {}
-    },
     "components/charts/UniversalChart/index.ts": {
       "id": "code-components-charts-UniversalChart-index-ts",
       "type": "ui-component",
@@ -2175,7 +2164,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.088Z"
+          "lastModified": "2025-12-27T13:51:00.337Z"
         },
         "getPeriodLabel": {
           "lineRange": [
@@ -2184,7 +2173,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.088Z"
+          "lastModified": "2025-12-27T13:51:00.337Z"
         },
         "getAllPeriodLabels": {
           "lineRange": [
@@ -2193,7 +2182,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.088Z"
+          "lastModified": "2025-12-27T13:51:00.337Z"
         }
       }
     },
@@ -2226,7 +2215,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.088Z"
+          "lastModified": "2025-12-27T13:51:00.338Z"
         }
       }
     },
@@ -2261,7 +2250,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.089Z"
+          "lastModified": "2025-12-27T13:51:00.338Z"
         }
       }
     },
@@ -2286,7 +2275,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.089Z"
+          "lastModified": "2025-12-27T13:51:00.338Z"
         }
       }
     },
@@ -2317,6 +2306,17 @@
         "@/components/charts/UniversalChart",
         "@/components/ui/SortButtonGroup",
         "@/lib/sorting"
+      ],
+      "functions": {}
+    },
+    "app/test/quarterly-chart/page.tsx": {
+      "id": "code-app-test-quarterly-chart-page-tsx",
+      "type": "ui-component",
+      "exports": [],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/components/charts/QuarterlyProportionChart"
       ],
       "functions": {}
     },
@@ -2361,7 +2361,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.339Z"
         }
       }
     },
@@ -2374,17 +2374,18 @@
       "documentedIn": [],
       "usedBy": [],
       "dependencies": [
-        "@/lib/typography"
+        "@/lib/typography",
+        "../../QuarterlyProportionChart/utils/colorUtils"
       ],
       "functions": {
         "useUniversalConfig": {
           "lineRange": [
-            240,
-            559
+            241,
+            570
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.339Z"
         }
       }
     },
@@ -2405,7 +2406,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.339Z"
         }
       }
     },
@@ -2437,7 +2438,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "calculateAchievementRate": {
           "lineRange": [
@@ -2446,7 +2447,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "calculateShare": {
           "lineRange": [
@@ -2455,7 +2456,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "getWarningLevel": {
           "lineRange": [
@@ -2464,7 +2465,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "calculateGrowthRateArray": {
           "lineRange": [
@@ -2473,7 +2474,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "calculateAchievementRateArray": {
           "lineRange": [
@@ -2482,7 +2483,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "calculateShareArray": {
           "lineRange": [
@@ -2491,7 +2492,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "validateArrayLength": {
           "lineRange": [
@@ -2500,7 +2501,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "ensureGrowthSeries": {
           "lineRange": [
@@ -2509,7 +2510,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "ensureAchievementSeries": {
           "lineRange": [
@@ -2518,7 +2519,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         }
       }
     },
@@ -2541,7 +2542,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         }
       }
     },
@@ -2566,7 +2567,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "createQuarterlyShareAdapter": {
           "lineRange": [
@@ -2575,7 +2576,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.090Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         }
       }
     },
@@ -2601,7 +2602,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         }
       }
     },
@@ -2624,7 +2625,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         }
       }
     },
@@ -2649,7 +2650,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         },
         "createMonthlyShareAdapter": {
           "lineRange": [
@@ -2658,7 +2659,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.340Z"
         }
       }
     },
@@ -2692,7 +2693,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.341Z"
         },
         "calculateCumulative": {
           "lineRange": [
@@ -2701,7 +2702,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.341Z"
         },
         "reverseCalculateCumulative": {
           "lineRange": [
@@ -2710,7 +2711,31 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.341Z"
+        }
+      }
+    },
+    "components/charts/UniversalChart/components/TableView.tsx": {
+      "id": "code-components-charts-UniversalChart-components-TableView-tsx",
+      "type": "ui-component",
+      "exports": [
+        "TableView"
+      ],
+      "documentedIn": [],
+      "usedBy": [],
+      "dependencies": [
+        "@/lib/utils",
+        "../UniversalChart.types"
+      ],
+      "functions": {
+        "TableView": {
+          "lineRange": [
+            84,
+            166
+          ],
+          "documentation": [],
+          "tests": [],
+          "lastModified": "2025-12-27T13:51:00.341Z"
         }
       }
     },
@@ -2733,7 +2758,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.091Z"
+          "lastModified": "2025-12-27T13:51:00.341Z"
         }
       }
     },
@@ -2756,7 +2781,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.092Z"
+          "lastModified": "2025-12-27T13:51:00.341Z"
         }
       }
     },
@@ -2779,7 +2804,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.092Z"
+          "lastModified": "2025-12-27T13:51:00.342Z"
         }
       }
     },
@@ -2802,7 +2827,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.092Z"
+          "lastModified": "2025-12-27T13:51:00.342Z"
         }
       }
     },
@@ -2825,7 +2850,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.092Z"
+          "lastModified": "2025-12-27T13:51:00.342Z"
         }
       }
     },
@@ -2848,7 +2873,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.092Z"
+          "lastModified": "2025-12-27T13:51:00.342Z"
         }
       }
     },
@@ -2871,7 +2896,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.092Z"
+          "lastModified": "2025-12-27T13:51:00.342Z"
         }
       }
     },
@@ -2903,7 +2928,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "mergeConfig": {
           "lineRange": [
@@ -2912,7 +2937,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         }
       }
     },
@@ -2935,31 +2960,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
-        }
-      }
-    },
-    "components/charts/UniversalChart/components/TableView.tsx": {
-      "id": "code-components-charts-UniversalChart-components-TableView-tsx",
-      "type": "ui-component",
-      "exports": [
-        "TableView"
-      ],
-      "documentedIn": [],
-      "usedBy": [],
-      "dependencies": [
-        "@/lib/utils",
-        "../UniversalChart.types"
-      ],
-      "functions": {
-        "TableView": {
-          "lineRange": [
-            84,
-            166
-          ],
-          "documentation": [],
-          "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         }
       }
     },
@@ -3001,7 +3002,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatNumber": {
           "lineRange": [
@@ -3010,7 +3011,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatCurrency": {
           "lineRange": [
@@ -3019,7 +3020,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "getGrowthArrow": {
           "lineRange": [
@@ -3028,7 +3029,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatGrowth": {
           "lineRange": [
@@ -3037,7 +3038,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatQuarterData": {
           "lineRange": [
@@ -3046,7 +3047,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "sanitizeFilename": {
           "lineRange": [
@@ -3055,7 +3056,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatDateTime": {
           "lineRange": [
@@ -3064,7 +3065,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatFileSize": {
           "lineRange": [
@@ -3073,7 +3074,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatDuration": {
           "lineRange": [
@@ -3082,7 +3083,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "truncateText": {
           "lineRange": [
@@ -3091,7 +3092,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "getValueColorClass": {
           "lineRange": [
@@ -3100,7 +3101,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         },
         "formatRange": {
           "lineRange": [
@@ -3109,7 +3110,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.343Z"
         }
       }
     },
@@ -3136,7 +3137,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "exportQuarterDetails": {
           "lineRange": [
@@ -3145,7 +3146,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "exportToJSON": {
           "lineRange": [
@@ -3154,7 +3155,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "printChart": {
           "lineRange": [
@@ -3163,7 +3164,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         }
       }
     },
@@ -3202,7 +3203,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "getWarningLevelByGrowth": {
           "lineRange": [
@@ -3211,7 +3212,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "getGrowthColorClass": {
           "lineRange": [
@@ -3220,7 +3221,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "adjustBrightness": {
           "lineRange": [
@@ -3229,7 +3230,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "hexToRgba": {
           "lineRange": [
@@ -3238,7 +3239,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "createGradient": {
           "lineRange": [
@@ -3247,7 +3248,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "getHeatmapColor": {
           "lineRange": [
@@ -3256,7 +3257,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "isDarkColor": {
           "lineRange": [
@@ -3265,7 +3266,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "getContrastColor": {
           "lineRange": [
@@ -3274,7 +3275,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "blendColors": {
           "lineRange": [
@@ -3283,7 +3284,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "withOpacity": {
           "lineRange": [
@@ -3292,7 +3293,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.093Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "generatePalette": {
           "lineRange": [
@@ -3301,7 +3302,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.094Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         },
         "getYearlyComparisonColor": {
           "lineRange": [
@@ -3312,7 +3313,7 @@
             "docs/design/全局设计规范.md:106-119"
           ],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.094Z"
+          "lastModified": "2025-12-27T13:51:00.344Z"
         }
       }
     },
@@ -3335,7 +3336,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.094Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         }
       }
     },
@@ -3362,7 +3363,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.094Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         },
         "getWarningLevelColor": {
           "lineRange": [
@@ -3371,7 +3372,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.094Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         },
         "getDefaultColors": {
           "lineRange": [
@@ -3380,7 +3381,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.094Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         }
       }
     },
@@ -3414,7 +3415,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         },
         "WarningBadgeSelector": {
           "lineRange": [
@@ -3423,7 +3424,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         }
       }
     },
@@ -3448,7 +3449,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         },
         "ViewSwitcherSelector": {
           "lineRange": [
@@ -3457,7 +3458,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.345Z"
         }
       }
     },
@@ -3483,7 +3484,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.346Z"
         },
         "DetailPanelShowcase": {
           "lineRange": [
@@ -3492,7 +3493,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.346Z"
         }
       }
     },
@@ -3519,7 +3520,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.346Z"
         },
         "CompactChartHeader": {
           "lineRange": [
@@ -3528,7 +3529,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.346Z"
         },
         "ChartHeaderShowcase": {
           "lineRange": [
@@ -3537,7 +3538,7 @@
           ],
           "documentation": [],
           "tests": [],
-          "lastModified": "2025-12-27T13:14:17.095Z"
+          "lastModified": "2025-12-27T13:51:00.346Z"
         }
       }
     }

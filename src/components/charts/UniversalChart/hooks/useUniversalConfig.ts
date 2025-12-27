@@ -23,6 +23,7 @@ import {
   getStandardGridConfig,
   getStandardTooltipConfig
 } from '@/lib/echarts-utils';
+import { getYearlyComparisonColor, adjustBrightness } from '../../QuarterlyProportionChart/utils/colorUtils';
 
 /**
  * 默认颜色配置
@@ -326,16 +327,26 @@ export function useUniversalConfig(
       {
         name: seriesNames.baselineName,
         type: 'bar',
-        data: baselineData,
+        data: baselineData.map((value) => {
+          // 使用年度对比颜色系统 - 2025实际数据
+          const colorConfig = getYearlyComparisonColor('actual2025');
+
+          return {
+            value,
+            itemStyle: {
+              color: colorConfig.fill,
+              borderColor: colorConfig.border,
+              borderWidth: colorConfig.borderWidth,
+              borderRadius: [4, 4, 0, 0],
+            },
+          };
+        }),
         yAxisIndex: 0,
         barMaxWidth: calculatedBarMaxWidth,
-        itemStyle: {
-          color: DEFAULT_COLORS.actual.normal,
-          borderRadius: [4, 4, 0, 0],
-        },
         emphasis: {
           itemStyle: {
-            color: DEFAULT_COLORS.actual.hover,
+            // hover 时使用稍深的颜色
+            color: adjustBrightness(getYearlyComparisonColor('actual2025').fill, -0.1),
           },
         },
         label: showDataLabel
@@ -349,7 +360,7 @@ export function useUniversalConfig(
                   : params.value.toFixed(0);
               },
               fontSize: FONT_SIZE.xs,
-              color: '#999',
+              color: '#666',
             }
           : undefined,
       },
