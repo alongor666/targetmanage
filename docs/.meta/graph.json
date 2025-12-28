@@ -695,20 +695,6 @@
       }
     },
     {
-      "id": "doc-ai-evolution-analysis-index-md",
-      "type": "doc",
-      "label": "本质分析索引",
-      "metadata": {
-        "path": "ai-evolution/analysis/index.md",
-        "category": "ai-evolution",
-        "tags": [
-          "📊 统计概览",
-          "🔍 根因分类",
-          "📁 目录结构"
-        ]
-      }
-    },
-    {
       "id": "doc-ai-evolution-problems-template-md",
       "type": "doc",
       "label": "[问题编号] - [问题简短标题]",
@@ -885,6 +871,20 @@
       }
     },
     {
+      "id": "doc-ai-evolution-analysis-index-md",
+      "type": "doc",
+      "label": "本质分析索引",
+      "metadata": {
+        "path": "ai-evolution/analysis/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📊 统计概览",
+          "🔍 根因分类",
+          "📁 目录结构"
+        ]
+      }
+    },
+    {
       "id": "doc-ai-evolution-solutions-best-practices-问题诊断技巧-md",
       "type": "doc",
       "label": "[BP-002] 问题诊断技巧",
@@ -1025,6 +1025,136 @@
       }
     },
     {
+      "id": "code-lib-utils-ts",
+      "type": "code",
+      "label": "lib/utils.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "cn",
+          "getQuarterlyStatus"
+        ]
+      }
+    },
+    {
+      "id": "code-lib-typography-ts",
+      "type": "code",
+      "label": "lib/typography.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "FONT_SIZE",
+          "getFontSize",
+          "CHART_FONT_SIZE",
+          "validateFontSizes"
+        ]
+      }
+    },
+    {
+      "id": "code-lib-sorting-ts",
+      "type": "code",
+      "label": "lib/sorting.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "sortOrgItems",
+          "reorderArrayByIndex",
+          "createSortMapping",
+          "safeCompare",
+          "genericSort"
+        ]
+      }
+    },
+    {
+      "id": "code-lib-paths-ts",
+      "type": "code",
+      "label": "lib/paths.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "getAssetPath"
+        ]
+      }
+    },
+    {
+      "id": "code-lib-minion-config-ts",
+      "type": "code",
+      "label": "lib/minion-config.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-lib-minion-client-ts",
+      "type": "code",
+      "label": "lib/minion-client.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-lib-echarts-utils-ts",
+      "type": "code",
+      "label": "lib/echarts-utils.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "getOptimizedXAxisConfig",
+          "getStandardYAxisConfig",
+          "getStandardGridConfig",
+          "getStandardTooltipConfig",
+          "getStandardLegendConfig",
+          "operatingOverviewColors",
+          "createBarSeries",
+          "createLineSeries"
+        ]
+      }
+    },
+    {
+      "id": "code-lib-chart-title-ts",
+      "type": "code",
+      "label": "lib/chart-title.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "generateChartTitle"
+        ]
+      }
+    },
+    {
+      "id": "code-services-storage-ts",
+      "type": "code",
+      "label": "services/storage.ts",
+      "metadata": {
+        "type": "service",
+        "exports": [
+          "LS_KEYS",
+          "lsGetJson",
+          "lsSetJson",
+          "lsRemove"
+        ]
+      }
+    },
+    {
+      "id": "code-services-loaders-ts",
+      "type": "code",
+      "label": "services/loaders.ts",
+      "metadata": {
+        "type": "service",
+        "exports": [
+          "OrgsFileSchema",
+          "TargetsAnnualFileSchema",
+          "ActualsAnnualFileSchema",
+          "MonthlyActualsFileSchema",
+          "AllocationRulesFileSchema",
+          "HeadquartersTargetsFileSchema",
+          "parseMonthlyCsv"
+        ]
+      }
+    },
+    {
       "id": "code-config-thresholdRules-ts",
       "type": "code",
       "label": "config/thresholdRules.ts",
@@ -1061,37 +1191,6 @@
           "organizationModes",
           "detectOrganizationMode",
           "generatePageTitle"
-        ]
-      }
-    },
-    {
-      "id": "code-services-storage-ts",
-      "type": "code",
-      "label": "services/storage.ts",
-      "metadata": {
-        "type": "service",
-        "exports": [
-          "LS_KEYS",
-          "lsGetJson",
-          "lsSetJson",
-          "lsRemove"
-        ]
-      }
-    },
-    {
-      "id": "code-services-loaders-ts",
-      "type": "code",
-      "label": "services/loaders.ts",
-      "metadata": {
-        "type": "service",
-        "exports": [
-          "OrgsFileSchema",
-          "TargetsAnnualFileSchema",
-          "ActualsAnnualFileSchema",
-          "MonthlyActualsFileSchema",
-          "AllocationRulesFileSchema",
-          "HeadquartersTargetsFileSchema",
-          "parseMonthlyCsv"
         ]
       }
     },
@@ -1221,105 +1320,6 @@
       }
     },
     {
-      "id": "code-lib-utils-ts",
-      "type": "code",
-      "label": "lib/utils.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "cn",
-          "getQuarterlyStatus"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-typography-ts",
-      "type": "code",
-      "label": "lib/typography.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "FONT_SIZE",
-          "getFontSize",
-          "CHART_FONT_SIZE",
-          "validateFontSizes"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-sorting-ts",
-      "type": "code",
-      "label": "lib/sorting.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "sortOrgItems",
-          "reorderArrayByIndex",
-          "createSortMapping",
-          "safeCompare",
-          "genericSort"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-paths-ts",
-      "type": "code",
-      "label": "lib/paths.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "getAssetPath"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-minion-config-ts",
-      "type": "code",
-      "label": "lib/minion-config.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-minion-client-ts",
-      "type": "code",
-      "label": "lib/minion-client.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-echarts-utils-ts",
-      "type": "code",
-      "label": "lib/echarts-utils.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "getOptimizedXAxisConfig",
-          "getStandardYAxisConfig",
-          "getStandardGridConfig",
-          "getStandardTooltipConfig",
-          "getStandardLegendConfig",
-          "operatingOverviewColors",
-          "createBarSeries",
-          "createLineSeries"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-chart-title-ts",
-      "type": "code",
-      "label": "lib/chart-title.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "generateChartTitle"
-        ]
-      }
-    },
-    {
       "id": "code-app-page-tsx",
       "type": "code",
       "label": "app/page.tsx",
@@ -1340,46 +1340,125 @@
       }
     },
     {
-      "id": "code-components-ui-index-ts",
+      "id": "code-lib-skill-loader-types-ts",
       "type": "code",
-      "label": "components/ui/index.ts",
+      "label": "lib/skill-loader/types.ts",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-components-ui-SortButtonGroup-tsx",
+      "id": "code-lib-skill-loader-registry-ts",
       "type": "code",
-      "label": "components/ui/SortButtonGroup.tsx",
+      "label": "lib/skill-loader/registry.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-lib-skill-loader-loader-ts",
+      "type": "code",
+      "label": "lib/skill-loader/loader.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-lib-skill-loader-index-ts",
+      "type": "code",
+      "label": "lib/skill-loader/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-lib-skill-loader-hooks-ts",
+      "type": "code",
+      "label": "lib/skill-loader/hooks.ts",
       "metadata": {
         "type": "ui-component",
         "exports": [
-          "SortButtonGroup",
-          "SortPresets"
+          "useSkills",
+          "useSkill",
+          "useSkillExecution",
+          "useSkillsByCategory"
         ]
       }
     },
     {
-      "id": "code-components-ui-Badge-tsx",
+      "id": "code-lib-skill-loader-executor-ts",
       "type": "code",
-      "label": "components/ui/Badge.tsx",
+      "label": "lib/skill-loader/executor.ts",
       "metadata": {
         "type": "ui-component",
-        "exports": [
-          "Badge"
-        ]
+        "exports": []
       }
     },
     {
-      "id": "code-components-system-ColorSystemHydrator-tsx",
+      "id": "code-app-skills-demo-page-tsx",
       "type": "code",
-      "label": "components/system/ColorSystemHydrator.tsx",
+      "label": "app/skills-demo/page.tsx",
       "metadata": {
         "type": "ui-component",
-        "exports": [
-          "ColorSystemHydrator"
-        ]
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-rules-page-tsx",
+      "type": "code",
+      "label": "app/rules/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-import-page-tsx",
+      "type": "code",
+      "label": "app/import/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-earned-premium-page-tsx",
+      "type": "code",
+      "label": "app/earned-premium/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-data-page-tsx",
+      "type": "code",
+      "label": "app/data/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-color-system-page-tsx",
+      "type": "code",
+      "label": "app/color-system/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-design-system-page-tsx",
+      "type": "code",
+      "label": "app/design-system/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
       }
     },
     {
@@ -1458,13 +1537,54 @@
       }
     },
     {
-      "id": "code-components-layout-Section-tsx",
+      "id": "code-app-universal-chart-test-page-tsx",
       "type": "code",
-      "label": "components/layout/Section.tsx",
+      "label": "app/universal-chart-test/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-ui-index-ts",
+      "type": "code",
+      "label": "components/ui/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-ui-SortButtonGroup-tsx",
+      "type": "code",
+      "label": "components/ui/SortButtonGroup.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": [
-          "Section"
+          "SortButtonGroup",
+          "SortPresets"
+        ]
+      }
+    },
+    {
+      "id": "code-components-ui-Badge-tsx",
+      "type": "code",
+      "label": "components/ui/Badge.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "Badge"
+        ]
+      }
+    },
+    {
+      "id": "code-components-system-ColorSystemHydrator-tsx",
+      "type": "code",
+      "label": "components/system/ColorSystemHydrator.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "ColorSystemHydrator"
         ]
       }
     },
@@ -1476,6 +1596,17 @@
         "type": "ui-component",
         "exports": [
           "KpiCard"
+        ]
+      }
+    },
+    {
+      "id": "code-components-layout-Section-tsx",
+      "type": "code",
+      "label": "components/layout/Section.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "Section"
         ]
       }
     },
@@ -1513,28 +1644,6 @@
       }
     },
     {
-      "id": "code-components-config-ThresholdConfig-tsx",
-      "type": "code",
-      "label": "components/config/ThresholdConfig.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "ThresholdConfig"
-        ]
-      }
-    },
-    {
-      "id": "code-components-data-DataTable-tsx",
-      "type": "code",
-      "label": "components/data/DataTable.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "DataTable"
-        ]
-      }
-    },
-    {
       "id": "code-components-feedback-LoadingState-tsx",
       "type": "code",
       "label": "components/feedback/LoadingState.tsx",
@@ -1553,6 +1662,28 @@
         "type": "ui-component",
         "exports": [
           "EmptyState"
+        ]
+      }
+    },
+    {
+      "id": "code-components-data-DataTable-tsx",
+      "type": "code",
+      "label": "components/data/DataTable.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "DataTable"
+        ]
+      }
+    },
+    {
+      "id": "code-components-config-ThresholdConfig-tsx",
+      "type": "code",
+      "label": "components/config/ThresholdConfig.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "ThresholdConfig"
         ]
       }
     },
@@ -1579,158 +1710,18 @@
       }
     },
     {
-      "id": "code-lib-skill-loader-types-ts",
+      "id": "code-app-test-quarterly-chart-page-tsx",
       "type": "code",
-      "label": "lib/skill-loader/types.ts",
+      "label": "app/test/quarterly-chart/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-lib-skill-loader-registry-ts",
+      "id": "code-app-color-system-preview-page-tsx",
       "type": "code",
-      "label": "lib/skill-loader/registry.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-loader-ts",
-      "type": "code",
-      "label": "lib/skill-loader/loader.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-index-ts",
-      "type": "code",
-      "label": "lib/skill-loader/index.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-hooks-ts",
-      "type": "code",
-      "label": "lib/skill-loader/hooks.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "useSkills",
-          "useSkill",
-          "useSkillExecution",
-          "useSkillsByCategory"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-executor-ts",
-      "type": "code",
-      "label": "lib/skill-loader/executor.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-universal-chart-test-page-tsx",
-      "type": "code",
-      "label": "app/universal-chart-test/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-rules-page-tsx",
-      "type": "code",
-      "label": "app/rules/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-skills-demo-page-tsx",
-      "type": "code",
-      "label": "app/skills-demo/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-orgs-page-tsx",
-      "type": "code",
-      "label": "app/orgs/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-import-page-tsx",
-      "type": "code",
-      "label": "app/import/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-earned-premium-page-tsx",
-      "type": "code",
-      "label": "app/earned-premium/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-demo-page-tsx",
-      "type": "code",
-      "label": "app/demo/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-design-system-page-tsx",
-      "type": "code",
-      "label": "app/design-system/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-data-page-tsx",
-      "type": "code",
-      "label": "app/data/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-demo-v2-page-tsx",
-      "type": "code",
-      "label": "app/demo-v2/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-color-system-page-tsx",
-      "type": "code",
-      "label": "app/color-system/page.tsx",
+      "label": "app/color-system/preview/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
@@ -1760,35 +1751,6 @@
       "id": "code-components-ui-Modal-Modal-test-tsx",
       "type": "code",
       "label": "components/ui/Modal/Modal.test.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-components-ui-Button-index-ts",
-      "type": "code",
-      "label": "components/ui/Button/index.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-components-ui-Button-Button-tsx",
-      "type": "code",
-      "label": "components/ui/Button/Button.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "Button"
-        ]
-      }
-    },
-    {
-      "id": "code-components-ui-Button-Button-test-tsx",
-      "type": "code",
-      "label": "components/ui/Button/Button.test.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
@@ -1847,6 +1809,35 @@
       "id": "code-components-ui-Card-Card-test-tsx",
       "type": "code",
       "label": "components/ui/Card/Card.test.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-ui-Button-index-ts",
+      "type": "code",
+      "label": "components/ui/Button/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-ui-Button-Button-tsx",
+      "type": "code",
+      "label": "components/ui/Button/Button.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "Button"
+        ]
+      }
+    },
+    {
+      "id": "code-components-ui-Button-Button-test-tsx",
+      "type": "code",
+      "label": "components/ui/Button/Button.test.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
@@ -1922,48 +1913,23 @@
       }
     },
     {
-      "id": "code-app-orgs-[org_id]-page-tsx",
-      "type": "code",
-      "label": "app/orgs/[org_id]/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-orgs-[org_id]-OrgDetailClient-tsx",
-      "type": "code",
-      "label": "app/orgs/[org_id]/OrgDetailClient.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-test-quarterly-chart-page-tsx",
-      "type": "code",
-      "label": "app/test/quarterly-chart/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-color-system-preview-page-tsx",
-      "type": "code",
-      "label": "app/color-system/preview/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
       "id": "code-components-charts-UniversalChart-utils-index-ts",
       "type": "code",
       "label": "components/charts/UniversalChart/utils/index.ts",
       "metadata": {
         "type": "ui-component",
         "exports": []
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-components-TableView-tsx",
+      "type": "code",
+      "label": "components/charts/UniversalChart/components/TableView.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "TableView"
+        ]
       }
     },
     {
@@ -1996,116 +1962,6 @@
         "type": "ui-component",
         "exports": [
           "useChartInteractions"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-shared-adapter-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/shared.adapter.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "calculateGrowthRate",
-          "calculateAchievementRate",
-          "calculateShare",
-          "getWarningLevel",
-          "calculateGrowthRateArray",
-          "calculateAchievementRateArray",
-          "calculateShareArray",
-          "validateArrayLength",
-          "ensureGrowthSeries",
-          "ensureAchievementSeries"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-quarterlyAchievement-adapter-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/quarterlyAchievement.adapter.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "createQuarterlyAchievementAdapter"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-quarterly-adapter-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/quarterly.adapter.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "createQuarterlyPremiumAdapter",
-          "createQuarterlyShareAdapter"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-organization-adapter-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/organization.adapter.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "createOrganizationPremiumAdapter"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-monthlyAchievement-adapter-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/monthlyAchievement.adapter.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "createMonthlyAchievementAdapter"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-monthly-adapter-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/monthly.adapter.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "createMonthlyPremiumAdapter",
-          "createMonthlyShareAdapter"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-index-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/index.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-adapters-hqPrediction-adapter-ts",
-      "type": "code",
-      "label": "components/charts/UniversalChart/adapters/hqPrediction.adapter.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "createHqPredictionAdapter",
-          "calculateCumulative",
-          "reverseCalculateCumulative"
-        ]
-      }
-    },
-    {
-      "id": "code-components-charts-UniversalChart-components-TableView-tsx",
-      "type": "code",
-      "label": "components/charts/UniversalChart/components/TableView.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "TableView"
         ]
       }
     },
@@ -2206,6 +2062,105 @@
         "type": "ui-component",
         "exports": [
           "createHqPredictionConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-shared-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/shared.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "calculateGrowthRate",
+          "calculateAchievementRate",
+          "calculateShare",
+          "getWarningLevel",
+          "calculateGrowthRateArray",
+          "calculateAchievementRateArray",
+          "calculateShareArray",
+          "validateArrayLength",
+          "ensureGrowthSeries",
+          "ensureAchievementSeries"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-quarterlyAchievement-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/quarterlyAchievement.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createQuarterlyAchievementAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-quarterly-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/quarterly.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createQuarterlyPremiumAdapter",
+          "createQuarterlyShareAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-organization-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/organization.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createOrganizationPremiumAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-monthlyAchievement-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/monthlyAchievement.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createMonthlyAchievementAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-monthly-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/monthly.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createMonthlyPremiumAdapter",
+          "createMonthlyShareAdapter"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-index-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/index.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-adapters-hqPrediction-adapter-ts",
+      "type": "code",
+      "label": "components/charts/UniversalChart/adapters/hqPrediction.adapter.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "createHqPredictionAdapter",
+          "calculateCumulative",
+          "reverseCalculateCumulative"
         ]
       }
     },
