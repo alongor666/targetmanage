@@ -161,9 +161,12 @@ export function UniversalChart({
         {/* 图表头部（包含标题、视图切换器） */}
         <ChartHeader
           title={config.title || '图表'}
+          titleIcon={config.titleIcon}
+          subtitle={config.subtitle}
           viewMode={quarterlyViewMode}
           onViewModeChange={(mode) => handleViewModeChange(mode as ViewMode)}
           legendItems={legendItems}
+          showViewSwitcher={config.showViewSwitcher ?? true}
         />
 
         {/* 表格主体 */}
@@ -188,9 +191,12 @@ export function UniversalChart({
       {/* 图表头部（包含标题、视图切换器、图例） */}
       <ChartHeader
         title={config.title || '图表'}
+        titleIcon={config.titleIcon}
+        subtitle={config.subtitle}
         viewMode={quarterlyViewMode}
         onViewModeChange={(mode) => handleViewModeChange(mode as ViewMode)}
         legendItems={legendItems}
+        showViewSwitcher={config.showViewSwitcher ?? true}
       />
 
       {/* 图表主体 */}

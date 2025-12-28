@@ -560,7 +560,6 @@ export function useUniversalConfig(
     viewMode,
     timeGranularity,
     valueType,
-    config,
     animation,
     calculatedBarMaxWidth,
     showDataLabel,

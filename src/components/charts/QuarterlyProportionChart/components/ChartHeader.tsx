@@ -26,6 +26,10 @@ export interface ChartHeaderLegendItem {
 export interface ChartHeaderProps {
   /** 标题文本 */
   title?: string;
+  /** 标题图标（可选） */
+  titleIcon?: string;
+  /** 标题说明文字（可选） */
+  subtitle?: string;
   /** 当前视图模式 */
   viewMode: ViewMode;
   /** 视图模式变化回调 */
@@ -38,6 +42,8 @@ export interface ChartHeaderProps {
   className?: string;
   /** 视图切换器样式 */
   viewSwitcherVariant?: 'buttons' | 'tabs' | 'segment';
+  /** 是否显示视图切换器，默认 true */
+  showViewSwitcher?: boolean;
 }
 
 /**
@@ -109,12 +115,15 @@ function LegendItemComponent({ item, className }: LegendItemComponentProps) {
  */
 export function ChartHeader({
   title = '季度占比规划图',
+  titleIcon,
+  subtitle,
   viewMode,
   onViewModeChange,
   showWarningLineLegend = true,
   legendItems: customLegendItems,
   className,
   viewSwitcherVariant = 'buttons',
+  showViewSwitcher = true,
 }: ChartHeaderProps) {
   const legendItems: ChartHeaderLegendItem[] =
     customLegendItems ??
@@ -145,14 +154,26 @@ export function ChartHeader({
   return (
     <div className={cn('p-4 border-b border-gray-100', className)}>
       {/* 标题和视图切换器 */}
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-medium text-gray-900">{title}</h3>
+      <div className="flex items-start justify-between gap-4 mb-3">
+        <div className="flex items-start gap-2">
+          {titleIcon && (
+            <span className="text-base leading-5" aria-hidden="true">
+              {titleIcon}
+            </span>
+          )}
+          <div>
+            <h3 className="text-sm font-medium text-gray-900">{title}</h3>
+            {subtitle && <p className="text-xs text-gray-500 mt-1">{subtitle}</p>}
+          </div>
+        </div>
 
-        <ViewSwitcher
-          currentMode={viewMode}
-          onChange={onViewModeChange}
-          variant={viewSwitcherVariant}
-        />
+        {showViewSwitcher && (
+          <ViewSwitcher
+            currentMode={viewMode}
+            onChange={onViewModeChange}
+            variant={viewSwitcherVariant}
+          />
+        )}
       </div>
 
       {/* 图例说明 */}

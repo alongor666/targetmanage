@@ -48,7 +48,6 @@ import {
   loadHeadquartersTargetsAnnual2026,
 } from "@/services/loaders";
 import { lsRemove, LS_KEYS } from "@/services/storage";
-import { generateChartTitle } from "@/lib/chart-title";
 import {
   UniversalChart,
   createQuarterlyPremiumAdapter,
@@ -941,12 +940,9 @@ export default function HomePage() {
               chartType="quarterlyPremium"
               data={createQuarterlyPremiumAdapter().adapt(quarterlyPremiumData)}
               config={{
-                title: generateChartTitle(viewLabel, {
-                  product,
-                  granularity: 'quarterly',
-                  dataType: 'premium',
-                  progressMode,
-                }),
+                title: `同比增长分析（季度） - ${viewLabel} - ${productLabel[product]}`,
+                titleIcon: '📈',
+                subtitle: '对比2025年同期实际数据，分析2026年目标的增长情况',
                 height: 360,
               }}
             />
@@ -960,7 +956,10 @@ export default function HomePage() {
               chartType="quarterlyAchievement"
               data={createQuarterlyAchievementAdapter().adapt(quarterlyAchievementData)}
               config={{
-                title: `${viewLabel} - ${productLabel[product]} - 季度目标达成情况`,
+                title: `目标达成监控（季度） - ${viewLabel} - ${productLabel[product]}`,
+                titleIcon: '🎯',
+                subtitle: '实时监控2026年季度目标完成进度与达成率',
+                showViewSwitcher: false,
                 height: 360,
               }}
             />
@@ -974,12 +973,9 @@ export default function HomePage() {
               chartType="monthlyPremium"
               data={createMonthlyPremiumAdapter().adapt(monthlyPremiumData)}
               config={{
-                title: generateChartTitle(viewLabel, {
-                  product,
-                  granularity: 'monthly',
-                  dataType: 'premium',
-                  progressMode,
-                }),
+                title: `同比增长分析（月度） - ${viewLabel} - ${productLabel[product]}`,
+                titleIcon: '📈',
+                subtitle: '对比2025年同期实际数据，分析2026年目标的增长情况',
                 height: 360,
                 showDataLabel: true,
                 currentMonth: effectiveMonth,
@@ -995,7 +991,10 @@ export default function HomePage() {
               chartType="monthlyAchievement"
               data={createMonthlyAchievementAdapter().adapt(monthlyAchievementData)}
               config={{
-                title: `${viewLabel} - ${productLabel[product]} - 月度目标达成情况`,
+                title: `目标达成监控（月度） - ${viewLabel} - ${productLabel[product]}`,
+                titleIcon: '🎯',
+                subtitle: '实时监控2026年月度目标完成进度与达成率',
+                showViewSwitcher: false,
                 height: 360,
                 showDataLabel: true,
                 currentMonth: effectiveMonth,
