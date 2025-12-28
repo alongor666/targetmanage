@@ -215,8 +215,8 @@ function getSeriesNames(viewMode: ViewMode): {
 
     case 'achievement':
       return {
-        targetName: '目标',
-        baselineName: '实际达成',
+        targetName: '2026目标',
+        baselineName: '2026实际',
         growthName: '达成率',
       };
 

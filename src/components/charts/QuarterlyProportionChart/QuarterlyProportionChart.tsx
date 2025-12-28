@@ -149,6 +149,12 @@ export function QuarterlyProportionChart({
     []
   );
 
+  const selectedDetail = useMemo(() => {
+    if (!isValid) return null;
+    if (interactionState.selectedQuarter === null) return null;
+    return processedData.quarterDetails[interactionState.selectedQuarter];
+  }, [interactionState.selectedQuarter, isValid, processedData]);
+
   // 如果数据无效，显示错误信息
   if (!isValid) {
     return (
@@ -165,12 +171,6 @@ export function QuarterlyProportionChart({
       </div>
     );
   }
-
-  // 当前选中的季度详情
-  const selectedDetail = useMemo(() => {
-    if (interactionState.selectedQuarter === null) return null;
-    return processedData.quarterDetails[interactionState.selectedQuarter];
-  }, [interactionState.selectedQuarter, processedData]);
 
   return (
     <section

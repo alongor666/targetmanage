@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { filterV2, dropdownStatesV2, animationsV2 } from '@/styles/design-tokens-v2';
+import { colorsV2, filterV2, dropdownStatesV2, animationsV2 } from '@/styles/design-tokens-v2';
 
 export interface DropdownOption {
   /** 选项值 */
@@ -70,6 +70,7 @@ export function Dropdown({
   className,
 }: DropdownProps) {
   const selectedOption = options.find(opt => opt.value === value);
+  const hasSelection = Boolean(value && selectedOption);
 
   return (
     <div className="relative inline-block w-full">
@@ -83,7 +84,8 @@ export function Dropdown({
           borderRadius: `${filterV2.dropdown.borderRadius}px`,
           backgroundColor: filterV2.dropdown.background,
           border: filterV2.dropdown.border,
-          color: filterV2.dropdown.color,
+          color: hasSelection ? colorsV2.primary.blue : filterV2.dropdown.color,
+          fontWeight: hasSelection ? 600 : 400,
           transition: `all ${animationsV2.interaction.dropdownExpand.duration}ms ${animationsV2.interaction.dropdownExpand.easing}`,
         }}
         className={cn(

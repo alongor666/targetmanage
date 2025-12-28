@@ -60,23 +60,27 @@ export function Button({
     lg: 'h-10 px-6 text-base',        // 高度40px, 左右padding 24px, 字号16px
   };
 
-  // 变体样式配置
+  // 变体样式配置（统一设计规范：无背景色）
   const variantClasses = {
     primary: cn(
-      'text-white border border-transparent',
-      !disabled && !loading && 'hover:opacity-90',
+      // 主按钮：蓝色字 + 蓝色边框，无背景
+      'text-blue-600 border border-blue-600 bg-transparent',
+      !disabled && !loading && 'hover:text-blue-700 hover:border-blue-700',
     ),
     secondary: cn(
-      'bg-gray-100 text-gray-900 border border-transparent',
-      !disabled && !loading && 'hover:bg-gray-200',
+      // 次要按钮：灰色字 + 灰色边框，无背景
+      'text-gray-700 border border-gray-400 bg-transparent',
+      !disabled && !loading && 'hover:text-gray-900 hover:border-gray-600',
     ),
     outline: cn(
-      'bg-transparent border',
-      !disabled && !loading && 'hover:bg-gray-50',
+      // 轮廓按钮：灰色字 + 灰色边框，无背景
+      'text-gray-600 border border-gray-300 bg-transparent',
+      !disabled && !loading && 'hover:text-gray-900 hover:border-gray-400',
     ),
     ghost: cn(
-      'bg-transparent border-transparent',
-      !disabled && !loading && 'hover:bg-gray-50',
+      // 幽灵按钮：灰色字 + 透明边框，无背景
+      'text-gray-600 border border-transparent bg-transparent',
+      !disabled && !loading && 'hover:text-gray-900 hover:border-gray-300',
     ),
   };
 
@@ -96,13 +100,8 @@ export function Button({
       disabled={disabled || loading}
       style={{
         borderRadius: `${radiusV2.button}px`,
-        backgroundColor:
-          disabled || loading
-            ? buttonStatesV2.disabled.background
-            : variant === 'primary'
-            ? buttonStatesV2.default.background
-            : undefined,
-        color: disabled || loading ? buttonStatesV2.disabled.color : undefined,
+        // 统一设计规范：所有按钮无背景色
+        backgroundColor: 'transparent',
         transition: `all ${animationsV2.interaction.buttonClick.duration}ms ease`,
       }}
       className={cn(

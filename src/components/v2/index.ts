@@ -21,3 +21,6 @@ export type { FilterTagProps } from './FilterTag';
 
 export { Navbar } from './Navbar';
 export type { NavbarProps, NavbarLink } from './Navbar';
+
+export { ToggleButton, ToggleButtonGroup } from './ToggleButton';
+export type { ToggleButtonProps, ToggleButtonGroupProps } from './ToggleButton';

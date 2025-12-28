@@ -119,6 +119,15 @@ export function UniversalChart({
   // 映射到Quarterly ViewMode
   const quarterlyViewMode = mapToQuarterlyViewMode(state.viewMode);
 
+  const legendItems =
+    state.viewMode === 'achievement'
+      ? [
+          { type: 'bar' as const, label: '2026目标', color: '#dceef9', width: '16px' },
+          { type: 'bar' as const, label: '2026实际', color: '#f2f2f2', width: '16px' },
+          { type: 'line' as const, label: '达成率', color: '#0070c0', width: '24px' },
+        ]
+      : undefined;
+
   // 将PeriodDetailData转换为QuarterDetailData
   const quarterDetailData: QuarterDetailData | null = selectedDetail
     ? {
@@ -154,6 +163,7 @@ export function UniversalChart({
           title={config.title || '图表'}
           viewMode={quarterlyViewMode}
           onViewModeChange={(mode) => handleViewModeChange(mode as ViewMode)}
+          legendItems={legendItems}
         />
 
         {/* 表格主体 */}
@@ -180,6 +190,7 @@ export function UniversalChart({
         title={config.title || '图表'}
         viewMode={quarterlyViewMode}
         onViewModeChange={(mode) => handleViewModeChange(mode as ViewMode)}
+        legendItems={legendItems}
       />
 
       {/* 图表主体 */}

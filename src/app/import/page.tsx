@@ -329,7 +329,7 @@ export default function ImportPage() {
           </div>
 
           <div className="text-xs text-slate-500">
-            规则：只接受 orgs.json 中存在的 org_id；禁止导入"同城/异地/四川分公司"等汇总行（系统派生）。
+            规则：只接受 orgs.json 中存在的 org_id；禁止导入“同城/异地/四川分公司”等汇总行（系统派生）。
           </div>
 
           <div className="ml-auto flex gap-2">

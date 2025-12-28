@@ -12,7 +12,7 @@ export interface QuarterlyChartLegendProps {
  *
  * 图例项：
  * - 2026目标: 浅天蓝色柱
- * - 2025实际: 浅灰色柱
+ * - 2026实际: 浅灰色柱
  * - 增长率: 蓝色折线
  *
  * @param className - 额外的CSS类名
@@ -29,7 +29,7 @@ export function QuarterlyChartLegend({ className }: QuarterlyChartLegendProps) {
     },
     {
       type: 'bar' as const,
-      label: '2025实际',
+      label: '2026实际',
       color: '#f2f2f2',
     },
     {

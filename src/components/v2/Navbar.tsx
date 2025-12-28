@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Navbar组件 V2 - 基于UI重构设计方案
  *
@@ -82,9 +84,9 @@ export function Navbar({
       {/* 左侧：标题/Logo */}
       <div className="flex items-center gap-8">
         {title && (
-          <h1 className="text-lg font-semibold text-gray-900">
+          <div className="text-lg font-semibold text-gray-900">
             {title}
-          </h1>
+          </div>
         )}
 
         {/* 导航链接 */}
