@@ -9,7 +9,7 @@
  */
 
 import React, { useState } from 'react';
-import { Navbar, Card, ToggleButton, ToggleButtonGroup } from '@/components/v2';
+import { Navbar, Card, Button, ToggleButton, ToggleButtonGroup } from '@/components/v2';
 import { ViewSwitcher } from '@/components/charts/QuarterlyProportionChart/components/ViewSwitcher';
 import type { ViewMode } from '@/components/charts/QuarterlyProportionChart/QuarterlyProportionChart.types';
 import { colorsV2, typographyV2 } from '@/styles/design-tokens-v2';
@@ -256,7 +256,95 @@ export default function ToggleDemoPage() {
           </div>
         </Card>
 
-        {/* 4. 设计规范说明 */}
+        {/* 4. 操作按钮（Action Buttons） */}
+        <Card className="mb-6">
+          <h2
+            className="mb-4"
+            style={{
+              fontSize: `${typographyV2.fontSize.h2}px`,
+              fontWeight: typographyV2.fontWeight.semibold,
+              color: colorsV2.text.primary,
+            }}
+          >
+            4. 操作按钮（Button）
+          </h2>
+
+          <div className="space-y-6">
+            {/* 不同变体 */}
+            <div>
+              <div className="text-sm mb-2" style={{ color: colorsV2.text.secondary }}>
+                不同变体（primary / secondary / outline / ghost）：
+              </div>
+              <div className="flex gap-4 flex-wrap">
+                <Button variant="primary" size="md">
+                  主按钮
+                </Button>
+                <Button variant="secondary" size="md">
+                  次要按钮
+                </Button>
+                <Button variant="outline" size="md">
+                  轮廓按钮
+                </Button>
+                <Button variant="ghost" size="md">
+                  幽灵按钮
+                </Button>
+              </div>
+            </div>
+
+            {/* 不同尺寸 */}
+            <div>
+              <div className="text-sm mb-2" style={{ color: colorsV2.text.secondary }}>
+                不同尺寸（sm / md / lg）：
+              </div>
+              <div className="flex gap-4 items-end">
+                <Button variant="primary" size="sm">
+                  Small
+                </Button>
+                <Button variant="primary" size="md">
+                  Medium
+                </Button>
+                <Button variant="primary" size="lg">
+                  Large
+                </Button>
+              </div>
+            </div>
+
+            {/* 实际应用示例 */}
+            <div>
+              <div className="text-sm mb-2" style={{ color: colorsV2.text.secondary }}>
+                实际应用（操作按钮组）：
+              </div>
+              <div className="flex gap-2">
+                <Button variant="primary" size="sm">
+                  刷新数据
+                </Button>
+                <Button variant="outline" size="sm">
+                  导出数据
+                </Button>
+                <Button variant="outline" size="sm">
+                  清空缓存
+                </Button>
+              </div>
+            </div>
+
+            {/* 加载和禁用状态 */}
+            <div>
+              <div className="text-sm mb-2" style={{ color: colorsV2.text.secondary }}>
+                特殊状态：
+              </div>
+              <div className="flex gap-4">
+                <Button variant="primary" disabled>
+                  禁用按钮
+                </Button>
+                <Button variant="primary" loading>
+                  加载中
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Card>
+
+        {/* 5. 设计规范说明 */}
         <Card>
           <h2
             className="mb-4"
@@ -270,61 +358,143 @@ export default function ToggleDemoPage() {
           </h2>
 
           <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* 选中状态 */}
-              <div
-                className="p-4 rounded"
+            {/* 切换按钮规范 */}
+            <div>
+              <h3
+                className="mb-3"
                 style={{
-                  border: '1px solid',
-                  borderColor: colorsV2.primary.blue,
-                  backgroundColor: 'rgba(0, 123, 255, 0.02)',
+                  fontSize: `${typographyV2.fontSize.h3}px`,
+                  fontWeight: typographyV2.fontWeight.semibold,
+                  color: colorsV2.text.primary,
                 }}
               >
-                <h3
-                  className="mb-2"
+                切换按钮（Toggle Buttons）
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* 选中状态 */}
+                <div
+                  className="p-4 rounded"
                   style={{
-                    fontSize: `${typographyV2.fontSize.h3}px`,
-                    fontWeight: typographyV2.fontWeight.medium,
-                    color: colorsV2.primary.blue,
+                    border: '1px solid',
+                    borderColor: colorsV2.primary.blue,
+                    backgroundColor: 'rgba(0, 123, 255, 0.02)',
                   }}
                 >
-                  ✅ 选中状态
-                </h3>
-                <ul className="space-y-1 text-sm" style={{ color: colorsV2.text.secondary }}>
-                  <li>• 文字颜色：#007BFF（蓝色）</li>
-                  <li>• 边框颜色：#007BFF（蓝色）</li>
-                  <li>• 背景颜色：透明</li>
-                  <li>• 边框宽度：1px</li>
-                  <li>• 圆角：4px</li>
-                </ul>
-              </div>
+                  <h4
+                    className="mb-2"
+                    style={{
+                      fontSize: `${typographyV2.fontSize.body}px`,
+                      fontWeight: typographyV2.fontWeight.medium,
+                      color: colorsV2.primary.blue,
+                    }}
+                  >
+                    ✅ 选中状态
+                  </h4>
+                  <ul className="space-y-1 text-sm" style={{ color: colorsV2.text.secondary }}>
+                    <li>• 文字颜色：#007BFF（蓝色）</li>
+                    <li>• 边框颜色：#007BFF（蓝色）</li>
+                    <li>• 背景颜色：透明</li>
+                    <li>• 边框宽度：1px</li>
+                    <li>• 圆角：4px</li>
+                  </ul>
+                </div>
 
-              {/* 未选中状态 */}
-              <div
-                className="p-4 rounded"
-                style={{
-                  border: '1px solid',
-                  borderColor: colorsV2.background.separator,
-                  backgroundColor: 'rgba(233, 236, 239, 0.1)',
-                }}
-              >
-                <h3
-                  className="mb-2"
+                {/* 未选中状态 */}
+                <div
+                  className="p-4 rounded"
                   style={{
-                    fontSize: `${typographyV2.fontSize.h3}px`,
-                    fontWeight: typographyV2.fontWeight.medium,
-                    color: colorsV2.text.secondary,
+                    border: '1px solid',
+                    borderColor: colorsV2.background.separator,
+                    backgroundColor: 'rgba(233, 236, 239, 0.1)',
                   }}
                 >
-                  ⚪ 未选中状态
-                </h3>
-                <ul className="space-y-1 text-sm" style={{ color: colorsV2.text.secondary }}>
-                  <li>• 文字颜色：#6C757D（灰色）</li>
-                  <li>• 边框颜色：#E9ECEF（浅灰）</li>
-                  <li>• 背景颜色：透明</li>
-                  <li>• 边框宽度：1px</li>
-                  <li>• 圆角：4px</li>
-                </ul>
+                  <h4
+                    className="mb-2"
+                    style={{
+                      fontSize: `${typographyV2.fontSize.body}px`,
+                      fontWeight: typographyV2.fontWeight.medium,
+                      color: colorsV2.text.secondary,
+                    }}
+                  >
+                    ⚪ 未选中状态
+                  </h4>
+                  <ul className="space-y-1 text-sm" style={{ color: colorsV2.text.secondary }}>
+                    <li>• 文字颜色：#6C757D（灰色）</li>
+                    <li>• 边框颜色：#E9ECEF（浅灰）</li>
+                    <li>• 背景颜色：透明</li>
+                    <li>• 边框宽度：1px</li>
+                    <li>• 圆角：4px</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* 操作按钮规范 */}
+            <div>
+              <h3
+                className="mb-3"
+                style={{
+                  fontSize: `${typographyV2.fontSize.h3}px`,
+                  fontWeight: typographyV2.fontWeight.semibold,
+                  color: colorsV2.text.primary,
+                }}
+              >
+                操作按钮（Action Buttons）
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Primary 按钮 */}
+                <div
+                  className="p-4 rounded"
+                  style={{
+                    border: '1px solid',
+                    borderColor: 'rgb(37, 99, 235)',
+                    backgroundColor: 'rgba(37, 99, 235, 0.02)',
+                  }}
+                >
+                  <h4
+                    className="mb-2"
+                    style={{
+                      fontSize: `${typographyV2.fontSize.body}px`,
+                      fontWeight: typographyV2.fontWeight.medium,
+                      color: 'rgb(37, 99, 235)',
+                    }}
+                  >
+                    🔵 Primary 按钮
+                  </h4>
+                  <ul className="space-y-1 text-sm" style={{ color: colorsV2.text.secondary }}>
+                    <li>• 文字颜色：rgb(37, 99, 235)</li>
+                    <li>• 边框颜色：rgb(37, 99, 235)</li>
+                    <li>• 背景颜色：透明</li>
+                    <li>• 用途：主要操作（刷新数据）</li>
+                  </ul>
+                </div>
+
+                {/* Outline 按钮 */}
+                <div
+                  className="p-4 rounded"
+                  style={{
+                    border: '1px solid',
+                    borderColor: 'rgb(209, 213, 219)',
+                    backgroundColor: 'rgba(209, 213, 219, 0.1)',
+                  }}
+                >
+                  <h4
+                    className="mb-2"
+                    style={{
+                      fontSize: `${typographyV2.fontSize.body}px`,
+                      fontWeight: typographyV2.fontWeight.medium,
+                      color: 'rgb(75, 85, 99)',
+                    }}
+                  >
+                    ⚫ Outline 按钮
+                  </h4>
+                  <ul className="space-y-1 text-sm" style={{ color: colorsV2.text.secondary }}>
+                    <li>• 文字颜色：rgb(75, 85, 99)</li>
+                    <li>• 边框颜色：rgb(209, 213, 219)</li>
+                    <li>• 背景颜色：透明</li>
+                    <li>• 用途：次要操作（导出、清空）</li>
+                  </ul>
+                </div>
               </div>
             </div>
 

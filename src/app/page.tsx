@@ -786,96 +786,86 @@ export default function HomePage() {
           maxWidth: '1400px',
         }}
       >
-        {/* 2. 筛选控制区（双行布局） */}
+        {/* 2. 筛选控制区（单行布局：筛选器 + 操作按钮） */}
         <Card className="mb-7 sticky top-16 z-40">
-          {/* 第一行：筛选器 */}
-          <div className="flex flex-wrap gap-4 items-end mb-4">
-            {/* 视角选择器 */}
-            <div className="min-w-[140px]">
-              <label
-                className="block mb-1 font-medium"
-                style={{
-                  fontSize: `${typographyV2.fontSize.small}px`,
-                  color: colorsV2.text.secondary,
-                }}
-              >
-                区域
-              </label>
-              <Dropdown
-                value={viewKey}
-                options={viewOptions}
-                onChange={setViewKey}
-              />
+          <div className="flex flex-wrap gap-4 items-end justify-between">
+            {/* 左侧：筛选器组 */}
+            <div className="flex flex-wrap gap-4 items-end">
+              {/* 视角选择器 */}
+              <div className="min-w-[140px]">
+                <label
+                  className="block mb-1 font-medium"
+                  style={{
+                    fontSize: `${typographyV2.fontSize.small}px`,
+                    color: colorsV2.text.secondary,
+                  }}
+                >
+                  区域
+                </label>
+                <Dropdown
+                  value={viewKey}
+                  options={viewOptions}
+                  onChange={setViewKey}
+                />
+              </div>
+
+              {/* 产品选择器 */}
+              <div className="min-w-[120px]">
+                <label
+                  className="block mb-1 font-medium"
+                  style={{
+                    fontSize: `${typographyV2.fontSize.small}px`,
+                    color: colorsV2.text.secondary,
+                  }}
+                >
+                  产品
+                </label>
+                <Dropdown
+                  value={product}
+                  options={productOptions}
+                  onChange={(val) => setProduct(val as ProductView)}
+                />
+              </div>
+
+              {/* 截至月份 */}
+              <div className="min-w-[100px]">
+                <label
+                  className="block mb-1 font-medium"
+                  style={{
+                    fontSize: `${typographyV2.fontSize.small}px`,
+                    color: colorsV2.text.secondary,
+                  }}
+                >
+                  时间
+                </label>
+                <Dropdown
+                  value={String(month)}
+                  options={monthOptions}
+                  onChange={(val) => setMonth(val === 'plan' ? 'plan' : Number(val))}
+                />
+              </div>
+
+              {/* 预测规则 */}
+              <div className="min-w-[140px]">
+                <label
+                  className="block mb-1 font-medium"
+                  style={{
+                    fontSize: `${typographyV2.fontSize.small}px`,
+                    color: colorsV2.text.secondary,
+                  }}
+                >
+                  预测规则
+                </label>
+                <Dropdown
+                  value={progressMode}
+                  options={progressModeOptions}
+                  onChange={(val) => setProgressMode(val as ProgressMode)}
+                />
+              </div>
             </div>
 
-            {/* 产品选择器 */}
-            <div className="min-w-[120px]">
-              <label
-                className="block mb-1 font-medium"
-                style={{
-                  fontSize: `${typographyV2.fontSize.small}px`,
-                  color: colorsV2.text.secondary,
-                }}
-              >
-                产品
-              </label>
-              <Dropdown
-                value={product}
-                options={productOptions}
-                onChange={(val) => setProduct(val as ProductView)}
-              />
-            </div>
-
-            {/* 截至月份 */}
-            <div className="min-w-[100px]">
-              <label
-                className="block mb-1 font-medium"
-                style={{
-                  fontSize: `${typographyV2.fontSize.small}px`,
-                  color: colorsV2.text.secondary,
-                }}
-              >
-                时间
-              </label>
-              <Dropdown
-                value={String(month)}
-                options={monthOptions}
-                onChange={(val) => setMonth(val === 'plan' ? 'plan' : Number(val))}
-              />
-            </div>
-
-            {/* 预测规则 */}
-            <div className="min-w-[140px]">
-              <label
-                className="block mb-1 font-medium"
-                style={{
-                  fontSize: `${typographyV2.fontSize.small}px`,
-                  color: colorsV2.text.secondary,
-                }}
-              >
-                预测规则
-              </label>
-              <Dropdown
-                value={progressMode}
-                options={progressModeOptions}
-                onChange={(val) => setProgressMode(val as ProgressMode)}
-              />
-            </div>
-          </div>
-
-          {/* 分隔线 */}
-          <div
-            className="my-4"
-            style={{
-              height: '1px',
-              backgroundColor: colorsV2.background.separator,
-            }}
-          />
-
-          {/* 第二行：状态信息和操作 */}
-          <div className="flex flex-wrap gap-4 items-center justify-end">
-            {/* 操作按钮（按使用频率排序） */}
-            <div className="flex gap-2">
+            {/* 右侧：操作按钮组 */}
+            <div className="flex gap-2 items-end">
               {/* 高频操作：刷新数据 */}
               <Button
                 variant="primary"
