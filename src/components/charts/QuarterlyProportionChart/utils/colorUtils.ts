@@ -39,7 +39,7 @@ export const DEFAULT_COLORS = {
   // 渐变色序列：灰→蓝连续渐变，体现时间推进和确定性层次
   yearlyComparison: {
     actual2025: '#BDC3C7',      // 2025年实际（浅灰色，历史基线）
-    actual2026: '#7FB3D5',      // 2026年实际（中蓝灰，当期数据）
+    actual2026: '#5B9BD5',      // 2026年实际（中蓝色，当期数据，实心柱）
     target2026: '#B0D8EF',      // 2026年目标（浅蓝色，计划目标）
     planned2026: '#E8F4FD',     // 2026年规划（极浅蓝，预测规划）
     planned2026Border: '#B0D8EF', // 2026年规划边框

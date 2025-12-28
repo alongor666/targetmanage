@@ -2,8 +2,8 @@
 
 This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Last Updated:** 2025-12-23
-**Version:** 2.0.0
+**Last Updated:** 2025-12-28
+**Version:** 2.1.0
 **Project:** Target Management & Visualization Platform (川分目标管理系统)
 
 ---
@@ -71,6 +71,12 @@ pnpm start
 pnpm typecheck          # TypeScript type checking
 pnpm lint               # ESLint code linting
 
+# Testing (CRITICAL - must run before commit)
+pnpm test               # Run tests in watch mode
+pnpm test:run           # Run all tests once
+pnpm test:coverage      # Generate coverage report
+pnpm test:ui            # Open Vitest UI
+
 # Documentation system
 pnpm docs:sync          # Sync documentation indices
 pnpm docs:check         # Verify doc-code consistency
@@ -93,6 +99,7 @@ pnpm docs:graph         # View knowledge graph
 |----------|-----------|---------|---------|
 | **Framework** | Next.js (App Router) | 14.2.0 | Full-stack React framework |
 | **Language** | TypeScript | 5.4.0 | Type-safe development |
+| **Testing** | Vitest + Testing Library | 4.0.16 | Unit & integration testing (143 tests, 100% pass rate) |
 | **Styling** | Tailwind CSS | 3.4.0 | Utility-first CSS framework |
 | **Charts** | ECharts + echarts-for-react | 5.5.0 | Data visualization |
 | **Validation** | Zod | 3.23.8 | Schema validation |
@@ -164,7 +171,12 @@ src/
 │   ├── growth.ts          # YoY growth metrics (6 fields)
 │   ├── time.ts            # Time progress calculations (3 modes)
 │   ├── headquarters.ts    # HQ target prediction
-│   └── validate.ts        # Business validation rules
+│   ├── validate.ts        # Business validation rules
+│   └── __tests__/         # Domain layer tests (143 tests, 100% pass rate)
+│       ├── achievement.test.ts  # 31 tests for achievement functions
+│       ├── allocation.test.ts   # 33 tests for allocation logic
+│       ├── growth.test.ts       # 28 tests for growth metrics
+│       └── time.test.ts         # 51 tests for time progress
 │
 ├── services/               # Data Services (Side Effects)
 │   ├── loaders.ts         # Data loading (3-tier priority)
@@ -214,6 +226,11 @@ public/data/               # Static Data Files
 
 scripts/
 └── sync-docs-code.ts      # Documentation-code sync tool
+
+tests/                      # Test Infrastructure (PROTECTED)
+└── setup.ts               # Global test setup (@testing-library/jest-dom)
+
+vitest.config.ts            # Vitest configuration (PROTECTED)
 
 .github/workflows/
 ├── deploy.yml             # GitHub Pages deployment
@@ -1012,6 +1029,10 @@ Explain:
 - ❌ Commit without updating indices
 - ❌ Delete and recreate files (use `git mv`)
 - ❌ Ignore `pnpm docs:check` warnings
+- ❌ **Delete test files or test infrastructure** (vitest.config.ts, tests/setup.ts, src/**/__tests__/*)
+- ❌ **Remove test scripts from package.json** (test, test:run, test:coverage, test:watch, test:ui)
+- ❌ **Remove test dependencies** (vitest, @testing-library/*, @vitest/*, jsdom)
+- ❌ **Modify tests without understanding their business logic coverage**
 
 ---
 
@@ -1035,8 +1056,8 @@ Explain:
 ---
 
 **Maintainers**: Development Team
-**Version**: 2.0.0
-**Last Updated**: 2025-12-23
+**Version**: 2.1.0
+**Last Updated**: 2025-12-28
 **License**: Private
 
 **Related Files**:

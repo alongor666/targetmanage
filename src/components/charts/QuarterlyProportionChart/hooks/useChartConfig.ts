@@ -389,7 +389,7 @@ export function useChartConfig(
       yAxis: yAxisConfig,
       series: seriesConfig,
     };
-  }, [processedData, viewMode, height, animation, barMaxWidth, showDataLabel]);
+  }, [processedData, viewMode, animation, barMaxWidth, showDataLabel]);
 }
 
 /**

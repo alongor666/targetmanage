@@ -695,38 +695,120 @@
       }
     },
     {
-      "id": "doc-ai-evolution-problems-template-md",
+      "id": "doc-ai-evolution-analysis-index-md",
       "type": "doc",
-      "label": "[问题编号] - [问题简短标题]",
+      "label": "本质分析索引",
       "metadata": {
-        "path": "ai-evolution/problems/template.md",
+        "path": "ai-evolution/analysis/index.md",
         "category": "ai-evolution",
         "tags": [
-          "📋 问题描述",
-          "💬 Prompt历史",
-          "🔍 本质分析",
-          "💡 改进方案",
-          "🎯 提炼的模式",
-          "📚 相关资源",
-          "✅ 验证清单",
-          "📝 经验总结"
+          "📊 统计概览",
+          "🔍 根因分类",
+          "📁 目录结构"
         ]
       }
     },
     {
-      "id": "doc-ai-evolution-problems-index-md",
+      "id": "doc-ai-evolution-solutions-context-patterns-依赖关系图-md",
       "type": "doc",
-      "label": "问题记录索引",
+      "label": "[C-003] 依赖关系图",
       "metadata": {
-        "path": "ai-evolution/problems/index.md",
+        "path": "ai-evolution/solutions/context-patterns/依赖关系图.md",
         "category": "ai-evolution",
         "tags": [
-          "📊 统计概览",
-          "🗂️ 按分类索引",
-          "📅 按时间索引",
-          "🏷️ 按标签索引",
-          "📈 问题趋势",
-          "🔍 快速查询"
+          "📝 模板",
+          "依赖关系"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-context-patterns-代码结构说明-md",
+      "type": "doc",
+      "label": "[C-002] 代码结构说明",
+      "metadata": {
+        "path": "ai-evolution/solutions/context-patterns/代码结构说明.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📝 模板",
+          "项目结构"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-context-patterns-业务规则提供-md",
+      "type": "doc",
+      "label": "[C-001] 业务规则提供",
+      "metadata": {
+        "path": "ai-evolution/solutions/context-patterns/业务规则提供.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📝 模板",
+          "业务规则",
+          "💡 关键要素"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-context-patterns-index-md",
+      "type": "doc",
+      "label": "Context模式库",
+      "metadata": {
+        "path": "ai-evolution/solutions/context-patterns/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📚 模式列表"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-问题诊断技巧-md",
+      "type": "doc",
+      "label": "[BP-002] 问题诊断技巧",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/问题诊断技巧.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🔍 诊断流程",
+          "💡 快速修复技巧"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-进化式开发-md",
+      "type": "doc",
+      "label": "[BP-003] 进化式开发",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/进化式开发.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🔄 进化循环",
+          "📊 进化指标",
+          "💡 持续改进建议"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-与AI协作流程-md",
+      "type": "doc",
+      "label": "[BP-001] 与AI协作流程",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/与AI协作流程.md",
+        "category": "ai-evolution",
+        "tags": [
+          "🔄 完整流程",
+          "💡 关键原则"
+        ]
+      }
+    },
+    {
+      "id": "doc-ai-evolution-solutions-best-practices-index-md",
+      "type": "doc",
+      "label": "最佳实践库",
+      "metadata": {
+        "path": "ai-evolution/solutions/best-practices/index.md",
+        "category": "ai-evolution",
+        "tags": [
+          "📚 实践列表"
         ]
       }
     },
@@ -819,120 +901,38 @@
       }
     },
     {
-      "id": "doc-ai-evolution-solutions-context-patterns-依赖关系图-md",
+      "id": "doc-ai-evolution-problems-template-md",
       "type": "doc",
-      "label": "[C-003] 依赖关系图",
+      "label": "[问题编号] - [问题简短标题]",
       "metadata": {
-        "path": "ai-evolution/solutions/context-patterns/依赖关系图.md",
+        "path": "ai-evolution/problems/template.md",
         "category": "ai-evolution",
         "tags": [
-          "📝 模板",
-          "依赖关系"
+          "📋 问题描述",
+          "💬 Prompt历史",
+          "🔍 本质分析",
+          "💡 改进方案",
+          "🎯 提炼的模式",
+          "📚 相关资源",
+          "✅ 验证清单",
+          "📝 经验总结"
         ]
       }
     },
     {
-      "id": "doc-ai-evolution-solutions-context-patterns-代码结构说明-md",
+      "id": "doc-ai-evolution-problems-index-md",
       "type": "doc",
-      "label": "[C-002] 代码结构说明",
+      "label": "问题记录索引",
       "metadata": {
-        "path": "ai-evolution/solutions/context-patterns/代码结构说明.md",
-        "category": "ai-evolution",
-        "tags": [
-          "📝 模板",
-          "项目结构"
-        ]
-      }
-    },
-    {
-      "id": "doc-ai-evolution-solutions-context-patterns-业务规则提供-md",
-      "type": "doc",
-      "label": "[C-001] 业务规则提供",
-      "metadata": {
-        "path": "ai-evolution/solutions/context-patterns/业务规则提供.md",
-        "category": "ai-evolution",
-        "tags": [
-          "📝 模板",
-          "业务规则",
-          "💡 关键要素"
-        ]
-      }
-    },
-    {
-      "id": "doc-ai-evolution-solutions-context-patterns-index-md",
-      "type": "doc",
-      "label": "Context模式库",
-      "metadata": {
-        "path": "ai-evolution/solutions/context-patterns/index.md",
-        "category": "ai-evolution",
-        "tags": [
-          "📚 模式列表"
-        ]
-      }
-    },
-    {
-      "id": "doc-ai-evolution-analysis-index-md",
-      "type": "doc",
-      "label": "本质分析索引",
-      "metadata": {
-        "path": "ai-evolution/analysis/index.md",
+        "path": "ai-evolution/problems/index.md",
         "category": "ai-evolution",
         "tags": [
           "📊 统计概览",
-          "🔍 根因分类",
-          "📁 目录结构"
-        ]
-      }
-    },
-    {
-      "id": "doc-ai-evolution-solutions-best-practices-问题诊断技巧-md",
-      "type": "doc",
-      "label": "[BP-002] 问题诊断技巧",
-      "metadata": {
-        "path": "ai-evolution/solutions/best-practices/问题诊断技巧.md",
-        "category": "ai-evolution",
-        "tags": [
-          "🔍 诊断流程",
-          "💡 快速修复技巧"
-        ]
-      }
-    },
-    {
-      "id": "doc-ai-evolution-solutions-best-practices-进化式开发-md",
-      "type": "doc",
-      "label": "[BP-003] 进化式开发",
-      "metadata": {
-        "path": "ai-evolution/solutions/best-practices/进化式开发.md",
-        "category": "ai-evolution",
-        "tags": [
-          "🔄 进化循环",
-          "📊 进化指标",
-          "💡 持续改进建议"
-        ]
-      }
-    },
-    {
-      "id": "doc-ai-evolution-solutions-best-practices-与AI协作流程-md",
-      "type": "doc",
-      "label": "[BP-001] 与AI协作流程",
-      "metadata": {
-        "path": "ai-evolution/solutions/best-practices/与AI协作流程.md",
-        "category": "ai-evolution",
-        "tags": [
-          "🔄 完整流程",
-          "💡 关键原则"
-        ]
-      }
-    },
-    {
-      "id": "doc-ai-evolution-solutions-best-practices-index-md",
-      "type": "doc",
-      "label": "最佳实践库",
-      "metadata": {
-        "path": "ai-evolution/solutions/best-practices/index.md",
-        "category": "ai-evolution",
-        "tags": [
-          "📚 实践列表"
+          "🗂️ 按分类索引",
+          "📅 按时间索引",
+          "🏷️ 按标签索引",
+          "📈 问题趋势",
+          "🔍 快速查询"
         ]
       }
     },
@@ -991,6 +991,37 @@
           "getStatusColor",
           "getStatusBlockColors",
           "generateResponsiveClass"
+        ]
+      }
+    },
+    {
+      "id": "code-services-storage-ts",
+      "type": "code",
+      "label": "services/storage.ts",
+      "metadata": {
+        "type": "service",
+        "exports": [
+          "LS_KEYS",
+          "lsGetJson",
+          "lsSetJson",
+          "lsRemove"
+        ]
+      }
+    },
+    {
+      "id": "code-services-loaders-ts",
+      "type": "code",
+      "label": "services/loaders.ts",
+      "metadata": {
+        "type": "service",
+        "exports": [
+          "OrgsFileSchema",
+          "TargetsAnnualFileSchema",
+          "ActualsAnnualFileSchema",
+          "MonthlyActualsFileSchema",
+          "AllocationRulesFileSchema",
+          "HeadquartersTargetsFileSchema",
+          "parseMonthlyCsv"
         ]
       }
     },
@@ -1124,77 +1155,6 @@
       }
     },
     {
-      "id": "code-services-storage-ts",
-      "type": "code",
-      "label": "services/storage.ts",
-      "metadata": {
-        "type": "service",
-        "exports": [
-          "LS_KEYS",
-          "lsGetJson",
-          "lsSetJson",
-          "lsRemove"
-        ]
-      }
-    },
-    {
-      "id": "code-services-loaders-ts",
-      "type": "code",
-      "label": "services/loaders.ts",
-      "metadata": {
-        "type": "service",
-        "exports": [
-          "OrgsFileSchema",
-          "TargetsAnnualFileSchema",
-          "ActualsAnnualFileSchema",
-          "MonthlyActualsFileSchema",
-          "AllocationRulesFileSchema",
-          "HeadquartersTargetsFileSchema",
-          "parseMonthlyCsv"
-        ]
-      }
-    },
-    {
-      "id": "code-config-thresholdRules-ts",
-      "type": "code",
-      "label": "config/thresholdRules.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "DEFAULT_THRESHOLD_RULES",
-          "getAchievementStatus",
-          "getGrowthStatus"
-        ]
-      }
-    },
-    {
-      "id": "code-config-progressWeights-ts",
-      "type": "code",
-      "label": "config/progressWeights.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "DEFAULT_MONTHLY_WEIGHTS",
-          "DEFAULT_QUARTERLY_WEIGHTS",
-          "validateWeightsSum",
-          "calculateQuarterlyWeights"
-        ]
-      }
-    },
-    {
-      "id": "code-config-organizationModes-ts",
-      "type": "code",
-      "label": "config/organizationModes.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "organizationModes",
-          "detectOrganizationMode",
-          "generatePageTitle"
-        ]
-      }
-    },
-    {
       "id": "code-domain-validate-ts",
       "type": "code",
       "label": "domain/validate.ts",
@@ -1320,6 +1280,46 @@
       }
     },
     {
+      "id": "code-config-thresholdRules-ts",
+      "type": "code",
+      "label": "config/thresholdRules.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "DEFAULT_THRESHOLD_RULES",
+          "getAchievementStatus",
+          "getGrowthStatus"
+        ]
+      }
+    },
+    {
+      "id": "code-config-progressWeights-ts",
+      "type": "code",
+      "label": "config/progressWeights.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "DEFAULT_MONTHLY_WEIGHTS",
+          "DEFAULT_QUARTERLY_WEIGHTS",
+          "validateWeightsSum",
+          "calculateQuarterlyWeights"
+        ]
+      }
+    },
+    {
+      "id": "code-config-organizationModes-ts",
+      "type": "code",
+      "label": "config/organizationModes.ts",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "organizationModes",
+          "detectOrganizationMode",
+          "generatePageTitle"
+        ]
+      }
+    },
+    {
       "id": "code-app-page-tsx",
       "type": "code",
       "label": "app/page.tsx",
@@ -1340,134 +1340,24 @@
       }
     },
     {
-      "id": "code-lib-skill-loader-types-ts",
-      "type": "code",
-      "label": "lib/skill-loader/types.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-registry-ts",
-      "type": "code",
-      "label": "lib/skill-loader/registry.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-loader-ts",
-      "type": "code",
-      "label": "lib/skill-loader/loader.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-index-ts",
-      "type": "code",
-      "label": "lib/skill-loader/index.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-hooks-ts",
-      "type": "code",
-      "label": "lib/skill-loader/hooks.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "useSkills",
-          "useSkill",
-          "useSkillExecution",
-          "useSkillsByCategory"
-        ]
-      }
-    },
-    {
-      "id": "code-lib-skill-loader-executor-ts",
-      "type": "code",
-      "label": "lib/skill-loader/executor.ts",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-skills-demo-page-tsx",
-      "type": "code",
-      "label": "app/skills-demo/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-rules-page-tsx",
-      "type": "code",
-      "label": "app/rules/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-import-page-tsx",
-      "type": "code",
-      "label": "app/import/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-earned-premium-page-tsx",
-      "type": "code",
-      "label": "app/earned-premium/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-data-page-tsx",
-      "type": "code",
-      "label": "app/data/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-color-system-page-tsx",
-      "type": "code",
-      "label": "app/color-system/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
-      "id": "code-app-design-system-page-tsx",
-      "type": "code",
-      "label": "app/design-system/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
       "id": "code-components-v2-index-ts",
       "type": "code",
       "label": "components/v2/index.ts",
       "metadata": {
         "type": "ui-component",
         "exports": []
+      }
+    },
+    {
+      "id": "code-components-v2-ToggleButton-tsx",
+      "type": "code",
+      "label": "components/v2/ToggleButton.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "ToggleButton",
+          "ToggleButtonGroup"
+        ]
       }
     },
     {
@@ -1537,15 +1427,6 @@
       }
     },
     {
-      "id": "code-app-universal-chart-test-page-tsx",
-      "type": "code",
-      "label": "app/universal-chart-test/page.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
       "id": "code-components-ui-index-ts",
       "type": "code",
       "label": "components/ui/index.ts",
@@ -1578,6 +1459,17 @@
       }
     },
     {
+      "id": "code-components-layout-Section-tsx",
+      "type": "code",
+      "label": "components/layout/Section.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "Section"
+        ]
+      }
+    },
+    {
       "id": "code-components-system-ColorSystemHydrator-tsx",
       "type": "code",
       "label": "components/system/ColorSystemHydrator.tsx",
@@ -1596,17 +1488,6 @@
         "type": "ui-component",
         "exports": [
           "KpiCard"
-        ]
-      }
-    },
-    {
-      "id": "code-components-layout-Section-tsx",
-      "type": "code",
-      "label": "components/layout/Section.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": [
-          "Section"
         ]
       }
     },
@@ -1710,18 +1591,36 @@
       }
     },
     {
-      "id": "code-app-test-quarterly-chart-page-tsx",
+      "id": "code-app-rules-page-tsx",
       "type": "code",
-      "label": "app/test/quarterly-chart/page.tsx",
+      "label": "app/rules/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-app-color-system-preview-page-tsx",
+      "id": "code-app-earned-premium-page-tsx",
       "type": "code",
-      "label": "app/color-system/preview/page.tsx",
+      "label": "app/earned-premium/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-data-page-tsx",
+      "type": "code",
+      "label": "app/data/page.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": []
+      }
+    },
+    {
+      "id": "code-app-color-system-page-tsx",
+      "type": "code",
+      "label": "app/color-system/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
@@ -1748,15 +1647,6 @@
       }
     },
     {
-      "id": "code-components-ui-Modal-Modal-test-tsx",
-      "type": "code",
-      "label": "components/ui/Modal/Modal.test.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
       "id": "code-components-ui-Input-index-ts",
       "type": "code",
       "label": "components/ui/Input/index.ts",
@@ -1774,15 +1664,6 @@
         "exports": [
           "Input"
         ]
-      }
-    },
-    {
-      "id": "code-components-ui-Input-Input-test-tsx",
-      "type": "code",
-      "label": "components/ui/Input/Input.test.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
       }
     },
     {
@@ -1806,15 +1687,6 @@
       }
     },
     {
-      "id": "code-components-ui-Card-Card-test-tsx",
-      "type": "code",
-      "label": "components/ui/Card/Card.test.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
-      }
-    },
-    {
       "id": "code-components-ui-Button-index-ts",
       "type": "code",
       "label": "components/ui/Button/index.ts",
@@ -1832,15 +1704,6 @@
         "exports": [
           "Button"
         ]
-      }
-    },
-    {
-      "id": "code-components-ui-Button-Button-test-tsx",
-      "type": "code",
-      "label": "components/ui/Button/Button.test.tsx",
-      "metadata": {
-        "type": "ui-component",
-        "exports": []
       }
     },
     {
@@ -1913,23 +1776,21 @@
       }
     },
     {
-      "id": "code-components-charts-UniversalChart-utils-index-ts",
+      "id": "code-app-color-system-preview-page-tsx",
       "type": "code",
-      "label": "components/charts/UniversalChart/utils/index.ts",
+      "label": "app/color-system/preview/page.tsx",
       "metadata": {
         "type": "ui-component",
         "exports": []
       }
     },
     {
-      "id": "code-components-charts-UniversalChart-components-TableView-tsx",
+      "id": "code-components-charts-UniversalChart-utils-index-ts",
       "type": "code",
-      "label": "components/charts/UniversalChart/components/TableView.tsx",
+      "label": "components/charts/UniversalChart/utils/index.ts",
       "metadata": {
         "type": "ui-component",
-        "exports": [
-          "TableView"
-        ]
+        "exports": []
       }
     },
     {
@@ -2062,6 +1923,17 @@
         "type": "ui-component",
         "exports": [
           "createHqPredictionConfig"
+        ]
+      }
+    },
+    {
+      "id": "code-components-charts-UniversalChart-components-TableView-tsx",
+      "type": "code",
+      "label": "components/charts/UniversalChart/components/TableView.tsx",
+      "metadata": {
+        "type": "ui-component",
+        "exports": [
+          "TableView"
         ]
       }
     },

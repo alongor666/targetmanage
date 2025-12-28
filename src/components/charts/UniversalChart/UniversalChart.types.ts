@@ -146,6 +146,12 @@ export interface UniversalChartConfig {
   showDataLabel?: boolean;
   /** 图表标题（可选） */
   title?: string;
+  /** 标题图标（可选） */
+  titleIcon?: string;
+  /** 标题说明文字（可选） */
+  subtitle?: string;
+  /** 是否显示视图切换器，默认 true */
+  showViewSwitcher?: boolean;
   /** 是否显示导出按钮，默认 true */
   showExportButtons?: boolean;
   /** 自定义Y轴名称（可选） */
