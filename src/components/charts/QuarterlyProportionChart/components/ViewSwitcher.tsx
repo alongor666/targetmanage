@@ -3,10 +3,14 @@
  *
  * @component ViewSwitcher
  * @description 切换图表的视图模式（占比/绝对值/增长率）
+ *
+ * 统一设计规范：
+ * - 选中：蓝色字 + 蓝色边框，无背景
+ * - 未选中：灰色字 + 灰色边框，无背景
  */
 
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { ToggleButton, ToggleButtonGroup } from '@/components/v2';
 import type { ViewMode } from '../QuarterlyProportionChart.types';
 
 /**
@@ -57,7 +61,7 @@ export interface ViewSwitcherProps {
 }
 
 /**
- * 按钮样式视图切换器
+ * 按钮样式视图切换器（使用统一的 ToggleButtonGroup）
  */
 function ButtonViewSwitcher({
   currentMode,
@@ -65,37 +69,23 @@ function ButtonViewSwitcher({
   className,
   size = 'md',
 }: ViewSwitcherProps) {
-  const sizeClasses = {
-    sm: 'px-2.5 py-1 text-xs gap-1',
-    md: 'px-3 py-1.5 text-xs gap-1.5',
-    lg: 'px-4 py-2 text-sm gap-2',
-  };
-
   return (
-    <div className={cn('flex items-center gap-2', className)}>
-      {VIEW_MODES.map((mode) => (
-        <button
-          key={mode.value}
-          onClick={() => onChange(mode.value)}
-          className={cn(
-            'font-medium rounded-lg transition-all flex items-center border',
-            sizeClasses[size],
-            currentMode === mode.value
-              ? 'bg-blue-50 text-blue-700 border-blue-200 shadow-sm'
-              : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
-          )}
-          title={mode.description}
-        >
-          <span>{mode.icon}</span>
-          <span>{mode.label}</span>
-        </button>
-      ))}
-    </div>
+    <ToggleButtonGroup
+      value={currentMode}
+      options={VIEW_MODES.map(mode => ({
+        value: mode.value,
+        label: mode.label,
+        icon: mode.icon,
+      }))}
+      onChange={onChange}
+      size={size}
+      className={className}
+    />
   );
 }
 
 /**
- * 标签页样式视图切换器
+ * 标签页样式视图切换器（统一样式，移除背景色）
  */
 function TabViewSwitcher({
   currentMode,
@@ -103,29 +93,21 @@ function TabViewSwitcher({
   className,
 }: ViewSwitcherProps) {
   return (
-    <div className={cn('flex items-center bg-gray-100 rounded-lg p-1 gap-1', className)}>
-      {VIEW_MODES.map((mode) => (
-        <button
-          key={mode.value}
-          onClick={() => onChange(mode.value)}
-          className={cn(
-            'flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all',
-            currentMode === mode.value
-              ? 'bg-white text-gray-900 shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
-          )}
-          title={mode.description}
-        >
-          <span>{mode.icon}</span>
-          <span>{mode.label}</span>
-        </button>
-      ))}
-    </div>
+    <ToggleButtonGroup
+      value={currentMode}
+      options={VIEW_MODES.map(mode => ({
+        value: mode.value,
+        label: mode.label,
+        icon: mode.icon,
+      }))}
+      onChange={onChange}
+      className={className}
+    />
   );
 }
 
 /**
- * 分段控制器样式视图切换器
+ * 分段控制器样式视图切换器（统一样式，移除背景色）
  */
 function SegmentViewSwitcher({
   currentMode,
@@ -133,27 +115,16 @@ function SegmentViewSwitcher({
   className,
 }: ViewSwitcherProps) {
   return (
-    <div className={cn('inline-flex bg-white rounded-lg border border-gray-200 p-0.5', className)}>
-      {VIEW_MODES.map((mode, index) => (
-        <button
-          key={mode.value}
-          onClick={() => onChange(mode.value)}
-          className={cn(
-            'relative px-3 py-1.5 text-xs font-medium transition-all rounded',
-            'flex items-center gap-1.5 min-w-[80px] justify-center',
-            currentMode === mode.value
-              ? 'bg-blue-600 text-white shadow-sm'
-              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50',
-            index === 0 && 'rounded-l-md',
-            index === VIEW_MODES.length - 1 && 'rounded-r-md'
-          )}
-          title={mode.description}
-        >
-          <span>{mode.icon}</span>
-          <span>{mode.label}</span>
-        </button>
-      ))}
-    </div>
+    <ToggleButtonGroup
+      value={currentMode}
+      options={VIEW_MODES.map(mode => ({
+        value: mode.value,
+        label: mode.label,
+        icon: mode.icon,
+      }))}
+      onChange={onChange}
+      className={className}
+    />
   );
 }
 
