@@ -239,7 +239,7 @@ export default function DesignSystemPage() {
             {/* 小尺寸 */}
             <ChartContainer title="小尺寸图表 (400px)" height="sm">
               <div className="flex h-full items-center justify-center rounded-lg bg-bg-secondary">
-                <p className="text-text-muted">图表内容区域 - height="sm"</p>
+                <p className="text-text-muted">图表内容区域 - height=&quot;sm&quot;</p>
               </div>
             </ChartContainer>
 
@@ -250,7 +250,7 @@ export default function DesignSystemPage() {
               height="md"
             >
               <div className="flex h-full items-center justify-center rounded-lg bg-bg-secondary">
-                <p className="text-text-muted">图表内容区域 - height="md" (默认)</p>
+                <p className="text-text-muted">图表内容区域 - height=&quot;md&quot; (默认)</p>
               </div>
             </ChartContainer>
 

@@ -307,7 +307,7 @@ export default function QuarterlyChartTestPage() {
             <p>• <strong>数据场景</strong>: 切换不同的数据场景来测试预警系统的显示效果</p>
             <p>• <strong>视图模式</strong>: 测试占比视图、绝对值视图、增长率聚焦三种模式</p>
             <p>• <strong>交互功能</strong>: 点击图表中的柱状图，查看季度详情面板</p>
-            <p>• <strong>错误处理</strong>: 选择"错误数据"场景测试组件的错误处理能力</p>
+            <p>• <strong>错误处理</strong>: 选择“错误数据”场景测试组件的错误处理能力</p>
             <p>• <strong>响应式</strong>: 调整图表高度，测试不同尺寸下的显示效果</p>
           </div>
         </div>

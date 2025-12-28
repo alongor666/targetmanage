@@ -61,13 +61,13 @@ export const colorsV2 = {
 
   // 图表专用色
   chart: {
-    // 柱状图
-    target2026: '#007BFF',     // 2026规划 - 主蓝色
-    actual2025: '#6C757D',     // 2025实际 - 灰色
-
     // 折线图
     mainLine: '#368DCC',       // 主线 - 亮蓝色
     dashLine: '#F7B500',       // 辅线 - 橙色虚线
+
+    // ⚠️ 年度对比颜色（actual2025, actual2026, target2026, planned2026）
+    //    已移至 src/styles/tokens.ts 统一管理
+    //    请使用: colors.chart.actual2025, colors.chart.actual2026 等
   },
 } as const;
 
@@ -235,8 +235,8 @@ export const chartV2 = {
   },
 
   bar: {
-    target2026: '#007BFF',     // 2026规划柱
-    actual2025: '#6C757D',     // 2025实际柱
+    // ⚠️ 年度对比柱状图颜色已移至 src/styles/tokens.ts
+    //    请使用: colors.chart.actual2025, colors.chart.target2026 等
   },
 
   line: {

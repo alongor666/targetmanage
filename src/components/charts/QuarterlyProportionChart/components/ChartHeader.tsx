@@ -13,7 +13,7 @@ import type { ViewMode } from '../QuarterlyProportionChart.types';
 /**
  * 图例项配置
  */
-interface LegendItem {
+export interface ChartHeaderLegendItem {
   type: 'bar' | 'line' | 'dash';
   label: string;
   color: string;
@@ -32,6 +32,8 @@ export interface ChartHeaderProps {
   onViewModeChange: (mode: ViewMode) => void;
   /** 是否显示预警线图例，默认 true */
   showWarningLineLegend?: boolean;
+  /** 自定义图例项（提供后将覆盖默认图例渲染） */
+  legendItems?: ChartHeaderLegendItem[];
   /** 额外的CSS类名 */
   className?: string;
   /** 视图切换器样式 */
@@ -42,7 +44,7 @@ export interface ChartHeaderProps {
  * 图例项组件
  */
 interface LegendItemComponentProps {
-  item: LegendItem;
+  item: ChartHeaderLegendItem;
   className?: string;
 }
 
@@ -110,27 +112,28 @@ export function ChartHeader({
   viewMode,
   onViewModeChange,
   showWarningLineLegend = true,
+  legendItems: customLegendItems,
   className,
   viewSwitcherVariant = 'buttons',
 }: ChartHeaderProps) {
-  // 图例配置
-  const legendItems: LegendItem[] = [
-    {
-      type: 'bar',
-      label: '2026规划',
-      color: '#dceef9',
-      width: '16px',
-    },
-    {
-      type: 'bar',
-      label: '2025实际',
-      color: '#f2f2f2',
-      width: '16px',
-    },
-  ];
+  const legendItems: ChartHeaderLegendItem[] =
+    customLegendItems ??
+    [
+      {
+        type: 'bar',
+        label: '2026规划',
+        color: '#dceef9',
+        width: '16px',
+      },
+      {
+        type: 'bar',
+        label: '2025实际',
+        color: '#f2f2f2',
+        width: '16px',
+      },
+    ];
 
-  // 增长率相关图例（仅在非绝对值视图显示）
-  if (viewMode !== 'absolute') {
+  if (!customLegendItems && viewMode !== 'absolute') {
     legendItems.push({
       type: 'line',
       label: '增长率',

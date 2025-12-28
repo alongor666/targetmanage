@@ -1,6 +1,6 @@
 import "./globals.css";
-import Link from "next/link";
 import dynamic from "next/dynamic";
+import { Navbar } from "@/components/v2/Navbar";
 
 // 动态导入 ColorSystemHydrator，禁用 SSR 避免水合错误
 const ColorSystemHydrator = dynamic(
@@ -9,8 +9,8 @@ const ColorSystemHydrator = dynamic(
 );
 
 export const metadata = {
-  title: "2026 目标管理可视化",
-  description: "同城/异地 + 分产品 + 月/季/年目标与进度",
+  title: "保费目标管理系统",
+  description: "保费目标管理与可视化分析",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -18,22 +18,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh-CN">
       <body className="min-h-screen bg-white text-slate-900">
         <ColorSystemHydrator />
+        <Navbar
+          title="保费目标管理系统"
+          links={[
+            { label: "首页", href: "/" },
+            { label: "数据管理", href: "/data" },
+            { label: "导入数据", href: "/import" },
+            { label: "规则配置", href: "/rules" },
+            { label: "已赚保费预测", href: "/earned-premium" },
+            { label: "配色", href: "/color-system" },
+          ]}
+        />
         <div className="mx-auto max-w-7xl px-4 py-6">
-          <header className="mb-6 flex items-center justify-between">
-            <div>
-              <h1 className="text-xl font-semibold">2026 目标管理可视化</h1>
-              <p className="text-sm text-slate-600">同城/异地 · 分产品 · 月/季/年 · 双时间进度</p>
-            </div>
-            <nav className="text-sm text-slate-600">
-              <Link className="mr-4 hover:underline" href="/">总览</Link>
-              <Link className="mr-4 hover:underline" href="/orgs">机构</Link>
-              <Link className="mr-4 hover:underline" href="/earned-premium">已赚保费预测</Link>
-              <Link className="mr-4 hover:underline" href="/rules">权重规则</Link>
-              <Link className="mr-4 hover:underline" href="/import">导入</Link>
-              <Link className="hover:underline" href="/data">数据</Link>
-              <Link className="ml-4 hover:underline" href="/color-system">配色</Link>
-            </nav>
-          </header>
           {children}
           <footer className="mt-10 border-t pt-4 text-xs text-slate-500">
             数据文件：public/data（开发期） · 口径：docs（唯一依据）
